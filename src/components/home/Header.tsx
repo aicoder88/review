@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Reviews', href: '#latest' },
   { label: 'Methodology', href: '#methodology' },
   { label: 'Guides', href: '#newsletter' },
+  { label: 'About', href: '#about' },
 ];
 
 export function Header() {
@@ -26,7 +27,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/80 backdrop-blur-xl border-b border-primary/10 py-3 shadow-sm'
+        ? 'bg-background/80 backdrop-blur-xl border-b border-primary/10 py-3 shadow-sm'
         : 'bg-transparent border-transparent py-5'
         }`}
     >
@@ -34,13 +35,12 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${scrolled ? 'bg-primary text-white' : 'bg-primary/10 text-primary backdrop-blur-md'
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${scrolled ? 'bg-primary text-secondary' : 'bg-primary/10 text-primary backdrop-blur-md'
               }`}>
               <Sparkles className="w-5 h-5" />
             </div>
-            <span className={`font-display text-2xl font-bold transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-primary'
-              }`}>
-              Review<span className="text-secondary-foreground">CatLitter</span>
+            <span className={`font-display text-2xl font-bold transition-colors duration-300 text-primary`}>
+              Review<span className="text-foreground">CatLitter</span>
             </span>
           </Link>
 
@@ -50,7 +50,7 @@ export function Header() {
               <a
                 key={index}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-accent ${scrolled ? 'text-primary/80' : 'text-primary/80'
+                className={`text-sm font-medium transition-colors duration-300 hover:text-accent ${scrolled ? 'text-foreground/80' : 'text-foreground/80'
                   }`}
               >
                 {link.label}
