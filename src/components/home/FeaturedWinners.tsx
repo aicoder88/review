@@ -14,7 +14,7 @@ const featuredProducts = [
     badge: "Editor's Choice",
     badgeIcon: Crown,
     specs: ['99% Dust Free', 'Superior Clumping', 'Low Tracking'],
-    gradient: 'from-amber-500 to-orange-600',
+    gradient: 'from-accent to-amber-600', // Gold/Amber
     size: 'large',
   },
   {
@@ -26,7 +26,7 @@ const featuredProducts = [
     badge: 'Best Natural',
     badgeIcon: Sparkles,
     specs: ['Flushable', 'Lightweight', 'Eco-Friendly'],
-    gradient: 'from-emerald-500 to-teal-600',
+    gradient: 'from-primary to-emerald-800', // Forest Green
     size: 'medium',
   },
   {
@@ -38,7 +38,7 @@ const featuredProducts = [
     badge: 'Best Tech',
     badgeIcon: Award,
     specs: ['Health Monitoring', 'Odor Control', 'Long Lasting'],
-    gradient: 'from-violet-500 to-purple-600',
+    gradient: 'from-slate-600 to-slate-800', // Modern/Tech Slate
     size: 'medium',
   },
   {
@@ -50,28 +50,29 @@ const featuredProducts = [
     badge: 'Best Value',
     badgeIcon: Star,
     specs: ['Flat Top Clumps', 'Probiotic Formula', 'Scent Free'],
-    gradient: 'from-rose-500 to-pink-600',
+    gradient: 'from-[#8B5E3C] to-[#6F4E37]', // Bronze/Earth
     size: 'medium',
   },
 ];
 
 export function FeaturedWinners() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="py-24 px-6 relative overflow-hidden bg-[#FDFBF7]">
       {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-amber-200/30 to-orange-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-emerald-200/30 to-teal-200/30 rounded-full blur-3xl" />
-      
-      <div className="max-w-7xl mx-auto relative">
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-multiply" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full px-6 py-2 mb-6">
-            <Crown className="w-5 h-5" />
-            <span className="font-semibold">2024 Winners</span>
+          <div className="inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm border border-stone-200 text-stone-600 rounded-full px-5 py-2 mb-6 shadow-sm">
+            <Crown className="w-4 h-4 text-accent" />
+            <span className="font-semibold text-sm tracking-wide">2024 Winners</span>
           </div>
-          <h2 className="font-display text-5xl md:text-6xl font-bold text-slate-900 mb-4">
-            Top Rated <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Cat Litters</span>
+          <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
+            Top Rated <span className="text-gradient-gold font-serif italic">Cat Litters</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-stone-500 max-w-2xl mx-auto font-light">
             Rigorously tested, independently reviewed, and cat-approved
           </p>
         </div>
@@ -81,9 +82,8 @@ export function FeaturedWinners() {
           {featuredProducts.map((product, index) => (
             <Card
               key={product.id}
-              className={`group relative overflow-hidden bg-white border-0 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2 ${
-                product.size === 'large' ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''
-              }`}
+              className={`group relative overflow-hidden border-0 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer ${product.size === 'large' ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''
+                }`}
             >
               {/* Product Image */}
               <div className={`relative overflow-hidden ${product.size === 'large' ? 'aspect-[4/3]' : 'aspect-square'}`}>
@@ -92,14 +92,14 @@ export function FeaturedWinners() {
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
+
                 {/* Score Badge */}
-                <div className={`absolute top-4 right-4 w-16 h-16 bg-gradient-to-r ${product.gradient} rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                <div className={`absolute top-4 right-4 w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300`}>
                   <div className="text-center">
-                    <div className="font-mono text-2xl font-bold text-white leading-none">
+                    <div className="font-mono text-xl font-bold text-white leading-none">
                       {product.score}
                     </div>
                   </div>
@@ -107,44 +107,45 @@ export function FeaturedWinners() {
 
                 {/* Badge */}
                 <div className={`absolute top-4 left-4 bg-gradient-to-r ${product.gradient} text-white border-none px-4 py-2 rounded-full flex items-center gap-2 shadow-lg`}>
-                  <product.badgeIcon className="w-4 h-4" />
-                  <span className="font-semibold text-sm">{product.badge}</span>
+                  <product.badgeIcon className="w-3 h-3" />
+                  <span className="font-semibold text-xs tracking-wide uppercase">{product.badge}</span>
                 </div>
 
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-white/80 text-sm font-medium mb-2 uppercase tracking-wider">
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="text-white/60 text-xs font-bold mb-2 uppercase tracking-widest">
                     {product.category}
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
+                  <h3 className={`font-display font-bold text-white mb-4 leading-tight ${product.size === 'large' ? 'text-4xl' : 'text-2xl'}`}>
                     {product.name}
                   </h3>
 
                   {/* Quick Specs */}
-                  <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {product.specs.map((spec, i) => (
-                      <span key={i} className="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                      <span key={i} className="bg-white/10 backdrop-blur-md border border-white/10 text-white/90 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
                         {spec}
                       </span>
                     ))}
                   </div>
-                </div>
-              </div>
 
-              {/* Hover Button */}
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                <button className={`bg-gradient-to-r ${product.gradient} text-white px-6 py-3 rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300`}>
-                  View Review
-                </button>
+                  {/* Action Button */}
+                  <div className="overflow-hidden h-0 group-hover:h-12 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    <button className="bg-white text-foreground px-6 py-3 rounded-full font-bold text-sm w-full hover:bg-accent hover:text-white transition-colors">
+                      Read In-Depth Review
+                    </button>
+                  </div>
+                </div>
               </div>
             </Card>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-            View All Top Picks
+        <div className="text-center mt-20">
+          <button className="group relative px-10 py-5 bg-foreground text-white rounded-full font-bold text-lg shadow-2xl hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <span className="relative z-10 group-hover:text-primary-foreground transition-colors">View All Winners</span>
+            <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out" />
           </button>
         </div>
       </div>

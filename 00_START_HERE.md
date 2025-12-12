@@ -15,9 +15,7 @@
 - Only landing page exists (missing category pages, product reviews, comparison tool)
 - No CMS integration for managing content
 - No functionality (search, filtering, comparison)
-
-**The Problem:**
-You have a Ferrari with a lawnmower engine. The design is elite, but the copy sounds like every other review site. You won't stand out or build trust without fixing the copywriting FIRST.
+- the main reason for the site to exist is to drive qualified, pre-warmed, interested traffic to purrify.ca to buy cat litter odor remover.
 
 ---
 

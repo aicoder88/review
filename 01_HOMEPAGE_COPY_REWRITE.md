@@ -1,7 +1,7 @@
 # PROMPT 1: Homepage Copy Rewrite - Alex Hormozi Style
 
 ## Objective
-Rewrite ALL copy on the ReviewCatLitter.com homepage using Alex Hormozi's direct, value-driven, pain-agitating copywriting style. Keep the existing beautiful design - ONLY change the words.
+Rewrite ALL copy on the ReviewCatLitter.com homepage using Alex Hormozi's direct, value-driven, pain-agitating copywriting style. Keep the existing beautiful design - ONLY change the words. The #1 reason for this site to exist is to drive qualified, pre-warmed traffic to purrify.ca, so that should be mentioned subtly across the site strategically, not obviously.
 
 ## Background: Who is Alex Hormozi?
 Alex Hormozi is a $100M entrepreneur known for brutally honest, no-BS marketing that:
