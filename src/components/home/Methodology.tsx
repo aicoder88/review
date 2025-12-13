@@ -1,6 +1,6 @@
 'use client';
 
-import { Beaker, ClipboardCheck, LineChart, Microscope, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Beaker, ClipboardCheck, LineChart, Microscope, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { FadeUp, StaggerChildren, FadeIn } from '@/components/ui/motion';
 
 const methodologyPoints = [
@@ -39,41 +39,55 @@ const methodologyPoints = [
 
 export function Methodology() {
   return (
-    <section id="methodology" className="py-24 px-6 bg-[#0D261F] relative overflow-hidden text-white">
-      {/* Background Decorations */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-accent/5 rounded-full blur-[100px] opacity-50 pointer-events-none" />
-      <div className="absolute bottom-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-[100px] opacity-50 pointer-events-none" />
+    <section id="methodology" className="py-24 px-6 bg-foreground relative overflow-hidden text-white">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary rounded-full blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-accent rounded-full blur-3xl" />
+      </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Images */}
-          <FadeIn className="relative group hidden lg:block">
-            {/* Main Image */}
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/5">
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+          {/* Left Column: Image & Stats */}
+          <div className="relative">
+            <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10">
               <img
                 src="https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80"
-                alt="Testing Process"
-                className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                alt="Scientist testing cat litter"
+                className="w-full h-full object-cover"
               />
+
+              {/* Overlay Stat Card */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="flex items-end gap-4">
+                  <div>
+                    <span className="block text-4xl font-bold text-accent">547+</span>
+                    <span className="text-sm text-white/80">Brands Tested</span>
+                  </div>
+                  <div className="w-px h-12 bg-white/20" />
+                  <div>
+                    <span className="block text-4xl font-bold text-accent">$47k</span>
+                    <span className="text-sm text-white/80">Invested</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Floating Secondary Image */}
-            <div className="absolute -bottom-8 -right-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#0D261F] z-20 hidden md:block">
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-8 -right-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-foreground z-20 hidden md:block">
               <img
-                src="https://images.unsplash.com/photo-1533738903027-cae69dd45067?w=400&q=80"
-                alt="Cat testing"
+                src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?w=400&q=80"
+                alt="Microscope analysis"
                 className="w-full h-full object-cover"
               />
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute top-8 -left-4 bg-accent text-[#0D261F] px-6 py-3 rounded-full shadow-xl z-20 flex items-center gap-2 transform hover:-translate-y-1 transition-transform">
-              <CheckCircle2 className="w-5 h-5" />
-              <span className="font-bold text-sm tracking-wide">30+ Tests Per Product</span>
+            {/* Trust Badge */}
+            <div className="absolute top-8 -left-4 bg-accent text-foreground px-6 py-3 rounded-full shadow-xl z-20 flex items-center gap-2 transform hover:-translate-y-1 transition-transform">
+              <ShieldCheck className="w-5 h-5" />
+              <span className="font-bold">Vet-Approved Process</span>
             </div>
-          </FadeIn>
-
+          </div>
           {/* Right: Content */}
           <div>
             <FadeUp>

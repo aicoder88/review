@@ -75,7 +75,7 @@ export function ReviewHero({ review }: ReviewHeroProps) {
                         </div>
 
                         {/* Trust Badge Floating */}
-                        <div className="absolute -bottom-6 -left-6 md:bottom-10 md:-left-12 bg-[#0D261F] border border-white/10 p-5 rounded-2xl shadow-xl flex items-center gap-4 hidden md:flex">
+                        <div className="absolute -bottom-6 -left-6 md:bottom-10 md:-left-12 bg-foreground border border-white/10 p-5 rounded-2xl shadow-xl flex items-center gap-4 hidden md:flex">
                             <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
                                 <ShieldCheck className="w-6 h-6 text-primary" />
                             </div>

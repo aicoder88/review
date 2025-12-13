@@ -46,11 +46,11 @@ export function Hero() {
           <FadeUp delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <button
               onClick={() => document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground font-bold text-lg rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-accent text-accent-foreground font-bold text-lg rounded-full shadow-lg shadow-accent/20 hover:shadow-xl hover:-translate-y-1 hover:bg-accent/90 transition-all duration-300 flex items-center justify-center gap-2"
             >
               See What Actually Works <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-border text-foreground font-bold text-lg rounded-full hover:bg-secondary/50 hover:border-primary/20 transition-all duration-300">
+            <button className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-primary/20 text-foreground font-bold text-lg rounded-full hover:bg-white hover:border-primary/50 transition-all duration-300">
               How We Test
             </button>
           </FadeUp>
