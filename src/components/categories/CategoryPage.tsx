@@ -12,7 +12,7 @@ import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-interface ProductGridItem {
+export interface ProductGridItem {
     id: string;
     name: string;
     image: string;
@@ -28,7 +28,7 @@ interface ProductGridItem {
     tags: string[]; // For filtering
 }
 
-interface CategoryPageProps {
+export interface CategoryData {
     title: string;
     description: string;
     stats: {
@@ -44,6 +44,9 @@ interface CategoryPageProps {
     products: ProductGridItem[]; // Full list
     comparisonProducts: ProductSpec[]; // Comparison data
     faq: { question: string; answer: string }[];
+}
+
+interface CategoryPageProps extends CategoryData {
     children: ReactNode; // Buying guide
 }
 

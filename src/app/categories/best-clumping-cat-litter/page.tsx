@@ -148,6 +148,16 @@ export default function BestClumpingPage() {
                 We used ammonia meters in sealed containers. Winners neutralized 85%+ of ammonia. Losers just masked it with heavy perfume that smells worse when mixed with waste.
             </p>
 
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-6 my-6 rounded-r-xl">
+                <h4 className="font-bold text-purple-900 mb-2">💡 Pro Tip: How to Make Clumping Litter Last 2x Longer</h4>
+                <p className="text-purple-800 mb-4">
+                    Clumping litter is great, but eventually, the small un-scooped bits start to smell.
+                </p>
+                <p className="text-purple-800">
+                    <strong>The Hack:</strong> Mix in a probiotic deodorizer like <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-purple-950">Purrify</a>. The probiotics eat the bacteria that cause smell <em>before</em> they multiply. This lets you use the same box of litter for 6-8 weeks instead of 3-4, saving you ~$20/month.
+                </p>
+            </div>
+
             <h2>Clay vs. Natural Clumping Litter</h2>
             <p>
                 <strong>Clay (Bentonite):</strong> Clumps harder and faster. Cheaper. But heavy and dusty (unless premium). <br />

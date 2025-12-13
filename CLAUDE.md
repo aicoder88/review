@@ -4,80 +4,64 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 14 application for ReviewCatLitter.com - a data-driven cat litter review website. The application uses the App Router architecture with React Server Components and is styled with Tailwind CSS and shadcn/ui components.
+Next.js 14 application for ReviewCatLitter.com - a data-driven cat litter review website. Uses App Router with React Server Components, Tailwind CSS, and shadcn/ui.
 
 ## Development Commands
 
 ```bash
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm run start
+npm run dev      # Start development server (localhost:3000)
+npm run build    # Build for production
+npm run start    # Start production server
 ```
 
-## Project Architecture
+## Architecture
 
-### Next.js App Router Structure
+### Route Structure
 
-- **`src/app/`**: App Router directory containing:
-  - `layout.tsx`: Root layout with metadata and HTML structure
-  - `page.tsx`: Homepage that orchestrates all landing page sections
-  - `globals.css`: Global styles with Tailwind directives and CSS custom properties for theming
+- `/` - Homepage with section components
+- `/reviews` - Reviews listing
+- `/reviews/[slug]` - Individual product reviews (uses `ProductReviewPage` component)
+- `/categories/[slug]` - Category pages (uses `CategoryPage` component)
+- `/compare` - Product comparison tool
+- `/about`, `/guides`, `/methodology`, `/search` - Static pages
+
+### Key Patterns
+
+**Product Reviews**: Individual review pages in `src/app/reviews/[product-name]/page.tsx` pass review data to the reusable `ProductReviewPage` component in `src/components/reviews/`.
+
+**Category Pages**: Category pages use the `CategoryPage` component (`src/components/categories/CategoryPage.tsx`) with filter sidebar, comparison table, and quick picks.
+
+**Comparison System**: Global state via `ComparisonContext` (`src/context/ComparisonContext.tsx`) with localStorage persistence. The `ComparisonBar` shows in the root layout. Max 4 products can be compared.
 
 ### Component Organization
 
-The project uses a feature-based component structure:
+- `src/components/home/` - Landing page sections (Header, Hero, Footer, etc.)
+- `src/components/reviews/` - Review page components and UI elements
+- `src/components/categories/` - Category page components
+- `src/components/compare/` - Comparison tool components
+- `src/components/ui/` - shadcn/ui primitives (modify with care, managed by CLI)
 
-- **`src/components/home/`**: Landing page section components that are composed together in the homepage:
-  - `Header.tsx`: Fixed header with navigation (uses client-side state for mobile menu)
-  - `Hero.tsx`: Hero section
-  - `TrustBar.tsx`: Trust indicators
-  - `FeaturedWinners.tsx`: Featured product winners
-  - `Methodology.tsx`: Review methodology explanation
-  - `LatestReviews.tsx`: Recent reviews listing
-  - `CategoryNavigation.tsx`: Category browser
-  - `Newsletter.tsx`: Newsletter signup
-  - `Footer.tsx`: Site footer
+### Data Layer
 
-- **`src/components/ui/`**: shadcn/ui component library - reusable UI primitives built on Radix UI. These are managed by shadcn CLI and should be modified with care.
+- `src/lib/types/review.ts` - TypeScript interfaces for `ProductReview`, `ReviewScore`, `ReviewVerdict`
+- `src/lib/data/` - Static review data files
+- Review data includes: scores (dust/clumping/odor/tracking/value), specs, pros/cons, verdict
 
-- **`src/lib/utils.ts`**: Contains the `cn()` utility function for merging Tailwind classes with clsx and tailwind-merge.
+### Styling
 
-### Styling System
+- **Design tokens**: Emerald/teal gradient (`from-emerald-500 to-teal-500`) as primary
+- **Typography**: Fraunces (headings), Outfit (body), JetBrains Mono (code)
+- **CSS Variables**: HSL theme colors in `globals.css`
+- **Utility**: `cn()` from `@/lib/utils` for merging Tailwind classes
 
-- **Tailwind CSS** with custom configuration in `tailwind.config.ts`
-- **CSS Variables**: Theme colors defined as HSL variables in `globals.css` (can support dark mode via `darkMode: ["class"]`)
-- **Custom animations**: Accordion, fade-in, and slide-in animations defined in Tailwind config
-- **Design tokens**: Primary color is emerald/teal gradient (`from-emerald-500 to-teal-500`)
-- **Typography**: Uses Google Fonts - Fraunces, DM Sans, and JetBrains Mono
+### Adding New Content
+
+**New review page**: Create `src/app/reviews/[product-slug]/page.tsx`, define `ReviewData` object, and render `<ProductReviewPage data={...}>` with content as children.
+
+**New category page**: Create `src/app/categories/[category-slug]/page.tsx` using the `CategoryPage` component pattern.
+
+**New shadcn component**: `npx shadcn@latest add [component]`
 
 ### Path Aliases
 
-- `@/*` maps to `./src/*` (configured in `tsconfig.json`)
-- `@/components` for components
-- `@/lib/utils` for utilities
-
-### Key Technical Details
-
-- **React 18** with TypeScript
-- **Client Components**: Components requiring interactivity (like Header) use `'use client'` directive
-- **Image Configuration**: Unsplash images allowed in `next.config.js`
-- **shadcn/ui**: Configured with `components.json` for component generation via CLI
-
-### Component Patterns
-
-1. **Section Components**: Most home components are self-contained sections with their own data/content
-2. **Client Interactivity**: Only components needing state (like Header's mobile menu) use 'use client'
-3. **Styling**: Utility-first Tailwind classes with `cn()` for conditional/merged classes
-4. **Icons**: Uses `lucide-react` for icons throughout
-
-## Adding New Features
-
-- **New pages**: Create route folders under `src/app/` following App Router conventions
-- **New UI components**: Use `npx shadcn@latest add [component]` for shadcn components
-- **New sections**: Add to `src/components/home/` and compose in `page.tsx`
-- **Styling**: Use existing design tokens and gradient patterns for consistency
+- `@/*` → `./src/*`
