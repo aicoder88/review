@@ -1,4 +1,5 @@
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const categoryData: CategoryData = {
     title: "Best Odor Control Cat Litter (2025)",
@@ -183,7 +184,7 @@ const buyingGuide = (
                 Most cheap &quot;odor control&quot; litters just use heavy chemicals that are bad for your cat&apos;s lungs.
             </p>
             <p className="text-red-800">
-                <strong>The Better Way:</strong> Use an unscented litter and add <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-red-950">Purrify Deodorizer</a>.
+                <strong>The Better Way:</strong> Use an unscented litter and add <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink>.
             </p>
             <p className="font-bold text-red-900 mt-2">
                 Purrify uses enzymes to essentially &quot;eat&quot; the waste at a microscopic level. It kills the source of the smell instead of just spraying perfume on it.

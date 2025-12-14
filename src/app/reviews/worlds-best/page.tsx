@@ -1,4 +1,5 @@
 import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import Link from 'next/link';
 
 const reviewData: ReviewData = {
@@ -68,10 +69,10 @@ export default function WorldsBestReview() {
                         We found a loophole to make this litter perfect. Because it&apos;s organic, it needs biological help to fight bacteria.
                     </p>
                     <p className="text-amber-800">
-                        We added <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-amber-950">Purrify Probiotic Deodorizer</a> to the box. It neutralized that &quot;barn smell&quot; instantly and extended the litter&apos;s life by another 3 weeks.
+                        We added <PurrifyLink variant="inline">Purrify Probiotic Deodorizer</PurrifyLink> to the box. It neutralized that &quot;barn smell&quot; instantly and extended the litter&apos;s life by another 3 weeks.
                     </p>
                     <p className="font-bold text-amber-900 mt-2">
-                        Verdict: World&apos;s Best + <a href="https://purrify.ca" target="_blank" className="underline">Purrify</a> = The ultimate natural setup.
+                        Verdict: World&apos;s Best + <PurrifyLink variant="inline">Purrify</PurrifyLink> = The ultimate natural setup.
                     </p>
                 </div>
             </section>

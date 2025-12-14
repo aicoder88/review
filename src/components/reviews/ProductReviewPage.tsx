@@ -6,6 +6,7 @@ import { ArrowRight, Check, X, Info, ShoppingCart, Share2 } from 'lucide-react';
 import { ScoreBadge } from './ui/ScoreBadge';
 import { ScoreMeter } from './ui/ScoreMeter';
 import { ComparisonWidget } from './ui/ComparisonWidget';
+import { RecommendedAddOn } from './RecommendedAddOn';
 import { FadeIn, FadeUp, StaggerChildren } from '@/components/ui/motion';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
@@ -230,6 +231,8 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
 
                     </div>
                 </section>
+
+                <RecommendedAddOn productName={data.name} />
 
                 <ComparisonWidget currentProduct={data.name} />
 

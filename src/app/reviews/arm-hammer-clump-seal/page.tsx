@@ -1,4 +1,5 @@
 import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const reviewData: ReviewData = {
     name: "Arm & Hammer Clump & Seal",
@@ -65,10 +66,10 @@ export default function ArmHammerReview() {
                         Love the price and clumping, but hate the chemical smell?
                     </p>
                     <p className="text-blue-800">
-                        <strong>Do this:</strong> Buy the <em>Unscented</em> version (often harder to find) or buy a basic cheap clay litter and add <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-blue-950">Purrify Odor Neutralizer</a>.
+                        <strong>Do this:</strong> Buy the <em>Unscented</em> version (often harder to find) or buy a basic cheap clay litter and add <PurrifyLink variant="inline">Purrify Odor Neutralizer</PurrifyLink>.
                     </p>
                     <p className="font-bold text-blue-900 mt-2">
-                        Why? <a href="https://purrify.ca" target="_blank" className="underline">Purrify</a> kills the bacteria that causes smell, so you don&apos;t need the heavy perfumes to mask it. You get superior odor control without the chemical headache.
+                        Why? <PurrifyLink variant="inline">Purrify</PurrifyLink> kills the bacteria that causes smell, so you don&apos;t need the heavy perfumes to mask it. You get superior odor control without the chemical headache.
                     </p>
                 </div>
             </section>

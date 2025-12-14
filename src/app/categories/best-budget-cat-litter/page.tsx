@@ -1,5 +1,6 @@
 
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const categoryData: CategoryData = {
     title: "Best Budget Cat Litter (2025)",
@@ -182,7 +183,7 @@ const buyingGuide = (
             </p>
             <ul className="list-decimal pl-6 text-blue-800 mb-4 space-y-2">
                 <li>Buy the cheapest <strong>Unscented</strong> clumping clay litter you can find (e.g., Special Kitty).</li>
-                <li>Add one scoop of <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-blue-950">Purrify Deodorizer</a> ($10).</li>
+                <li>Add one scoop of <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink> ($10).</li>
                 <li><strong>Result:</strong> Creates a premium probiotic litter that outperforms the expensive brands.</li>
             </ul>
             <p className="font-bold text-blue-900 mt-2">

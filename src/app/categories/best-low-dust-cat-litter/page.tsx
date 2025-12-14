@@ -1,4 +1,5 @@
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const categoryData: CategoryData = {
     title: "Best Low-Dust Cat Litter (2025)",
@@ -175,7 +176,7 @@ const buyingGuide = (
                 Even low-dust clay litters can trigger asthma. If you or your cat are sensitive, switch to a plant-based litter (like World&apos;s Best) immediately. Clay dust contains silica, which is distinct from plant dust.
             </p>
             <p className="text-sky-800">
-                To maximize Clean Air in your home, pair a low-dust litter like Dr. Elsey&apos;s with <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-sky-950">Purrify Deodorizer</a>.
+                To maximize Clean Air in your home, pair a low-dust litter like Dr. Elsey&apos;s with <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink>.
             </p>
             <p className="font-bold text-sky-900 mt-2">
                 Purrify helps break down waste before it dries out and becomes airborne dust particles.

@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { ComparisonTable, DetailedProduct } from '@/components/compare/ComparisonTable';
+import { PurrifyEnhancement } from '@/components/compare/PurrifyEnhancement';
 import { useComparison } from '@/context/ComparisonContext';
 import { FadeUp } from '@/components/ui/motion';
 
@@ -153,6 +154,11 @@ function ComparisonLoader() {
             <FadeUp>
                 <ComparisonTable products={displayProducts} />
             </FadeUp>
+            {displayProducts.length > 0 && (
+                <FadeUp delay={0.2}>
+                    <PurrifyEnhancement />
+                </FadeUp>
+            )}
         </section>
     );
 }

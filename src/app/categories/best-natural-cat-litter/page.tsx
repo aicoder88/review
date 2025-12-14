@@ -1,4 +1,5 @@
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const categoryData: CategoryData = {
     title: "Best Natural Cat Litter (2025)",
@@ -180,7 +181,7 @@ const buyingGuide = (
                 Natural litters are more prone to bacterial growth than clay. Using a probiotic deodorizer like Purrify is virtually mandatory for corn/wheat litter to prevent that &quot;barnyard&quot; smell.
             </p>
             <p className="text-green-800">
-                <strong>The Solution:</strong> Add a probiotic booster like <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-green-950">Purrify</a> to your natural litter.
+                <strong>The Solution:</strong> Add a probiotic booster like <PurrifyLink variant="inline">Purrify</PurrifyLink> to your natural litter.
             </p>
             <p className="font-bold text-green-900 mt-2">
                 Purrify uses enzymes to break down the waste <em>before</em> it ferments into that sour smell. It makes corn and wheat litter perform just as well as heavy chemical clay.

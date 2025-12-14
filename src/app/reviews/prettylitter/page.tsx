@@ -1,4 +1,5 @@
 import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const reviewData: ReviewData = {
     name: "PrettyLitter",
@@ -79,7 +80,7 @@ export default function PrettyLitterReview() {
                         The #1 complaint with crystal litter is that poop smell lingers because it isn&apos;t coated/buried like in clay.
                     </p>
                     <p className="text-purple-800">
-                        <strong>The Solution:</strong> This litter <em>needs</em> help with solid waste odor. We recommend sprinkling <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-purple-950">Purrify</a> over the crystals.
+                        <strong>The Solution:</strong> This litter <em>needs</em> help with solid waste odor. We recommend sprinkling <PurrifyLink variant="inline">Purrify</PurrifyLink> over the crystals.
                     </p>
                     <p className="font-bold text-purple-900 mt-2">
                         Because Purrify is dry and enzymatic, it breaks down the organic waste on the surface without saturating the crystals, doubling the effective life of the bag.

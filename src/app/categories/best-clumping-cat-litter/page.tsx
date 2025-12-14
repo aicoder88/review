@@ -1,4 +1,5 @@
 import { CategoryPage } from '@/components/categories/CategoryPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 export default function BestClumpingPage() {
     const products = [
@@ -154,7 +155,7 @@ export default function BestClumpingPage() {
                     Clumping litter is great, but eventually, the small un-scooped bits start to smell.
                 </p>
                 <p className="text-purple-800">
-                    <strong>The Hack:</strong> Mix in a probiotic deodorizer like <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-purple-950">Purrify</a>. The probiotics eat the bacteria that cause smell <em>before</em> they multiply. This lets you use the same box of litter for 6-8 weeks instead of 3-4, saving you ~$20/month.
+                    <strong>The Hack:</strong> Mix in a probiotic deodorizer like <PurrifyLink variant="inline">Purrify</PurrifyLink>. The probiotics eat the bacteria that cause smell <em>before</em> they multiply. This lets you use the same box of litter for 6-8 weeks instead of 3-4, saving you ~$20/month.
                 </p>
             </div>
 

@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Reviews', href: '/reviews' },
   { label: 'Methodology', href: '/methodology' },
   { label: 'Guides', href: '/guides' },
+  { label: 'Purrify', href: 'https://purrify.ca', external: true, highlight: true },
   { label: 'About', href: '/about' },
 ];
 
@@ -62,7 +63,12 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-accent ${scrolled ? 'text-foreground/80' : 'text-foreground/80'
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className={`text-sm font-medium transition-colors duration-300 hover:text-accent ${
+                  link.highlight
+                    ? 'text-emerald-600 font-bold hover:text-emerald-700'
+                    : scrolled ? 'text-foreground/80' : 'text-foreground/80'
                   }`}
               >
                 {link.label}
@@ -136,7 +142,13 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
-                className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className={`text-lg font-medium transition-colors ${
+                  link.highlight
+                    ? 'text-emerald-600 font-bold hover:text-emerald-700'
+                    : 'text-foreground/80 hover:text-primary'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

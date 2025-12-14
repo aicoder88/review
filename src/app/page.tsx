@@ -2,6 +2,7 @@ import { Header } from '@/components/home/Header';
 import { Hero } from '@/components/home/Hero';
 import { TrustBar } from '@/components/home/TrustBar';
 import { FeaturedWinners } from '@/components/home/FeaturedWinners';
+import { BudgetHackBanner } from '@/components/home/BudgetHackBanner';
 import { Methodology } from '@/components/home/Methodology';
 import { ValueEquation } from '@/components/home/ValueEquation';
 import { LatestReviews } from '@/components/home/LatestReviews';
@@ -17,6 +18,7 @@ export default function Page() {
         <Hero />
         <TrustBar />
         <FeaturedWinners />
+        <BudgetHackBanner />
         <Methodology />
         <ValueEquation />
         <LatestReviews />

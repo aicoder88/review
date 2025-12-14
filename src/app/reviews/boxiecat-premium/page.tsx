@@ -1,4 +1,5 @@
 import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const reviewData: ReviewData = {
     name: "Boxiecat Premium",
@@ -71,7 +72,7 @@ export default function BoxiecatReview() {
                         Boxiecat has the right idea: probiotics work better than perfumes. But the built-in probiotics die off once exposed to air.
                     </p>
                     <p className="text-green-800">
-                        To maintain that &quot;Day 1&quot; freshness forever, we simply refreshed the box with <a href="https://purrify.ca" target="_blank" className="font-bold underline hover:text-green-950">Purrify</a> every time we scooped.
+                        To maintain that &quot;Day 1&quot; freshness forever, we simply refreshed the box with <PurrifyLink variant="inline">Purrify</PurrifyLink> every time we scooped.
                     </p>
                     <p className="font-bold text-green-900 mt-2">
                         Since Purrify is a concentrated probiotic specifically designed for litter, it supercharges Boxiecat&apos;s natural formula.

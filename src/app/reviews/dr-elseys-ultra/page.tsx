@@ -1,4 +1,5 @@
 import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
+import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 
 const reviewData: ReviewData = {
     name: "Dr. Elsey's Ultra",
@@ -105,7 +106,7 @@ export default function DrElseysReview() {
                     Odor control is excellent but relied entirely on locking away moisture, not masking it with perfume. There is zero scent.
                 </p>
                 <p>
-                    In our multi-cat test, we noticed no smell for 3 weeks without a full box change. By week 4, a faint ammonia smell appeared, which is standard for unscented clay. If you scoop daily, odor is simply a non-issue. (<strong>Pro Tip:</strong> If you have multiple cats and want to extend this to 8 weeks, adding a <a href="https://purrify.ca" target="_blank" className="underline font-bold text-primary">probiotic booster</a> works wonders).
+                    In our multi-cat test, we noticed no smell for 3 weeks without a full box change. By week 4, a faint ammonia smell appeared, which is standard for unscented clay. If you scoop daily, odor is simply a non-issue. (<strong>Pro Tip:</strong> If you have multiple cats and want to extend this to 8 weeks, adding a <PurrifyLink variant="inline">probiotic booster</PurrifyLink> works wonders).
                 </p>
 
                 <h3>Tracking (7.2/10)</h3>
