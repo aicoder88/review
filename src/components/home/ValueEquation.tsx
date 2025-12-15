@@ -21,7 +21,7 @@ export function ValueEquation() {
                             We spent <span className="font-bold">$70,000+</span> and <span className="font-bold">2,847 hours</span> testing.
                         </p>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                            You get the truth for free. That's the deal.
+                            You get the truth for free. That&apos;s the deal.
                         </p>
                     </FadeUp>
                 </div>
@@ -76,7 +76,7 @@ export function ValueEquation() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent mt-1 shrink-0" />
-                                <span className="text-lg text-white/80">No more wasting money on <strong className="text-white">litters that don't work</strong></span>
+                                <span className="text-lg text-white/80">No more wasting money on <strong className="text-white">litters that don&apos;t work</strong></span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent mt-1 shrink-0" />

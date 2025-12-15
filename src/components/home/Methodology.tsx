@@ -95,13 +95,13 @@ export function Methodology() {
                 How We <span className="text-gradient-gold italic">Actually</span> Test
               </h2>
               <p className="text-2xl text-white/90 mb-4">
-                (Unlike Other "Review" Sites)
+                (Unlike Other &ldquo;Review&rdquo; Sites)
               </p>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                We're cat owners who got tired of the lies. <span className="font-bold text-white">"99% Dust Free"</span> usually means <span className="font-bold text-white">"Clouds of Choking Dust"</span>. We buy every product at retail price, test it for 90 days, and give you the raw data.
+                We&apos;re cat owners who got tired of the lies. <span className="font-bold text-white">&ldquo;99% Dust Free&rdquo;</span> usually means <span className="font-bold text-white">&ldquo;Clouds of Choking Dust&rdquo;</span>. We buy every product at retail price, test it for 90 days, and give you the raw data.
               </p>
             </FadeUp>
 

@@ -52,7 +52,7 @@ export function Hero() {
               <span className="font-bold text-destructive">93% of cat litters fail</span> our odor control test by week 3.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Stop wasting money on litters that <span className="font-semibold text-foreground">clump like wet sand</span>, <span className="font-semibold text-foreground">track across your house</span>, or <span className="font-semibold text-foreground">smell like a zoo</span>. We spent 2,847 hours testing 547 brands so you don't have to.
+              Stop wasting money on litters that <span className="font-semibold text-foreground">clump like wet sand</span>, <span className="font-semibold text-foreground">track across your house</span>, or <span className="font-semibold text-foreground">smell like a zoo</span>. We spent 2,847 hours testing 547 brands so you don&apos;t have to.
             </p>
           </FadeUp>
 
