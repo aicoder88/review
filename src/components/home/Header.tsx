@@ -10,8 +10,8 @@ const navLinks = [
   { label: 'Categories', href: '/categories/best-clumping-cat-litter' },
   { label: 'Compare', href: '/compare' },
   { label: 'Guides', href: '/guides' },
-  { label: 'Methodology', href: '/methodology' },
-  { label: 'Purrify', href: 'https://purrify.ca', external: true, highlight: true },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Purrify', href: '/purrify-litter-enhancer', highlight: true },
   { label: 'About', href: '/about' },
 ];
 
@@ -64,8 +64,6 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
-                target={link.external ? '_blank' : undefined}
-                rel={link.external ? 'noopener noreferrer' : undefined}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-accent ${
                   link.highlight
                     ? 'text-emerald-600 font-bold hover:text-emerald-700'
@@ -143,8 +141,6 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
-                target={link.external ? '_blank' : undefined}
-                rel={link.external ? 'noopener noreferrer' : undefined}
                 className={`text-lg font-medium transition-colors ${
                   link.highlight
                     ? 'text-emerald-600 font-bold hover:text-emerald-700'

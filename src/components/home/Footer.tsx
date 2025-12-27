@@ -13,14 +13,16 @@ const footerLinks = {
   resources: [
     { label: 'Testing Methodology', href: '/methodology' },
     { label: 'All Guides', href: '/guides' },
+    { label: 'Stop Litter Tracking', href: '/guides/stop-litter-tracking' },
+    { label: 'Eliminate Litter Smell', href: '/guides/eliminate-litter-smell' },
     { label: 'Compare Products', href: '/compare' },
-    { label: 'Search', href: '/search' },
+    { label: 'FAQ', href: '/faq' },
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Purrify', href: 'https://purrify.ca' },
+    { label: 'Purrify Litter Enhancer', href: '/purrify-litter-enhancer' },
     { label: 'Contact', href: '/about' },
-    { label: 'Methodology', href: '/methodology' },
+    { label: 'Black Friday 2025', href: '/black-friday-cat-litter-deals-2025' },
   ],
 };
 

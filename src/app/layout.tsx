@@ -3,6 +3,7 @@ import { Fraunces, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ComparisonProvider } from "@/context/ComparisonContext";
 import { ComparisonBar } from "@/components/compare/ComparisonBar";
+import { ExitIntentOffer } from "@/components/marketing/ExitIntentOffer";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ComparisonProvider>
           {children}
           <ComparisonBar />
+          <ExitIntentOffer />
         </ComparisonProvider>
       </body>
     </html>

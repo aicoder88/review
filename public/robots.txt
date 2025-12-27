@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://reviewcatlitter.com
+
+# Sitemaps
+Sitemap: https://reviewcatlitter.com/sitemap.xml

@@ -12,6 +12,7 @@ Next.js 14 application for ReviewCatLitter.com - a data-driven cat litter review
 npm run dev      # Start development server (localhost:3000)
 npm run build    # Build for production
 npm run start    # Start production server
+npm run lint     # Run ESLint
 ```
 
 ## Architecture
@@ -49,7 +50,7 @@ npm run start    # Start production server
 
 ### Styling
 
-- **Design tokens**: Emerald/teal gradient (`from-emerald-500 to-teal-500`) as primary
+- **Design tokens**: Forest green (`hsl(166 65% 24%)`) as primary, warm cream background (`hsl(40 20% 97%)`)
 - **Typography**: Fraunces (headings), Outfit (body), JetBrains Mono (code)
 - **CSS Variables**: HSL theme colors in `globals.css`
 - **Utility**: `cn()` from `@/lib/utils` for merging Tailwind classes
