@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { execSync } = require('child_process');
 
-// Simply run next dev with hostname - ignore any extra args from Tempo
+// Simply run next dev with hostname
 try {
   execSync('npx next dev -H 0.0.0.0', {
     stdio: 'inherit',
