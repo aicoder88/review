@@ -42,7 +42,7 @@ const reviewData: ReviewData = {
         worthIt: "You want to save money, extend litter life, or eliminate odor without harsh chemicals.",
         skipIt: "You change litter every week regardless (though even then, it reduces smell between changes)."
     },
-    priceCheckUrl: "https://purrify.ca"
+    priceCheckUrl: "https://www.purrify.ca"
 };
 
 export default function PurrifyReview() {

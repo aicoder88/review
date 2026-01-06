@@ -22,7 +22,7 @@ export function PurrifyLink({
 
   return (
     <a
-      href="https://purrify.ca"
+      href="https://www.purrify.ca"
       target="_blank"
       rel="noopener noreferrer"
       className={cn(baseClasses, variantClasses[variant], className)}

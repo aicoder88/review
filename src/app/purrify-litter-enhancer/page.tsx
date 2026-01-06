@@ -37,7 +37,7 @@ export default function PurrifyLandingPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <a
-                href="https://purrify.ca"
+                href="https://www.purrify.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
@@ -219,7 +219,7 @@ export default function PurrifyLandingPage() {
           </div>
 
           <a
-            href="https://purrify.ca"
+            href="https://www.purrify.ca"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-emerald-600 px-12 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"

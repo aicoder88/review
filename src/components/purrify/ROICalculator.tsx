@@ -96,7 +96,7 @@ export function ROICalculator() {
           </div>
 
           <a
-            href="https://purrify.ca"
+            href="https://www.purrify.ca"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-emerald-700 mt-8 transition-colors"
