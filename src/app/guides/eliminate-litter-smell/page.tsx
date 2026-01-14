@@ -103,8 +103,6 @@ export default function EliminateLitterSmell() {
                   </Link>
                   <a
                     href="https://www.purrify.ca"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-xl font-bold hover:bg-emerald-50 text-center"
                   >
                     Get Purrify ($19)

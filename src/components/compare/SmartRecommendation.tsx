@@ -46,7 +46,7 @@ export function SmartRecommendation({ products }: SmartRecommendationProps) {
               <span className="font-bold">$30/mo</span>
             </div>
             <div className="flex justify-between">
-              <span>+ Purrify (1 jar lasts 4 weeks):</span>
+              <span>+ Purrify (1 bag lasts 4 weeks):</span>
               <span className="font-bold">$19/mo</span>
             </div>
             <div className="border-t border-border pt-2 flex justify-between">

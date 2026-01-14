@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export function BeforeAfter() {
   return (
     <section className="py-16 bg-white">
@@ -15,8 +17,13 @@ export function BeforeAfter() {
               <div className="bg-red-100 px-6 py-3 border-b-2 border-red-200">
                 <h4 className="font-bold text-red-900">❌ Without Purrify (Day 7)</h4>
               </div>
-              <div className="aspect-video bg-gray-200 flex items-center justify-center text-gray-400">
-                [Before Image: Litter box with visible deterioration]
+              <div className="aspect-video relative overflow-hidden">
+                <Image
+                  src="/images/litter-before.jpg"
+                  alt="Litter box showing deterioration after 7 days without Purrify"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-6">
                 <ul className="space-y-2 text-red-600">
@@ -42,8 +49,13 @@ export function BeforeAfter() {
               <div className="bg-emerald-100 px-6 py-3 border-b-2 border-emerald-200">
                 <h4 className="font-bold text-emerald-900">✓ With Purrify (Day 14)</h4>
               </div>
-              <div className="aspect-video bg-gray-200 flex items-center justify-center text-gray-400">
-                [After Image: Fresh-looking litter box]
+              <div className="aspect-video relative overflow-hidden">
+                <Image
+                  src="/images/litter-after.jpg"
+                  alt="Fresh litter box after 14 days with Purrify"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-6">
                 <ul className="space-y-2 text-emerald-600">

@@ -90,15 +90,13 @@ export function ROICalculator() {
                 ${yearlySavings.toFixed(0)}
               </div>
               <div className="text-emerald-700">
-                That&apos;s {(yearlySavings / 19).toFixed(0)} jars of Purrify... FREE!
+                That&apos;s {(yearlySavings / 19).toFixed(0)} bags of Purrify... FREE!
               </div>
             </div>
           </div>
 
           <a
             href="https://www.purrify.ca"
-            target="_blank"
-            rel="noopener noreferrer"
             className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-emerald-700 mt-8 transition-colors"
           >
             Get Purrify for $19 →

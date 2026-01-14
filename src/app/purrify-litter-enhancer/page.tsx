@@ -38,8 +38,6 @@ export default function PurrifyLandingPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <a
                 href="https://www.purrify.ca"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
               >
                 Get Purrify for $19 →
@@ -153,9 +151,9 @@ export default function PurrifyLandingPage() {
             </div>
 
             <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <h3 className="font-bold text-lg mb-2">How long does one jar last?</h3>
+              <h3 className="font-bold text-lg mb-2">How long does one bag last?</h3>
               <p className="text-muted-foreground">
-                One 16oz jar lasts approximately 4 weeks with one cat, 2-3 weeks with multiple cats.
+                One 16oz bag lasts approximately 4 weeks with one cat, 2-3 weeks with multiple cats.
                 Apply 1 tablespoon per week per litter box. Cost: $4.75/week for single cat households,
                 which is far less than the $20-40 you save by extending litter life.
               </p>
@@ -220,8 +218,6 @@ export default function PurrifyLandingPage() {
 
           <a
             href="https://www.purrify.ca"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-block bg-white text-emerald-600 px-12 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
           >
             Get Purrify Now - $19

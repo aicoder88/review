@@ -149,8 +149,6 @@ export default function BlackFriday2025() {
             </Link>
             <a
               href="https://www.purrify.ca"
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex-1 text-center border-2 border-emerald-600 text-emerald-600 py-4 rounded-xl font-bold hover:bg-emerald-50"
             >
               Get Purrify - $19
@@ -287,8 +285,6 @@ export default function BlackFriday2025() {
             </Link>
             <a
               href="https://www.purrify.ca"
-              target="_blank"
-              rel="noopener noreferrer"
               className="bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-800 text-center"
             >
               Get Purrify - $19

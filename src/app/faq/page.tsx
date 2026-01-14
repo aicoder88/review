@@ -79,8 +79,8 @@ const faqs = [
         answer: "Yes. We've personally tested Purrify with 50+ litter brands including clay (clumping and non-clumping), silica crystal, natural corn/wheat/wood, walnut, paper, and pellet types. The probiotics work on bacterial odor regardless of litter material. Results consistently show 2x extended litter life across ALL types tested."
       },
       {
-        question: "How long does one jar of Purrify last?",
-        answer: "One 16oz jar lasts approximately 4 weeks with one cat, 2-3 weeks with multiple cats. Apply 1 tablespoon per week per litter box (mix into litter after scooping). Cost: $4.75/week for single cat households. Since Purrify saves you $20-40/month by extending litter life, it pays for itself 4-8x over."
+        question: "How long does one bag of Purrify last?",
+        answer: "One 16oz bag lasts approximately 4 weeks with one cat, 2-3 weeks with multiple cats. Apply 1 tablespoon per week per litter box (mix into litter after scooping). Cost: $4.75/week for single cat households. Since Purrify saves you $20-40/month by extending litter life, it pays for itself 4-8x over."
       },
       {
         question: "How does Purrify work?",
@@ -174,8 +174,6 @@ export default function FAQPage() {
                 </Link>
                 <a
                   href="https://www.purrify.ca"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-block border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 text-center"
                 >
                   Get Purrify ($19)
