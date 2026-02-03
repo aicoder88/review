@@ -297,7 +297,7 @@ export function CategoryPage({
                                         {/* Image & Score */}
                                         <div className="w-full md:w-56 flex-shrink-0 flex flex-col items-center">
                                             <div className="w-full aspect-square mb-4 relative">
-                                                <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
+                                                <img src={product.image} alt={`${product.name} cat litter product photo`} className="w-full h-full object-contain" />
                                                 <div className="absolute top-0 right-0 md:hidden">
                                                     <ScoreBadge score={product.score} size="sm" />
                                                 </div>

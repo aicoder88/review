@@ -4,12 +4,53 @@ import { ProsCons } from "@/components/reviews/ProsCons";
 import { VerdictCard } from "@/components/reviews/VerdictCard";
 import { dummyReview } from "@/lib/data/dummy-review";
 import { Metadata } from "next";
-// In a real app, we'd fetch data based on params.slug
 
-export const metadata: Metadata = {
-    title: "Dr. Elsey's Ultra Review: We Tested It For 90 Days",
-    description: "Is Dr. Elsey's Ultra actually dust-free? We spent $47k testing it. Read our brutal honest review.",
-};
+const siteUrl = "https://www.reviewcatlitter.com";
+
+// In a real app, we'd fetch data based on params.slug and generate proper metadata
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  // Format slug for display
+  const formattedName = params.slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+  return {
+    title: `${formattedName} Review 2025 | 90-Day Lab Test Results`,
+    description: `We spent 90 days testing ${formattedName} cat litter. Read our honest review with dust, clumping, and odor control data. Is it worth buying?`,
+    keywords: [`${formattedName} review`, `${formattedName} cat litter`, "cat litter test", "litter review 2025"],
+    alternates: {
+      canonical: `/reviews/${params.slug}`,
+      languages: {
+        "en-CA": `/reviews/${params.slug}`,
+        "fr-CA": `/reviews/${params.slug}`,
+        "en": `/reviews/${params.slug}`,
+      },
+    },
+    openGraph: {
+      title: `${formattedName} Review 2025 | 90-Day Lab Test Results`,
+      description: `We spent 90 days testing ${formattedName} cat litter. Read our honest review with real test data.`,
+      url: `${siteUrl}/reviews/${params.slug}`,
+      type: "article",
+      publishedTime: "2024-01-15",
+      authors: ["ReviewCatLitter Team"],
+      images: [
+        {
+          url: `${siteUrl}/images/og-review-${params.slug}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${formattedName} Cat Litter Review and Test Results`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${formattedName} Review 2025 | 90-Day Lab Test Results`,
+      description: `We spent 90 days testing ${formattedName} cat litter. Read our honest review with real test data.`,
+      images: [`${siteUrl}/images/og-review-${params.slug}.jpg`],
+    },
+  };
+}
 
 export default function ReviewPage({ params }: { params: { slug: string } }) {
     // Mock data fetch

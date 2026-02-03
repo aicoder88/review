@@ -87,7 +87,7 @@ export function CategoryNavigation() {
             >
               {/* Background Image */}
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
-                <img src={category.image} alt="" className="w-full h-full object-cover" />
+                <img src={category.image} alt={`${category.label} cat litter category`} className="w-full h-full object-cover" />
               </div>
 
               {/* Content */}
@@ -113,7 +113,7 @@ export function CategoryNavigation() {
         <div className="mt-16 grid md:grid-cols-2 gap-6">
           <Link href="/categories/best-clumping-cat-litter" className="relative bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
-              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" alt="" className="w-full h-full object-cover rounded-bl-3xl" />
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" alt="Best clumping cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
             </div>
             <div className="relative z-10">
               <span className="text-white/80 font-medium">Most Popular</span>
@@ -127,7 +127,7 @@ export function CategoryNavigation() {
 
           <Link href="/categories/best-natural-cat-litter" className="relative bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
-              <img src="https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=400&q=80" alt="" className="w-full h-full object-cover rounded-bl-3xl" />
+              <img src="https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=400&q=80" alt="Natural eco-friendly cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
             </div>
             <div className="relative z-10">
               <span className="text-white/80 font-medium">Eco-Friendly</span>

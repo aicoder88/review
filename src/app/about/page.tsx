@@ -1,7 +1,44 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
+
+const siteUrl = "https://www.reviewcatlitter.com";
+
+export const metadata: Metadata = {
+  title: "About Us | How We Test Cat Litter | ReviewCatLitter",
+  description: "Learn about ReviewCatLitter's mission and methodology. We spent $47K testing 500+ cat litters to give you honest, data-driven reviews you can trust.",
+  keywords: ["about reviewcatlitter", "cat litter testing methodology", "how we test cat litter", "independent cat litter reviews"],
+  alternates: {
+    canonical: "/about",
+    languages: {
+      "en-CA": "/about",
+      "fr-CA": "/about",
+      "en": "/about",
+    },
+  },
+  openGraph: {
+    title: "About Us | How We Test Cat Litter",
+    description: "Learn about ReviewCatLitter's mission and methodology. We spent $47K testing 500+ cat litters to give you honest reviews.",
+    url: `${siteUrl}/about`,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/og-about.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "About ReviewCatLitter - Our Testing Methodology",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | How We Test Cat Litter",
+    description: "Learn about ReviewCatLitter's mission and methodology. We spent $47K testing 500+ cat litters.",
+    images: [`${siteUrl}/images/og-about.jpg`],
+  },
+};
 
 export default function AboutPage() {
     return (

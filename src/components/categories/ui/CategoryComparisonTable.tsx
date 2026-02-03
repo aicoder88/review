@@ -46,7 +46,7 @@ export function CategoryComparisonTable({ products }: CategoryComparisonTablePro
                             <td className="p-4">
                                 <div className="flex items-center gap-3">
                                     <div className="w-12 h-12 bg-white rounded-lg border border-border p-1">
-                                        <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
+                                        <img src={product.image} alt={`${product.name} cat litter product`} className="w-full h-full object-contain" />
                                     </div>
                                     <a href={product.reviewUrl} className="font-bold text-foreground hover:text-primary hover:underline block max-w-[150px] leading-tight">
                                         {product.name}

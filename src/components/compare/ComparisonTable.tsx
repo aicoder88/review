@@ -102,7 +102,7 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
                                 </button>
                                 <div className="flex flex-col items-center text-center">
                                     <div className="h-32 mb-4 flex items-center justify-center">
-                                        <img src={product.image} alt={product.name} className="max-h-full max-w-full object-contain" />
+                                        <img src={product.image} alt={`${product.name} cat litter product`} className="max-h-full max-w-full object-contain" />
                                     </div>
                                     <Link href={product.reviewUrl} className="font-display font-bold text-lg leading-tight hover:text-primary hover:underline mb-2 block">
                                         {product.name}

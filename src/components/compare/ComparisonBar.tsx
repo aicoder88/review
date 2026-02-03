@@ -51,7 +51,7 @@ export function ComparisonBar() {
                                             <X className="w-3 h-3" />
                                         </button>
                                         <div className="border border-border rounded-xl p-2 bg-secondary/20 h-24 flex items-center justify-center">
-                                            <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
+                                            <img src={product.image} alt={`${product.name} cat litter product`} className="w-full h-full object-contain" />
                                         </div>
                                         <p className="text-xs font-medium text-center mt-2 truncate leading-tight">
                                             {product.name}

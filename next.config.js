@@ -19,6 +19,17 @@ const nextConfig = {
     compress: true,
     // Enable SWC minification
     swcMinify: true,
+    // Redirects for www redirection
+    async redirects() {
+        return [
+            {
+                source: "/:path*",
+                has: [{ type: "host", value: "reviewcatlitter.com" }],
+                destination: "https://www.reviewcatlitter.com/:path*",
+                permanent: true,
+            },
+        ];
+    },
     // Headers for caching
     async headers() {
         return [

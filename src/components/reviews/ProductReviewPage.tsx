@@ -82,7 +82,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                 <div className="relative aspect-[4/3] flex items-center justify-center">
                                     <img
                                         src={data.image}
-                                        alt={data.name}
+                                        alt={`${data.name} cat litter product photo`}
                                         className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>

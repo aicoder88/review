@@ -10,9 +10,40 @@ import {
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const siteUrl = "https://www.reviewcatlitter.com";
+
 export const metadata: Metadata = {
-  title: "Cat Litter FAQ - Your Questions Answered | ReviewCatLitter.com",
-  description: "Everything you need to know about cat litter, odor control, and making your litter last longer. Expert answers to common cat litter questions.",
+  title: "Cat Litter FAQ 2025 | Common Questions Answered | ReviewCatLitter",
+  description: "Get answers to all your cat litter questions. How often to change litter, best types for odor control, money-saving tips, and expert advice.",
+  keywords: ["cat litter FAQ", "how often change cat litter", "best cat litter odor control", "cat litter questions", "litter box tips"],
+  alternates: {
+    canonical: "/faq",
+    languages: {
+      "en-CA": "/faq",
+      "fr-CA": "/faq",
+      "en": "/faq",
+    },
+  },
+  openGraph: {
+    title: "Cat Litter FAQ 2025 | Common Questions Answered",
+    description: "Get answers to all your cat litter questions. How often to change litter, best types for odor control, money-saving tips.",
+    url: `${siteUrl}/faq`,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/og-faq.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Cat Litter Frequently Asked Questions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cat Litter FAQ 2025 | Common Questions Answered",
+    description: "Get answers to all your cat litter questions. How often to change litter, best types for odor control.",
+    images: [`${siteUrl}/images/og-faq.jpg`],
+  },
 };
 
 const faqs = [

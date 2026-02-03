@@ -3,10 +3,44 @@ import { Footer } from '@/components/home/Footer';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { Clock, TrendingUp, CheckCircle, DollarSign } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: "How to Make Cat Litter Last 2x Longer (7 Proven Methods)",
-  description: "Extend your cat litter life from 3-4 weeks to 6-8 weeks with these tested methods. Save money and reduce odor naturally.",
+const siteUrl = "https://www.reviewcatlitter.com";
+
+export const metadata: Metadata = {
+  title: "How to Make Cat Litter Last 2x Longer (7 Proven Methods) | ReviewCatLitter",
+  description: "Extend your cat litter life from 3-4 weeks to 6-8 weeks with these tested methods. Save money and reduce odor naturally with our expert guide.",
+  keywords: ["extend cat litter life", "make litter last longer", "cat litter savings", "litter life tips", "prolong cat litter"],
+  alternates: {
+    canonical: "/guides/extend-cat-litter-life",
+    languages: {
+      "en-CA": "/guides/extend-cat-litter-life",
+      "fr-CA": "/guides/extend-cat-litter-life",
+      "en": "/guides/extend-cat-litter-life",
+    },
+  },
+  openGraph: {
+    title: "How to Make Cat Litter Last 2x Longer (7 Proven Methods)",
+    description: "Extend your cat litter life from 3-4 weeks to 6-8 weeks with these tested methods. Save money and reduce odor naturally.",
+    url: `${siteUrl}/guides/extend-cat-litter-life`,
+    type: "article",
+    publishedTime: "2024-01-15",
+    authors: ["ReviewCatLitter Team"],
+    images: [
+      {
+        url: `${siteUrl}/images/og-extend-litter-life.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "How to Make Cat Litter Last 2x Longer - Expert Guide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Make Cat Litter Last 2x Longer",
+    description: "Extend your cat litter life from 3-4 weeks to 6-8 weeks with these tested methods.",
+    images: [`${siteUrl}/images/og-extend-litter-life.jpg`],
+  },
 };
 
 export default function ExtendCatLitterLifeGuide() {

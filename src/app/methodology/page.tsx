@@ -1,8 +1,45 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { CheckCircle2, Beaker, Clock, DollarSign, Sparkles, ArrowRight } from "lucide-react";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+
+const siteUrl = "https://www.reviewcatlitter.com";
+
+export const metadata: Metadata = {
+  title: "Our Testing Methodology | How We Review Cat Litter | ReviewCatLitter",
+  description: "Learn how we test cat litter. $47K spent, 500+ products, scientific measurements for dust, clumping, odor & tracking. Real data, no sponsored reviews.",
+  keywords: ["cat litter testing methodology", "how we test cat litter", "cat litter lab testing", "litter review process", "independent cat litter testing"],
+  alternates: {
+    canonical: "/methodology",
+    languages: {
+      "en-CA": "/methodology",
+      "fr-CA": "/methodology",
+      "en": "/methodology",
+    },
+  },
+  openGraph: {
+    title: "Our Testing Methodology | How We Review Cat Litter",
+    description: "Learn how we test cat litter. $47K spent, 500+ products, scientific measurements for dust, clumping, odor & tracking.",
+    url: `${siteUrl}/methodology`,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/og-methodology.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Our Cat Litter Testing Methodology",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Testing Methodology | How We Review Cat Litter",
+    description: "Learn how we test cat litter. $47K spent, 500+ products, scientific measurements.",
+    images: [`${siteUrl}/images/og-methodology.jpg`],
+  },
+};
 
 export default function MethodologyPage() {
     return (

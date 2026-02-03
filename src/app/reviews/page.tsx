@@ -1,8 +1,45 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Star, ArrowRight, Sparkles, Crown, Award } from "lucide-react";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+
+const siteUrl = "https://www.reviewcatlitter.com";
+
+export const metadata: Metadata = {
+  title: "All Cat Litter Reviews 2025 | 500+ Products Tested | ReviewCatLitter",
+  description: "Browse our complete database of cat litter reviews. Independent testing of 500+ brands including Dr. Elsey's, World's Best, PrettyLitter & more. Data-driven ratings.",
+  keywords: ["cat litter reviews", "all cat litter brands", "best cat litter reviews", "litter comparison", "cat litter ratings"],
+  alternates: {
+    canonical: "/reviews",
+    languages: {
+      "en-CA": "/reviews",
+      "fr-CA": "/reviews",
+      "en": "/reviews",
+    },
+  },
+  openGraph: {
+    title: "All Cat Litter Reviews 2025 | 500+ Products Tested",
+    description: "Browse our complete database of cat litter reviews. Independent testing of 500+ brands.",
+    url: `${siteUrl}/reviews`,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/og-reviews.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Complete Cat Litter Reviews Database - ReviewCatLitter.com",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Cat Litter Reviews 2025 | 500+ Products Tested",
+    description: "Browse our complete database of cat litter reviews. Independent testing of 500+ brands.",
+    images: [`${siteUrl}/images/og-reviews.jpg`],
+  },
+};
 
 // Comprehensive review data
 const reviews = [
@@ -119,7 +156,7 @@ export default function ReviewsPage() {
                                     <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0 relative">
                                         <img
                                             src={review.image}
-                                            alt={review.name}
+                                            alt={`${review.name} - ${review.category} cat litter product photo`}
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
                                         {review.badge && (

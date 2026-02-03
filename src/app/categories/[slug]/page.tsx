@@ -66,7 +66,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                                 <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0">
                                     <img
                                         src={review.image}
-                                        alt={review.name}
+                                        alt={`${review.name} cat litter product photo`}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
                                 </div>

@@ -37,7 +37,7 @@ export function UserReviewList({ reviews }: UserReviewListProps) {
                 <img
                   src={review.photoUrl}
                   className="w-12 h-12 rounded-full object-cover"
-                  alt={review.name}
+                  alt={`${review.name} profile photo`}
                 />
               ) : (
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center text-white font-bold text-lg">

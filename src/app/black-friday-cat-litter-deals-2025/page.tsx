@@ -3,9 +3,40 @@ import { Footer } from '@/components/home/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const siteUrl = "https://www.reviewcatlitter.com";
+
 export const metadata: Metadata = {
   title: "Black Friday Cat Litter Deals 2025 - Best Sales & Money-Saving Hacks",
   description: "We tracked 47 litter brands to find the real Black Friday deals. Plus: the #1 hack to save $312/year (better than any sale).",
+  keywords: ["Black Friday cat litter deals", "cat litter sale 2025", "cat litter Black Friday", "best cat litter deals"],
+  alternates: {
+    canonical: "/black-friday-cat-litter-deals-2025",
+    languages: {
+      "en-CA": "/black-friday-cat-litter-deals-2025",
+      "fr-CA": "/black-friday-cat-litter-deals-2025",
+      "en": "/black-friday-cat-litter-deals-2025",
+    },
+  },
+  openGraph: {
+    title: "Black Friday Cat Litter Deals 2025 - Best Sales & Money-Saving Hacks",
+    description: "We tracked 47 litter brands to find the real Black Friday deals. Plus: the #1 hack to save $312/year.",
+    url: `${siteUrl}/black-friday-cat-litter-deals-2025`,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/og-blackfriday.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Black Friday Cat Litter Deals 2025",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Black Friday Cat Litter Deals 2025",
+    description: "We tracked 47 litter brands to find the real Black Friday deals. Plus: the #1 hack to save $312/year.",
+    images: [`${siteUrl}/images/og-blackfriday.jpg`],
+  },
 };
 
 const deals = [
@@ -171,9 +202,11 @@ export default function BlackFriday2025() {
               <div key={deal.id} className="bg-white border-2 border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   <div className="w-full md:w-32 h-32 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400">
-                      Product Image
-                    </div>
+                    <img 
+                      src={deal.image} 
+                      alt={`${deal.product} cat litter Black Friday deal`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   <div className="flex-1">

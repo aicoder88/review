@@ -1,8 +1,45 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { BookOpen, Sparkles, Clock, DollarSign, ArrowRight } from "lucide-react";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+
+const siteUrl = "https://www.reviewcatlitter.com";
+
+export const metadata: Metadata = {
+  title: "Cat Litter Guides & Tips | Expert Advice | ReviewCatLitter",
+  description: "Expert guides on cat litter care, odor control, money-saving hacks, and litter box maintenance. Learn how to extend litter life and save money.",
+  keywords: ["cat litter guide", "how to use cat litter", "litter box tips", "cat litter maintenance", "save money on cat litter"],
+  alternates: {
+    canonical: "/guides",
+    languages: {
+      "en-CA": "/guides",
+      "fr-CA": "/guides",
+      "en": "/guides",
+    },
+  },
+  openGraph: {
+    title: "Cat Litter Guides & Tips | Expert Advice",
+    description: "Expert guides on cat litter care, odor control, money-saving hacks, and litter box maintenance.",
+    url: `${siteUrl}/guides`,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/og-guides.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Cat Litter Guides and Expert Tips",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cat Litter Guides & Tips | Expert Advice",
+    description: "Expert guides on cat litter care, odor control, money-saving hacks, and litter box maintenance.",
+    images: [`${siteUrl}/images/og-guides.jpg`],
+  },
+};
 
 const guides = [
     {

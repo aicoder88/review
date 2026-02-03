@@ -63,7 +63,7 @@ export function QuickPickCard({
             <div className="mt-4 mb-6 relative aspect-square">
                 <img
                     src={image}
-                    alt={productName}
+                    alt={`${productName} cat litter product photo`}
                     className="w-full h-full object-contain p-4"
                 />
                 <div className="absolute top-0 right-0">

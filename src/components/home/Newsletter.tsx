@@ -58,7 +58,7 @@ export function Newsletter() {
                     <div key={i} className="w-12 h-12 rounded-full border-2 border-foreground overflow-hidden bg-white/10">
                       <img
                         src={`https://i.pravatar.cc/100?img=${i + 10}`}
-                        alt="Subscriber"
+                        alt="Cat parent subscriber profile"
                         className="w-full h-full object-cover"
                       />
                     </div>
