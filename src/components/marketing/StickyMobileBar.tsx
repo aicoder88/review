@@ -46,6 +46,7 @@ export function StickyMobileBar({ productName }: StickyMobileBarProps) {
         </div>
         <Link
           href="/reviews/purrify"
+          prefetch={false}
           className="bg-white text-emerald-600 px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap"
         >
           Learn More

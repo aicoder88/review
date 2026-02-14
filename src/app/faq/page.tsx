@@ -199,6 +199,7 @@ export default function FAQPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/reviews/purrify"
+                  prefetch={false}
                   className="inline-block bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-700 text-center"
                 >
                   Learn About Purrify →

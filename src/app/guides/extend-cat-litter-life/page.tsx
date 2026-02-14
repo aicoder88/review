@@ -51,9 +51,9 @@ export default function ExtendCatLitterLifeGuide() {
       <main className="pt-24 pb-20">
         {/* Breadcrumb */}
         <div className="container mx-auto px-6 mb-8 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-primary">Home</Link>
+          <Link href="/" prefetch={false} className="hover:text-primary">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/guides" className="hover:text-primary">Guides</Link>
+          <Link href="/guides" prefetch={false} className="hover:text-primary">Guides</Link>
           <span className="mx-2">/</span>
           <span className="text-foreground font-medium">Extend Cat Litter Life</span>
         </div>
@@ -413,9 +413,9 @@ export default function ExtendCatLitterLifeGuide() {
 
               <h2>Related Guides</h2>
               <ul>
-                <li><Link href="/guides/purrify-budget-litter-hack" className="text-primary hover:underline">The $15 Budget Litter Hack</Link></li>
-                <li><Link href="/categories/best-clumping-cat-litter" className="text-primary hover:underline">Best Clumping Cat Litters</Link></li>
-                <li><Link href="/reviews/purrify" className="text-primary hover:underline">Full Purrify Review</Link></li>
+                <li><Link href="/guides/purrify-budget-litter-hack" prefetch={false} className="text-primary hover:underline">The $15 Budget Litter Hack</Link></li>
+                <li><Link href="/categories/best-clumping-cat-litter" prefetch={false} className="text-primary hover:underline">Best Clumping Cat Litters</Link></li>
+                <li><Link href="/reviews/purrify" prefetch={false} className="text-primary hover:underline">Full Purrify Review</Link></li>
               </ul>
 
             </article>

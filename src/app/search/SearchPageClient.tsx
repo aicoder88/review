@@ -91,7 +91,7 @@ function SearchContent() {
                         <div className="text-center py-20 bg-secondary/30 rounded-3xl">
                             <h2 className="text-2xl font-bold mb-4">No results found</h2>
                             <p className="text-muted-foreground mb-8">Try searching for &quot;clay&quot;, &quot;natural&quot;, &quot;dust&quot;, or &quot;odor&quot;.</p>
-                            <Link href="/" className="bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
+                            <Link href="/" prefetch={false} className="bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
                                 Return Home
                             </Link>
                         </div>
@@ -99,7 +99,7 @@ function SearchContent() {
                         <>
                             <div className="grid gap-6 mb-12">
                                 {results.map(product => (
-                                    <Link key={product.id} href={`/reviews/${product.id}`}>
+                                    <Link key={product.id} href={`/reviews/${product.id}`} prefetch={false}>
                                         <div className="bg-card border border-border p-6 rounded-2xl hover:shadow-md transition-all flex flex-col md:flex-row gap-6 group">
                                             <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0">
                                                 <img src={product.image} alt={`${product.name} - ${product.category} cat litter product`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />

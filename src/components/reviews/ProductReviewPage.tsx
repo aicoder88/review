@@ -57,9 +57,9 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
             <main className="pt-24 pb-20">
                 {/* Breadcrumb - Simple */}
                 <div className="container mx-auto px-6 mb-8 text-sm text-muted-foreground">
-                    <Link href="/" className="hover:text-primary">Home</Link>
+                    <Link href="/" prefetch={false} className="hover:text-primary">Home</Link>
                     <span className="mx-2">/</span>
-                    <Link href="/reviews" className="hover:text-primary">Reviews</Link>
+                    <Link href="/reviews" prefetch={false} className="hover:text-primary">Reviews</Link>
                     <span className="mx-2">/</span>
                     <span className="text-foreground font-medium">{data.name}</span>
                 </div>

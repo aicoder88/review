@@ -66,7 +66,7 @@ export function Hero() {
               <span className="relative z-10">See What Actually Works</span>
               <ArrowRight className="w-6 h-6 relative z-10" />
             </button>
-            <Link href="/methodology" className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-primary/20 text-foreground font-bold text-lg rounded-full hover:bg-white hover:border-primary/50 transition-all duration-300 inline-flex items-center justify-center">
+            <Link href="/methodology" prefetch={false} className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-primary/20 text-foreground font-bold text-lg rounded-full hover:bg-white hover:border-primary/50 transition-all duration-300 inline-flex items-center justify-center">
               How We Test
             </Link>
           </FadeUp>

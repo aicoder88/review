@@ -313,7 +313,7 @@ export function CategoryPage({
                                             <div className="flex flex-wrap items-baseline justify-between gap-4 mb-2">
                                                 <div>
                                                     <div className="text-xs font-bold text-primary uppercase tracking-wider mb-1">{product.type}</div>
-                                                    <Link href={product.reviewUrl} className="font-display text-2xl font-bold text-foreground hover:text-primary hover:underline">
+                                                    <Link href={product.reviewUrl} prefetch={false} className="font-display text-2xl font-bold text-foreground hover:text-primary hover:underline">
                                                         {product.name}
                                                     </Link>
                                                 </div>
@@ -345,7 +345,7 @@ export function CategoryPage({
                                             </div>
 
                                             <div className="flex flex-wrap gap-3">
-                                                <Link href={product.reviewUrl} className="px-6 py-2.5 bg-foreground text-white font-bold rounded-lg hover:bg-black transition-colors">
+                                                <Link href={product.reviewUrl} prefetch={false} className="px-6 py-2.5 bg-foreground text-white font-bold rounded-lg hover:bg-black transition-colors">
                                                     Read Review
                                                 </Link>
                                                 <a href={product.priceCheckUrl} target="_blank" className="px-6 py-2.5 border border-border font-bold rounded-lg hover:bg-secondary transition-colors">

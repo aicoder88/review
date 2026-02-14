@@ -75,6 +75,7 @@ export default function PurrifyLandingPage() {
               </a>
               <Link
                 href="/reviews/purrify"
+                prefetch={false}
                 className="bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-800 transition-colors"
               >
                 Read Full Review

@@ -139,10 +139,10 @@ export default function MethodologyPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-12">
-                            <Link href="/reviews" className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
+                            <Link href="/reviews" prefetch={false} className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
                                 See Our Reviews <ArrowRight className="w-4 h-4" />
                             </Link>
-                            <Link href="/compare" className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-bold py-3 px-6 rounded-xl hover:bg-secondary/80 transition-colors">
+                            <Link href="/compare" prefetch={false} className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-bold py-3 px-6 rounded-xl hover:bg-secondary/80 transition-colors">
                                 Compare Products
                             </Link>
                         </div>

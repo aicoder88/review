@@ -83,6 +83,7 @@ export function CategoryNavigation() {
             <Link
               key={index}
               href={`/categories/${category.slug}`}
+              prefetch={false}
               className="group relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden cursor-pointer block"
             >
               {/* Background Image */}
@@ -111,7 +112,7 @@ export function CategoryNavigation() {
 
         {/* Featured Categories Banner */}
         <div className="mt-16 grid md:grid-cols-2 gap-6">
-          <Link href="/categories/best-clumping-cat-litter" className="relative bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
+          <Link href="/categories/best-clumping-cat-litter" prefetch={false} className="relative bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
               <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" alt="Best clumping cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
             </div>
@@ -125,7 +126,7 @@ export function CategoryNavigation() {
             </div>
           </Link>
 
-          <Link href="/categories/best-natural-cat-litter" className="relative bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
+          <Link href="/categories/best-natural-cat-litter" prefetch={false} className="relative bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
               <img src="https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=400&q=80" alt="Natural eco-friendly cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
             </div>

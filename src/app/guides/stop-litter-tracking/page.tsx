@@ -210,6 +210,7 @@ export default function StopLitterTracking() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/reviews/purrify"
+                  prefetch={false}
                   className="bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-emerald-700 text-center"
                 >
                   Learn About Purrify

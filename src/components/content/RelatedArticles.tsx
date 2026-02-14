@@ -29,6 +29,7 @@ export function RelatedArticles({ articles, title = "Related Articles" }: Relate
           <Link
             key={index}
             href={article.url}
+            prefetch={false}
             className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow group"
           >
             {article.image && (

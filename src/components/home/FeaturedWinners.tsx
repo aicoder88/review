@@ -172,7 +172,7 @@ export function FeaturedWinners() {
         </StaggerChildren>
 
         <div className="mt-16 text-center space-y-6">
-          <Link href="/reviews" className="px-8 py-4 bg-white border-2 border-border hover:border-primary text-foreground font-bold rounded-full transition-all duration-300 shadow-sm hover:shadow-lg inline-flex items-center gap-2">
+          <Link href="/reviews" prefetch={false} className="px-8 py-4 bg-white border-2 border-border hover:border-primary text-foreground font-bold rounded-full transition-all duration-300 shadow-sm hover:shadow-lg inline-flex items-center gap-2">
             View All 547 Reviews <ArrowRight className="w-4 h-4" />
           </Link>
           

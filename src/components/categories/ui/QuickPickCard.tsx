@@ -81,7 +81,7 @@ export function QuickPickCard({
             </div>
 
             <div className="grid grid-cols-2 gap-3 mt-auto">
-                <Link href={reviewUrl} className="flex items-center justify-center py-2.5 rounded-lg border border-border text-sm font-bold text-foreground hover:bg-secondary transition-colors">
+                <Link href={reviewUrl} prefetch={false} className="flex items-center justify-center py-2.5 rounded-lg border border-border text-sm font-bold text-foreground hover:bg-secondary transition-colors">
                     Review
                 </Link>
                 <a href={priceCheckUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center py-2.5 rounded-lg bg-primary text-sm font-bold text-white hover:bg-primary/90 transition-colors shadow-sm">

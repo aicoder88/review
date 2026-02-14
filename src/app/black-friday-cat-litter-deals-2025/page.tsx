@@ -174,6 +174,7 @@ export default function BlackFriday2025() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/reviews/purrify"
+              prefetch={false}
               className="flex-1 text-center bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700"
             >
               Learn About Purrify (The Real Deal)
@@ -312,6 +313,7 @@ export default function BlackFriday2025() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/reviews/purrify"
+              prefetch={false}
               className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 text-center"
             >
               Learn How Purrify Works

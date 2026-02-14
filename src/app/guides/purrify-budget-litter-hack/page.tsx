@@ -17,9 +17,9 @@ export default function PurrifyBudgetHackGuide() {
       <main className="pt-24 pb-20">
         {/* Breadcrumb */}
         <div className="container mx-auto px-6 mb-8 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-primary">Home</Link>
+          <Link href="/" prefetch={false} className="hover:text-primary">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/guides" className="hover:text-primary">Guides</Link>
+          <Link href="/guides" prefetch={false} className="hover:text-primary">Guides</Link>
           <span className="mx-2">/</span>
           <span className="text-foreground font-medium">Purrify Budget Litter Hack</span>
         </div>
@@ -311,9 +311,9 @@ export default function PurrifyBudgetHackGuide() {
                 Check out these related guides:
               </p>
               <ul>
-                <li><Link href="/guides/extend-cat-litter-life" className="text-primary hover:underline">How to Make Cat Litter Last 2x Longer</Link></li>
-                <li><Link href="/categories/best-budget-cat-litter" className="text-primary hover:underline">Best Budget Cat Litters (2025)</Link></li>
-                <li><Link href="/reviews/purrify" className="text-primary hover:underline">Full Purrify Review</Link></li>
+                <li><Link href="/guides/extend-cat-litter-life" prefetch={false} className="text-primary hover:underline">How to Make Cat Litter Last 2x Longer</Link></li>
+                <li><Link href="/categories/best-budget-cat-litter" prefetch={false} className="text-primary hover:underline">Best Budget Cat Litters (2025)</Link></li>
+                <li><Link href="/reviews/purrify" prefetch={false} className="text-primary hover:underline">Full Purrify Review</Link></li>
               </ul>
 
             </article>

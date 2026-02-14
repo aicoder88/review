@@ -59,9 +59,9 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                     </p>
                 </div>
 
-                <div className="grid gap-6">
+                    <div className="grid gap-6">
                     {products.map((review) => (
-                        <Link key={review.id} href={`/reviews/${review.id}`}>
+                        <Link key={review.id} href={`/reviews/${review.id}`} prefetch={false}>
                             <div className="bg-card border border-border p-6 rounded-2xl hover:shadow-md transition-all flex flex-col md:flex-row gap-6 group">
                                 <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0">
                                     <img

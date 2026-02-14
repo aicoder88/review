@@ -58,7 +58,7 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
             <div className="text-center py-24 bg-secondary/20 rounded-3xl">
                 <h3 className="text-xl font-bold mb-4">No products selected</h3>
                 <p className="text-muted-foreground mb-8">Add products from across the site to compare them here.</p>
-                <Link href="/categories/best-clumping-cat-litter" className="bg-primary text-white font-bold py-3 px-6 rounded-xl">
+                <Link href="/categories/best-clumping-cat-litter" prefetch={false} className="bg-primary text-white font-bold py-3 px-6 rounded-xl">
                     Browse Reviews
                 </Link>
             </div>
@@ -104,7 +104,7 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
                                     <div className="h-32 mb-4 flex items-center justify-center">
                                         <img src={product.image} alt={`${product.name} cat litter product`} className="max-h-full max-w-full object-contain" />
                                     </div>
-                                    <Link href={product.reviewUrl} className="font-display font-bold text-lg leading-tight hover:text-primary hover:underline mb-2 block">
+                                    <Link href={product.reviewUrl} prefetch={false} className="font-display font-bold text-lg leading-tight hover:text-primary hover:underline mb-2 block">
                                         {product.name}
                                     </Link>
                                     {overallWinner === product.id && (
@@ -239,7 +239,7 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
                         <th className="p-4 text-left bg-background sticky left-0 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] text-sm font-medium"></th>
                         {products.map(p => (
                             <td key={p.id} className="p-4 text-center">
-                                <Link href={p.reviewUrl} className="block w-full py-2 mb-2 bg-secondary text-foreground text-sm font-bold rounded hover:bg-black hover:text-white transition-colors">
+                                <Link href={p.reviewUrl} prefetch={false} className="block w-full py-2 mb-2 bg-secondary text-foreground text-sm font-bold rounded hover:bg-black hover:text-white transition-colors">
                                     Read Review
                                 </Link>
                                 <a href={p.buyUrl} target="_blank" className="block w-full py-2 bg-primary text-white text-sm font-bold rounded hover:bg-primary/90 transition-colors">

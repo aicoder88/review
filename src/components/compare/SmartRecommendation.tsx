@@ -64,6 +64,7 @@ export function SmartRecommendation({ products }: SmartRecommendationProps) {
         </div>
         <Link
           href="/guides/purrify-budget-litter-hack"
+          prefetch={false}
           className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700"
         >
           Show Me The Budget Hack
@@ -96,6 +97,7 @@ export function SmartRecommendation({ products }: SmartRecommendationProps) {
         </div>
         <Link
           href="/reviews/purrify"
+          prefetch={false}
           className="block w-full text-center bg-purple-600 text-white py-4 rounded-xl font-bold hover:bg-purple-700"
         >
           Supercharge Your Premium Litter
@@ -128,6 +130,7 @@ export function SmartRecommendation({ products }: SmartRecommendationProps) {
       </div>
       <Link
         href="/reviews/purrify"
+        prefetch={false}
         className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700"
       >
         See How Purrify Works →

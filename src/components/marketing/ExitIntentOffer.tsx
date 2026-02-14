@@ -60,6 +60,7 @@ export function ExitIntentOffer() {
 
         <Link
           href="/reviews/purrify"
+          prefetch={false}
           onClick={() => setDismissed(true)}
           className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700"
         >

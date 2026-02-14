@@ -20,6 +20,7 @@ export function InternalLinkBox({ links, title = "Related Resources" }: Internal
           <li key={index}>
             <Link
               href={link.url}
+              prefetch={false}
               className="text-primary hover:text-primary/80 font-medium flex items-center gap-2 group"
             >
               <span className="group-hover:translate-x-1 transition-transform">→</span>

@@ -121,6 +121,7 @@ export default function GuidesPage() {
                                 <Link 
                                     key={i} 
                                     href={guide.slug ? `/guides/${guide.slug}` : '#'}
+                                    prefetch={false}
                                     className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 p-8 rounded-3xl hover:shadow-xl transition-all group"
                                 >
                                     <div className="flex items-start gap-4">

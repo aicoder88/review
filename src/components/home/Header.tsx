@@ -48,7 +48,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" prefetch={false} className="flex items-center gap-2 group">
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${scrolled ? 'bg-primary text-secondary' : 'bg-primary/10 text-primary backdrop-blur-md'
               }`}>
               <Sparkles className="w-5 h-5" />
@@ -64,6 +64,7 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
+                prefetch={false}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-accent ${
                   link.highlight
                     ? 'text-emerald-600 font-bold hover:text-emerald-700'
@@ -141,6 +142,7 @@ export function Header() {
               <Link
                 key={index}
                 href={link.href}
+                prefetch={false}
                 className={`text-lg font-medium transition-colors ${
                   link.highlight
                     ? 'text-emerald-600 font-bold hover:text-emerald-700'

@@ -88,6 +88,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
+                    prefetch={false}
                     className="text-secondary/60 hover:text-accent transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-1.5 h-1.5 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -108,6 +109,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
+                    prefetch={false}
                     className="text-secondary/60 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -139,6 +141,7 @@ export function Footer() {
                   ) : (
                     <Link
                       href={link.href}
+                      prefetch={false}
                       className="text-secondary/60 hover:text-accent transition-colors duration-300 flex items-center gap-2 group"
                     >
                       <span className="w-1.5 h-1.5 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

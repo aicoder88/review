@@ -79,7 +79,7 @@ export default function AboutPage() {
                             Because we&apos;re cat owners who got tired of the lies. &quot;99% Dust Free&quot; usually means &quot;Clouds of Choking Dust&quot;. We&apos;re here to expose the marketing fluff and give you the raw data.
                         </p>
 
-                        <Link href="/reviews" className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
+                        <Link href="/reviews" prefetch={false} className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
                             See Our Reviews <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

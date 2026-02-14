@@ -134,7 +134,7 @@ export default function ReviewsPage() {
                                     Our highest-rated product works with ANY litter to eliminate odor and extend life by 2x.
                                 </p>
                                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                                    <Link href="/reviews/purrify" className="inline-flex items-center gap-2 bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors">
+                                    <Link href="/reviews/purrify" prefetch={false} className="inline-flex items-center gap-2 bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors">
                                         Read Review <ArrowRight className="w-4 h-4" />
                                     </Link>
                                     <PurrifyLink variant="badge">
@@ -151,7 +151,7 @@ export default function ReviewsPage() {
 
                     <div className="grid gap-6">
                         {reviews.filter(r => r.id !== 'purrify').map((review) => (
-                            <Link key={review.id} href={`/reviews/${review.id}`}>
+                            <Link key={review.id} href={`/reviews/${review.id}`} prefetch={false}>
                                 <div className="bg-card border border-border p-6 rounded-2xl hover:shadow-md transition-all flex flex-col md:flex-row gap-6 group">
                                     <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0 relative">
                                         <img
@@ -197,7 +197,7 @@ export default function ReviewsPage() {
                     <div className="mt-16 text-center">
                         <p className="text-muted-foreground mb-4">
                             Looking for the best value? Check out our{" "}
-                            <Link href="/guides/purrify-budget-litter-hack" className="text-primary font-bold hover:underline">
+                            <Link href="/guides/purrify-budget-litter-hack" prefetch={false} className="text-primary font-bold hover:underline">
                                 $15 Budget Hack Guide
                             </Link>
                         </p>
