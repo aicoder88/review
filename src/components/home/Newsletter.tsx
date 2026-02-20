@@ -93,7 +93,7 @@ export function Newsletter() {
                   </div>
 
                   <div className="space-y-4">
-                    {['Best Clumping Clay 2024', 'Top 5 Eco-Friendly Picks', 'Dust-Free Solutions'].map((item, i) => (
+                    {['Best Clumping Clay 2025', 'Top 5 Eco-Friendly Picks', 'Dust-Free Solutions'].map((item, i) => (
                       <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
                         <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center text-xs">✓</div>
                         <span className="text-white/90 font-medium">{item}</span>

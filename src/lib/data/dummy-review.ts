@@ -66,5 +66,5 @@ It doesn't use heavy perfumes. It relies on locking moisture away instantly. For
 
 Using this litter feels premium. It doesn't stick to the box liner, it scoops cleanly, and you don't feel like you're breathing in a construction site every time you top it off.
   `,
-    datePublished: "2024-01-15"
+    datePublished: "2025-01-15"
 };

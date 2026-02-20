@@ -77,7 +77,7 @@ export function FeaturedWinners() {
           <FadeUp>
             <div className="inline-flex items-center gap-2 bg-white border border-border text-foreground/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
               <Crown className="w-4 h-4 text-accent" />
-              <span className="font-semibold text-sm tracking-wide">2024 Award Winners</span>
+              <span className="font-semibold text-sm tracking-wide">2025 Award Winners</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Only <span className="text-gradient-gold italic font-serif">4 Litters</span> Passed Our Tests

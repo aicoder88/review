@@ -73,7 +73,7 @@ export function BudgetHackBanner() {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">💰</span>
                     <div>
-                      <p className="font-bold">Budget Litter + Purrify: $15-20/month</p>
+                      <p className="font-bold">Budget Litter + <PurrifyLink variant="inline">Purrify</PurrifyLink>: $15-20/month</p>
                       <p className="text-sm">50% cheaper than premium alone</p>
                     </div>
                   </div>

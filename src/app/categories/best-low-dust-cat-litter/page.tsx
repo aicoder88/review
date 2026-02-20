@@ -179,7 +179,7 @@ const buyingGuide = (
                 To maximize Clean Air in your home, pair a low-dust litter like Dr. Elsey&apos;s with <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink>.
             </p>
             <p className="font-bold text-sky-900 mt-2">
-                Purrify helps break down waste before it dries out and becomes airborne dust particles.
+                <PurrifyLink variant="inline">Purrify</PurrifyLink> helps break down waste before it dries out and becomes airborne dust particles.
             </p>
         </div>
 

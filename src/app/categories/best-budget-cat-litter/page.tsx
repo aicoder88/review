@@ -187,7 +187,7 @@ const buyingGuide = (
                 <li><strong>Result:</strong> Creates a premium probiotic litter that outperforms the expensive brands.</li>
             </ul>
             <p className="font-bold text-blue-900 mt-2">
-                You save ~50% annually by buying generic litter and boosting it with Purrify.
+                You save ~50% annually by buying generic litter and boosting it with <PurrifyLink variant="inline">Purrify</PurrifyLink>.
             </p>
         </div>
     </>

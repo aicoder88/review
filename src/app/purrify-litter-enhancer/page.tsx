@@ -4,6 +4,7 @@ import { HowItWorks } from '@/components/purrify/HowItWorks';
 import { BeforeAfter } from '@/components/purrify/BeforeAfter';
 import { ROICalculator } from '@/components/purrify/ROICalculator';
 import { Testimonials } from '@/components/purrify/Testimonials';
+import { RelatedArticles } from '@/components/content/RelatedArticles';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -164,6 +165,40 @@ export default function PurrifyLandingPage() {
 
       {/* Testimonials */}
       <Testimonials />
+
+      {/* Hub Knowledge Base */}
+      <section className="py-16 bg-gray-50 border-t border-b border-gray-200">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-4xl font-bold text-center mb-8">
+            Explore Our Purrify Research
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Dive into our lab tests, budget hacks, and scientific guides to see exactly how Purrify performs.
+          </p>
+          <RelatedArticles
+            articles={[
+              {
+                title: "In-Depth Lab Review: Purrify Deodorizer",
+                url: "/reviews/purrify",
+                description: "See our exact testing methodology and ammonia reduction results.",
+                type: "review"
+              },
+              {
+                title: "The $15 Budget Litter Hack",
+                url: "/guides/purrify-budget-litter-hack",
+                description: "How to combine generic litter + Purrify to beat premium brands.",
+                type: "guide"
+              },
+              {
+                title: "How to Extend Cat Litter Life",
+                url: "/guides/extend-cat-litter-life",
+                description: "Science-backed methods to double your litter's lifespan.",
+                type: "guide"
+              }
+            ]}
+          />
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-16">

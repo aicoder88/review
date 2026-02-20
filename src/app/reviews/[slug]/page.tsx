@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: `We spent 90 days testing ${formattedName} cat litter. Read our honest review with real test data.`,
       url: `${siteUrl}/reviews/${params.slug}`,
       type: "article",
-      publishedTime: "2024-01-15",
+      publishedTime: "2025-01-15",
       authors: ["ReviewCatLitter Team"],
       images: [
         {

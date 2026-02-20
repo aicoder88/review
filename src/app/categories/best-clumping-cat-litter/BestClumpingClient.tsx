@@ -120,7 +120,7 @@ export function BestClumpingClient() {
 
     return (
         <CategoryPage
-            title="Best Clumping Cat Litter (2024)"
+            title="Best Clumping Cat Litter (2025)"
             description="We tested 87 clumping cat litters. Most were garbage. These actually clump properly and don't turn into cement."
             stats={{ tested: 87, duration: "6 Months", priceRange: "$12 - $35" }}
             products={products}

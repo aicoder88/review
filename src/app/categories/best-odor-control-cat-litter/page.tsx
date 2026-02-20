@@ -154,7 +154,7 @@ const categoryData: CategoryData = {
     faq: [
         {
             question: "Why does my litter box still smell after scooping?",
-            answer: "Small crumbles of poop or urine-saturated clay are often left behind. These bacterial colonies grow and emit gas. Using a better clumping litter (like Dr. Elsey's) or adding a probiotic (like Purrify) helps prevent this."
+            answer: "Small crumbles of poop or urine-saturated clay are often left behind. These bacterial colonies grow and emit gas. Using a better clumping litter (like Dr. Elsey's) or adding a probiotic (like Purrify) helps prevent this. Learn more about how <PurrifyLink variant=\"inline\">Purrify</PurrifyLink> works."
         },
         {
             question: "Is better to cover odor or remove it?",
@@ -187,7 +187,7 @@ const buyingGuide = (
                 <strong>The Better Way:</strong> Use an unscented litter and add <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink>.
             </p>
             <p className="font-bold text-red-900 mt-2">
-                Purrify uses enzymes to essentially &quot;eat&quot; the waste at a microscopic level. It kills the source of the smell instead of just spraying perfume on it.
+                <PurrifyLink variant="inline">Purrify</PurrifyLink> uses enzymes to essentially &quot;eat&quot; the waste at a microscopic level. It kills the source of the smell instead of just spraying perfume on it.
             </p>
         </div>
 

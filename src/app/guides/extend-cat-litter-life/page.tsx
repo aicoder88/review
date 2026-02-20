@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: "Extend your cat litter life from 3-4 weeks to 6-8 weeks with these tested methods. Save money and reduce odor naturally.",
     url: `${siteUrl}/guides/extend-cat-litter-life`,
     type: "article",
-    publishedTime: "2024-01-15",
+    publishedTime: "2025-01-15",
     authors: ["ReviewCatLitter Team"],
     images: [
       {

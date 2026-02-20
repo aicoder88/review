@@ -178,13 +178,13 @@ const buyingGuide = (
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
             <h4 className="font-bold text-blue-900 mb-2">💡 Pro Tip: Stop The Sour Smell</h4>
             <p className="text-blue-800 mb-4">
-                Natural litters are more prone to bacterial growth than clay. Using a probiotic deodorizer like Purrify is virtually mandatory for corn/wheat litter to prevent that &quot;barnyard&quot; smell.
+                Natural litters are more prone to bacterial growth than clay. Using a probiotic deodorizer like <PurrifyLink variant="inline">Purrify</PurrifyLink> is virtually mandatory for corn/wheat litter to prevent that &quot;barnyard&quot; smell.
             </p>
             <p className="text-green-800">
                 <strong>The Solution:</strong> Add a probiotic booster like <PurrifyLink variant="inline">Purrify</PurrifyLink> to your natural litter.
             </p>
             <p className="font-bold text-green-900 mt-2">
-                Purrify uses enzymes to break down the waste <em>before</em> it ferments into that sour smell. It makes corn and wheat litter perform just as well as heavy chemical clay.
+                <PurrifyLink variant="inline">Purrify</PurrifyLink> uses enzymes to break down the waste <em>before</em> it ferments into that sour smell. It makes corn and wheat litter perform just as well as heavy chemical clay.
             </p>
         </div>
 

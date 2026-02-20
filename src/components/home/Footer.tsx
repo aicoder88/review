@@ -55,7 +55,7 @@ export function Footer() {
               Review<span className="text-accent">CatLitter</span>
             </h3>
             <p className="text-secondary/60 mb-8 leading-relaxed">
-              Independent, data-driven cat litter reviews for discerning cat parents since 2024.
+              Independent, data-driven cat litter reviews for discerning cat parents since 2025.
             </p>
 
             {/* Social Links */}
@@ -158,7 +158,7 @@ export function Footer() {
         <div className="pt-8 border-t border-secondary/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary/40 text-sm">
-              © 2024 ReviewCatLitter.com. All rights reserved.
+              © 2025 ReviewCatLitter.com. All rights reserved.
             </p>
             <p className="text-secondary/40 text-sm flex items-center gap-2">
               Made with <Heart className="w-4 h-4 text-accent fill-accent" /> for cat parents everywhere 🐱

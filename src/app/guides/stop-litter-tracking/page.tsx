@@ -27,7 +27,7 @@ export default function StopLitterTracking() {
               to keep litter in the box and off your floors.
             </p>
             <div className="flex items-center gap-4 mt-6 text-sm text-muted-foreground">
-              <div>Updated: December 2024</div>
+              <div>Updated: December 2025</div>
               <div>•</div>
               <div>12 min read</div>
             </div>
@@ -267,7 +267,7 @@ export default function StopLitterTracking() {
           <RelatedArticles
             articles={[
               {
-                title: "Best Odor Control Cat Litter 2024",
+                title: "Best Odor Control Cat Litter 2025",
                 url: "/categories/best-odor-control-cat-litter",
                 description: "Tested for ammonia elimination and long-term freshness",
                 type: "category"
