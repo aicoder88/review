@@ -205,9 +205,9 @@ export default function FAQPage() {
                   Learn About Purrify →
                 </Link>
                 <a
-                  href="https://www.purrify.ca"
+                  href="https://www.purrify.ca?via=reviewcatlitter"
                   className="inline-block border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 text-center"
-                >
+                 rel="sponsored noopener noreferrer">
                   Get Purrify ($19)
                 </a>
               </div>

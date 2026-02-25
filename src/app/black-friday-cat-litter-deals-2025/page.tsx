@@ -180,9 +180,9 @@ export default function BlackFriday2025() {
               Learn About Purrify (The Real Deal)
             </Link>
             <a
-              href="https://www.purrify.ca"
+              href="https://www.purrify.ca?via=reviewcatlitter"
               className="flex-1 text-center border-2 border-emerald-600 text-emerald-600 py-4 rounded-xl font-bold hover:bg-emerald-50"
-            >
+             rel="sponsored noopener noreferrer">
               Get Purrify - $19
             </a>
           </div>
@@ -319,9 +319,9 @@ export default function BlackFriday2025() {
               Learn How Purrify Works
             </Link>
             <a
-              href="https://www.purrify.ca"
+              href="https://www.purrify.ca?via=reviewcatlitter"
               className="bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-800 text-center"
-            >
+             rel="sponsored noopener noreferrer">
               Get Purrify - $19
             </a>
           </div>

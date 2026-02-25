@@ -103,9 +103,9 @@ export default function EliminateLitterSmell() {
                     Read Purrify Review
                   </Link>
                   <a
-                    href="https://www.purrify.ca"
+                    href="https://www.purrify.ca?via=reviewcatlitter"
                     className="border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-xl font-bold hover:bg-emerald-50 text-center"
-                  >
+                   rel="sponsored noopener noreferrer">
                     Get Purrify ($19)
                   </a>
                 </div>

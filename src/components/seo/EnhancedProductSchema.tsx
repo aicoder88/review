@@ -208,7 +208,7 @@ export function EnhancedProductSchema({
       "@type": "Product",
       "name": "Purrify Probiotic Deodorizer",
       "description": "Probiotic litter enhancer that extends litter life and eliminates odor",
-      "url": "https://www.purrify.ca"
+      "url": "https://www.purrify.ca?via=reviewcatlitter"
     }
   };
 

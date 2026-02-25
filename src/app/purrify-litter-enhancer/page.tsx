@@ -69,9 +69,9 @@ export default function PurrifyLandingPage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <a
-                href="https://www.purrify.ca"
+                href="https://www.purrify.ca?via=reviewcatlitter"
                 className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
-              >
+               rel="sponsored noopener noreferrer">
                 Get Purrify for $19 →
               </a>
               <Link
@@ -284,9 +284,9 @@ export default function PurrifyLandingPage() {
           </div>
 
           <a
-            href="https://www.purrify.ca"
+            href="https://www.purrify.ca?via=reviewcatlitter"
             className="inline-block bg-white text-emerald-600 px-12 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
-          >
+           rel="sponsored noopener noreferrer">
             Get Purrify Now - $19
           </a>
 

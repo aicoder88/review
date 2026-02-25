@@ -157,6 +157,21 @@ export default function GuidesPage() {
                         ))}
                     </div>
 
+                    <div className="bg-white border border-border rounded-3xl p-8 mb-16">
+                        <h2 className="font-display text-2xl font-bold mb-4">Methodology & Source Library</h2>
+                        <p className="text-muted-foreground mb-4">
+                            We use these external references for testing design, veterinary context, and brand verification:
+                        </p>
+                        <ul className="grid md:grid-cols-2 gap-2 text-sm">
+                            <li><a href="https://www.astm.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ASTM testing standards</a></li>
+                            <li><a href="https://www.iso.org/standards.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ISO standards database</a></li>
+                            <li><a href="https://www.avma.org/resources-tools/pet-owners/petcare" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AVMA pet care references</a></li>
+                            <li><a href="https://journals.sagepub.com/home/jfm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Journal of Feline Medicine and Surgery</a></li>
+                            <li><a href="https://www.armandhammer.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Arm &amp; Hammer official site</a></li>
+                            <li><a href="https://www.drelseys.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Dr. Elsey&apos;s official site</a></li>
+                        </ul>
+                    </div>
+
                     {/* Purrify CTA */}
                     <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 rounded-3xl p-10 border-2 border-amber-200 text-center">
                         <Sparkles className="w-12 h-12 text-amber-500 mx-auto mb-4" />

@@ -122,6 +122,26 @@ const reviews = [
     pros: ["Flushable", "Eco-friendly", "Lightweight"]
   },
   {
+    id: "naturally-fresh",
+    name: "Naturally Fresh Walnut",
+    category: "Walnut Shell (Natural)",
+    rating: 8.8,
+    summary: "Out-clumps most clay litters with walnut shells. 89% clump survival in drop tests. Natural odor absorption, sustainable byproduct. Dark color makes scooping harder.",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80",
+    badge: "Best Natural Clumping",
+    pros: ["Harder than clay", "Sustainable", "Natural odor control"]
+  },
+  {
+    id: "catalyst",
+    name: "Catalyst Soft Wood",
+    category: "Pine (Soft Granules)",
+    rating: 8.7,
+    summary: "Soft sand-like pine that cats love. Upcycled materials, clumps better than pellets. Low dust and flushable. Premium price for eco-conscious owners.",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80",
+    badge: "Best Soft Natural",
+    pros: ["Soft texture", "Upcycled pine", "Clumps well"]
+  },
+  {
     id: "prettylitter",
     name: "PrettyLitter",
     category: "Silica Crystal",
@@ -142,6 +162,15 @@ const reviews = [
     pros: ["7-day odor control", "Very affordable", "Easy to find"]
   },
   {
+    id: "arm-hammer-hardball",
+    name: "Arm & Hammer HardBall",
+    category: "Clumping Clay",
+    rating: 8.5,
+    summary: "Fast clumping in 10 seconds with hard clumps (87% survive drop test). 10% baking soda helps odor. Good mid-range option between Super Scoop and premium.",
+    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&q=80",
+    pros: ["Fast clumping", "Hard clumps", "Baking soda"]
+  },
+  {
     id: "arm-hammer-super-scoop",
     name: "Arm & Hammer Super Scoop",
     category: "Clumping Clay (Budget)",
@@ -150,6 +179,54 @@ const reviews = [
     image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&q=80",
     badge: "Best Budget",
     pros: ["Under $15", "Widely available", "Baking soda helps"]
+  },
+  {
+    id: "feline-pine",
+    name: "Feline Pine",
+    category: "Pine Pellet",
+    rating: 8.0,
+    summary: "100% pure pine, no chemicals. Natural scent masks odor, highly absorbent. Non-clumping pellets need sifting box. Best for eco-conscious with sifting setup.",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80",
+    badge: "Best Pine Pellet",
+    pros: ["100% natural", "No dust", "Chemical-free"]
+  },
+  {
+    id: "fresh-step",
+    name: "Fresh Step Scented",
+    category: "Scented Clay",
+    rating: 8.1,
+    summary: "Gain fragrance is strong and pleasant. Decent clumping for mid-range price. Moderate dust. Widely available. Best for Gain scent lovers on budget.",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80",
+    pros: ["Gain scent", "Widely available", "Fair value"]
+  },
+  {
+    id: "frisco",
+    name: "Frisco by Chewy",
+    category: "Clumping Clay (Budget)",
+    rating: 8.0,
+    summary: "Best raw value at $13 for 40lb. Chewy house brand with free shipping. Works in automatic boxes. Dustier than premium but unbeatable price.",
+    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=600&q=80",
+    badge: "Best Value",
+    pros: ["$13 for 40lb", "Free Chewy shipping", "Auto-box compatible"]
+  },
+  {
+    id: "tidy-cats",
+    name: "Purina Tidy Cats",
+    category: "Clumping Clay (Budget)",
+    rating: 7.9,
+    summary: "Instant Action clumps fast, 24/7 offers sustained control. Glade scents pleasant. Moderate dust. Great variety of formulas. Grocery store staple.",
+    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=600&q=80",
+    pros: ["Multiple formulas", "Glade scents", "Grocery available"]
+  },
+  {
+    id: "tuft-paw",
+    name: "Tuft + Paw",
+    category: "Soy/Tofu (Designer)",
+    rating: 8.3,
+    summary: "Designer soy litter with virtually zero dust and minimal tracking. Flushable and biodegradable. Very expensive at $29 for 9lb. For style-conscious owners.",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80",
+    badge: "Best Designer",
+    pros: ["Zero dust", "Minimal tracking", "Designer aesthetic"]
   },
   {
     id: "okocat-paper-pellet",
@@ -216,6 +293,21 @@ export default function ReviewsPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="bg-white border border-border rounded-2xl p-6 max-w-4xl mx-auto">
+                <h2 className="font-display text-2xl font-bold mb-3">Official Brand & Research Links</h2>
+                <p className="text-muted-foreground mb-4">
+                  We verify brand claims and benchmark methods against official sites and third-party references:
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-2 text-sm text-left">
+                  <li><a href="https://www.armandhammer.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Arm &amp; Hammer official</a></li>
+                  <li><a href="https://www.drelseys.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Dr. Elsey&apos;s official</a></li>
+                  <li><a href="https://www.worldsbestcatlitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">World&apos;s Best official</a></li>
+                  <li><a href="https://www.prettylitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">PrettyLitter official</a></li>
+                  <li><a href="https://www.astm.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ASTM consumer testing standards</a></li>
+                  <li><a href="https://www.avma.org/resources-tools/pet-owners/petcare" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AVMA veterinary guidance</a></li>
+                </ul>
               </div>
             </div>
 

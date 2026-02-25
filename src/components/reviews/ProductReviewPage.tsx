@@ -205,6 +205,23 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                 {children}
                             </div>
 
+                            <div className="mt-10 bg-secondary/20 border border-border rounded-2xl p-6">
+                                <h3 className="font-display text-2xl font-bold mb-3">External Resources</h3>
+                                <p className="text-muted-foreground mb-4">
+                                    Official brand pages and third-party references used to cross-check claims:
+                                </p>
+                                <ul className="grid md:grid-cols-2 gap-2 text-sm">
+                                    <li><a href="https://www.armandhammer.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Arm &amp; Hammer Official Site</a></li>
+                                    <li><a href="https://www.drelseys.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Dr. Elsey&apos;s Official Site</a></li>
+                                    <li><a href="https://www.worldsbestcatlitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">World&apos;s Best Cat Litter Official Site</a></li>
+                                    <li><a href="https://www.prettylitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">PrettyLitter Official Site</a></li>
+                                    <li><a href="https://www.avma.org/resources-tools/pet-owners/petcare" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AVMA Pet Care Guidance</a></li>
+                                    <li><a href="https://journals.sagepub.com/home/jfm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Journal of Feline Medicine and Surgery</a></li>
+                                    <li><a href="https://www.astm.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ASTM Testing Standards</a></li>
+                                    <li><a href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">EPA Indoor Air Quality</a></li>
+                                </ul>
+                            </div>
+
                             {/* Odor Elimination Bonus Section */}
                             <OdorEliminationBonus productName={data.name} />
 
@@ -223,7 +240,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                     <ScoreMeter score={data.scores.value} label="Value For Money" className="mb-2" />
                                 </div>
                                 <div className="mt-8 pt-6 border-t border-border">
-                                    <a href={data.priceCheckUrl} target="_blank" className="block w-full py-4 bg-primary text-white font-bold text-center rounded-xl shadow-lg shadow-primary/10 hover:bg-primary/90 transition-all">
+                                    <a href={data.priceCheckUrl} target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-primary text-white font-bold text-center rounded-xl shadow-lg shadow-primary/10 hover:bg-primary/90 transition-all">
                                         Get Best Price
                                     </a>
                                     <p className="text-center text-xs text-muted-foreground mt-3">

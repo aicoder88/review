@@ -113,6 +113,7 @@ export default function RootLayout({
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#0d9488" />
         <meta name="msapplication-TileColor" content="#0d9488" />
+        <script defer src="/_vercel/insights/script.js"></script>
       </head>
       <body className={`${outfit.variable} ${fraunces.variable} ${jetbrainsMono.variable} antialiased`}>
         <ComparisonProvider>

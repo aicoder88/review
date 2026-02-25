@@ -80,7 +80,7 @@ const reviewData: ReviewData = {
         worthIt: "You want to eliminate odor at the source, save $15-30/month on litter, or extend the life of your current litter by 2x.",
         skipIt: "You change litter every 5-7 days regardless, or exclusively use heavily scented litters (fragrances inhibit probiotics)."
     },
-    priceCheckUrl: "https://www.purrify.ca"
+    priceCheckUrl: "https://www.purrify.ca?via=reviewcatlitter"
 };
 
 // Schema data
@@ -112,7 +112,7 @@ const productSchemaData = {
         price: "$14.99",
         priceCurrency: "CAD",
         availability: "https://schema.org/InStock",
-        url: "https://www.purrify.ca",
+        url: "https://www.purrify.ca?via=reviewcatlitter",
         seller: "Purrify Canada"
     },
     features: [
@@ -155,6 +155,19 @@ const breadcrumbData = [
     { name: "Purrify Probiotic Deodorizer", url: productUrl }
 ];
 
+const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Purrify Probiotic Deodorizer",
+    "url": productUrl,
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 9.6,
+        "bestRating": 10,
+        "ratingCount": 1
+    }
+};
+
 const faqData = [
     {
         question: "How does Purrify work to eliminate litter box odor?",
@@ -186,6 +199,12 @@ export default function PurrifyReview() {
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(aggregateRatingSchema),
+                }}
+            />
 
             <ProductReviewPage data={reviewData}>
 

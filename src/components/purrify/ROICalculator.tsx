@@ -96,9 +96,9 @@ export function ROICalculator() {
           </div>
 
           <a
-            href="https://www.purrify.ca"
+            href="https://www.purrify.ca?via=reviewcatlitter"
             className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-emerald-700 mt-8 transition-colors"
-          >
+           rel="sponsored noopener noreferrer">
             Get Purrify for $19 →
           </a>
 
