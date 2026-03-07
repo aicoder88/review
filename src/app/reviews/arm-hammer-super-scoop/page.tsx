@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/arm-hammer-super-scoop`;
 
 export const metadata: Metadata = {
-    title: "Arm & Hammer Super Scoop Review | Best Budget Litter Test",
-    description: "We tested Arm & Hammer Super Scoop for 60 days. The best budget litter under $15? See our clumping, dust, and odor control data vs premium alternatives.",
+    title: "Arm & Hammer Super Scoop Review: Tested Budget Value, Dust, and Clumping",
+    description: "Our Arm & Hammer Super Scoop review covers budget value, dust, clumping, odor control, and tracking after hands-on testing. See the tradeoffs and best alternatives.",
     keywords: [
         "Arm and Hammer Super Scoop review",
         "best budget cat litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/arm-hammer-super-scoop",
     },
     openGraph: {
-        title: "Arm & Hammer Super Scoop Review: Best Budget Litter Under $15",
-        description: "60-day test of the best-selling budget litter. $0.35/day performance comparison. Is it worth saving $5/month vs premium?",
+        title: "Arm & Hammer Super Scoop Review: Tested Budget Value, Dust, and Clumping",
+        description: "See our hands-on Arm & Hammer Super Scoop test data for budget value, dust, clumping, and who it fits best.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-11-28",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Arm & Hammer", "Super Scoop", "budget litter", "affordable"],

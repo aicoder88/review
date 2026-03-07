@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { Input } from '@/components/ui/input';
-import { Check, Mail, Gift, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Gift, ArrowRight } from 'lucide-react';
 import { FadeIn, FadeUp } from '@/components/ui/motion';
 
 export function Newsletter() {
@@ -20,15 +19,16 @@ export function Newsletter() {
             <div className="p-12 lg:p-16 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 text-accent font-semibold mb-6">
                 <Mail className="w-5 h-5" />
-                <span>Join 45,000+ Cat Parents</span>
+                <span>Roundup Updates</span>
               </div>
 
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Get Our Free <span className="text-accent">Litter Buying Guide</span> (Saves You $300+)
+                Get the Free <span className="text-accent">Litter Buying Guide</span>
               </h2>
 
               <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                <span className="font-bold text-white">Stop wasting money on bad litter.</span> Get our weekly lab results, exclusive buying guides, and money-saving hacks. Plus, instant access to our <span className="text-accent font-semibold">$15 Budget Hack</span> that turns cheap litter into premium performance.
+                <span className="font-bold text-white">Stay current on new reviews and category updates.</span> We use email
+                for roundup refreshes, buying-guide notes, and links to the newest comparison pages and cleanup guides.
               </p>
 
               <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
@@ -44,33 +44,25 @@ export function Newsletter() {
                 </div>
                 <p className="text-white/40 text-sm flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  Next report dropping in 3 days
+                  Designed for occasional review updates, not daily spam
                 </p>
               </form>
 
-              {/* Social Proof Mini */}
               <div className="mt-12 flex items-center gap-4">
                 <h3 className="font-display text-xl font-bold text-white mr-4">
-                  Get the <span className="text-accent">&quot;Pro Tip&quot;</span> of the Week
+                  What you&apos;ll get
                 </h3>
-                <div className="flex -space-x-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-2 border-foreground overflow-hidden bg-white/10">
-                      <img
-                        src={`https://i.pravatar.cc/100?img=${i + 10}`}
-                        alt="Cat parent subscriber profile"
-                        className="w-full h-full object-cover"
-                      />
+                <div className="flex flex-wrap gap-3">
+                  {['New reviews', 'Best cat litter roundups', 'Odor and tracking guides'].map((item) => (
+                    <div key={item} className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80">
+                      {item}
                     </div>
                   ))}
-                  <div className="w-12 h-12 rounded-full bg-accent border-2 border-foreground flex items-center justify-center text-foreground font-bold text-xs">
-                    +45k
-                  </div>
                 </div>
               </div>
 
               <div className="text-white/60 text-sm font-medium mt-4">
-                Trusted by 45,000+ cat experts
+                You can also browse the full guide library at any time from the Guides section
               </div>
             </div>
 
@@ -88,12 +80,12 @@ export function Newsletter() {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-lg">Weekly Gold Nuggets</h4>
-                      <p className="text-white/60 text-sm">Latest finding from the lab</p>
+                      <p className="text-white/60 text-sm">A quick look at what the site covers</p>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    {['Best Clumping Clay 2025', 'Top 5 Eco-Friendly Picks', 'Dust-Free Solutions'].map((item, i) => (
+                    {['Best clumping picks', 'Natural litter tradeoffs', 'Low-dust and odor-control shortcuts'].map((item, i) => (
                       <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10">
                         <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center text-xs">✓</div>
                         <span className="text-white/90 font-medium">{item}</span>
@@ -102,7 +94,7 @@ export function Newsletter() {
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-white/10 flex justify-between items-center">
-                    <span className="text-white/60 text-sm">Read time: 3 min</span>
+                    <span className="text-white/60 text-sm">Short, practical updates</span>
                     <button className="text-accent text-sm font-bold hover:underline">View Preview</button>
                   </div>
                 </div>

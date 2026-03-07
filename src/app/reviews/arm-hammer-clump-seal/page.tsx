@@ -10,8 +10,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/arm-hammer-clump-seal`;
 
 export const metadata: Metadata = {
-    title: "Arm & Hammer Clump & Seal Review | Odor Control Test Results",
-    description: "We tested Arm & Hammer Clump & Seal for 60 days. Strong odor control but heavy perfume. See our ammonia test data and learn the unscented alternative.",
+    title: "Arm & Hammer Clump & Seal Review: Tested for Odor, Dust, and Value",
+    description: "Our Arm & Hammer Clump & Seal review covers odor control, dust, clumping, tracking, and value after hands-on testing. See the data, tradeoffs, and best alternatives.",
     keywords: [
         "Arm and Hammer cat litter review",
         "Clump and Seal review",
@@ -24,12 +24,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/arm-hammer-clump-seal",
     },
     openGraph: {
-        title: "Arm & Hammer Clump & Seal Review: Nuclear Odor Control (With a Catch)",
-        description: "Budget-friendly litter with 9/10 odor control but heavy perfume. See our 60-day test data and the unscented alternative with Purrify.",
+        title: "Arm & Hammer Clump & Seal Review: Tested for Odor, Dust, and Value",
+        description: "See our hands-on test data for Arm & Hammer Clump & Seal, including odor control, dust, tracking, and who should skip it.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-02",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Arm & Hammer", "budget litter", "scented", "odor control"],

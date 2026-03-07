@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/sustainably-yours`;
 
 export const metadata: Metadata = {
-    title: "Sustainably Yours Cat Litter Review | Best Natural Litter Test",
-    description: "We tested Sustainably Yours for 60 days. Better than World's Best? See our corn + cassava formula test data, clumping analysis, and flushability results.",
+    title: "Sustainably Yours Review: Tested Natural Clumping, Odor, and Tracking",
+    description: "Our Sustainably Yours review covers natural clumping, odor control, tracking, flushability, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Sustainably Yours review",
         "Sustainably Yours cat litter",
@@ -24,12 +24,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/sustainably-yours",
     },
     openGraph: {
-        title: "Sustainably Yours Review: The World's Best Killer?",
-        description: "60-day test of the corn + cassava natural litter. Better clumping than World's Best, whiter color for health monitoring, and flushable. The new natural leader?",
+        title: "Sustainably Yours Review: Tested Natural Clumping, Odor, and Tracking",
+        description: "See our hands-on Sustainably Yours test data for clumping, odor control, tracking, and how it compares with other natural litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-12",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Sustainably Yours", "natural litter", "eco-friendly", "flushable"],

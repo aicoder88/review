@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/naturally-fresh`;
 
 export const metadata: Metadata = {
-    title: "Naturally Fresh Review 2025 | Walnut Shell Cat Litter Test",
-    description: "We tested Naturally Fresh for 60 days. Walnut shell litter with incredible clumping. See our data on this eco-friendly clay alternative.",
+    title: "Naturally Fresh Review: Tested Walnut Clumping, Odor, and Dust",
+    description: "Our Naturally Fresh review covers walnut-shell clumping, odor control, dust, tracking, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Naturally Fresh review",
         "walnut cat litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/naturally-fresh",
     },
     openGraph: {
-        title: "Naturally Fresh Review: Walnut Litter That Out-Clumps Clay",
-        description: "60-day test of walnut shell litter. Superior clumping to clay, eco-friendly, and naturally odor-absorbent. Performance data and comparison.",
+        title: "Naturally Fresh Review: Tested Walnut Clumping, Odor, and Dust",
+        description: "See our hands-on Naturally Fresh test data for walnut-shell clumping, odor control, dust, and how it compares with clay and other natural litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-11-18",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Naturally Fresh", "walnut", "natural", "eco-friendly"],

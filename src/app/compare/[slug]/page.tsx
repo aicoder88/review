@@ -5,16 +5,17 @@ import { ArrowLeftRight, ArrowRight, BadgeDollarSign, ShieldCheck, Trophy } from
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { ComparisonTable } from '@/components/compare/ComparisonTable';
-import { BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
+import { ComparisonPageSchemas } from '@/components/seo/PageSchemas';
+import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
 import { buildPageMetadata } from '@/lib/page-metadata';
 import {
+  type ComparisonProductRecord,
   formatCatalogDate,
   getAllComparisonMatchups,
   getComparisonMatchupBySlug,
   getComparisonMatchupHref,
 } from '@/lib/product-catalog';
-
-const siteUrl = 'https://www.reviewcatlitter.com';
+import { siteUrl } from '@/lib/site';
 
 function buildMetadata(matchupSlug: string): Metadata {
   const matchup = getComparisonMatchupBySlug(matchupSlug);
@@ -55,6 +56,29 @@ export function generateStaticParams() {
   return getAllComparisonMatchups().map((matchup) => ({
     slug: matchup.slug,
   }));
+}
+
+function buildComparisonFaqs(
+  leftProduct: ComparisonProductRecord,
+  rightProduct: ComparisonProductRecord,
+  winnerName: string,
+  cheapestName: string,
+  bestDustName: string,
+) {
+  return [
+    {
+      question: `Which is better: ${leftProduct.name} or ${rightProduct.name}?`,
+      answer: `${winnerName} comes out ahead in this matchup based on the balance of dust, clumping, odor control, tracking, and day-to-day cost.`,
+    },
+    {
+      question: `Which is cheaper per day: ${leftProduct.name} or ${rightProduct.name}?`,
+      answer: `${cheapestName} has the lower daily cost in this head-to-head comparison.`,
+    },
+    {
+      question: `Which has better dust control: ${leftProduct.name} or ${rightProduct.name}?`,
+      answer: `${bestDustName} posts the stronger dust-control result in this comparison page.`,
+    },
+  ];
 }
 
 export default function ComparisonMatchupPage({
@@ -106,10 +130,32 @@ export default function ComparisonMatchupPage({
       icon: ShieldCheck,
     },
   ];
+  const faqData = buildComparisonFaqs(
+    leftProduct,
+    rightProduct,
+    matchup.insight.winner.name,
+    cheapestProduct.name,
+    bestDustProduct.name,
+  );
+  const comparisonDescription = `Compare dust, clumping, odor control, tracking, and daily cost side by side. ${matchup.insight.winner.name} is the better fit here for ${matchup.insight.winner.verdict.bestFor.toLowerCase()}.`;
 
   return (
     <>
-      <BreadcrumbSchema items={breadcrumbData} />
+      <ComparisonPageSchemas
+        title={`${leftProduct.name} vs ${rightProduct.name}`}
+        description={comparisonDescription}
+        path={getComparisonMatchupHref(matchup.slug)}
+        dateModified={matchup.updatedAt}
+        breadcrumbs={breadcrumbData}
+        products={matchup.products.map((product) => ({
+          name: product.name,
+          category: product.category,
+          reviewUrl: product.reviewUrl,
+          overallScore: product.overallScore,
+          price: product.price,
+        }))}
+        faqs={faqData}
+      />
 
       <div className="min-h-screen bg-background">
         <Header />
@@ -125,10 +171,14 @@ export default function ComparisonMatchupPage({
                 {leftProduct.name} <span className="text-primary">vs</span> {rightProduct.name}
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Compare dust, clumping, odor control, tracking, and daily cost side by side.{' '}
-                {matchup.insight.winner.name} is the better fit here for{' '}
-                {matchup.insight.winner.verdict.bestFor.toLowerCase()}.
+                {comparisonDescription}
               </p>
+              <div className="mt-8 text-left">
+                <EditorialTrustBox
+                  updatedOn={matchup.updatedAt}
+                  summary="This comparison page is maintained by the ReviewCatLitter editorial team and grounded in the same scoring framework used across the published review catalog."
+                />
+              </div>
             </div>
           </section>
 
@@ -232,6 +282,20 @@ export default function ComparisonMatchupPage({
                       <ArrowRight className="w-4 h-4 shrink-0" />
                     </div>
                   </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="container mx-auto px-6 mt-12">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="font-display text-3xl font-bold mb-6 text-center">Quick Answers</h2>
+              <div className="grid gap-4 md:grid-cols-3">
+                {faqData.map((faq) => (
+                  <div key={faq.question} className="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                    <h3 className="font-bold text-lg mb-3">{faq.question}</h3>
+                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                  </div>
                 ))}
               </div>
             </div>

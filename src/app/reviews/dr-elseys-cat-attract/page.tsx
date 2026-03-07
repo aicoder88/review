@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/dr-elseys-cat-attract`;
 
 export const metadata: Metadata = {
-    title: "Dr. Elsey's Cat Attract Review | Multi-Cat Formula Test Results",
-    description: "We tested Dr. Elsey's Cat Attract for 90 days with cats who avoid the litter box. Does the herbal attractant really work? See our behavioral and performance data.",
+    title: "Dr. Elsey's Cat Attract Review: Tested for Behavior, Dust, and Clumping",
+    description: "Our Dr. Elsey's Cat Attract review covers litter-box behavior, dust, clumping, odor control, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Dr Elsey's Cat Attract review",
         "Cat Attract litter review",
@@ -24,12 +24,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/dr-elseys-cat-attract",
     },
     openGraph: {
-        title: "Dr. Elsey's Cat Attract Review: Does It Actually Work?",
-        description: "90-day test with cats who avoid the litter box. Behavioral analysis and performance data. The litter that 'trains' cats to use the box.",
+        title: "Dr. Elsey's Cat Attract Review: Tested for Behavior, Dust, and Clumping",
+        description: "See our hands-on Dr. Elsey's Cat Attract test data for litter-box behavior, dust, odor control, and who it fits best.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-16",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Dr. Elsey's", "Cat Attract", "multi-cat", "behavioral training"],

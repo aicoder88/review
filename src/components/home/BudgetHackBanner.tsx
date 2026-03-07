@@ -3,7 +3,7 @@ import { PurrifyLink } from "@/components/reviews/PurrifyLink";
 
 export function BudgetHackBanner() {
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden" id="budget-hack">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
@@ -24,10 +24,11 @@ export function BudgetHackBanner() {
             The <span className="text-gradient-gold italic">$15 Budget Hack</span>
           </h2>
           <p className="text-xl md:text-2xl text-center text-foreground mb-2 max-w-3xl mx-auto">
-            Turn <span className="font-bold">any cheap litter</span> into premium performance.
+            One practical way to get more from a budget litter setup.
           </p>
           <p className="text-lg text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Our testers saved an average of <span className="font-bold text-emerald-600">$240/year</span> with this one simple addition.
+            This section is not a blanket recommendation for every home. It is a shortcut for readers
+            whose main problem is odor and box life, not premium clumping or ultra-low dust.
           </p>
 
           {/* Main Card */}
@@ -43,22 +44,22 @@ export function BudgetHackBanner() {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">💸</span>
                     <div>
-                      <p className="font-bold">Premium Litter: $30-40/month</p>
-                      <p className="text-sm">Dr. Elsey&apos;s, Boxiecat, World&apos;s Best</p>
+                      <p className="font-bold">Premium litter can cost more up front</p>
+                      <p className="text-sm">Especially if you are buying for odor control first</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">🤢</span>
                     <div>
-                      <p className="font-bold">Still smells by week 3</p>
-                      <p className="text-sm">Even premium litters develop odor</p>
+                      <p className="font-bold">Budget clay often fades fast</p>
+                      <p className="text-sm">Weak clumps and lingering waste shorten usable box life</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">🔄</span>
                     <div>
-                      <p className="font-bold">Constant replacement</p>
-                      <p className="text-sm">Full box changes every 3-4 weeks</p>
+                      <p className="font-bold">Frequent partial resets</p>
+                      <p className="text-sm">You spend less per bag but can end up cleaning more often</p>
                     </div>
                   </div>
                 </div>
@@ -73,22 +74,22 @@ export function BudgetHackBanner() {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">💰</span>
                     <div>
-                      <p className="font-bold">Budget Litter + <PurrifyLink variant="inline">Purrify</PurrifyLink>: $15-20/month</p>
-                      <p className="text-sm">50% cheaper than premium alone</p>
+                      <p className="font-bold">Budget litter + <PurrifyLink variant="inline">Purrify</PurrifyLink></p>
+                      <p className="text-sm">Can be a more practical setup when odor is the main problem</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">✨</span>
                     <div>
-                      <p className="font-bold">Zero odor for 6-8 weeks</p>
-                      <p className="text-sm">Probiotics eliminate smell at source</p>
+                      <p className="font-bold">Targets odor between full changes</p>
+                      <p className="text-sm">Useful if you want an unscented or lower-cost litter to stay fresher</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">🎯</span>
                     <div>
-                      <p className="font-bold">Lasts 2x longer</p>
-                      <p className="text-sm">Extends any litter&apos;s effective life</p>
+                      <p className="font-bold">Works best as a supplement</p>
+                      <p className="text-sm">It can improve a weaker setup, but it does not replace choosing the right litter</p>
                     </div>
                   </div>
                 </div>
@@ -98,22 +99,22 @@ export function BudgetHackBanner() {
             {/* Bottom: The Math */}
             <div className="bg-gradient-to-r from-emerald-500 to-teal-500 p-8 text-white">
               <div className="max-w-3xl mx-auto">
-                <h4 className="font-display text-2xl font-bold mb-6 text-center">The Actual Math (No BS)</h4>
+                <h4 className="font-display text-2xl font-bold mb-6 text-center">Where This Approach Makes Sense</h4>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                   <div>
                     <DollarSign className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                    <p className="text-3xl font-bold mb-1">$240</p>
-                    <p className="text-emerald-100 text-sm">Saved per year</p>
+                    <p className="text-3xl font-bold mb-1">Budget</p>
+                    <p className="text-emerald-100 text-sm">You want to keep bag cost under control</p>
                   </div>
                   <div>
                     <TrendingUp className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                    <p className="text-3xl font-bold mb-1">2x</p>
-                    <p className="text-emerald-100 text-sm">Longer litter life</p>
+                    <p className="text-3xl font-bold mb-1">Odor</p>
+                    <p className="text-emerald-100 text-sm">Smell is your biggest frustration</p>
                   </div>
                   <div>
                     <Sparkles className="w-8 h-8 mx-auto mb-2 opacity-90" />
-                    <p className="text-3xl font-bold mb-1">87%</p>
-                    <p className="text-emerald-100 text-sm">Less ammonia odor</p>
+                    <p className="text-3xl font-bold mb-1">Guide</p>
+                    <p className="text-emerald-100 text-sm">You still want to read the full tradeoffs before buying</p>
                   </div>
                 </div>
               </div>
@@ -122,13 +123,13 @@ export function BudgetHackBanner() {
             {/* CTA */}
             <div className="p-8 bg-white text-center border-t border-gray-200">
               <p className="text-muted-foreground mb-6 text-lg">
-                Over <strong className="text-foreground">10,000+ cat owners</strong> are already using this hack
+                Read the full walkthrough before deciding whether this fits your box, budget, and cleanup routine.
               </p>
               <PurrifyLink variant="button">
                 See How It Works
               </PurrifyLink>
               <p className="text-xs text-muted-foreground mt-4">
-                Made in Canada • Natural probiotics • Safe for cats
+                Pair with the budget-litter guide and the Purrify review for the full context
               </p>
             </div>
           </div>

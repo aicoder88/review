@@ -3,15 +3,38 @@ import { Footer } from '@/components/home/Footer';
 import { InternalLinkBox } from '@/components/content/InternalLinkBox';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { ArticlePageSchemas } from '@/components/seo/PageSchemas';
+import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
+import { buildGuideMetadata, getGuidePageDefinition } from '@/lib/guide-pages';
+import { formatSiteDate, siteUrl } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: "Cat Litter Smells Bad Even When Clean? 7 Science-Backed Fixes",
-  description: "Bacterial buildup causes smell even in clean boxes. Learn the real solutions (not baking soda or scented litter) that eliminate odor permanently.",
-};
+const guide = getGuidePageDefinition('eliminate-litter-smell');
+
+export const metadata: Metadata = buildGuideMetadata('eliminate-litter-smell');
 
 export default function EliminateLitterSmell() {
+  if (!guide) {
+    return null;
+  }
+
   return (
     <>
+      <ArticlePageSchemas
+        headline={guide.title}
+        description={guide.description}
+        path={guide.path}
+        image={guide.image}
+        datePublished={guide.datePublished}
+        dateModified={guide.dateModified}
+        keywords={guide.keywords}
+        articleSection="Guides"
+        breadcrumbs={[
+          { name: 'Home', url: siteUrl },
+          { name: 'Guides', url: `${siteUrl}/guides` },
+          { name: 'Eliminate Litter Smell', url: `${siteUrl}${guide.path}` },
+        ]}
+      />
+
       <Header />
 
       <main className="container mx-auto px-6 py-16">
@@ -25,6 +48,17 @@ export default function EliminateLitterSmell() {
               If your litter box smells even after scooping, the problem is bacterial buildup—not
               the litter itself. Here&apos;s how to eliminate odor at the source.
             </p>
+            <div className="mt-6 flex items-center gap-4 text-sm text-muted-foreground">
+              <div>{guide.readTime}</div>
+              <div>•</div>
+              <div>Updated {formatSiteDate(guide.dateModified)}</div>
+            </div>
+            <div className="mt-8">
+              <EditorialTrustBox
+                updatedOn={guide.dateModified}
+                summary="This guide is maintained by the ReviewCatLitter editorial team and tied back to the live odor-control review set, category roundups, and the published methodology."
+              />
+            </div>
           </div>
 
           {/* Quick Answer */}

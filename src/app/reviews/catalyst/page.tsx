@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/catalyst`;
 
 export const metadata: Metadata = {
-    title: "Catalyst Cat Litter Review 2025 | Upcycled Pine Litter Test",
-    description: "We tested Catalyst for 60 days. Upcycled pine with soft, sand-like texture. See our clumping analysis and how it compares to clay litters.",
+    title: "Catalyst Review: Tested Soft Wood Clumping, Dust, and Value",
+    description: "Our Catalyst review covers soft wood texture, clumping, dust, odor control, tracking, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Catalyst cat litter review",
         "upcycled pine litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/catalyst",
     },
     openGraph: {
-        title: "Catalyst Review: Soft Pine Litter That Clumps Like Clay",
-        description: "60-day test of upcycled pine litter. Sand-like soft texture with clumping action. Performance vs clay litters.",
+        title: "Catalyst Review: Tested Soft Wood Clumping, Dust, and Value",
+        description: "See our hands-on Catalyst test data for soft wood clumping, dust, odor control, and how it compares with clay and other natural litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-11-18",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Catalyst", "pine litter", "upcycled", "soft texture"],

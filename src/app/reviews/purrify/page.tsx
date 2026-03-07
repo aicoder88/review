@@ -10,8 +10,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/purrify`;
 
 export const metadata: Metadata = {
-    title: "Purrify Probiotic Deodorizer Review | 6-Month Test Results",
-    description: "We tested Purrify for 6 months with 10+ litter brands. See the data: 87% ammonia reduction, 2x litter life extension. Is it worth $15? Our honest review.",
+    title: "Purrify Review: Tested Odor Reduction, Savings, and Litter Life",
+    description: "Our Purrify review covers ammonia reduction, litter-life extension, monthly savings, and fit after six months of hands-on testing across multiple litters.",
     keywords: [
         "Purrify review",
         "Purrify probiotic deodorizer",
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/purrify",
     },
     openGraph: {
-        title: "Purrify Review: 6-Month Test Data Shows 87% Odor Reduction",
-        description: "We scientifically tested Purrify with 10 litter brands across 6 months. See the actual ammonia reduction data and cost savings analysis.",
+        title: "Purrify Review: Tested Odor Reduction, Savings, and Litter Life",
+        description: "See our six-month Purrify test data for odor reduction, litter-life extension, and the households most likely to benefit.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-18",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Purrify", "odor control", "probiotics", "litter enhancer"],

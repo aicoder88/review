@@ -10,8 +10,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/boxiecat-premium`;
 
 export const metadata: Metadata = {
-    title: "Boxiecat Premium Review | Flat Top Clumping Test Results",
-    description: "We tested Boxiecat Premium for 90 days. The 'Flat Top' clumping really works—no more scraping the bottom. See our dust test data vs Dr. Elsey's.",
+    title: "Boxiecat Premium Review: Tested Clumping, Dust, and Value",
+    description: "Our Boxiecat Premium review covers flat-top clumping, dust, odor control, tracking, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Boxiecat Premium review",
         "Boxiecat vs Dr Elsey's",
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/boxiecat-premium",
     },
     openGraph: {
-        title: "Boxiecat Premium Review: Flat Top Clumping That Actually Works",
-        description: "90-day test: Flat Top clumping means no more scraping urine cement off the bottom. 0.04mg dust (comparable to Dr. Elsey's). The runner-up for Best Overall.",
+        title: "Boxiecat Premium Review: Tested Clumping, Dust, and Value",
+        description: "See our hands-on Boxiecat Premium test data for flat-top clumping, dust, tracking, and how it stacks up against top clay litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-08",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Boxiecat", "flat top", "premium litter", "dust free", "clumping"],

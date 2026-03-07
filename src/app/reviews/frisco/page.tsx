@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/frisco`;
 
 export const metadata: Metadata = {
-    title: "Frisco Cat Litter Review 2025 | Chewy's House Brand Test",
-    description: "We tested Frisco by Chewy for 60 days. Best value litter at $13 for 40lb? See our clumping, dust, and odor control data vs name brands.",
+    title: "Frisco Review: Tested Budget Value, Dust, and Clumping",
+    description: "Our Frisco review covers budget value, dust, clumping, odor control, tracking, and day-to-day fit after hands-on testing. See the tradeoffs and best alternatives.",
     keywords: [
         "Frisco cat litter review",
         "Frisco by Chewy",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/frisco",
     },
     openGraph: {
-        title: "Frisco Review: Chewy's Budget Litter Delivers",
-        description: "60-day test of Frisco by Chewy. $13 for 40lb—best budget litter value? Performance data vs premium alternatives.",
+        title: "Frisco Review: Tested Budget Value, Dust, and Clumping",
+        description: "See our hands-on Frisco by Chewy test data for budget value, dust, clumping, and whether it is worth choosing over name brands.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-11-14",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Frisco", "Chewy", "budget", "value"],

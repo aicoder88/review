@@ -10,8 +10,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/worlds-best`;
 
 export const metadata: Metadata = {
-    title: "World's Best Cat Litter Review | Flushable Natural Litter Test",
-    description: "We tested World's Best Cat Litter for 60 days. It's flushable, eco-friendly, and controls odor well—but has a 'corn smell' issue. See our full data and the Purrify fix.",
+    title: "World's Best Cat Litter Review: Tested Flushability, Odor, and Clumping",
+    description: "Our World's Best Cat Litter review covers flushability, odor control, clumping, tracking, and value after hands-on testing. See the tradeoffs and best alternatives.",
     keywords: [
         "World's Best Cat Litter review",
         "flushable cat litter",
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/worlds-best",
     },
     openGraph: {
-        title: "World's Best Cat Litter Review: The Flushable Eco Option (With One Catch)",
-        description: "60-day test: Flushable, eco-friendly, but develops a 'corn smell.' See how we fixed it with Purrify and extended litter life by 3 weeks.",
+        title: "World's Best Cat Litter Review: Tested Flushability, Odor, and Clumping",
+        description: "See our hands-on World's Best Cat Litter test data for flushability, odor control, clumping, and who it fits best.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-06",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["World's Best", "natural litter", "flushable", "eco-friendly", "corn litter"],

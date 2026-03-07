@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/hardball`;
 
 export const metadata: Metadata = {
-    title: "Arm & Hammer HardBall Review 2025 | Hard Clump Clay Litter Test",
-    description: "We tested Arm & Hammer HardBall for 60 days. Fast-forming hard clumps with 10% baking soda. See our clump strength test data vs premium alternatives.",
+    title: "Arm & Hammer HardBall Review: Tested Hard Clumps, Dust, and Odor",
+    description: "Our Arm & Hammer HardBall review covers clump strength, dust, odor control, tracking, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Arm and Hammer HardBall review",
         "HardBall cat litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/hardball",
     },
     openGraph: {
-        title: "Arm & Hammer HardBall Review: Fast Hard Clumping",
-        description: "60-day test of HardBall litter. Fast-forming hard clumps with baking soda odor control. Clump strength comparison vs premium litters.",
+        title: "Arm & Hammer HardBall Review: Tested Hard Clumps, Dust, and Odor",
+        description: "See our hands-on Arm & Hammer HardBall test data for clump strength, dust, odor control, and where it fits among top clay litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-12-02",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["HardBall", "Arm & Hammer", "hard clumping", "baking soda"],

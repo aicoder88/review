@@ -1,6 +1,7 @@
 'use client';
 
-import { Beaker, ClipboardCheck, LineChart, Microscope, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Beaker, ClipboardCheck, LineChart, Scale, ArrowRight, ShieldCheck } from 'lucide-react';
 import { FadeUp, StaggerChildren, FadeIn } from '@/components/ui/motion';
 import { formatSiteDate, getLatestReviewedDate, getReviewedProductCount } from '@/lib/site';
 
@@ -9,27 +10,27 @@ const latestReviewedDate = getLatestReviewedDate();
 
 const methodologyPoints = [
   {
-    icon: Beaker,
-    title: 'Lab Testing',
-    description: 'Each review tracks dust, clumping, tracking, odor, and day-to-day usability with the same scoring framework',
+    icon: Scale,
+    title: 'Consistent scoring',
+    description: 'Every published review uses the same five core lenses: dust, clumping, odor, tracking, and value.',
     color: 'bg-accent/20 text-accent',
   },
   {
-    icon: Microscope,
-    title: 'Scientific Measurement',
-    description: 'Precise instruments measure particle size, moisture absorption, and ammonia neutralization',
+    icon: Beaker,
+    title: 'Product-level notes',
+    description: 'We document the practical tradeoffs that change buying decisions, including texture, scent load, weight, and cleanup feel.',
     color: 'bg-emerald-500/20 text-emerald-300',
   },
   {
     icon: ClipboardCheck,
-    title: 'Real-World Testing',
-    description: 'Real household use with multiple cats, different box types, and repeat review cycles over time',
+    title: 'Roundups tied back to reviews',
+    description: 'Category winners are not picked in isolation. They are connected back to review pages, comparisons, and guide content.',
     color: 'bg-accent/20 text-accent',
   },
   {
     icon: LineChart,
-    title: 'Data-Driven Scoring',
-    description: 'Objective metrics + expert evaluation = brutally honest ratings (no marketing BS)',
+    title: 'Editorial maintenance',
+    description: 'We update roundup pages when newer review data or better comparison coverage changes the recommendation.',
     color: 'bg-emerald-500/20 text-emerald-300',
   },
 ];
@@ -82,7 +83,7 @@ export function Methodology() {
             {/* Trust Badge */}
             <div className="absolute top-8 -left-4 bg-accent text-foreground px-6 py-3 rounded-full shadow-xl z-20 flex items-center gap-2 transform hover:-translate-y-1 transition-transform">
               <ShieldCheck className="w-5 h-5" />
-              <span className="font-bold">Vet-Approved Process</span>
+              <span className="font-bold">Editorial Standards</span>
             </div>
           </div>
           {/* Right: Content */}
@@ -90,22 +91,21 @@ export function Methodology() {
             <FadeUp>
               <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
                 <Beaker className="w-4 h-4 text-accent" />
-                <span className="text-white/80 font-medium text-sm tracking-wide">Our Rigorous Process</span>
+                <span className="text-white/80 font-medium text-sm tracking-wide">How We Evaluate Reviews</span>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.1}>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                How We <span className="text-gradient-gold italic">Actually</span> Test
+                How We Keep the Catalog <span className="text-gradient-gold italic">Comparable</span>
               </h2>
-              <p className="text-2xl text-white/90 mb-4">
-                (Unlike Other &ldquo;Review&rdquo; Sites)
-              </p>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                We&apos;re cat owners who got tired of the lies. <span className="font-bold text-white">&ldquo;99% Dust Free&rdquo;</span> usually means <span className="font-bold text-white">&ldquo;Clouds of Choking Dust&rdquo;</span>. We review products on the same rubric, revisit the catalog regularly, and publish the raw data instead of packaging hype.
+                ReviewCatLitter exists to make cat litter shopping easier to audit. Instead of repeating
+                packaging claims, we keep review pages on a shared scoring framework, explain the tradeoffs
+                in plain language, and connect winners back to the review and comparison pages they came from.
               </p>
             </FadeUp>
 
@@ -130,9 +130,13 @@ export function Methodology() {
             </StaggerChildren>
 
             <FadeUp delay={0.4}>
-              <button className="mt-12 group flex items-center gap-2 text-accent font-bold text-lg hover:text-white transition-colors">
+              <Link
+                href="/methodology"
+                prefetch={false}
+                className="group mt-12 inline-flex items-center gap-2 text-accent font-bold text-lg hover:text-white transition-colors"
+              >
                 Read Full Methodology <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
             </FadeUp>
           </div>
         </div>

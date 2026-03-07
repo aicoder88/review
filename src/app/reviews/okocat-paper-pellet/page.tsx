@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/okocat-paper-pellet`;
 
 export const metadata: Metadata = {
-    title: "Ökocat Paper Pellet Review | Best Paper Litter Test Results",
-    description: "We tested Ökocat Non-Clumping Paper Pellet for 60 days. Best for post-surgery, declawed cats, and dust-free needs. See absorption and odor control data.",
+    title: "Ökocat Paper Pellet Review: Tested Dust, Absorbency, and Odor",
+    description: "Our Ökocat Paper Pellet review covers dust, absorbency, odor control, tracking, and special-needs fit after hands-on testing. See the tradeoffs and best alternatives.",
     keywords: [
         "Okocat review",
         "Okocat paper litter",
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/okocat-paper-pellet",
     },
     openGraph: {
-        title: "Ökocat Paper Pellet Review: Best Paper Litter for Special Needs",
-        description: "60-day test of paper pellet litter. Best for post-surgery recovery, declawed cats, and severe dust allergies. Absorption and odor control data.",
+        title: "Ökocat Paper Pellet Review: Tested Dust, Absorbency, and Odor",
+        description: "See our hands-on Ökocat Paper Pellet test data for dust, absorbency, odor control, and when it makes sense over clumping litter.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-11-10",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Okocat", "paper litter", "pellet", "dust-free", "special needs"],

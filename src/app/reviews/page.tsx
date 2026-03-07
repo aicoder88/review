@@ -4,8 +4,7 @@ import { Star, ArrowRight, Sparkles, Crown, Award, Beaker, Clock, Shield } from 
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
-import { BreadcrumbSchema } from "@/components/seo/EnhancedProductSchema";
-import { ItemListSchema } from "@/components/seo/ItemListSchema";
+import { CollectionPageSchemas } from "@/components/seo/PageSchemas";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getReviewDirectoryProducts } from "@/lib/product-catalog";
 import {
@@ -22,26 +21,29 @@ const latestReviewedDate = getLatestReviewedDate();
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: 'All Cat Litter Reviews',
-    description: `Independent cat litter reviews based on hands-on testing. Browse ${reviewedProductCount} current reviews with dust, clumping, odor, tracking, and value data.`,
+    title: 'Cat Litter Reviews: Tested Picks for Dust, Odor, and Clumping',
+    description: `Browse ${reviewedProductCount} independent cat litter reviews with hands-on scores for dust, clumping, odor control, tracking, and value. Updated through ${formatSiteDate(latestReviewedDate)}.`,
     path: '/reviews',
     keywords: [
       "cat litter reviews",
+      "best cat litter reviews",
+      "tested cat litter reviews",
       "scientific cat litter testing",
       "dust free litter reviews",
       "clumping litter comparison",
+      "odor control cat litter reviews",
       "cat litter ratings",
       "independent litter reviews",
       "Dr Elsey's review",
       "World's Best litter review",
       "PrettyLitter review"
     ],
-    openGraphTitle: 'Cat Litter Reviews | Scientific Testing and Real Data',
+    openGraphTitle: 'Tested Cat Litter Reviews | Dust, Odor, and Clumping Data',
     openGraphDescription:
-      'Independent reviews with dust measurement, clump strength analysis, and ammonia testing. No paid placements, no fake reviews.',
-    twitterTitle: 'Cat Litter Reviews | Scientific Testing and Real Data',
+      `Browse ${reviewedProductCount} hands-on reviews with dust measurement, clump testing, and odor-control analysis.`,
+    twitterTitle: 'Tested Cat Litter Reviews | Dust, Odor, and Clumping Data',
     twitterDescription:
-      'Independent reviews with dust measurement, clump strength analysis, and ammonia testing.',
+      `Browse ${reviewedProductCount} hands-on reviews with dust measurement, clump testing, and odor-control analysis.`,
   }),
 };
 
@@ -56,6 +58,39 @@ const reviewListSchemaItems = reviews.map((review) => ({
   name: review.name,
   url: toAbsoluteUrl(review.reviewUrl),
 }));
+
+const researchPaths = [
+  {
+    title: "Best Clumping Cat Litter",
+    description: "Roundup for hard clumps, easier scooping, and fewer mid-scoop breakups.",
+    href: "/categories/best-clumping-cat-litter",
+  },
+  {
+    title: "Best Low-Dust Cat Litter",
+    description: "Find the cleanest pours and lowest airborne dust across the review catalog.",
+    href: "/categories/best-low-dust-cat-litter",
+  },
+  {
+    title: "Best Odor Control Cat Litter",
+    description: "See which picks hold up best against ammonia and day-to-day smell.",
+    href: "/categories/best-odor-control-cat-litter",
+  },
+  {
+    title: "Compare Cat Litters Side by Side",
+    description: "Use permanent head-to-head pages to narrow the closest alternatives faster.",
+    href: "/compare",
+  },
+  {
+    title: "Cat Litter Guides",
+    description: "Jump into odor, tracking, savings, and litter-life guides tied to the same test data.",
+    href: "/guides",
+  },
+  {
+    title: "Testing Methodology",
+    description: "See how dust, clumping, odor, tracking, and value are scored across every review.",
+    href: "/methodology",
+  },
+];
 
 // Trust signals
 const trustSignals = [
@@ -79,11 +114,10 @@ const trustSignals = [
 export default function ReviewsPage() {
   return (
     <>
-      {/* Schema.org Breadcrumb */}
-      <BreadcrumbSchema items={breadcrumbData} />
-      <ItemListSchema
+      <CollectionPageSchemas
         name="ReviewCatLitter review archive"
-        url={`${siteUrl}/reviews`}
+        path="/reviews"
+        breadcrumbs={breadcrumbData}
         items={reviewListSchemaItems}
       />
 
@@ -143,6 +177,37 @@ export default function ReviewsPage() {
                 </ul>
               </div>
             </div>
+
+            <section className="mb-12">
+              <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
+                <div>
+                  <h2 className="font-display text-3xl font-bold">Browse by Problem or Next Step</h2>
+                  <p className="text-muted-foreground">
+                    Use the review archive as the starting point, then narrow into roundups, comparisons, and methodology pages.
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {researchPaths.map((path) => (
+                  <Link
+                    key={path.href}
+                    href={path.href}
+                    prefetch={false}
+                    className="rounded-2xl border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-sm"
+                  >
+                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                      Research Path
+                    </div>
+                    <h3 className="font-display text-2xl font-bold mb-2">{path.title}</h3>
+                    <p className="text-muted-foreground mb-4">{path.description}</p>
+                    <div className="inline-flex items-center text-sm font-semibold text-primary">
+                      Open path
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
 
             {/* Featured Purrify Banner */}
             <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 md:p-8 border border-emerald-200 mb-12">

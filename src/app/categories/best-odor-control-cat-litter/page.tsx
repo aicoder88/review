@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
-import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
 
 const categoryConfig = getCategoryPageConfig('best-odor-control-cat-litter');
@@ -15,6 +15,7 @@ const categoryData: CategoryData = {
     stats: {
         tested: categoryStats?.tested ?? 0,
         reviewedThrough: categoryStats?.reviewedThrough ?? '',
+        reviewedThroughDate: categoryStats?.reviewedThroughDate ?? '',
         priceRange: categoryStats?.priceRange ?? '$0 - $0'
     },
     products: [
@@ -22,7 +23,7 @@ const categoryData: CategoryData = {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
             image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
-            price: "$$",
+            price: "$16.99",
             score: 8.7,
             quickTake: "The nuclear option. Seals odor instantly with micro-sealing granules and powerful scent.",
             pros: ["Seals odor instantly", "7-day guarantee works", "Cheap"],
@@ -37,7 +38,7 @@ const categoryData: CategoryData = {
             id: "prettylitter",
             name: "PrettyLitter",
             image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
-            price: "$$$$",
+            price: "$24.00",
             score: 8.8,
             quickTake: "Best for urine odor. The silica crystals absorb moisture instantly, trapping the smell inside.",
             pros: ["Zero urine smell", "Lightweight", "Health monitoring"],
@@ -52,7 +53,7 @@ const categoryData: CategoryData = {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
             image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
-            price: "$$",
+            price: "$24.99",
             score: 9.4,
             quickTake: "Best unscented option. Controls odor by locking waste in rock-solid clumps.",
             pros: ["No fake perfume", "Great clumping", "Dust free"],
@@ -69,7 +70,7 @@ const categoryData: CategoryData = {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
             image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
-            price: "$$",
+            price: "$16.99",
             score: 8.7,
             quickTake: "The nuclear option for smell.",
             pros: ["Seals odor instantly", "7-day guarantee works", "Cheap"],
@@ -85,7 +86,7 @@ const categoryData: CategoryData = {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
             image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
-            price: "$$",
+            price: "$24.99",
             score: 9.4,
             quickTake: "Best unscented option.",
             pros: ["No fake perfume", "Great clumping", "Dust free"],
@@ -101,7 +102,7 @@ const categoryData: CategoryData = {
             id: "prettylitter",
             name: "PrettyLitter",
             image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
-            price: "$$$$",
+            price: "$24.00",
             score: 8.8,
             quickTake: "Best for urine odor.",
             pros: ["Zero urine smell", "Lightweight", "Health monitoring"],
@@ -121,7 +122,7 @@ const categoryData: CategoryData = {
             name: "Arm & Hammer",
             image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
             score: 8.7,
-            price: "$$",
+            price: "$16.99",
             type: "Clay",
             dust: 8,
             clumping: 9,
@@ -135,7 +136,7 @@ const categoryData: CategoryData = {
             name: "PrettyLitter",
             image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=200&q=80",
             score: 8.8,
-            price: "$$$$",
+            price: "$24.00",
             type: "Silica",
             dust: 9,
             clumping: 0,
@@ -149,7 +150,7 @@ const categoryData: CategoryData = {
             name: "Dr. Elsey's Ultra",
             image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=200&q=80",
             score: 9.4,
-            price: "$$",
+            price: "$24.99",
             type: "Clay",
             dust: 9,
             clumping: 10,
@@ -162,48 +163,51 @@ const categoryData: CategoryData = {
     faq: [
         {
             question: "Why does my litter box still smell after scooping?",
-            answer: "Small crumbles of poop or urine-saturated clay are often left behind. These bacterial colonies grow and emit gas. Using a better clumping litter (like Dr. Elsey's) or adding a probiotic (like Purrify) helps prevent this. Learn more about how <PurrifyLink variant=\"inline\">Purrify</PurrifyLink> works."
+            answer: "Small waste crumbs and damp litter left behind after scooping are the usual culprit. Better clumping and better absorption matter because they remove more of the odor source in the first place."
         },
         {
             question: "Is better to cover odor or remove it?",
-            answer: "Always remove it. Covering odor with floral scents just creates a 'poop-pourri' smell that is actually more offensive to sensitive noses."
+            answer: "Removing the source is usually better. Some homes prefer scented litter, but the best odor-control setup still depends on clean scoops, good absorption, and a formula that matches your tolerance for fragrance."
         }
     ]
 };
 
 const buyingGuide = (
     <>
-        <h3>The Two Types of Odor Control</h3>
+        <h2>How Odor Control Actually Works in Cat Litter</h2>
         <p>
-            If you live in a small apartment, you can&apos;t afford cheap litter. The smell permeates <em>everything</em>—your clothes, your sofa, your bed.
+            Odor control is rarely just one ingredient. The best performers isolate waste quickly, absorb moisture
+            well, and make daily scooping easier so less dirty litter stays in the box.
         </p>
         <p>
-            You need a litter with <strong>Activated Carbon</strong> or probiotics. Baking soda alone often isn&apos;t enough for multi-cat homes.
+            That is why this category mixes scented clay, unscented clay, and crystal options. Different homes solve
+            smell differently, and the right answer depends on whether you want maximum fragrance, a cleaner
+            unscented profile, or stronger urine absorption.
         </p>
 
-        <h3>The &quot;Nose Blindness&quot; Danger</h3>
+        <h3>Scented vs. Unscented Is a Real Tradeoff</h3>
         <p>
-            You might get used to the smell (&quot;nose blind&quot;), but your guests certainly aren&apos;t.
+            Some cat owners want the strongest possible masking effect, while others would rather avoid perfume and
+            rely on clumping plus absorption. That is the main difference between
+            <Link href="/reviews/arm-hammer-clump-seal" prefetch={false}> Arm &amp; Hammer Clump &amp; Seal</Link> and
+            <Link href="/reviews/dr-elseys-ultra" prefetch={false}> Dr. Elsey&apos;s Ultra</Link>.
         </p>
 
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
-            <h4 className="font-bold text-blue-900 mb-2">💡 Pro Tip: The &quot;Nuclear&quot; Option</h4>
-            <p className="text-red-800 mb-4">
-                Most cheap &quot;odor control&quot; litters just use heavy chemicals that are bad for your cat&apos;s lungs.
-            </p>
-            <p className="text-red-800">
-                <strong>The Better Way:</strong> Use an unscented litter and add <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink>.
-            </p>
-            <p className="font-bold text-red-900 mt-2">
-                <PurrifyLink variant="inline">Purrify</PurrifyLink> uses enzymes to essentially &quot;eat&quot; the waste at a microscopic level. It kills the source of the smell instead of just spraying perfume on it.
-            </p>
-        </div>
-
-        <h3>Carbon vs. Baking Soda vs. Probiotics</h3>
+        <h3>Why Clumping Still Matters on an Odor Page</h3>
         <p>
-            <strong>Baking Soda:</strong> Cheap, absorbs some smell, but mostly filler.<br />
-            <strong>Activated Carbon:</strong> Very effective at trapping gas molecules. Look for this in premium clays.<br />
-            <strong>Probiotics:</strong> The new gold standard. Active bacteria that hunt down and destroy odor-causing waste.
+            Stronger clumps mean less residue left behind after you scoop. That is why readers focused on odor should
+            usually compare this page with
+            <Link href="/categories/best-clumping-cat-litter" prefetch={false}> best clumping cat litter</Link> and
+            <Link href="/compare" prefetch={false}> the comparison tool</Link>, not just chase the strongest fragrance.
+        </p>
+
+        <h3>Where to Go Next If Smell Is Your Main Problem</h3>
+        <p>
+            Use
+            <Link href="/guides/eliminate-litter-smell" prefetch={false}> eliminate litter smell</Link> if you want
+            box-care habits and setup changes, and use
+            <Link href="/categories/best-budget-cat-litter" prefetch={false}> best budget cat litter</Link> if you
+            want to balance odor control against long-term cost.
         </p>
     </>
 );

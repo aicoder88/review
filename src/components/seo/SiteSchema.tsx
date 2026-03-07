@@ -1,4 +1,6 @@
 import {
+  editorialTeamName,
+  homePageId,
   logoPath,
   methodologyPath,
   organizationId,
@@ -11,6 +13,11 @@ import {
 } from '@/lib/site';
 
 export function SiteSchema() {
+  const homeUrl = toAbsoluteUrl('/');
+  const reviewTeamUrl = toAbsoluteUrl(reviewTeamPath);
+  const methodologyUrl = toAbsoluteUrl(methodologyPath);
+  const logoUrl = toAbsoluteUrl(logoPath);
+
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -22,10 +29,23 @@ export function SiteSchema() {
         description: siteDescription,
         logo: {
           '@type': 'ImageObject',
-          url: toAbsoluteUrl(logoPath),
+          url: logoUrl,
         },
-        publishingPrinciples: toAbsoluteUrl(methodologyPath),
-        sameAs: [toAbsoluteUrl(reviewTeamPath)],
+        publishingPrinciples: methodologyUrl,
+        subjectOf: [
+          {
+            '@type': 'AboutPage',
+            '@id': reviewTeamUrl,
+            url: reviewTeamUrl,
+            name: editorialTeamName,
+          },
+          {
+            '@type': 'WebPage',
+            '@id': methodologyUrl,
+            url: methodologyUrl,
+            name: 'Our Testing Methodology',
+          },
+        ],
         knowsAbout: [
           'cat litter reviews',
           'odor control testing',
@@ -51,6 +71,27 @@ export function SiteSchema() {
             urlTemplate: `${siteUrl}/search?q={search_term_string}`,
           },
           'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': homePageId,
+        url: homeUrl,
+        name: 'Cat Litter Reviews and Comparisons',
+        description: siteDescription,
+        isPartOf: {
+          '@id': websiteId,
+        },
+        about: {
+          '@id': organizationId,
+        },
+        publisher: {
+          '@id': organizationId,
+        },
+        inLanguage: 'en-US',
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: logoUrl,
         },
       },
     ],

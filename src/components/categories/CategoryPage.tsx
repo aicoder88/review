@@ -11,8 +11,12 @@ import { ArrowUpDown, SlidersHorizontal, Check } from 'lucide-react';
 import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { ItemListSchema } from '@/components/seo/ItemListSchema';
-import { toAbsoluteUrl } from '@/lib/site';
+import { CollectionPageSchemas } from '@/components/seo/PageSchemas';
+import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
+import { RelatedArticles } from '@/components/content/RelatedArticles';
+import { siteUrl, toAbsoluteUrl } from '@/lib/site';
+import { getRelatedCategoryCardsForCategory, getRelatedGuideCardsForCategory } from '@/lib/internal-links';
+import { getCategoryRoundupCopy } from '@/lib/category-pages';
 
 export interface ProductGridItem {
     id: string;
@@ -37,6 +41,7 @@ export interface CategoryData {
     stats: {
         tested: number;
         reviewedThrough: string;
+        reviewedThroughDate?: string;
         priceRange: string;
     };
     quickPicks: {
@@ -64,10 +69,30 @@ export function CategoryPage({
     faq,
     children
 }: CategoryPageProps) {
+    const slug = path.split('/').filter(Boolean).pop() ?? '';
+    const relatedGuides = getRelatedGuideCardsForCategory(slug);
+    const relatedCategories = getRelatedCategoryCardsForCategory(slug);
+    const roundupCopy = getCategoryRoundupCopy(slug);
+    const breadcrumbItems = [
+        { name: 'Home', url: siteUrl },
+        { name: title, url: toAbsoluteUrl(path) },
+    ];
 
     const [activeFilters, setActiveFilters] = useState<Record<string, string[]>>({});
     const [sortBy, setSortBy] = useState('rating');
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const jumpLinks = [
+        { label: 'Overview', href: '#overview' },
+        { label: 'Winners', href: '#winners' },
+        { label: 'All Picks', href: '#all-reviews' },
+        { label: 'Compare', href: '#compare-table' },
+        { label: 'Buying Guide', href: '#buying-guide' },
+        { label: 'FAQ', href: '#faq' },
+    ];
+
+    if (relatedGuides.length > 0) {
+        jumpLinks.push({ label: 'Guides', href: '#guides' });
+    }
 
     // Filters Configuration (You might bubble this up in a real app)
     const filterConfig = [
@@ -164,13 +189,15 @@ export function CategoryPage({
 
     return (
         <>
-            <ItemListSchema
+            <CollectionPageSchemas
                 name={`${title} category roundup`}
-                url={toAbsoluteUrl(path)}
+                path={path}
+                breadcrumbs={breadcrumbItems}
                 items={products.map((product) => ({
                     name: product.name,
                     url: toAbsoluteUrl(product.reviewUrl),
                 }))}
+                faqs={faq}
             />
 
             <div className="min-h-screen bg-background">
@@ -202,10 +229,85 @@ export function CategoryPage({
                             {stats.priceRange} Price Range
                         </span>
                     </FadeUp>
+                    <FadeUp delay={0.3} className="mt-8">
+                        <EditorialTrustBox
+                            updatedOn={stats.reviewedThroughDate}
+                            summary={`This roundup is maintained by the ReviewCatLitter editorial team and ties every winner back to hands-on review data, methodology notes, and current comparison coverage.`}
+                            className="mx-auto max-w-3xl text-left"
+                        />
+                    </FadeUp>
+                </section>
+
+                <section className="container mx-auto px-6 mb-16 max-w-5xl" id="overview">
+                    <div className="rounded-3xl border border-border bg-white/90 p-6 md:p-8 shadow-sm">
+                        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                            <div className="max-w-3xl">
+                                <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+                                    How to use this roundup
+                                </h2>
+                                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                                    {roundupCopy?.intro?.map((paragraph) => (
+                                        <p key={paragraph}>{paragraph}</p>
+                                    ))}
+                                </div>
+                            </div>
+                            <nav aria-label={`${title} jump links`} className="lg:w-72">
+                                <div className="rounded-2xl bg-secondary/30 p-4">
+                                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                                        Jump to
+                                    </div>
+                                    <div className="flex flex-wrap gap-2 lg:flex-col">
+                                        {jumpLinks.map((link) => (
+                                            <a
+                                                key={link.href}
+                                                href={link.href}
+                                                className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+                                            >
+                                                {link.label}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+
+                        {roundupCopy?.criteria?.length ? (
+                            <div className="mt-8">
+                                <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                                    {roundupCopy.criteriaTitle}
+                                </h3>
+                                <div className="grid gap-4 md:grid-cols-3">
+                                    {roundupCopy.criteria.map((item) => (
+                                        <div key={item.title} className="rounded-2xl border border-border bg-secondary/20 p-5">
+                                            <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                                            <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : null}
+
+                        <div className="mt-8 flex flex-wrap gap-3">
+                            <Link
+                                href="/reviews"
+                                prefetch={false}
+                                className="inline-flex items-center rounded-full bg-foreground px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary"
+                            >
+                                Browse all reviews
+                            </Link>
+                            <Link
+                                href="/compare"
+                                prefetch={false}
+                                className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
+                            >
+                                Open comparison tool
+                            </Link>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Quick Picks */}
-                <section className="container mx-auto px-6 mb-24">
+                <section className="container mx-auto px-6 mb-24" id="winners">
                     <h2 className="font-display text-2xl font-bold mb-8 flex items-center gap-2">
                         <span className="text-accent">★</span>
                         The Winners (Skip the Research)
@@ -375,20 +477,20 @@ export function CategoryPage({
                 </section>
 
                 {/* Comparison Table */}
-                <section className="container mx-auto px-6 mb-24">
+                <section className="container mx-auto px-6 mb-24" id="compare-table">
                     <h2 className="font-display text-3xl font-bold mb-8 text-center">Compare All Products</h2>
                     <CategoryComparisonTable products={comparisonProducts} />
                 </section>
 
                 {/* Buying Guide */}
-                <section className="container mx-auto px-6 mb-24">
+                <section className="container mx-auto px-6 mb-24" id="buying-guide">
                     <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:text-muted-foreground prose-a:text-primary">
                         {children}
                     </div>
                 </section>
 
                 {/* FAQ */}
-                <section className="container mx-auto px-6 mb-24 max-w-3xl">
+                <section className="container mx-auto px-6 mb-24 max-w-3xl" id="faq">
                     <h2 className="font-display text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
                     <div className="space-y-6">
                         {faq.map((item, i) => (
@@ -399,6 +501,24 @@ export function CategoryPage({
                         ))}
                     </div>
                 </section>
+
+                {relatedCategories.length > 0 && (
+                    <section className="container mx-auto px-6 mb-24 max-w-6xl">
+                        <RelatedArticles
+                            articles={relatedCategories}
+                            title="Explore Related Roundups"
+                        />
+                    </section>
+                )}
+
+                {relatedGuides.length > 0 && (
+                    <section className="container mx-auto px-6 mb-24 max-w-6xl" id="guides">
+                        <RelatedArticles
+                            articles={relatedGuides}
+                            title="Guides That Go Deeper"
+                        />
+                    </section>
+                )}
 
                 </main>
                 <Footer />

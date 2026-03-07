@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CheckCircle2, Beaker, Clock, DollarSign, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle2, Beaker, Clock, DollarSign, ArrowRight } from "lucide-react";
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+import { WebPageSchemas } from "@/components/seo/PageSchemas";
 import { buildPageMetadata } from "@/lib/page-metadata";
-import { getReviewedProductCount } from "@/lib/site";
+import { getLatestReviewedDate, methodologyPath, organizationId, getReviewedProductCount, siteName, siteUrl } from "@/lib/site";
 
 const reviewedProductCount = getReviewedProductCount();
 
@@ -14,13 +15,30 @@ export const metadata: Metadata = {
     title: "Our Testing Methodology",
     description: `Learn how we score dust, clumping, odor, tracking, and value across ${reviewedProductCount} published cat litter reviews.`,
     path: "/methodology",
-    keywords: ["cat litter testing methodology", "how we test cat litter", "cat litter lab testing", "litter review process", "independent cat litter testing"],
+    keywords: ["cat litter testing methodology", "how we review cat litter", "litter review process", "cat litter scoring rubric", "independent cat litter reviews"],
   }),
 };
 
 export default function MethodologyPage() {
     return (
         <div className="min-h-screen bg-background">
+            <WebPageSchemas
+                title="Our Testing Methodology"
+                description={`Learn how we score dust, clumping, odor, tracking, and value across ${reviewedProductCount} published cat litter reviews.`}
+                path={methodologyPath}
+                pageType="AboutPage"
+                dateModified={getLatestReviewedDate()}
+                breadcrumbs={[
+                    { name: "Home", url: siteUrl },
+                    { name: "Methodology", url: `${siteUrl}${methodologyPath}` },
+                ]}
+                mainEntity={{
+                    "@type": "Organization",
+                    "@id": organizationId,
+                    name: siteName,
+                    url: siteUrl,
+                }}
+            />
             <Header />
             <main className="pt-24 pb-20">
                 <div className="max-w-4xl mx-auto px-6 py-12">
@@ -35,11 +53,12 @@ export default function MethodologyPage() {
                         
                         <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
                             <Beaker className="w-6 h-6 text-primary" />
-                            Lab Testing Protocol
+                            Review Framework
                         </h2>
                         <p className="mb-6">
-                            Unlike other review sites that just aggregate Amazon reviews, we actually buy and test every single product. 
-                            Every review follows the same scoring rubric so dust, clumping, odor, tracking, and value stay comparable.
+                            ReviewCatLitter keeps the catalog comparable by using the same scoring framework across
+                            published product pages. Each review and roundup is built around the same core questions:
+                            how a litter handles dust, clumping, odor control, tracking, and day-to-day value.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
@@ -58,11 +77,11 @@ export default function MethodologyPage() {
                         <h2 className="text-2xl font-bold text-foreground mb-4">What We Test</h2>
                         <ul className="space-y-4 mb-12">
                             {[
-                                "Dust levels (measured with particle counter)",
-                                "Clumping strength (weight and integrity tests)",
-                                "Odor control (ammonia levels over 4 weeks)",
-                                "Tracking (measured area of spread)",
-                                "Value (cost per day of effective use)"
+                                "Dust control during pours, top-offs, and scooping",
+                                "Clumping performance and cleanup consistency",
+                                "Odor control in everyday litter-box use",
+                                "Tracking and general mess around the box",
+                                "Value relative to price, lifespan, and maintenance burden"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3">
                                     <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
@@ -74,11 +93,11 @@ export default function MethodologyPage() {
                         <h2 className="text-2xl font-bold text-foreground mb-4">Our Standards</h2>
                         <ul className="space-y-4 mb-12">
                             {[
-                                "We buy all products ourselves (Zero freebies)",
-                                "We test for a minimum of 2 weeks per product",
-                                "We use scientific tools to measure dust levels",
-                                "We weigh clumps to measure efficiency",
-                                "We test with real cats in real homes"
+                                "Every published review uses the same five scoring categories",
+                                "Category roundups link winners back to the relevant review pages",
+                                "Comparison pages are built from the live product catalog, not generic brand copy",
+                                "Editorial pages explain how affiliates and updates are handled",
+                                "Recommendations can change when new review or comparison context changes the verdict"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3">
                                     <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
@@ -89,31 +108,10 @@ export default function MethodologyPage() {
 
                         <h2 className="text-2xl font-bold text-foreground mb-4">Why Trust Us?</h2>
                         <p className="mb-8">
-                            Because we&apos;re cat owners who got tired of the lies. &quot;99% Dust Free&quot; usually means &quot;Clouds of Choking Dust&quot;. 
-                            We&apos;re here to expose the marketing fluff and give you the raw data.
+                            Because the site shows its work. Review pages publish scores and verdicts, category pages
+                            explain why a product wins for a specific use case, and the editorial standards page
+                            documents how updates and affiliate relationships are handled.
                         </p>
-
-                        {/* Purrify Discovery Section */}
-                        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-200 my-12 not-prose">
-                            <div className="flex items-start gap-4">
-                                <div className="bg-emerald-500 p-3 rounded-xl shrink-0">
-                                    <Sparkles className="w-6 h-6 text-white" />
-                                </div>
-                                <div>
-                                    <h3 className="font-display text-xl font-bold text-emerald-900 mb-2">
-                                        Our Biggest Discovery
-                                    </h3>
-                                    <p className="text-emerald-700 mb-4">
-                                        After reviewing the live catalog, we discovered that adding a probiotic deodorizer like Purrify 
-                                        to ANY litter dramatically improves performance. It&apos;s now part of our standard testing protocol 
-                                        to measure how litters perform both with and without enhancement.
-                                    </p>
-                                    <PurrifyLink variant="badge">
-                                        Learn About Purrify
-                                    </PurrifyLink>
-                                </div>
-                            </div>
-                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-12">
                             <Link href="/reviews" prefetch={false} className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
@@ -121,6 +119,9 @@ export default function MethodologyPage() {
                             </Link>
                             <Link href="/compare" prefetch={false} className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-bold py-3 px-6 rounded-xl hover:bg-secondary/80 transition-colors">
                                 Compare Products
+                            </Link>
+                            <Link href="/about/review-team" prefetch={false} className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-bold py-3 px-6 rounded-xl hover:bg-secondary/80 transition-colors">
+                                Editorial Standards
                             </Link>
                         </div>
                     </div>

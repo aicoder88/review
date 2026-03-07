@@ -10,9 +10,11 @@ export const siteDescription =
   'Independent, data-driven cat litter reviews and side-by-side comparisons based on hands-on testing and clear editorial standards.';
 export const organizationId = `${siteUrl}#organization`;
 export const websiteId = `${siteUrl}#website`;
+export const homePageId = `${siteUrl}#home`;
 export const logoPath = '/logo.png';
 export const reviewTeamPath = '/about/review-team';
 export const methodologyPath = '/methodology';
+export const editorialTeamName = 'ReviewCatLitter Editorial Team';
 
 export const indexedCategoryPaths = [
   '/categories/best-budget-cat-litter',

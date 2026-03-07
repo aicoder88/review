@@ -4,25 +4,42 @@ import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { Clock, TrendingUp, CheckCircle, DollarSign } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/page-metadata';
+import { ArticlePageSchemas } from '@/components/seo/PageSchemas';
+import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
+import { buildGuideMetadata, getGuidePageDefinition } from '@/lib/guide-pages';
+import { formatSiteDate, siteUrl } from '@/lib/site';
 
-export const metadata: Metadata = {
-  ...buildPageMetadata({
-    title: "How to Make Cat Litter Last 2x Longer",
-    description: "Extend your cat litter life from 3-4 weeks to 6-8 weeks with these tested methods. Save money and reduce odor naturally with our expert guide.",
-    path: "/guides/extend-cat-litter-life",
-    keywords: ["extend cat litter life", "make litter last longer", "cat litter savings", "litter life tips", "prolong cat litter"],
-    type: "article",
-    publishedTime: "2025-01-15",
-  }),
-};
+const guide = getGuidePageDefinition('extend-cat-litter-life');
+
+export const metadata: Metadata = buildGuideMetadata('extend-cat-litter-life');
 
 export default function ExtendCatLitterLifeGuide() {
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
+  if (!guide) {
+    return null;
+  }
 
-      <main className="pt-24 pb-20">
+  return (
+    <>
+      <ArticlePageSchemas
+        headline={guide.title}
+        description={guide.description}
+        path={guide.path}
+        image={guide.image}
+        datePublished={guide.datePublished}
+        dateModified={guide.dateModified}
+        keywords={guide.keywords}
+        articleSection="Guides"
+        breadcrumbs={[
+          { name: 'Home', url: siteUrl },
+          { name: 'Guides', url: `${siteUrl}/guides` },
+          { name: 'Extend Cat Litter Life', url: `${siteUrl}${guide.path}` },
+        ]}
+      />
+
+      <div className="min-h-screen bg-background">
+        <Header />
+
+        <main className="pt-24 pb-20">
         {/* Breadcrumb */}
         <div className="container mx-auto px-6 mb-8 text-sm text-muted-foreground">
           <Link href="/" prefetch={false} className="hover:text-primary">Home</Link>
@@ -46,11 +63,17 @@ export default function ExtendCatLitterLifeGuide() {
               7 proven methods to extend litter life from <strong>3-4 weeks to 6-8 weeks</strong> (without smell)
             </p>
             <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-              <span>📖 10 min read</span>
+              <span>{guide.readTime}</span>
               <span>•</span>
-              <span>🧪 Lab tested</span>
+              <span>Updated {formatSiteDate(guide.dateModified)}</span>
               <span>•</span>
               <span>💰 Save $15-30/month</span>
+            </div>
+            <div className="mt-8 text-left">
+              <EditorialTrustBox
+                updatedOn={guide.dateModified}
+                summary="This guide is maintained by the ReviewCatLitter editorial team and supported by current review data, comparison pages, and the published testing methodology."
+              />
             </div>
           </div>
         </section>
@@ -395,9 +418,10 @@ export default function ExtendCatLitterLifeGuide() {
             </article>
           </div>
         </section>
-      </main>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

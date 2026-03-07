@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
-import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
 
 const categoryConfig = getCategoryPageConfig('best-low-dust-cat-litter');
@@ -15,6 +15,7 @@ const categoryData: CategoryData = {
     stats: {
         tested: categoryStats?.tested ?? 0,
         reviewedThrough: categoryStats?.reviewedThrough ?? '',
+        reviewedThroughDate: categoryStats?.reviewedThroughDate ?? '',
         priceRange: categoryStats?.priceRange ?? '$0 - $0'
     },
     products: [
@@ -22,7 +23,7 @@ const categoryData: CategoryData = {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
             image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
-            price: "$$",
+            price: "$24.99",
             score: 9.4,
             quickTake: "The undefeated champion. 0.03mg dust levels (94% less than average).",
             pros: ["Zero visible dust", "Rock-solid clumps", "Hypoallergenic"],
@@ -37,7 +38,7 @@ const categoryData: CategoryData = {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
             image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
-            price: "$$$",
+            price: "$27.99",
             score: 9.2,
             quickTake: "The premium contender. Equally dust-free but with better 'flat top' clumping.",
             pros: ["Zero dust", "Flat top clumps", "Stays cleaner"],
@@ -52,7 +53,7 @@ const categoryData: CategoryData = {
             id: "prettylitter",
             name: "PrettyLitter",
             image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
-            price: "$$$$",
+            price: "$24.00",
             score: 8.8,
             quickTake: "Best non-clay option. Silica gel has no clay dust spread.",
             pros: ["Zero clay dust", "Health monitoring", "Delivered"],
@@ -69,7 +70,7 @@ const categoryData: CategoryData = {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
             image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
-            price: "$$",
+            price: "$24.99",
             score: 9.4,
             quickTake: "The undefeated champion for dust control.",
             pros: ["Zero visible dust", "Rock-solid clumps", "Hypoallergenic"],
@@ -85,7 +86,7 @@ const categoryData: CategoryData = {
             id: "worlds-best",
             name: "World's Best Cat Litter",
             image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
-            price: "$$$",
+            price: "$29.99",
             score: 9.1,
             quickTake: "Best natural low-dust option. Corn produces little dust compared to cheap clay.",
             pros: ["Flushable", "Sustainable", "Safe dust"],
@@ -101,7 +102,7 @@ const categoryData: CategoryData = {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
             image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
-            price: "$$$",
+            price: "$27.99",
             score: 9.2,
             quickTake: "Premium flat-top clumping.",
             pros: ["Zero dust", "Flat top clumps", "Stays cleaner"],
@@ -121,7 +122,7 @@ const categoryData: CategoryData = {
             name: "Dr. Elsey's Ultra",
             image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=200&q=80",
             score: 9.4,
-            price: "$$",
+            price: "$24.99",
             type: "Clay",
             dust: 10,
             clumping: 10,
@@ -135,7 +136,7 @@ const categoryData: CategoryData = {
             name: "Boxiecat Premium",
             image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=200&q=80",
             score: 9.2,
-            price: "$$$",
+            price: "$27.99",
             type: "Clay",
             dust: 10,
             clumping: 9,
@@ -149,7 +150,7 @@ const categoryData: CategoryData = {
             name: "Arm & Hammer",
             image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
             score: 8.7,
-            price: "$$",
+            price: "$16.99",
             type: "Clay",
             dust: 6,
             clumping: 9,
@@ -161,44 +162,51 @@ const categoryData: CategoryData = {
     ],
     faq: [
         {
-            question: "Why is dust dangerous?",
-            answer: "Clay dust contains silica particles. While not the same as crystalline silica (which causes silicosis), inhaling concentrated dust clouds daily can trigger feline asthma and chronic bronchitis in both cats and humans."
+            question: "What usually causes dust problems in a litter box setup?",
+            answer: "Most complaints come from pouring a fresh bag, topping off the box, or stirring the litter during scooping. Material type matters, but so does how the litter behaves once it is in regular use."
         },
         {
             question: "Is '99% Dust Free' real?",
-            answer: "No. It's a marketing term. A 40lb bag that is 99% dust free still contains 0.4lbs (6.4oz) of pure dust. That is a lot. Dr. Elsey's is closer to 99.9%."
+            answer: "Treat it as a loose marketing phrase, not a universal standard. One brand's low-dust experience can still look very different from another brand's once you start pouring, scooping, and living with it."
         }
     ]
 };
 
 const buyingGuide = (
     <>
-        <h3>The &quot;99% Dust Free&quot; Myth</h3>
+        <h2>How to Shop for Low-Dust Cat Litter</h2>
         <p>
-            Almost every brand claims this. It is a lie. There is no regulation for what &quot;99%&quot; means (by weight? by particle count?).
-        </p>
-
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
-            <h4 className="font-bold text-blue-900 mb-2">💡 Pro Tip for Asthma</h4>
-            <p className="text-blue-800 mb-4">
-                Even low-dust clay litters can trigger asthma. If you or your cat are sensitive, switch to a plant-based litter (like World&apos;s Best) immediately. Clay dust contains silica, which is distinct from plant dust.
-            </p>
-            <p className="text-sky-800">
-                To maximize Clean Air in your home, pair a low-dust litter like Dr. Elsey&apos;s with <PurrifyLink variant="inline">Purrify Deodorizer</PurrifyLink>.
-            </p>
-            <p className="font-bold text-sky-900 mt-2">
-                <PurrifyLink variant="inline">Purrify</PurrifyLink> helps break down waste before it dries out and becomes airborne dust particles.
-            </p>
-        </div>
-
-        <h3>Testing Methodology</h3>
-        <p>
-            We used a laser particle counter to measure PM2.5 and PM10 levels while pouring litter from a height of 24 inches.
+            Low-dust cat litter is really about the full cleanup cycle, not just the first pour out of the bag.
+            The best options stay controlled when you refill the box, disturb the litter during scooping, and top
+            it off through the week.
         </p>
         <p>
-            <strong>Fail:</strong> Visible cloud that lingers &gt; 5 seconds.<br />
-            <strong>Pass:</strong> No visible cloud, settles instantly.<br />
-            <strong>Winner:</strong> Zero visible dust, background particulate levels only.
+            That is why this roundup still cares about clumping and odor control. A low-dust formula loses value fast
+            if it turns the box into a harder cleanup job or leaves waste behind.
+        </p>
+
+        <h3>Material Tradeoffs Matter</h3>
+        <p>
+            Clay can deliver the strongest traditional clumps, but low-dust winners tend to come from the better
+            refined formulas. Crystal and plant-based litters can also reduce airborne mess, though they introduce
+            different tradeoffs around feel, price, or classic scoopability.
+        </p>
+
+        <h3>What to Compare Next</h3>
+        <p>
+            If dust is your top priority, compare this page with our
+            <Link href="/categories/best-clumping-cat-litter" prefetch={false}> clumping roundup</Link> to check
+            whether the cleaner options still scoop the way you want. If you are deciding between clay and natural
+            materials, jump to
+            <Link href="/categories/best-natural-cat-litter" prefetch={false}> best natural cat litter</Link> and
+            <Link href="/guides/stop-litter-tracking" prefetch={false}> stop litter tracking</Link> for the rest of
+            the cleanup picture.
+        </p>
+
+        <h3>Best Use Cases for This Category</h3>
+        <p>
+            This page is most useful for dust-sensitive homes, small rooms where litter clouds are more noticeable,
+            and anyone who wants a cleaner refill experience without giving up every other performance metric.
         </p>
     </>
 );

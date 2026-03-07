@@ -5,8 +5,9 @@ import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { Sparkles } from "lucide-react";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+import { WebPageSchemas } from "@/components/seo/PageSchemas";
 import { buildPageMetadata } from "@/lib/page-metadata";
-import { getComparisonPageCount, getReviewedProductCount } from "@/lib/site";
+import { getComparisonPageCount, getLatestReviewedDate, getReviewedProductCount, organizationId, siteName, siteUrl } from "@/lib/site";
 
 const reviewedProductCount = getReviewedProductCount();
 const comparisonPageCount = getComparisonPageCount();
@@ -21,8 +22,27 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+    const breadcrumbItems = [
+        { name: "Home", url: siteUrl },
+        { name: "About", url: `${siteUrl}/about` },
+    ];
+
     return (
         <div className="min-h-screen bg-background">
+            <WebPageSchemas
+                title="About ReviewCatLitter"
+                description={`Learn how ReviewCatLitter handles ${reviewedProductCount} published reviews and ${comparisonPageCount}+ comparison pages with clear editorial standards.`}
+                path="/about"
+                pageType="AboutPage"
+                dateModified={getLatestReviewedDate()}
+                breadcrumbs={breadcrumbItems}
+                mainEntity={{
+                    "@type": "Organization",
+                    "@id": organizationId,
+                    name: siteName,
+                    url: siteUrl,
+                }}
+            />
             <Header />
             <main className="pt-24 pb-20">
                 <div className="max-w-4xl mx-auto px-6 py-12">

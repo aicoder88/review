@@ -54,7 +54,7 @@ const categories = [
 
 export function CategoryNavigation() {
   return (
-    <section className="py-24 px-6 bg-foreground relative overflow-hidden">
+    <section id="categories" className="py-24 px-6 bg-foreground relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-50" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-50" />
@@ -69,7 +69,7 @@ export function CategoryNavigation() {
             Stop Guessing. <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Find Your Perfect Match</span>
           </h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Every cat and home is different. Pick the category that solves <span className="font-bold text-white">your specific problem</span>.
+            Every cat and home is different. Jump straight to the roundup for <span className="font-bold text-white">your specific problem</span>, whether that is odor control, low dust, stronger clumps, natural litter, or better value.
           </p>
         </div>
 

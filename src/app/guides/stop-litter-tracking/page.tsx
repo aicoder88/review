@@ -4,20 +4,57 @@ import { InternalLinkBox } from '@/components/content/InternalLinkBox';
 import { RelatedArticles } from '@/components/content/RelatedArticles';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { buildPageMetadata } from '@/lib/page-metadata';
+import { ArticlePageSchemas } from '@/components/seo/PageSchemas';
+import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
+import { buildGuideMetadata, getGuidePageDefinition } from '@/lib/guide-pages';
+import { formatSiteDate, siteUrl } from '@/lib/site';
 
-export const metadata: Metadata = {
-  ...buildPageMetadata({
-    title: "How to Stop Cat Litter Tracking: 12 Proven Methods",
-    description: "Tired of litter everywhere? Our testing shows these 12 methods reduce tracking substantially. Includes DIY solutions and product recommendations.",
-    path: "/guides/stop-litter-tracking",
-    type: "article",
-  }),
-};
+const guide = getGuidePageDefinition('stop-litter-tracking');
+
+export const metadata: Metadata = buildGuideMetadata('stop-litter-tracking');
+
+const faqData = [
+  {
+    question: 'Does trimming paw fur help reduce tracking?',
+    answer:
+      'Yes. For long-haired cats, trimming the fur between the toe pads can noticeably reduce how much litter clings after each box visit.',
+  },
+  {
+    question: 'Do litter box liners reduce tracking?',
+    answer:
+      'No. Liners can make cleanup easier, but they do not materially reduce how much litter is carried out on paws.',
+  },
+  {
+    question: 'What is the best litter mat material?',
+    answer:
+      'Silicone honeycomb mats performed best in our testing because they trapped more litter and were easier to clean than flat mats.',
+  },
+];
 
 export default function StopLitterTracking() {
+  if (!guide) {
+    return null;
+  }
+
   return (
     <>
+      <ArticlePageSchemas
+        headline={guide.title}
+        description={guide.description}
+        path={guide.path}
+        image={guide.image}
+        datePublished={guide.datePublished}
+        dateModified={guide.dateModified}
+        keywords={guide.keywords}
+        articleSection="Guides"
+        breadcrumbs={[
+          { name: 'Home', url: siteUrl },
+          { name: 'Guides', url: `${siteUrl}/guides` },
+          { name: 'Stop Litter Tracking', url: `${siteUrl}${guide.path}` },
+        ]}
+        faqs={faqData}
+      />
+
       <Header />
 
       <main className="container mx-auto px-6 py-16">
@@ -32,9 +69,15 @@ export default function StopLitterTracking() {
               to keep litter in the box and off your floors.
             </p>
             <div className="flex items-center gap-4 mt-6 text-sm text-muted-foreground">
-              <div>Updated: December 2025</div>
+              <div>Updated {formatSiteDate(guide.dateModified)}</div>
               <div>•</div>
-              <div>12 min read</div>
+              <div>{guide.readTime}</div>
+            </div>
+            <div className="mt-8">
+              <EditorialTrustBox
+                updatedOn={guide.dateModified}
+                summary="This guide is maintained by the ReviewCatLitter editorial team and supported by current low-dust reviews, category roundups, and the published testing methodology."
+              />
             </div>
           </div>
 

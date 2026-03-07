@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/tuft-paw`;
 
 export const metadata: Metadata = {
-    title: "Tuft + Paw Cat Litter Review 2025 | Designer Litter Test",
-    description: "We tested Tuft + Paw's Really Great Cat Litter for 60 days. Soy-based, tofu-like litter. See our clumping analysis and value assessment.",
+    title: "Tuft + Paw Review: Tested Soy Litter Clumping, Tracking, and Value",
+    description: "Our Tuft + Paw review covers soy-litter clumping, tracking, odor control, flushability, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Tuft and Paw review",
         "Tuft + Paw cat litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/tuft-paw",
     },
     openGraph: {
-        title: "Tuft + Paw Review: Designer Soy Litter Worth the Price?",
-        description: "60-day test of Tuft + Paw's soy-based litter. Tofu-like texture, flushable, low tracking. Is the premium price justified?",
+        title: "Tuft + Paw Review: Tested Soy Litter Clumping, Tracking, and Value",
+        description: "See our hands-on Tuft + Paw test data for soy-litter clumping, tracking, flushability, and whether the premium price is justified.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-10-12",
         authors: ["ReviewCatLitter.com"],
     section: "Product Reviews",
         tags: ["Tuft + Paw", "soy litter", "tofu", "designer", "luxury"],

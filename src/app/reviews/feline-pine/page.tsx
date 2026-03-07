@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/feline-pine`;
 
 export const metadata: Metadata = {
-    title: "Feline Pine Review 2025 | Best Pine Pellet Cat Litter Test",
-    description: "We tested Feline Pine for 60 days. Chemical-free pine scent, highly absorbent, but non-clumping. See our sawdust breakdown analysis and odor control data.",
+    title: "Feline Pine Review: Tested Pine Pellets, Odor, and Dust",
+    description: "Our Feline Pine review covers pine pellet odor control, absorbency, dust, tracking, and value after hands-on testing. See the tradeoffs and best alternatives.",
     keywords: [
         "Feline Pine review",
         "pine pellet cat litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/feline-pine",
     },
     openGraph: {
-        title: "Feline Pine Review: Natural Pine Pellet Litter Test",
-        description: "60-day test of pine pellet litter. Chemical-free with natural pine scent. Absorbency and sawdust breakdown analysis.",
+        title: "Feline Pine Review: Tested Pine Pellets, Odor, and Dust",
+        description: "See our hands-on Feline Pine test data for pine pellet absorbency, odor control, dust, and who it fits best.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-11-24",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Feline Pine", "pine pellets", "natural", "chemical-free"],

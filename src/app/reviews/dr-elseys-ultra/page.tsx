@@ -10,8 +10,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/dr-elseys-ultra`;
 
 export const metadata: Metadata = {
-    title: "Dr. Elsey's Ultra Cat Litter Review | 90-Day Lab Test Results",
-    description: "We spent 90 days testing Dr. Elsey's Ultra with air quality monitors and drop tests. 0.03mg dust per pour, 94% less than average. See the full data.",
+    title: "Dr. Elsey's Ultra Review: Tested for Dust, Clumping, and Odor",
+    description: "Our 90-day Dr. Elsey's Ultra review covers dust, clumping, odor control, tracking, and value. See the full hands-on test data, tradeoffs, and best alternatives.",
     keywords: [
         "Dr Elsey's Ultra review",
         "Dr Elsey's cat litter",
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/dr-elseys-ultra",
     },
     openGraph: {
-        title: "Dr. Elsey's Ultra Review: 94% Less Dust Than Average Clay Litter",
-        description: "90-day lab test results: 0.03mg dust per pour, 49/50 clumps survived drop test. The data-driven review of Dr. Elsey's Ultra.",
+        title: "Dr. Elsey's Ultra Review: Tested for Dust, Clumping, and Odor",
+        description: "See our 90-day test data on Dr. Elsey's Ultra, including dust results, clump strength, odor control, and who it fits best.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-14",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Dr. Elsey's", "dust free", "clumping", "clay litter"],

@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/fresh-step`;
 
 export const metadata: Metadata = {
-    title: "Fresh Step Scented Review 2025 | Gain Original Scent Test",
-    description: "We tested Fresh Step for 60 days. Gain scent is strong, clumping is decent. See our ammonia test data and clump strength comparison.",
+    title: "Fresh Step Review: Tested Scent, Odor Control, and Clumping",
+    description: "Our Fresh Step review covers scent strength, odor control, dust, clumping, tracking, and value after hands-on testing. See the data and best alternatives.",
     keywords: [
         "Fresh Step review",
         "Fresh Step cat litter",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/fresh-step",
     },
     openGraph: {
-        title: "Fresh Step Review: Strong Scent, Decent Performance",
-        description: "60-day test of Fresh Step scented litter. Gain fragrance strength, clumping analysis, and value assessment vs competitors.",
+        title: "Fresh Step Review: Tested Scent, Odor Control, and Clumping",
+        description: "See our hands-on Fresh Step test data for scent strength, odor control, dust, and whether it is worth choosing over competing scented litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-10-20",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Fresh Step", "scented", "Gain", "clay litter"],

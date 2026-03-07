@@ -1,9 +1,19 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BadgeCheck, FlaskConical, Scale, ShieldCheck } from 'lucide-react';
+import { WebPageSchemas } from '@/components/seo/PageSchemas';
 import { Footer } from '@/components/home/Footer';
 import { Header } from '@/components/home/Header';
-import { methodologyPath, reviewTeamPath, siteName, siteUrl, toAbsoluteUrl } from '@/lib/site';
+import {
+  editorialTeamName,
+  getLatestReviewedDate,
+  methodologyPath,
+  organizationId,
+  reviewTeamPath,
+  siteName,
+  siteUrl,
+  toAbsoluteUrl,
+} from '@/lib/site';
 
 export const metadata: Metadata = {
   title: `Editorial Team | ${siteName}`,
@@ -29,28 +39,33 @@ const principles = [
 ];
 
 export default function ReviewTeamPage() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
-    url: `${siteUrl}${reviewTeamPath}`,
-    name: 'ReviewCatLitter Editorial Team',
-    mainEntity: {
-      '@type': 'Organization',
-      name: siteName,
-      url: siteUrl,
-      publishingPrinciples: `${siteUrl}${methodologyPath}`,
-    },
-  };
+  const pageTitle = `${editorialTeamName} | ${siteName}`;
+  const pageDescription =
+    'Meet the ReviewCatLitter editorial team and the standards behind our cat litter reviews, comparisons, and testing process.';
+  const breadcrumbItems = [
+    { name: 'Home', url: siteUrl },
+    { name: 'Editorial Team', url: `${siteUrl}${reviewTeamPath}` },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
+      <WebPageSchemas
+        title={pageTitle}
+        description={pageDescription}
+        path={reviewTeamPath}
+        pageType="AboutPage"
+        dateModified={getLatestReviewedDate()}
+        breadcrumbs={breadcrumbItems}
+        mainEntity={{
+          '@type': 'Organization',
+          '@id': organizationId,
+          name: siteName,
+          url: siteUrl,
+          publishingPrinciples: `${siteUrl}${methodologyPath}`,
+        }}
+      />
       <Header />
       <main className="pt-24 pb-20">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-
         <div className="mx-auto max-w-4xl px-6 py-12">
           <div className="mb-10">
             <div className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-primary">

@@ -17,7 +17,7 @@ export function ValueEquation() {
                 <div className="text-center mb-16">
                     <FadeUp>
                         <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                            The <span className="text-gradient-gold italic">Value Equation</span>
+                            How to Use the <span className="text-gradient-gold italic">Review Catalog</span>
                         </h2>
                     </FadeUp>
                     <FadeUp delay={0.1}>
@@ -25,20 +25,20 @@ export function ValueEquation() {
                             We maintain <span className="font-bold">{reviewedProductCount} live reviews</span> and <span className="font-bold">{comparisonPageCount}+ comparison pages</span>.
                         </p>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                            You get the truth for free. That&apos;s the deal.
+                            The goal is simple: help you shortlist faster without pretending every home needs the same litter.
                         </p>
                     </FadeUp>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
-                    {/* Costs (Us) */}
+                    {/* What we publish */}
                     <FadeIn delay={0.2} className="bg-white rounded-3xl p-8 shadow-xl border border-border relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
                         <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                             <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                                We
+                                1
                             </span>
-                            What We Spent:
+                            What We Publish
                         </h3>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
@@ -51,40 +51,40 @@ export function ValueEquation() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">Real product-level notes</strong> on dust, clumping, odor, tracking, and value</span>
+                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">Product-level notes</strong> on dust, clumping, odor, tracking, and value</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">Zero</strong> sponsored reviews or affiliate pressure</span>
+                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">Methodology and editorial pages</strong> that explain how recommendations are maintained</span>
                             </li>
                         </ul>
                     </FadeIn>
 
-                    {/* Savings (You) */}
+                    {/* How readers use it */}
                     <FadeIn delay={0.4} className="bg-foreground text-white rounded-3xl p-8 shadow-xl border border-white/10 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-accent" />
                         <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                             <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-accent font-bold">
-                                You
+                                2
                             </span>
-                            What You Save:
+                            How Readers Use It
                         </h3>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent mt-1 shrink-0" />
-                                <span className="text-lg text-white/80"><strong className="text-white">$340+/year</strong> saved by choosing the right litter</span>
+                                <span className="text-lg text-white/80"><strong className="text-white">Use category pages</strong> when you know the problem first, like odor, dust, clumping, or natural materials.</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent mt-1 shrink-0" />
-                                <span className="text-lg text-white/80"><strong className="text-white">20+ hours</strong> of confused Amazon research</span>
+                                <span className="text-lg text-white/80"><strong className="text-white">Use review pages</strong> when you want the score, tradeoffs, and verdict on one specific product.</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent mt-1 shrink-0" />
-                                <span className="text-lg text-white/80">No more wasting money on <strong className="text-white">litters that don&apos;t work</strong></span>
+                                <span className="text-lg text-white/80"><strong className="text-white">Use comparison pages</strong> when two shortlists look close and you need to see the tradeoffs directly.</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent mt-1 shrink-0" />
-                                <span className="text-lg text-white/80">Instant access to <strong className="text-white">real data</strong>, not marketing hype</span>
+                                <span className="text-lg text-white/80"><strong className="text-white">Use the methodology and editorial standards</strong> when you want to audit how the site reaches its recommendations.</span>
                             </li>
                         </ul>
                     </FadeIn>

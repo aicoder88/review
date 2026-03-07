@@ -5,73 +5,94 @@ import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { CollectionPageSchemas } from "@/components/seo/PageSchemas";
+import { EditorialTrustBox } from "@/components/seo/EditorialTrustBox";
+import { getPublishedGuides } from "@/lib/guide-pages";
+import { formatSiteDate, siteUrl, toAbsoluteUrl } from "@/lib/site";
+
+const publishedGuides = getPublishedGuides();
+const latestGuideUpdate = [...publishedGuides]
+  .map((guide) => guide.dateModified)
+  .sort((left, right) => right.localeCompare(left))[0];
+const featuredGuideSlugs = ["extend-cat-litter-life", "purrify-budget-litter-hack"];
+const featuredGuides = featuredGuideSlugs
+  .map((slug) => publishedGuides.find((guide) => guide.slug === slug))
+  .filter((guide): guide is NonNullable<typeof guide> => Boolean(guide));
+const remainingGuides = publishedGuides.filter((guide) => !featuredGuideSlugs.includes(guide.slug));
+
+const nextStepLinks = [
+  {
+    title: "Best Odor Control Cat Litter",
+    description: "Start with the roundup most closely tied to ammonia and smell performance.",
+    href: "/categories/best-odor-control-cat-litter",
+  },
+  {
+    title: "Best Budget Cat Litter",
+    description: "Pair the money-saving guides with the strongest value-focused review picks.",
+    href: "/categories/best-budget-cat-litter",
+  },
+  {
+    title: "Best Low-Dust Cat Litter",
+    description: "Use the low-dust roundup if respiratory comfort and clean pours matter most.",
+    href: "/categories/best-low-dust-cat-litter",
+  },
+  {
+    title: "Compare Cat Litters",
+    description: "Move from education into side-by-side decisions with permanent comparison pages.",
+    href: "/compare",
+  },
+  {
+    title: "Browse All Reviews",
+    description: "See the underlying product pages that the guides reference throughout the site.",
+    href: "/reviews",
+  },
+  {
+    title: "Read the Methodology",
+    description: "Understand how the scores and tradeoffs are measured before choosing a winner.",
+    href: "/methodology",
+  },
+];
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: "Cat Litter Guides and Tips",
-    description: "Expert guides on cat litter care, odor control, money-saving hacks, and litter box maintenance.",
+    title: "Cat Litter Guides: Odor, Tracking, Savings, and Maintenance",
+    description: `Browse ${publishedGuides.length} cat litter guides on odor control, tracking, litter life, and savings strategies tied to live review data. Updated through ${formatSiteDate(latestGuideUpdate)}.`,
     path: "/guides",
-    keywords: ["cat litter guide", "how to use cat litter", "litter box tips", "cat litter maintenance", "save money on cat litter"],
+    keywords: [
+      "cat litter guide",
+      "cat litter odor control guide",
+      "how to stop litter tracking",
+      "how to make cat litter last longer",
+      "save money on cat litter",
+      "litter box maintenance guide",
+    ],
+    openGraphTitle: "Cat Litter Guides | Odor, Tracking, Savings, and Maintenance",
+    openGraphDescription: `Browse ${publishedGuides.length} practical guides built from the same review and comparison data used across the site.`,
+    twitterTitle: "Cat Litter Guides | Odor, Tracking, Savings, and Maintenance",
+    twitterDescription: `Browse ${publishedGuides.length} practical guides built from the same review and comparison data used across the site.`,
   }),
 };
 
-const guides = [
-    {
-        title: "How to Extend Cat Litter Life by 2x",
-        slug: "extend-cat-litter-life",
-        description: "Save $240/year with this simple probiotic hack that doubles your litter's lifespan.",
-        icon: Clock,
-        featured: true,
-        readTime: "8 min read"
-    },
-    {
-        title: "The $15 Budget Litter Hack",
-        slug: "purrify-budget-litter-hack",
-        description: "Turn any cheap litter into premium performance with one simple addition.",
-        icon: DollarSign,
-        featured: true,
-        readTime: "5 min read"
-    },
-    {
-        title: "How to Choose the Right Litter Box",
-        slug: null,
-        description: "Size, shape, covered vs uncovered - everything you need to know.",
-        icon: BookOpen,
-        featured: false,
-        readTime: "Coming soon"
-    },
-    {
-        title: "Why Your Cat Stopped Using the Litter Box",
-        slug: null,
-        description: "Common causes and solutions for litter box avoidance.",
-        icon: BookOpen,
-        featured: false,
-        readTime: "Coming soon"
-    },
-    {
-        title: "The Truth About Silica vs Clay",
-        slug: null,
-        description: "A deep dive into the pros and cons of each litter type.",
-        icon: BookOpen,
-        featured: false,
-        readTime: "Coming soon"
-    },
-    {
-        title: "How to Transition Cat Litter Brands",
-        slug: null,
-        description: "Step-by-step guide to switching litters without upsetting your cat.",
-        icon: BookOpen,
-        featured: false,
-        readTime: "Coming soon"
-    },
-];
-
 export default function GuidesPage() {
     return (
-        <div className="min-h-screen bg-background">
-            <Header />
-            <main className="pt-24 pb-20">
-                <div className="max-w-7xl mx-auto px-6 py-12">
+        <>
+            <CollectionPageSchemas
+                name="ReviewCatLitter guides hub"
+                path="/guides"
+                breadcrumbs={[
+                    { name: "Home", url: siteUrl },
+                    { name: "Guides", url: `${siteUrl}/guides` },
+                ]}
+                items={publishedGuides.map((guide) => ({
+                    name: guide.title,
+                    url: toAbsoluteUrl(guide.path),
+                }))}
+            />
+
+            <div className="min-h-screen bg-background">
+                <Header />
+                <main className="pt-24 pb-20">
+                    <div className="max-w-7xl mx-auto px-6 py-12">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                             Expert Guides
@@ -82,6 +103,12 @@ export default function GuidesPage() {
                         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                             Deep dives into everything from litter box behavior to money-saving hacks.
                         </p>
+                        <div className="mt-8 max-w-3xl mx-auto text-left">
+                            <EditorialTrustBox
+                                updatedOn={latestGuideUpdate}
+                                summary={`Every guide is maintained by the ReviewCatLitter editorial team and cross-links back to the live review catalog, comparison pages, and published methodology.`}
+                            />
+                        </div>
                     </div>
 
                     {/* Featured Guides */}
@@ -91,16 +118,20 @@ export default function GuidesPage() {
                             Most Popular Guides
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6">
-                            {guides.filter(g => g.featured).map((guide, i) => (
+                            {featuredGuides.map((guide) => (
                                 <Link 
-                                    key={i} 
-                                    href={guide.slug ? `/guides/${guide.slug}` : '#'}
+                                    key={guide.slug}
+                                    href={guide.path}
                                     prefetch={false}
                                     className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 p-8 rounded-3xl hover:shadow-xl transition-all group"
                                 >
                                     <div className="flex items-start gap-4">
                                         <div className="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                                            <guide.icon className="w-7 h-7 text-white" />
+                                            {guide.slug === "extend-cat-litter-life" ? (
+                                                <Clock className="w-7 h-7 text-white" />
+                                            ) : (
+                                                <DollarSign className="w-7 h-7 text-white" />
+                                            )}
                                         </div>
                                         <div className="flex-1">
                                             <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">{guide.readTime}</span>
@@ -118,17 +149,47 @@ export default function GuidesPage() {
 
                     {/* All Guides */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                        {guides.filter(g => !g.featured).map((guide, i) => (
-                            <div key={i} className="bg-card border border-border p-8 rounded-3xl hover:shadow-lg transition-all group cursor-pointer">
+                        {remainingGuides.map((guide) => (
+                            <Link
+                                key={guide.slug}
+                                href={guide.path}
+                                prefetch={false}
+                                className="bg-card border border-border p-8 rounded-3xl transition-all group hover:shadow-md"
+                            >
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <guide.icon className="w-6 h-6 text-primary" />
+                                    <BookOpen className="w-6 h-6 text-primary" />
                                 </div>
                                 <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{guide.readTime}</span>
                                 <h3 className="font-display text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{guide.title}</h3>
                                 <p className="text-muted-foreground mb-6">{guide.description}</p>
-                                <span className="text-sm font-bold text-primary">Read Guide &rarr;</span>
-                            </div>
+                                <span className="inline-flex items-center gap-2 text-sm font-bold text-primary">
+                                    Read guide <ArrowRight className="w-4 h-4" />
+                                </span>
+                            </Link>
                         ))}
+                    </div>
+
+                    <div className="mb-16">
+                        <h2 className="font-display text-2xl font-bold mb-6">Where To Go Next</h2>
+                        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                            {nextStepLinks.map((item) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    prefetch={false}
+                                    className="rounded-2xl border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-sm"
+                                >
+                                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                                        Next Step
+                                    </div>
+                                    <h3 className="font-display text-2xl font-bold mb-2">{item.title}</h3>
+                                    <p className="text-muted-foreground mb-4">{item.description}</p>
+                                    <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                                        Open page <ArrowRight className="w-4 h-4" />
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="bg-white border border-border rounded-3xl p-8 mb-16">
@@ -144,6 +205,9 @@ export default function GuidesPage() {
                             <li><a href="https://www.armandhammer.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Arm &amp; Hammer official site</a></li>
                             <li><a href="https://www.drelseys.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Dr. Elsey&apos;s official site</a></li>
                         </ul>
+                        <p className="mt-4 text-sm text-muted-foreground">
+                            Guide hub updated through {formatSiteDate(latestGuideUpdate)}.
+                        </p>
                     </div>
 
                     {/* Purrify CTA */}
@@ -160,9 +224,10 @@ export default function GuidesPage() {
                             Learn About Purrify
                         </PurrifyLink>
                     </div>
-                </div>
-            </main>
-            <Footer />
-        </div>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        </>
     );
 }

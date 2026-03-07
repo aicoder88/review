@@ -3,18 +3,62 @@ import { Footer } from '@/components/home/Footer';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { DollarSign, TrendingUp, CheckCircle, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { ArticlePageSchemas } from '@/components/seo/PageSchemas';
+import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
+import { buildGuideMetadata, getGuidePageDefinition } from '@/lib/guide-pages';
+import { formatSiteDate, siteUrl } from '@/lib/site';
 
-export const metadata = {
-  title: "The $15 Budget Litter Hack That Saves $240/Year | Purrify Guide",
-  description: "Turn cheap cat litter into premium performance with this proven budget hack. Save $20-30/month while getting better odor control.",
-};
+const guide = getGuidePageDefinition('purrify-budget-litter-hack');
+
+export const metadata: Metadata = buildGuideMetadata('purrify-budget-litter-hack');
+
+const faqData = [
+  {
+    question: 'Does this work with crystal or silica litter?',
+    answer:
+      'Yes. We tested Purrify with crystal and silica formulas and saw the biggest improvement in solid-waste odor control.',
+  },
+  {
+    question: 'What if I already use premium litter?',
+    answer:
+      'You can still cut your effective litter cost by extending the life of premium formulas from roughly four weeks to closer to eight weeks.',
+  },
+  {
+    question: 'How often do I need to add Purrify?',
+    answer:
+      'Weekly maintenance works best. Add one tablespoon after the main weekly scoop to keep the probiotic layer active.',
+  },
+];
 
 export default function PurrifyBudgetHackGuide() {
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
+  if (!guide) {
+    return null;
+  }
 
-      <main className="pt-24 pb-20">
+  return (
+    <>
+      <ArticlePageSchemas
+        headline={guide.title}
+        description={guide.description}
+        path={guide.path}
+        image={guide.image}
+        datePublished={guide.datePublished}
+        dateModified={guide.dateModified}
+        keywords={guide.keywords}
+        articleSection="Guides"
+        breadcrumbs={[
+          { name: 'Home', url: siteUrl },
+          { name: 'Guides', url: `${siteUrl}/guides` },
+          { name: 'Budget Litter Hack', url: `${siteUrl}${guide.path}` },
+        ]}
+        faqs={faqData}
+      />
+
+      <div className="min-h-screen bg-background">
+        <Header />
+
+        <main className="pt-24 pb-20">
         {/* Breadcrumb */}
         <div className="container mx-auto px-6 mb-8 text-sm text-muted-foreground">
           <Link href="/" prefetch={false} className="hover:text-primary">Home</Link>
@@ -38,11 +82,17 @@ export default function PurrifyBudgetHackGuide() {
               How to turn <strong>any cheap litter</strong> into premium performance and save <strong>$240/year</strong>
             </p>
             <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-              <span>📖 8 min read</span>
+              <span>{guide.readTime}</span>
               <span>•</span>
-              <span>💰 Tested by our team</span>
+              <span>Updated {formatSiteDate(guide.dateModified)}</span>
               <span>•</span>
               <span>✅ Works with all litters</span>
+            </div>
+            <div className="mt-8 text-left">
+              <EditorialTrustBox
+                updatedOn={guide.dateModified}
+                summary="This guide is maintained by the ReviewCatLitter editorial team and tied back to current odor-control testing, budget roundups, and the live Purrify review."
+              />
             </div>
           </div>
         </section>
@@ -319,9 +369,10 @@ export default function PurrifyBudgetHackGuide() {
             </article>
           </div>
         </section>
-      </main>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

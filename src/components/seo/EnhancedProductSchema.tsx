@@ -264,6 +264,7 @@ export interface ArticleSchemaProps {
   author: string;
   url: string;
   keywords?: string[];
+  articleSection?: string;
 }
 
 export function ArticleSchema({
@@ -275,6 +276,7 @@ export function ArticleSchema({
   author,
   url,
   keywords = [],
+  articleSection = 'Product Reviews',
 }: ArticleSchemaProps) {
   const images = Array.isArray(image) ? image : [image];
 
@@ -308,7 +310,7 @@ export function ArticleSchema({
       "@id": url
     },
     "keywords": keywords.join(", "),
-    "articleSection": "Product Reviews",
+    "articleSection": articleSection,
     "inLanguage": "en-US"
   };
 

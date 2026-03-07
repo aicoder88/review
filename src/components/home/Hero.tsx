@@ -48,17 +48,18 @@ export function Hero() {
           {/* Headline */}
           <FadeUp>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium mb-8 leading-[1.05] tracking-tight text-foreground">
-              We Review <span className="text-primary font-bold">Cat Litter</span> With Clear Scores, Real Tradeoffs, and <span className="text-gradient-gold italic pr-2">No Packaging Hype</span>. <br className="hidden md:block" /> Here&apos;s What Actually Works.
+              Best <span className="text-primary font-bold">Cat Litter Reviews</span>, Roundups, and Comparisons for Real-World Dust, Odor, Clumping, and Cleanup.
             </h1>
           </FadeUp>
 
-          {/* Subheadline (Hormozi Style) */}
           <FadeUp delay={0.2} className="max-w-3xl mx-auto mb-12">
             <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-4">
-              <span className="font-bold text-destructive">Most cat litters still fall short</span> on dust, odor, or cleanup.
+              <span className="font-bold text-destructive">Most cat litters still fall short</span> on low dust, odor control, or clean clumping.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Stop wasting money on litters that <span className="font-semibold text-foreground">clump like wet sand</span>, <span className="font-semibold text-foreground">track across your house</span>, or <span className="font-semibold text-foreground">smell like a zoo</span>. Browse {reviewedProductCount} current reviews and {comparisonPageCount}+ permanent side-by-side matchups instead of guessing from packaging claims.
+              Browse {reviewedProductCount} current review pages, category roundups for natural litter,
+              odor control, low dust, clumping, and budget shopping, plus {comparisonPageCount}+
+              side-by-side matchups when you are deciding between close alternatives.
             </p>
           </FadeUp>
 
@@ -97,6 +98,26 @@ export function Hero() {
             </form>
           </FadeUp>
 
+          <FadeUp delay={0.6} className="mt-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
+              {[
+                ['Start With Categories', '#intent-hub'],
+                ['Top Picks', '#featured'],
+                ['Latest Reviews', '#latest'],
+                ['Methodology', '#methodology'],
+                ['Find by Need', '#categories'],
+              ].map(([label, href]) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="rounded-full border border-border bg-white/80 px-4 py-2 font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </FadeUp>
+
         </StaggerChildren>
       </div>
 
@@ -131,7 +152,7 @@ export function Hero() {
         <FadeIn delay={1.0}>
           <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg border border-accent/10">
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-xs font-bold text-accent">Lab Tested</span>
+            <span className="text-xs font-bold text-accent">Review Library</span>
           </div>
         </FadeIn>
       </div>

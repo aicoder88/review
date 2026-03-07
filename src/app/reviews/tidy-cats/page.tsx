@@ -9,8 +9,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/tidy-cats`;
 
 export const metadata: Metadata = {
-    title: "Purina Tidy Cats Review 2025 | Instant Action vs 24/7 Performance",
-    description: "We tested Tidy Cats for 60 days. Instant Action vs 24/7 Performance—what's the difference? See our clumping, dust, and odor control comparison.",
+    title: "Tidy Cats Review: Tested Scented Clay Performance, Dust, and Value",
+    description: "Our Tidy Cats review covers clumping, dust, odor control, tracking, and value after hands-on testing. See the data, formula tradeoffs, and best alternatives.",
     keywords: [
         "Tidy Cats review",
         "Tidy Cats Instant Action",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/tidy-cats",
     },
     openGraph: {
-        title: "Tidy Cats Review: Budget Litter Giant Tested",
-        description: "60-day test of Tidy Cats Instant Action and 24/7 Performance. Which formula wins? Performance data vs Arm & Hammer and Fresh Step.",
+        title: "Tidy Cats Review: Tested Scented Clay Performance, Dust, and Value",
+        description: "See our hands-on Tidy Cats test data for clumping, dust, odor control, and how the main formulas compare with other scented clay litters.",
         url: productUrl,
         type: "article",
         publishedTime: "2024-01-15",
-        modifiedTime: "2024-12-01",
+        modifiedTime: "2025-10-28",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["Tidy Cats", "Purina", "budget", "Instant Action", "24/7"],

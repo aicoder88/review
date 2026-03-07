@@ -1,3 +1,5 @@
+import { organizationId, websiteId } from '@/lib/site';
+
 interface ItemListSchemaItem {
   name: string;
   url: string;
@@ -15,8 +17,16 @@ export function ItemListSchema({ name, url, items }: ItemListSchemaProps) {
     '@type': 'CollectionPage',
     name,
     url,
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@id': websiteId,
+    },
+    publisher: {
+      '@id': organizationId,
+    },
     mainEntity: {
       '@type': 'ItemList',
+      numberOfItems: items.length,
       itemListElement: items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,

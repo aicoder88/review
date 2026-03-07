@@ -103,12 +103,16 @@ export function Header() {
               </button>
             )}
 
-            <button className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${scrolled
-              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-              : 'bg-primary text-primary-foreground hover:bg-primary/90'
-              }`}>
+            <Link
+              href="/#newsletter"
+              prefetch={false}
+              className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${scrolled
+                ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                }`}
+            >
               Subscribe
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -154,9 +158,14 @@ export function Header() {
               </Link>
             ))}
             <hr className="border-border" />
-            <button className="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold shadow-lg">
+            <Link
+              href="/#newsletter"
+              prefetch={false}
+              className="w-full bg-primary text-primary-foreground py-3 rounded-xl font-semibold shadow-lg text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Subscribe
-            </button>
+            </Link>
           </nav>
         </div>
       )}

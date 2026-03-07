@@ -12,12 +12,15 @@ import { FadeUp } from '@/components/ui/motion';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { ReviewTrustPanel } from '@/components/seo/ReviewTrustPanel';
+import { RelatedArticles } from '@/components/content/RelatedArticles';
+import { getRelatedResourceCardsForProduct } from '@/lib/internal-links';
 import {
     formatCatalogDate,
     getCatalogProductByName,
     getComparisonMatchupHref,
     getComparisonMatchupsForProduct,
 } from '@/lib/product-catalog';
+import { methodologyPath } from '@/lib/site';
 
 export interface ReviewData {
     name: string;
@@ -61,6 +64,38 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
     const headToHeadMatchups = currentCatalogProduct
         ? getComparisonMatchupsForProduct(currentCatalogProduct.id, 3)
         : [];
+    const relatedResources = currentCatalogProduct
+        ? getRelatedResourceCardsForProduct(currentCatalogProduct.id)
+        : [];
+    const featuredResources = relatedResources.slice(0, 4);
+    const quickNavItems = [
+        { label: 'At a glance', href: '#at-a-glance' },
+        { label: 'Pros and cons', href: '#pros-and-cons' },
+        { label: 'Full review', href: '#full-review' },
+        { label: 'Compare options', href: '#compare-options' },
+        { label: 'Research links', href: '#research-links' },
+    ];
+    const verdictLabel =
+        data.overallScore >= 9
+            ? {
+                text: `${data.name} is one of our recommended picks`,
+                className: 'bg-green-50 text-green-700',
+                iconClassName: 'bg-green-100',
+                icon: '✓',
+            }
+            : data.overallScore >= 8
+                ? {
+                    text: `${data.name} is worth considering for the right home`,
+                    className: 'bg-amber-50 text-amber-700',
+                    iconClassName: 'bg-amber-100',
+                    icon: '•',
+                }
+                : {
+                    text: `${data.name} has too many tradeoffs to recommend broadly`,
+                    className: 'bg-red-50 text-red-700',
+                    iconClassName: 'bg-red-100',
+                    icon: '!',
+                };
 
     return (
         <div className="min-h-screen bg-background">
@@ -145,6 +180,71 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                     </div>
                 </section>
 
+                <section className="container mx-auto px-6 mb-12">
+                    <div className="grid gap-6 xl:grid-cols-[1.4fr,1fr]">
+                        <div className="rounded-3xl border border-border bg-white p-6 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                                Jump Through This Review
+                            </div>
+                            <div className="flex flex-wrap gap-3">
+                                {quickNavItems.map((item) => (
+                                    <a
+                                        key={item.href}
+                                        href={item.href}
+                                        className="rounded-full border border-border bg-secondary/20 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                                    >
+                                        {item.label}
+                                    </a>
+                                ))}
+                                <Link
+                                    href={methodologyPath}
+                                    prefetch={false}
+                                    className="rounded-full border border-border bg-secondary/20 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                                >
+                                    Methodology
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className="rounded-3xl border border-border bg-secondary/20 p-6 shadow-sm">
+                            <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                                Best Next Steps
+                            </div>
+                            <div className="space-y-3">
+                                {featuredResources.map((resource) => (
+                                    <Link
+                                        key={resource.url}
+                                        href={resource.url}
+                                        prefetch={false}
+                                        className="block rounded-2xl border border-border bg-white p-4 transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                                    >
+                                        <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">
+                                            {resource.type}
+                                        </div>
+                                        <div className="font-display text-xl font-bold mb-1">{resource.title}</div>
+                                        <p className="text-sm text-muted-foreground">{resource.description}</p>
+                                    </Link>
+                                ))}
+                                {featuredResources.length === 0 && (
+                                    <Link
+                                        href={methodologyPath}
+                                        prefetch={false}
+                                        className="block rounded-2xl border border-border bg-white p-4 transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                                    >
+                                        <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">
+                                            Methodology
+                                        </div>
+                                        <div className="font-display text-xl font-bold mb-1">How We Score Reviews</div>
+                                        <p className="text-sm text-muted-foreground">
+                                            See how dust, clumping, odor, tracking, and value are measured across the review catalog.
+                                        </p>
+                                    </Link>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Main Content Grid */}
                 <section className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-12 gap-12">
@@ -153,14 +253,15 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                         <div className="lg:col-span-8">
 
                             {/* Specs Table - At a Glance */}
-                            <FadeUp delay={0.3} className="mb-12">
+                            <FadeUp delay={0.3} className="mb-12" id="at-a-glance">
                                 <h2 className="font-display text-3xl font-bold mb-6">At A Glance</h2>
                                 <div className="bg-white border border-border rounded-2xl shadow-sm overflow-hidden">
                                     <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                                         <div className="p-6 space-y-4">
                                             <div className="flex justify-between items-center">
-                                                <div className="bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
-                                                    <span className="bg-red-100 p-1 rounded-full">🚫</span> {data.name} doesn&apos;t meet our standards
+                                                <div className={`${verdictLabel.className} px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2`}>
+                                                    <span className={`${verdictLabel.iconClassName} p-1 rounded-full`}>{verdictLabel.icon}</span>
+                                                    {verdictLabel.text}
                                                 </div>
                                             </div>
                                             <div className="flex justify-between items-center">
@@ -187,7 +288,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                             </FadeUp>
 
                             {/* Pros & Cons */}
-                            <FadeUp delay={0.4} className="mb-16">
+                            <FadeUp delay={0.4} className="mb-16" id="pros-and-cons">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="bg-green-50 border border-green-100 rounded-2xl p-6">
                                         <h3 className="font-bold text-xl text-green-800 mb-4 flex items-center gap-2">
@@ -219,11 +320,14 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                             </FadeUp>
 
                             {/* Long Form Content */}
-                            <div className="prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:text-muted-foreground prose-img:rounded-3xl prose-a:text-primary max-w-none">
+                            <div
+                                id="full-review"
+                                className="prose prose-lg prose-headings:font-display prose-headings:font-bold prose-p:text-muted-foreground prose-img:rounded-3xl prose-a:text-primary max-w-none"
+                            >
                                 {children}
                             </div>
 
-                            <div className="mt-10 bg-secondary/20 border border-border rounded-2xl p-6">
+                            <div id="research-links" className="mt-10 bg-secondary/20 border border-border rounded-2xl p-6">
                                 <h3 className="font-display text-2xl font-bold mb-3">External Resources</h3>
                                 <p className="text-muted-foreground mb-4">
                                     Official brand pages and third-party references used to cross-check claims:
@@ -244,7 +348,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                             <OdorEliminationBonus productName={data.name} />
 
                             {headToHeadMatchups.length > 0 && (
-                                <section className="mt-10">
+                                <section id="compare-options" className="mt-10">
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                                             <ArrowLeftRight className="w-5 h-5" />
@@ -290,6 +394,13 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                 </section>
                             )}
 
+                            {relatedResources.length > 0 && (
+                                <RelatedArticles
+                                    articles={relatedResources}
+                                    title="Continue Your Research"
+                                />
+                            )}
+
                         </div>
 
                         {/* Sidebar */}
@@ -311,6 +422,25 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                     <p className="text-center text-xs text-muted-foreground mt-3">
                                         We may earn a commission from links.
                                     </p>
+                                </div>
+                                <div className="mt-6 pt-6 border-t border-border space-y-3">
+                                    <Link
+                                        href={methodologyPath}
+                                        prefetch={false}
+                                        className="block rounded-xl bg-secondary/20 px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                                    >
+                                        See how this review was scored
+                                    </Link>
+                                    {featuredResources.slice(0, 2).map((resource) => (
+                                        <Link
+                                            key={resource.url}
+                                            href={resource.url}
+                                            prefetch={false}
+                                            className="block rounded-xl bg-secondary/20 px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                                        >
+                                            {resource.title}
+                                        </Link>
+                                    ))}
                                 </div>
                             </div>
                         </aside>

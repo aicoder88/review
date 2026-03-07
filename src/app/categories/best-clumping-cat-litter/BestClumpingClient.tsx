@@ -1,7 +1,7 @@
 'use client';
 
+import Link from 'next/link';
 import { CategoryPage } from '@/components/categories/CategoryPage';
-import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { getCategoryPageConfig, getCategoryPageStats } from '@/lib/category-pages';
 
 const categoryConfig = getCategoryPageConfig('best-clumping-cat-litter');
@@ -35,7 +35,7 @@ export function BestClumpingClient() {
             quickTake: "The best value clumping litter. Clumps well and seals odor instantly, but has a strong perfume scent some cats hate.",
             pros: ["Excellent odor sealing", "Great value", "Zero dust coating"],
             cons: ["Strong perfume scent", "Tracks easily"],
-            reviewUrl: "/reviews",
+            reviewUrl: "/reviews/arm-hammer-clump-seal",
             priceCheckUrl: "https://amazon.com",
             tags: ["clay", "scented", "budget", "odor-control"]
         },
@@ -50,7 +50,7 @@ export function BestClumpingClient() {
             quickTake: "The best natural clumping litter. It's flushable, lightweight, and eco-friendly. Clumps are softer than clay but good enough.",
             pros: ["Flushable & Septic Safe", "Lightweight", "Sustainable corn"],
             cons: ["Expensive", "Musky corn smell"],
-            reviewUrl: "/reviews",
+            reviewUrl: "/reviews/worlds-best",
             priceCheckUrl: "https://amazon.com",
             tags: ["natural", "flushable", "lightweight", "premium"]
         }
@@ -83,21 +83,21 @@ export function BestClumpingClient() {
             odor: 8,
             tracking: 9,
             attributes: { natural: true, flushable: true, scented: false },
-            reviewUrl: "/reviews"
+            reviewUrl: "/reviews/worlds-best"
         },
         {
-            id: "arm-hammer",
+            id: "arm-hammer-clump-seal",
             name: "Arm & Hammer",
             image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
             score: 8.7,
             price: "$16.99",
             type: "Clay",
-            dust: 9,
+            dust: 6,
             clumping: 8,
             odor: 9,
             tracking: 6,
             attributes: { natural: false, flushable: false, scented: true },
-            reviewUrl: "/reviews"
+            reviewUrl: "/reviews/arm-hammer-clump-seal"
         }
     ];
 
@@ -110,15 +110,15 @@ export function BestClumpingClient() {
     const faq = [
         {
             question: "What is the best clumping cat litter?",
-            answer: "Dr. Elsey's Ultra scored 9.4/10 in our testing. It's genuinely dust-free (0.03mg particulates), forms rock-solid clumps, and lasts 30% longer than competitors. Worth the 30% price premium if dust bothers you."
+            answer: "Dr. Elsey's Ultra leads this roundup because it combines hard, clean clumps with unusually low dust. It is not the cheapest option, but it is the most complete clumping package in the current review set."
         },
         {
             question: "Is expensive clumping litter worth it?",
-            answer: "Depends on what you're paying for. Dr. Elsey's costs $0.51/day vs $0.43/day for basic Tidy Cats. That extra $2.40/month gets you zero dust and better clumps. Worth it if dust matters. Not worth it if you're just paying for marketing."
+            answer: "Sometimes. Paying more makes sense when the better litter leaves less waste behind, keeps the box cleaner, or cuts down on mess enough to change the daily experience. It is less important if you only care about the lowest bag price."
         },
         {
             question: "How often should you change clumping litter?",
-            answer: "With daily scooping: completely change every 3-4 weeks. Without daily scooping: every 1-2 weeks. We tested longevity and good clumping litter (like Dr. Elsey's) lasts 30% longer than basic options."
+            answer: "The schedule depends on the formula, the number of cats, and how consistent scooping is. Stronger clumping litters usually buy you more usable time because they leave less dirty residue behind after each scoop."
         }
     ];
 
@@ -130,6 +130,7 @@ export function BestClumpingClient() {
             stats={{
                 tested: categoryStats?.tested ?? 0,
                 reviewedThrough: categoryStats?.reviewedThrough ?? '',
+                reviewedThroughDate: categoryStats?.reviewedThroughDate ?? '',
                 priceRange: categoryStats?.priceRange ?? '$0 - $0',
             }}
             products={products}
@@ -139,44 +140,46 @@ export function BestClumpingClient() {
         >
             <h2>What Makes a Good Clumping Cat Litter?</h2>
             <p>
-                Good clumping litter needs to do 3 things: form solid clumps that don&apos;t break, control odor, and minimize dust. Most products fail at least one of these.
+                Good clumping litter has one job first: remove waste cleanly. If the clump breaks apart on the way out,
+                the box gets dirty faster, odor builds earlier, and you end up throwing away more fresh litter.
             </p>
             <p>
-                Here&apos;s what separated the strongest clumping performers from the rest of the current review set:
+                The strongest options in this roundup also keep the rest of the maintenance routine manageable, which
+                is why dust, tracking, and odor still matter on a clumping page.
             </p>
 
             <h3>Clump Strength</h3>
             <p>
-                The clump needs to hold together when you scoop it. We drop-tested clumps from 12 inches. Winners stayed intact. Losers crumbled, leaving behind dirty litter that stink up the box later.
+                Tight clumps save time and preserve cleaner litter in the box. That is the biggest reason clay still
+                dominates this category, even though some natural formulas now come close enough for shoppers who want
+                a lighter or more flush-friendly setup.
             </p>
 
             <h3>Dust Levels</h3>
             <p>
-                We measured particulates with an air quality monitor. Winners had &lt;0.05mg per pour. Losers created visible clouds and measured 10x higher. Dust isn&apos;t just messy; it&apos;s bad for your (and your cat&apos;s) lungs.
+                A litter can clump hard and still be frustrating if every refill creates a visible cloud. That is why
+                the top performer here also overlaps with our
+                <Link href="/categories/best-low-dust-cat-litter" prefetch={false}> low-dust roundup</Link>.
             </p>
 
             <h3>Odor Control</h3>
             <p>
-                We used ammonia meters in sealed containers. Winners neutralized 85%+ of ammonia. Losers just masked it with heavy perfume that smells worse when mixed with waste.
+                Clumping and odor control work together. Better scooping removes more waste, which usually matters more
+                than simply adding more fragrance to the box.
             </p>
-
-            <div className="bg-purple-50 border-l-4 border-purple-500 p-6 my-6 rounded-r-xl">
-                <h4 className="font-bold text-purple-900 mb-2">💡 Pro Tip: How to Make Clumping Litter Last 2x Longer</h4>
-                <p className="text-purple-800 mb-4">
-                    Clumping litter is great, but eventually, the small un-scooped bits start to smell.
-                </p>
-                <p className="text-purple-800">
-                    <strong>The Hack:</strong> Mix in a probiotic deodorizer like <PurrifyLink variant="inline">Purrify</PurrifyLink>. The probiotics eat the bacteria that cause smell <em>before</em> they multiply. This lets you use the same box of litter for 6-8 weeks instead of 3-4, saving you ~$20/month.
-                </p>
-            </div>
 
             <h2>Clay vs. Natural Clumping Litter</h2>
             <p>
-                <strong>Clay (Bentonite):</strong> Clumps harder and faster. Cheaper. But heavy and dusty (unless premium). <br />
-                <strong>Natural (Corn/Wheat/Grass):</strong> Lighter, flushable, eco-friendly. Clumps are softer (can break). More expensive.
+                <strong>Clay:</strong> Usually clumps harder and faster, which keeps scooping simple. <br />
+                <strong>Natural:</strong> Often feels lighter and may be easier to dispose of, but the clumps can be softer
+                and the overall price can be higher.
             </p>
             <p>
-                If you want the absolute best performance (hardest clumps, least smell), go with premium Clay like Dr. Elsey&apos;s. If you value the planet or hate taking out trash, go with Natural like World&apos;s Best.
+                If you want the absolute best scoop performance, start with
+                <Link href="/reviews/dr-elseys-ultra" prefetch={false}> Dr. Elsey&apos;s Ultra</Link>. If you want a
+                natural option that still feels competitive in daily use, compare it against
+                <Link href="/reviews/worlds-best" prefetch={false}> World&apos;s Best</Link> and then use
+                <Link href="/compare" prefetch={false}> the comparison tool</Link> to narrow the tradeoffs.
             </p>
 
         </CategoryPage>

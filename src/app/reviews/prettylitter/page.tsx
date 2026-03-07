@@ -10,8 +10,8 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/prettylitter`;
 
 export const metadata: Metadata = {
-    title: "PrettyLitter Review | Health Monitoring Cat Litter Test",
-    description: "We tested PrettyLitter for 60 days. Health monitoring works, but poop odor is weak. See our pH test validation and probiotic solution for multi-cat homes.",
+    title: "PrettyLitter Review: Tested Health Monitoring, Odor, and Value",
+    description: "Our PrettyLitter review covers health monitoring accuracy, odor control, tracking, and value after hands-on testing. See where it works and where it falls short.",
     keywords: [
         "PrettyLitter review",
         "health monitoring cat litter",
@@ -25,12 +25,12 @@ export const metadata: Metadata = {
         canonical: "/reviews/prettylitter",
     },
     openGraph: {
-        title: "PrettyLitter Review: Health Tech That Works (With Odor Caveats)",
-        description: "60-day test validated health monitoring pH detection. Works for UTIs and dehydration. But poop odor control is weak—see our probiotic solution.",
+        title: "PrettyLitter Review: Tested Health Monitoring, Odor, and Value",
+        description: "See our hands-on PrettyLitter test data for health monitoring, odor control, tracking, and whether the subscription is worth it.",
         url: productUrl,
         type: "article",
         publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-01",
+        modifiedTime: "2025-12-04",
         authors: ["ReviewCatLitter.com"],
         section: "Product Reviews",
         tags: ["PrettyLitter", "health monitoring", "crystal litter", "silica gel"],
