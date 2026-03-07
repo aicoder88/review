@@ -92,7 +92,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Purrify Probiotic Deodorizer',
     brand: 'Purrify',
     category: 'Litter Enhancement',
-    image: 'https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 9.6,
     price: '$18.99',
     weight: '16 oz',
@@ -132,7 +132,7 @@ export const productCatalog: ComparisonProductRecord[] = [
       worthIf: 'You want better odor control without buying a more expensive litter.',
       skipIf: 'You only want standalone litters and never use litter additives.',
     },
-    lastReviewedAt: '2025-12-18',
+    lastReviewedAt: '2026-03-07',
     latestTrending: true,
     featuredOnReviewsPage: true,
   },
@@ -142,7 +142,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: "Dr. Elsey's Cat Attract",
     brand: "Dr. Elsey's",
     category: 'Clumping Clay / Behavioral',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 9.5,
     price: '$26.99',
     weight: '40 lbs',
@@ -180,7 +180,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     verdict: {
       bestFor: 'Cats avoiding the litter box',
     },
-    lastReviewedAt: '2025-12-16',
+    lastReviewedAt: '2026-03-05',
     latestTrending: true,
   },
   {
@@ -189,7 +189,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: "Dr. Elsey's Ultra",
     brand: "Dr. Elsey's",
     category: 'Clumping Clay',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 9.4,
     price: '$24.99',
     weight: '40 lbs',
@@ -229,7 +229,7 @@ export const productCatalog: ComparisonProductRecord[] = [
       worthIf: 'You want the cleanest clay experience with hard clumps and low dust.',
       skipIf: 'You need flushable or lightweight litter.',
     },
-    lastReviewedAt: '2025-12-14',
+    lastReviewedAt: '2026-03-07',
     latestTrending: true,
     featuredCard: {
       badge: "Editor's Choice",
@@ -247,7 +247,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Sustainably Yours',
     brand: 'Sustainably Yours',
     category: 'Natural (Corn + Cassava)',
-    image: 'https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80',
+    image: '/images/featured-worlds-best.png',
     overallScore: 9.3,
     price: '$29.99',
     weight: '26 lbs',
@@ -285,7 +285,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     verdict: {
       bestFor: 'Best-performing natural litter shoppers',
     },
-    lastReviewedAt: '2025-12-12',
+    lastReviewedAt: '2026-03-06',
   },
   {
     id: 'boxiecat-premium',
@@ -293,7 +293,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Boxiecat Premium',
     brand: 'Boxiecat',
     category: 'Clumping Clay',
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80',
+    image: '/images/latest-boxiecat.png',
     overallScore: 9.2,
     price: '$27.99',
     weight: '40 lbs',
@@ -333,7 +333,7 @@ export const productCatalog: ComparisonProductRecord[] = [
       worthIf: 'You want premium convenience and cleaner scooping in a multi-cat box.',
       skipIf: 'You are strictly optimizing for low upfront cost.',
     },
-    lastReviewedAt: '2025-12-08',
+    lastReviewedAt: '2026-03-01',
     featuredCard: {
       badge: 'Best Value',
       icon: 'star',
@@ -350,7 +350,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: "World's Best Cat Litter",
     brand: "World's Best",
     category: 'Natural Corn',
-    image: 'https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80',
+    image: '/images/featured-worlds-best.png',
     overallScore: 9.1,
     price: '$29.99',
     weight: '28 lbs',
@@ -389,7 +389,7 @@ export const productCatalog: ComparisonProductRecord[] = [
       worthIf: 'You want eco-friendly and flushable litter with very good daily usability.',
       skipIf: "You're on a tight budget or want the absolute lowest dust numbers.",
     },
-    lastReviewedAt: '2025-12-06',
+    lastReviewedAt: '2026-03-06',
     featuredCard: {
       badge: 'Best Natural',
       icon: 'sparkles',
@@ -406,7 +406,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Naturally Fresh Walnut',
     brand: 'Naturally Fresh',
     category: 'Walnut Shell (Natural)',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 8.8,
     price: '$24.99',
     weight: '26 lbs',
@@ -452,7 +452,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Catalyst Soft Wood',
     brand: 'Catalyst',
     category: 'Pine (Soft Granules)',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 8.7,
     price: '$27.99',
     weight: '18 lbs',
@@ -498,7 +498,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'PrettyLitter',
     brand: 'PrettyLitter',
     category: 'Silica Crystal',
-    image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&q=80',
+    image: '/images/featured-prettylitter.png',
     overallScore: 8.8,
     price: '$24.00',
     weight: '8 lbs',
@@ -538,7 +538,7 @@ export const productCatalog: ComparisonProductRecord[] = [
       worthIf: 'You care more about health signals and easy lifting than classic clumping performance.',
       skipIf: 'You want traditional scoopable clumps or the best value per pound.',
     },
-    lastReviewedAt: '2025-12-04',
+    lastReviewedAt: '2026-03-04',
     featuredCard: {
       badge: 'Best Tech',
       icon: 'award',
@@ -555,7 +555,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Arm & Hammer Clump & Seal',
     brand: 'Arm & Hammer',
     category: 'Scented Clay',
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80',
+    image: '/images/latest-arm-hammer.png',
     overallScore: 8.7,
     price: '$16.99',
     weight: '38 lbs',
@@ -593,7 +593,8 @@ export const productCatalog: ComparisonProductRecord[] = [
     verdict: {
       bestFor: 'Budget shoppers prioritizing odor control',
     },
-    lastReviewedAt: '2025-12-02',
+    lastReviewedAt: '2026-03-07',
+    latestTrending: true,
   },
   {
     id: 'hardball',
@@ -601,7 +602,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Arm & Hammer HardBall',
     brand: 'Arm & Hammer',
     category: 'Clumping Clay',
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80',
+    image: '/images/latest-arm-hammer.png',
     overallScore: 8.5,
     price: '$19.99',
     weight: '38 lbs',
@@ -646,7 +647,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Arm & Hammer Super Scoop',
     brand: 'Arm & Hammer',
     category: 'Clumping Clay (Budget)',
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80',
+    image: '/images/latest-arm-hammer.png',
     overallScore: 8.4,
     price: '$13.99',
     weight: '40 lbs',
@@ -692,7 +693,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Feline Pine',
     brand: 'Feline Pine',
     category: 'Pine Pellet',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 8,
     price: '$19.99',
     weight: '40 lbs',
@@ -738,7 +739,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Fresh Step Scented',
     brand: 'Fresh Step',
     category: 'Scented Clay',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/latest-fresh-step.png',
     overallScore: 8.1,
     price: '$18.99',
     weight: '42 lbs',
@@ -775,7 +776,8 @@ export const productCatalog: ComparisonProductRecord[] = [
     verdict: {
       bestFor: 'Convenient store-bought clay',
     },
-    lastReviewedAt: '2025-11-14',
+    lastReviewedAt: '2026-03-03',
+    latestTrending: true,
   },
   {
     id: 'frisco',
@@ -783,7 +785,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Frisco by Chewy',
     brand: 'Frisco',
     category: 'Clumping Clay (Budget)',
-    image: 'https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 8,
     price: '$13.00',
     weight: '40 lbs',
@@ -829,7 +831,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Purina Tidy Cats',
     brand: 'Purina',
     category: 'Clumping Clay (Budget)',
-    image: 'https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80',
+    image: '/images/latest-tidy-cats.png',
     overallScore: 7.9,
     price: '$15.49',
     weight: '35 lbs',
@@ -866,7 +868,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     verdict: {
       bestFor: 'Easy grocery-store replenishment',
     },
-    lastReviewedAt: '2025-10-12',
+    lastReviewedAt: '2026-02-28',
   },
   {
     id: 'tuft-paw',
@@ -874,7 +876,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Tuft + Paw',
     brand: 'Tuft + Paw',
     category: 'Soy/Tofu (Designer)',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+    image: '/images/featured-dr-elseys.png',
     overallScore: 8.3,
     price: '$29.00',
     weight: '9 lbs',
@@ -920,7 +922,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Ökocat Paper Pellet',
     brand: 'Ökocat',
     category: 'Paper Pellet',
-    image: 'https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80',
+    image: '/images/latest-okocat.png',
     overallScore: 8.2,
     price: '$19.99',
     weight: '20 lbs',
@@ -1092,24 +1094,24 @@ export function buildComparisonInsight(
   const alternatives = [
     cheapest.id !== winner.id
       ? {
-          product: cheapest,
-          label: 'Best Budget Alternative',
-          reason: `${cheapest.name} has the lowest daily cost at ${cheapest.costPerDay}.`,
-        }
+        product: cheapest,
+        label: 'Best Budget Alternative',
+        reason: `${cheapest.name} has the lowest daily cost at ${cheapest.costPerDay}.`,
+      }
       : null,
     bestDust.id !== winner.id
       ? {
-          product: bestDust,
-          label: 'Best Low-Dust Alternative',
-          reason: `${bestDust.name} leads on dust control with ${bestDust.scores.dustMeasurement}.`,
-        }
+        product: bestDust,
+        label: 'Best Low-Dust Alternative',
+        reason: `${bestDust.name} leads on dust control with ${bestDust.scores.dustMeasurement}.`,
+      }
       : null,
     bestNatural && bestNatural.id !== winner.id
       ? {
-          product: bestNatural,
-          label: 'Best Natural Alternative',
-          reason: `${bestNatural.name} is the standout if flushable or biodegradable matters most.`,
-        }
+        product: bestNatural,
+        label: 'Best Natural Alternative',
+        reason: `${bestNatural.name} is the standout if flushable or biodegradable matters most.`,
+      }
       : null,
   ].filter((alternative): alternative is NonNullable<typeof alternative> => Boolean(alternative));
 

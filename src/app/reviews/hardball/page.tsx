@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/hardball`;
 
 export const metadata: Metadata = {
-    title: "Arm & Hammer HardBall Review | Hard Clump Clay Litter Test",
+    title: "Arm & Hammer HardBall Review 2025 | Hard Clump Clay Litter Test",
     description: "We tested Arm & Hammer HardBall for 60 days. Fast-forming hard clumps with 10% baking soda. See our clump strength test data vs premium alternatives.",
     keywords: [
         "Arm and Hammer HardBall review",
@@ -168,7 +168,7 @@ const faqData = [
 export default function HardBallReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
+            <EnhancedProductSchema {...productSchemaData} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

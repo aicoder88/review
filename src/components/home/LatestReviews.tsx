@@ -63,11 +63,11 @@ export function LatestReviews() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
 
                 {/* Score Badge */}
-                  <div className={`absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300`}>
-                    <div className="font-mono text-lg font-bold text-white">
+                <div className={`absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300`}>
+                  <div className="font-mono text-lg font-bold text-white">
                     {review.overallScore}
-                    </div>
                   </div>
+                </div>
 
                 {/* Trending Badge */}
                 {review.latestTrending && (

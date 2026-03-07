@@ -49,7 +49,7 @@ export function Methodology() {
           <div className="relative">
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80"
+                src="/images/methodology-lab.png"
                 alt="Scientist testing cat litter"
                 className="w-full h-full object-cover"
               />
@@ -73,7 +73,7 @@ export function Methodology() {
             {/* Decorative Elements */}
             <div className="absolute -bottom-8 -right-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-foreground z-20 hidden md:block">
               <img
-                src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?w=400&q=80"
+                src="/images/methodology-microscope.png"
                 alt="Microscope analysis"
                 className="w-full h-full object-cover"
               />

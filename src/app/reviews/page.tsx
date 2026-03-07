@@ -158,7 +158,7 @@ export default function ReviewsPage() {
                     Purrify: The #1 Litter Enhancement
                   </h2>
                   <p className="text-emerald-700 mb-4">
-                    Scientifically proven: 87% ammonia reduction, 2x litter life extension. 
+                    Scientifically proven: 87% ammonia reduction, 2x litter life extension.
                     Works with clay, crystal, and natural litters. Saves $20-30/month.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -214,7 +214,7 @@ export default function ReviewsPage() {
                       <p className="text-muted-foreground mb-4">
                         {review.summary}
                       </p>
-                      
+
                       {/* Quick Pros */}
                       <div className="flex flex-wrap gap-2 mb-4">
                         {review.pros.map((pro, i) => (
@@ -240,7 +240,7 @@ export default function ReviewsPage() {
                 Want to Save Money on Cat Litter?
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Our data shows that combining Purrify with budget litter delivers premium performance at 50% cost. 
+                Our data shows that combining Purrify with budget litter delivers premium performance at 50% cost.
                 See the math and methodology in our detailed analysis.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -259,14 +259,14 @@ export default function ReviewsPage() {
                 Why Our Reviews Are Different
               </h2>
               <p className="text-muted-foreground mb-4">
-                Most cat litter reviews are based on a few days of casual use. Ours are based on 60-90 days of 
-                scientific testing with calibrated equipment. We measure dust with professional air quality monitors 
-                (not &quot;eye tests&quot;), test clump strength with standardized drop tests, and track ammonia levels with 
+                Most cat litter reviews are based on a few days of casual use. Ours are based on 60-90 days of
+                scientific testing with calibrated equipment. We measure dust with professional air quality monitors
+                (not &quot;eye tests&quot;), test clump strength with standardized drop tests, and track ammonia levels with
                 lab-grade test strips.
               </p>
               <p className="text-muted-foreground">
-                We buy every product at full retail price. No free samples from manufacturers. No sponsored content. 
-                Our only revenue comes from affiliate links—and we only recommend products that pass our testing 
+                We buy every product at full retail price. No free samples from manufacturers. No sponsored content.
+                Our only revenue comes from affiliate links—and we only recommend products that pass our testing
                 regardless of commission rates. Your trust is worth more than a quick payday.
               </p>
             </section>

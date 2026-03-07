@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/fresh-step`;
 
 export const metadata: Metadata = {
-    title: "Fresh Step Scented Review | Gain Original Scent Test",
+    title: "Fresh Step Scented Review 2025 | Gain Original Scent Test",
     description: "We tested Fresh Step for 60 days. Gain scent is strong, clumping is decent. See our ammonia test data and clump strength comparison.",
     keywords: [
         "Fresh Step review",
@@ -169,7 +169,7 @@ const faqData = [
 export default function FreshStepReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
+            <EnhancedProductSchema {...productSchemaData} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

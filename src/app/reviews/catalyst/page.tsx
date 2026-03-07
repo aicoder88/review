@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/catalyst`;
 
 export const metadata: Metadata = {
-    title: "Catalyst Cat Litter Review | Upcycled Pine Litter Test",
+    title: "Catalyst Cat Litter Review 2025 | Upcycled Pine Litter Test",
     description: "We tested Catalyst for 60 days. Upcycled pine with soft, sand-like texture. See our clumping analysis and how it compares to clay litters.",
     keywords: [
         "Catalyst cat litter review",
@@ -168,7 +168,7 @@ const faqData = [
 export default function CatalystReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
+            <EnhancedProductSchema {...productSchemaData} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

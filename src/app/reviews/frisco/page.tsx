@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/frisco`;
 
 export const metadata: Metadata = {
-    title: "Frisco Cat Litter Review | Chewy's House Brand Test",
+    title: "Frisco Cat Litter Review 2025 | Chewy's House Brand Test",
     description: "We tested Frisco by Chewy for 60 days. Best value litter at $13 for 40lb? See our clumping, dust, and odor control data vs name brands.",
     keywords: [
         "Frisco cat litter review",
@@ -169,7 +169,7 @@ const faqData = [
 export default function FriscoReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
+            <EnhancedProductSchema {...productSchemaData} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/tidy-cats`;
 
 export const metadata: Metadata = {
-    title: "Purina Tidy Cats Review | Instant Action vs 24/7 Performance",
+    title: "Purina Tidy Cats Review 2025 | Instant Action vs 24/7 Performance",
     description: "We tested Tidy Cats for 60 days. Instant Action vs 24/7 Performance—what's the difference? See our clumping, dust, and odor control comparison.",
     keywords: [
         "Tidy Cats review",
@@ -169,7 +169,7 @@ const faqData = [
 export default function TidyCatsReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
+            <EnhancedProductSchema {...productSchemaData} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

@@ -127,7 +127,7 @@ export function FeaturedWinners() {
           <Link href="/reviews" prefetch={false} className="px-8 py-4 bg-white border-2 border-border hover:border-primary text-foreground font-bold rounded-full transition-all duration-300 shadow-sm hover:shadow-lg inline-flex items-center gap-2">
             View All {reviewedProductCount} Reviews <ArrowRight className="w-4 h-4" />
           </Link>
-          
+
           {/* Subtle Purrify Tip */}
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Zap className="w-4 h-4 text-emerald-500" />

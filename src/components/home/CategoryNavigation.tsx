@@ -12,7 +12,7 @@ const categories = [
     painPoint: 'Tired of clumps that fall apart?',
     gradient: 'from-accent to-amber-600',
     bgGradient: 'from-accent/10 to-amber-600/10',
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300&q=80'
+    image: '/images/latest-arm-hammer.png'
   },
   {
     icon: Sparkles,
@@ -21,7 +21,7 @@ const categories = [
     painPoint: 'Coughing every time you scoop?',
     gradient: 'from-slate-400 to-slate-600',
     bgGradient: 'from-slate-400/10 to-slate-600/10',
-    image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&q=80'
+    image: '/images/latest-tidy-cats.png'
   },
   {
     icon: Leaf,
@@ -30,7 +30,7 @@ const categories = [
     painPoint: 'Want eco-friendly that actually works?',
     gradient: 'from-primary to-emerald-600',
     bgGradient: 'from-primary/10 to-emerald-600/10',
-    image: 'https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=300&q=80'
+    image: '/images/latest-okocat.png'
   },
   {
     icon: Heart,
@@ -39,7 +39,7 @@ const categories = [
     painPoint: 'Need quality without the premium price?',
     gradient: 'from-emerald-400 to-teal-500',
     bgGradient: 'from-emerald-400/10 to-teal-500/10',
-    image: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=300&q=80'
+    image: '/images/latest-fresh-step.png'
   },
   {
     icon: Droplets,
@@ -48,7 +48,7 @@ const categories = [
     painPoint: 'House smells like a litter box?',
     gradient: 'from-accent to-amber-700',
     bgGradient: 'from-accent/10 to-amber-700/10',
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=300&q=80'
+    image: '/images/latest-swheat-scoop.png'
   },
 ];
 
@@ -110,7 +110,7 @@ export function CategoryNavigation() {
         <div className="mt-16 grid md:grid-cols-2 gap-6">
           <Link href="/categories/best-clumping-cat-litter" prefetch={false} className="relative bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
-              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" alt="Best clumping cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
+              <img src="/images/featured-dr-elseys.png" alt="Best clumping cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
             </div>
             <div className="relative z-10">
               <span className="text-white/80 font-medium">Most Popular</span>
@@ -124,7 +124,7 @@ export function CategoryNavigation() {
 
           <Link href="/categories/best-natural-cat-litter" prefetch={false} className="relative bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
-              <img src="https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=400&q=80" alt="Natural eco-friendly cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
+              <img src="/images/featured-worlds-best.png" alt="Natural eco-friendly cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
             </div>
             <div className="relative z-10">
               <span className="text-white/80 font-medium">Eco-Friendly</span>
