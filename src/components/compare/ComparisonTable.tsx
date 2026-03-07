@@ -5,52 +5,16 @@ import { cn } from '@/lib/utils';
 import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
 import Link from 'next/link';
 import { useComparison } from '@/context/ComparisonContext';
+import type { ComparisonProductRecord } from '@/lib/product-catalog';
 
-// Extended product interface for the full table
-export interface DetailedProduct {
-    id: string;
-    name: string;
-    image: string;
-    overallScore: number;
-    price: string;
-    weight: string;
-    costPerLb: string;
-    costPerDay: string;
-    type: string;
-    scores: {
-        dust: number;
-        dustMeasurement: string;
-        clumping: number;
-        clumpingStatus: string;
-        odor: number;
-        odorStatus: string;
-        tracking: number;
-        trackingStatus: string;
-        value: number;
-    };
-    features: {
-        scented: boolean;
-        flushable: boolean;
-        biodegradable: boolean;
-        lightweight: boolean;
-        multiCat: boolean;
-    };
-    longevity: {
-        single: string;
-        multi: string;
-    };
-    verdict: {
-        bestFor: string;
-    };
-    reviewUrl: string;
-    buyUrl: string;
-}
+export type DetailedProduct = ComparisonProductRecord;
 
 interface ComparisonTableProps {
     products: DetailedProduct[];
+    allowRemoval?: boolean;
 }
 
-export function ComparisonTable({ products }: ComparisonTableProps) {
+export function ComparisonTable({ products, allowRemoval = true }: ComparisonTableProps) {
     const { removeProduct } = useComparison();
 
     if (products.length === 0) {
@@ -94,12 +58,14 @@ export function ComparisonTable({ products }: ComparisonTableProps) {
                         </th>
                         {products.map(product => (
                             <th key={product.id} className="p-4 align-bottom min-w-[240px] relative group">
-                                <button
-                                    onClick={() => removeProduct(product.id)}
-                                    className="absolute top-2 right-2 text-muted-foreground hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
+                                {allowRemoval && (
+                                    <button
+                                        onClick={() => removeProduct(product.id)}
+                                        className="absolute top-2 right-2 text-muted-foreground hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    >
+                                        <X className="w-5 h-5" />
+                                    </button>
+                                )}
                                 <div className="flex flex-col items-center text-center">
                                     <div className="h-32 mb-4 flex items-center justify-center">
                                         <img src={product.image} alt={`${product.name} cat litter product`} className="max-h-full max-w-full object-contain" />

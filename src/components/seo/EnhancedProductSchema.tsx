@@ -1,3 +1,12 @@
+import {
+  logoPath,
+  organizationId,
+  reviewTeamPath,
+  siteName,
+  siteUrl,
+  toAbsoluteUrl,
+} from '@/lib/site';
+
 /**
  * Enhanced Product Schema Component
  * Implements full Schema.org Product + Review structured data
@@ -43,6 +52,9 @@ export interface EnhancedProductSchemaProps {
   features?: string[];
   keywords?: string[];
   url: string;
+  dateModified?: string;
+  positiveNotes?: string[];
+  negativeNotes?: string[];
   // Additional cat litter specific properties
   odorControlScore?: number;
   clumpingScore?: number;
@@ -66,17 +78,33 @@ export function EnhancedProductSchema({
   features = [],
   keywords = [],
   url,
+  dateModified,
+  positiveNotes = [],
+  negativeNotes = [],
   odorControlScore,
   clumpingScore,
   dustScore,
   trackingScore,
   valueScore,
 }: EnhancedProductSchemaProps) {
-  const siteName = "ReviewCatLitter.com";
-  const siteUrl = "https://www.reviewcatlitter.com";
-
   // Normalize images to array
   const images = Array.isArray(image) ? image : [image];
+  const reviewPros = positiveNotes.length > 0 ? positiveNotes : features.slice(0, 3);
+
+  function buildNotes(items: string[]) {
+    if (items.length === 0) {
+      return undefined;
+    }
+
+    return {
+      "@type": "ItemList",
+      "itemListElement": items.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item,
+      })),
+    };
+  }
 
   // Build additional property values for cat litter specific metrics
   const additionalProperties = [
@@ -157,6 +185,10 @@ export function EnhancedProductSchema({
     "category": category,
     "image": images,
     "url": url,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url,
+    },
     "brand": brand ? {
       "@type": "Brand",
       "name": brand
@@ -178,23 +210,25 @@ export function EnhancedProductSchema({
     "review": {
       "@type": "Review",
       "author": {
+        "@id": organizationId,
         "@type": "Organization",
         "name": review.author,
-        "url": siteUrl,
+        "url": toAbsoluteUrl(reviewTeamPath),
         "logo": {
           "@type": "ImageObject",
-          "url": `${siteUrl}/logo.png`
+          "url": toAbsoluteUrl(logoPath)
         }
       },
       "publisher": {
-        "@type": "Organization",
-        "name": siteName,
-        "url": siteUrl
+        "@id": organizationId
       },
       "datePublished": review.datePublished,
+      "dateModified": dateModified || review.datePublished,
       "reviewBody": review.reviewBody,
       "name": `${name} Review - ${siteName}`,
       "url": url,
+      "positiveNotes": buildNotes(reviewPros),
+      "negativeNotes": buildNotes(negativeNotes),
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": review.rating,
@@ -204,12 +238,6 @@ export function EnhancedProductSchema({
     },
     "offers": offersSchema,
     "featureList": features.length > 0 ? features : undefined,
-    "isRelatedTo": {
-      "@type": "Product",
-      "name": "Purrify Probiotic Deodorizer",
-      "description": "Probiotic litter enhancer that extends litter life and eliminates odor",
-      "url": "https://www.purrify.ca?via=reviewcatlitter"
-    }
   };
 
   // Remove undefined values
@@ -248,8 +276,6 @@ export function ArticleSchema({
   url,
   keywords = [],
 }: ArticleSchemaProps) {
-  const siteName = "ReviewCatLitter.com";
-  const siteUrl = "https://www.reviewcatlitter.com";
   const images = Array.isArray(image) ? image : [image];
 
   const schema = {
@@ -262,17 +288,19 @@ export function ArticleSchema({
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
     "author": {
+      "@id": organizationId,
       "@type": "Organization",
       "name": author,
-      "url": siteUrl
+      "url": toAbsoluteUrl(reviewTeamPath)
     },
     "publisher": {
+      "@id": organizationId,
       "@type": "Organization",
       "name": siteName,
       "url": siteUrl,
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/logo.png`
+        "url": toAbsoluteUrl(logoPath)
       }
     },
     "mainEntityOfPage": {
@@ -281,7 +309,7 @@ export function ArticleSchema({
     },
     "keywords": keywords.join(", "),
     "articleSection": "Product Reviews",
-    "inLanguage": "en-CA"
+    "inLanguage": "en-US"
   };
 
   return (

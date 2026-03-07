@@ -5,69 +5,16 @@ import { Star, Crown, Award, Sparkles, ArrowRight, Check, Zap } from 'lucide-rea
 import { ScalePop, StaggerChildren, FadeUp } from '@/components/ui/motion';
 import Link from 'next/link';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
+import { getFeaturedWinnerProducts } from '@/lib/product-catalog';
 
-const featuredProducts = [
-  {
-    id: 1,
-    name: "Dr. Elsey's Ultra",
-    category: 'Clumping Clay',
-    score: 9.4,
-    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
-    badge: "Editor's Choice",
-    badgeIcon: Crown,
-    specs: ['99% Dust Free', 'Hard Clumps', 'Low Tracking'],
-    gradient: 'from-[#D9B373] to-[#B38B4D]', // Gold
-    size: 'large',
-    pricePerDay: '$0.42',
-    worthIf: 'You want zero dust and rock-hard clumps',
-    skipIf: 'You need lightweight or flushable',
-  },
-  {
-    id: 2,
-    name: "World's Best Cat Litter",
-    category: 'Natural/Corn',
-    score: 9.1,
-    image: 'https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=600&q=80',
-    badge: 'Best Natural',
-    badgeIcon: Sparkles,
-    specs: ['Flushable', 'Lightweight', 'Eco-Friendly'],
-    gradient: 'from-[#15664C] to-[#0D4030]', // Forest/Teal
-    size: 'medium',
-    pricePerDay: '$0.58',
-    worthIf: 'You want eco-friendly and flushable',
-    skipIf: "You're on a tight budget",
-  },
-  {
-    id: 3,
-    name: "PrettyLitter",
-    category: 'Silica Crystal',
-    score: 8.8,
-    image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=80',
-    badge: 'Best Tech',
-    badgeIcon: Award,
-    specs: ['Health Monitor', 'Odor Control', 'Non-Clumping'],
-    gradient: 'from-slate-500 to-slate-700',
-    size: 'medium',
-    pricePerDay: '$1.20',
-    worthIf: 'You want health monitoring features',
-    skipIf: 'You prefer traditional clumping',
-  },
-  {
-    id: 4,
-    name: "Boxiecat Premium",
-    category: 'Premium Clay',
-    score: 9.2,
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&q=80',
-    badge: 'Best Value',
-    badgeIcon: Star,
-    specs: ['Probiotic', 'Flat Top Clumps', 'Unscented'],
-    gradient: 'from-[#8B5E3C] to-[#6F4E37]',
-    size: 'medium',
-    pricePerDay: '$0.38',
-    worthIf: 'You want premium quality at budget price',
-    skipIf: 'You need scented options',
-  },
-];
+const iconMap = {
+  crown: Crown,
+  sparkles: Sparkles,
+  award: Award,
+  star: Star,
+} as const;
+
+const featuredProducts = getFeaturedWinnerProducts();
 
 export function FeaturedWinners() {
   return (
@@ -102,10 +49,10 @@ export function FeaturedWinners() {
                 visible: { opacity: 1, y: 0 }
               }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className={`group relative bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-2xl transition-shadow cursor-pointer ${product.size === 'large' ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''}`}
+              className={`group relative bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-2xl transition-shadow cursor-pointer ${product.featuredCard?.size === 'large' ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''}`}
             >
               <div className="relative h-full flex flex-col">
-                <div className={`relative overflow-hidden ${product.size === 'large' ? 'aspect-[16/9] md:aspect-auto md:h-full md:flex-1' : 'aspect-[4/3]'}`}>
+                <div className={`relative overflow-hidden ${product.featuredCard?.size === 'large' ? 'aspect-[16/9] md:aspect-auto md:h-full md:flex-1' : 'aspect-[4/3]'}`}>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-60 transition-opacity group-hover:opacity-40" />
                   <img
                     src={product.image}
@@ -114,16 +61,19 @@ export function FeaturedWinners() {
                   />
 
                   {/* Badge */}
-                  <ScalePop delay={0.2} className={`absolute top-4 left-4 z-20 bg-gradient-to-r ${product.gradient} text-white px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg`}>
-                    <product.badgeIcon className="w-3.5 h-3.5" />
-                    <span className="font-bold text-[10px] md:text-xs tracking-wide uppercase">{product.badge}</span>
+                  <ScalePop delay={0.2} className={`absolute top-4 left-4 z-20 bg-gradient-to-r ${product.featuredCard?.gradient} text-white px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg`}>
+                    {(() => {
+                      const BadgeIcon = iconMap[product.featuredCard?.icon ?? 'star'];
+                      return <BadgeIcon className="w-3.5 h-3.5" />;
+                    })()}
+                    <span className="font-bold text-[10px] md:text-xs tracking-wide uppercase">{product.featuredCard?.badge}</span>
                   </ScalePop>
 
                   {/* Score */}
                   <ScalePop delay={0.3} className="absolute top-4 right-4 z-20">
                     <div className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-xl flex flex-col items-center justify-center border border-white/50 shadow-lg">
                       <span className="text-[10px] uppercase font-bold text-muted-foreground leading-none mb-0.5">Score</span>
-                      <span className="text-lg font-bold text-primary leading-none">{product.score}</span>
+                      <span className="text-lg font-bold text-primary leading-none">{product.overallScore}</span>
                     </div>
                   </ScalePop>
                 </div>
@@ -131,12 +81,12 @@ export function FeaturedWinners() {
                 <div className="p-6 md:p-8 flex flex-col flex-1 relative z-20">
                   {/* Content */}
                   <div className="text-muted-foreground text-xs font-bold uppercase tracking-widest mb-2">{product.category}</div>
-                  <h3 className={`font-display font-bold text-foreground mb-4 leading-tight ${product.size === 'large' ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
+                  <h3 className={`font-display font-bold text-foreground mb-4 leading-tight ${product.featuredCard?.size === 'large' ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
                     {product.name}
                   </h3>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {product.specs.map((spec, i) => (
+                    {product.featuredCard?.specs.map((spec, i) => (
                       <span key={i} className="inline-flex items-center gap-1 bg-secondary text-secondary-foreground text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md">
                         <Check className="w-3 h-3 text-primary" /> {spec}
                       </span>
@@ -146,25 +96,25 @@ export function FeaturedWinners() {
                   {/* Price per day */}
                   <div className="mb-4 p-3 bg-accent/10 rounded-lg border border-accent/20">
                     <div className="text-xs text-muted-foreground mb-1">Cost per day</div>
-                    <div className="text-2xl font-bold text-accent">{product.pricePerDay}</div>
+                    <div className="text-2xl font-bold text-accent">{product.costPerDay}</div>
                   </div>
 
                   {/* Worth buying if / Skip if */}
                   <div className="space-y-2 mb-6 text-sm">
                     <div className="flex items-start gap-2">
                       <span className="text-green-600 font-bold">✓</span>
-                      <span className="text-foreground/80">{product.worthIf}</span>
+                      <span className="text-foreground/80">{product.featuredCard?.worthIf}</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-red-600 font-bold">✗</span>
-                      <span className="text-foreground/80">{product.skipIf}</span>
+                      <span className="text-foreground/80">{product.featuredCard?.skipIf}</span>
                     </div>
                   </div>
 
-                  <div className="mt-auto pt-4 border-t border-border flex items-center justify-between group-hover:text-primary transition-colors">
+                  <Link href={product.reviewUrl} prefetch={false} className="mt-auto pt-4 border-t border-border flex items-center justify-between group-hover:text-primary transition-colors">
                     <span className="font-bold text-sm">Read Full Review</span>
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </motion.div>

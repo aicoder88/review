@@ -10,24 +10,21 @@ import { CategoryNavigation } from '@/components/home/CategoryNavigation';
 import { Newsletter } from '@/components/home/Newsletter';
 import { Footer } from '@/components/home/Footer';
 import type { Metadata } from 'next';
+import { getComparisonPageCount, getReviewedProductCount, siteUrl } from '@/lib/site';
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const reviewedProductCount = getReviewedProductCount();
+const comparisonPageCount = getComparisonPageCount();
 
 export const metadata: Metadata = {
   title: "Cat Litter Reviews 2025 | Best Rated & Tested | ReviewCatLitter.com",
-  description: "Expert cat litter reviews based on $47K+ in lab testing. Compare 500+ brands on odor control, clumping, dust & value. Find the best cat litter for your cat.",
+  description: `Expert cat litter reviews and ${comparisonPageCount}+ side-by-side comparisons built from ${reviewedProductCount} live hands-on review pages.`,
   keywords: ["cat litter reviews", "best cat litter 2025", "cat litter comparison", "top rated cat litter", "odor control cat litter", "clumping cat litter reviews"],
   alternates: {
     canonical: "/",
-    languages: {
-      "en-CA": "/",
-      "fr-CA": "/",
-      "en": "/",
-    },
   },
   openGraph: {
     title: "Cat Litter Reviews 2025 | Best Rated & Tested | ReviewCatLitter.com",
-    description: "Expert cat litter reviews based on $47K+ in lab testing. Compare 500+ brands on odor control, clumping, dust & value.",
+    description: `Expert cat litter reviews and ${comparisonPageCount}+ side-by-side comparisons built from ${reviewedProductCount} live hands-on review pages.`,
     url: siteUrl,
     type: "website",
     images: [
@@ -42,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cat Litter Reviews 2025 | Best Rated & Tested",
-    description: "Expert cat litter reviews based on $47K+ in lab testing. Compare 500+ brands.",
+    description: `Expert cat litter reviews and ${comparisonPageCount}+ side-by-side comparisons built from ${reviewedProductCount} live hands-on review pages.`,
     images: [`${siteUrl}/images/og-home.jpg`],
   },
 };

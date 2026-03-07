@@ -11,11 +11,10 @@ export const metadata: Metadata = {
   keywords: ["Black Friday cat litter deals", "cat litter sale 2025", "cat litter Black Friday", "best cat litter deals"],
   alternates: {
     canonical: "/black-friday-cat-litter-deals-2025",
-    languages: {
-      "en-CA": "/black-friday-cat-litter-deals-2025",
-      "fr-CA": "/black-friday-cat-litter-deals-2025",
-      "en": "/black-friday-cat-litter-deals-2025",
-    },
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
   openGraph: {
     title: "Black Friday Cat Litter Deals 2025 - Best Sales & Money-Saving Hacks",

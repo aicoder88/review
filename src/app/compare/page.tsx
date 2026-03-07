@@ -1,23 +1,19 @@
 import { Metadata } from "next";
 import { ComparePageClient } from "./ComparePageClient";
+import { getComparisonPageCount, siteUrl } from "@/lib/site";
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const comparisonPageCount = getComparisonPageCount();
 
 export const metadata: Metadata = {
-  title: "Compare Cat Litters Side-by-Side | 500+ Brands | ReviewCatLitter",
-  description: "Compare cat litters head-to-head with real test data. See dust levels, clumping strength, odor control & cost per day. Find the best litter for your needs.",
+  title: "Compare Cat Litters Side-by-Side | ReviewCatLitter",
+  description: `Compare cat litters head-to-head with real test data. Browse ${comparisonPageCount}+ permanent comparison pages plus the interactive comparison tool.`,
   keywords: ["compare cat litter", "cat litter comparison", "best cat litter comparison", "litter side by side"],
   alternates: {
     canonical: "/compare",
-    languages: {
-      "en-CA": "/compare",
-      "fr-CA": "/compare",
-      "en": "/compare",
-    },
   },
   openGraph: {
-    title: "Compare Cat Litters Side-by-Side | 500+ Brands",
-    description: "Compare cat litters head-to-head with real test data. See dust levels, clumping strength, odor control & cost per day.",
+    title: "Compare Cat Litters Side-by-Side | ReviewCatLitter",
+    description: `Compare cat litters head-to-head with real test data across ${comparisonPageCount}+ permanent matchup pages.`,
     url: `${siteUrl}/compare`,
     type: "website",
     images: [
@@ -31,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Compare Cat Litters Side-by-Side | 500+ Brands",
-    description: "Compare cat litters head-to-head with real test data. Find the best litter for your needs.",
+    title: "Compare Cat Litters Side-by-Side | ReviewCatLitter",
+    description: `Compare cat litters head-to-head with real test data across ${comparisonPageCount}+ permanent matchup pages.`,
     images: [`${siteUrl}/images/og-compare.jpg`],
   },
 };

@@ -2,15 +2,22 @@
 
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Check, X, Info, ShoppingCart, Share2 } from 'lucide-react';
+import { ArrowLeftRight, ArrowRight, Check, X, Info, ShoppingCart } from 'lucide-react';
 import { ScoreBadge } from './ui/ScoreBadge';
 import { ScoreMeter } from './ui/ScoreMeter';
 import { ComparisonWidget } from './ui/ComparisonWidget';
 import { RecommendedAddOn } from './RecommendedAddOn';
 import { OdorEliminationBonus } from './OdorEliminationBonus';
-import { FadeIn, FadeUp, StaggerChildren } from '@/components/ui/motion';
+import { FadeUp } from '@/components/ui/motion';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
+import { ReviewTrustPanel } from '@/components/seo/ReviewTrustPanel';
+import {
+    formatCatalogDate,
+    getCatalogProductByName,
+    getComparisonMatchupHref,
+    getComparisonMatchupsForProduct,
+} from '@/lib/product-catalog';
 
 export interface ReviewData {
     name: string;
@@ -50,6 +57,11 @@ interface ProductReviewPageProps {
 }
 
 export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
+    const currentCatalogProduct = getCatalogProductByName(data.name);
+    const headToHeadMatchups = currentCatalogProduct
+        ? getComparisonMatchupsForProduct(currentCatalogProduct.id, 3)
+        : [];
+
     return (
         <div className="min-h-screen bg-background">
             <Header />
@@ -98,6 +110,12 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                                     {data.name}
                                 </h1>
+                                <ReviewTrustPanel reviewedOn={currentCatalogProduct?.lastReviewedAt} />
+                                {currentCatalogProduct?.lastReviewedAt && (
+                                    <p className="mb-6 text-sm text-muted-foreground">
+                                        Verdict based on the latest hands-on review cycle ending {formatCatalogDate(currentCatalogProduct.lastReviewedAt)}.
+                                    </p>
+                                )}
                             </FadeUp>
 
                             {/* Quick Verdict Box */}
@@ -224,6 +242,53 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
 
                             {/* Odor Elimination Bonus Section */}
                             <OdorEliminationBonus productName={data.name} />
+
+                            {headToHeadMatchups.length > 0 && (
+                                <section className="mt-10">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                            <ArrowLeftRight className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-display text-2xl font-bold">Head-to-Head Matchups</h3>
+                                            <p className="text-muted-foreground">
+                                                Permanent comparison pages for the closest alternatives.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="grid gap-4 md:grid-cols-3">
+                                        {headToHeadMatchups.map((matchup) => {
+                                            const [leftProduct, rightProduct] = matchup.products;
+
+                                            return (
+                                                <Link
+                                                    key={matchup.slug}
+                                                    href={getComparisonMatchupHref(matchup.slug)}
+                                                    prefetch={false}
+                                                    className="group rounded-2xl border border-border bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                                                >
+                                                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                                                        Compare
+                                                    </div>
+                                                    <h4 className="font-display text-xl font-bold leading-tight mb-2 group-hover:text-primary transition-colors">
+                                                        {leftProduct.name} vs {rightProduct.name}
+                                                    </h4>
+                                                    <p className="text-sm text-muted-foreground mb-4">
+                                                        {matchup.insight.summary}
+                                                    </p>
+                                                    <div className="text-sm font-semibold text-foreground mb-4">
+                                                        Winner: <span className="text-primary">{matchup.insight.winner.name}</span>
+                                                    </div>
+                                                    <div className="inline-flex items-center text-sm font-semibold text-primary">
+                                                        Read comparison
+                                                        <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                                                    </div>
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                </section>
+                            )}
 
                         </div>
 

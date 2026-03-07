@@ -1,140 +1,88 @@
 import Link from 'next/link';
-
-interface Product {
-  id: string;
-  name: string;
-  price: string;
-}
+import { CheckCircle2, Compass, ArrowRight } from 'lucide-react';
+import {
+  buildComparisonInsight,
+  type ComparisonProductRecord,
+} from '@/lib/product-catalog';
 
 interface SmartRecommendationProps {
-  products: Product[];
+  products: ComparisonProductRecord[];
 }
 
 export function SmartRecommendation({ products }: SmartRecommendationProps) {
-  if (products.length === 0) {
+  const insight = buildComparisonInsight(products);
+
+  if (!insight) {
     return null;
   }
 
-  // Analyze products to determine recommendation type
-  const averagePrice = products.reduce((sum, p) => {
-    const price = parseFloat(p.price.replace(/[$,]/g, ''));
-    return sum + price;
-  }, 0) / products.length;
-
-  const hasBudgetLitter = products.some(p => parseFloat(p.price.replace(/[$,]/g, '')) < 25);
-  const hasPremiumLitter = products.some(p => parseFloat(p.price.replace(/[$,]/g, '')) > 35);
-
-  if (hasBudgetLitter) {
-    return (
-      <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8 my-8">
-        <h3 className="text-2xl font-bold mb-4">💡 Budget Optimization Tip</h3>
-        <p className="text-lg mb-4">
-          You&apos;re comparing budget-friendly litters. Smart! Here&apos;s how to get
-          premium performance without the premium price:
-        </p>
-        <div className="bg-white rounded-xl p-6 mb-4">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="text-4xl">🧮</div>
-            <div>
-              <div className="font-bold text-xl">Your Budget Strategy</div>
-              <div className="text-muted-foreground">Save $360/year</div>
-            </div>
-          </div>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span>Budget litter (2 bags/month):</span>
-              <span className="font-bold">$30/mo</span>
-            </div>
-            <div className="flex justify-between">
-              <span>+ Purrify (1 bag lasts 4 weeks):</span>
-              <span className="font-bold">$19/mo</span>
-            </div>
-            <div className="border-t border-border pt-2 flex justify-between">
-              <span className="font-bold">Total:</span>
-              <span className="font-bold">$49/mo</span>
-            </div>
-            <div className="bg-emerald-50 border border-emerald-200 rounded p-3 flex justify-between items-center">
-              <span>vs Premium litter alone:</span>
-              <span className="line-through text-red-600 font-bold">$75/mo</span>
-            </div>
-            <div className="text-emerald-600 font-bold text-center text-lg mt-2">
-              Save $26/month = $312/year
-            </div>
-          </div>
-        </div>
-        <Link
-          href="/guides/purrify-budget-litter-hack"
-          prefetch={false}
-          className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700"
-        >
-          Show Me The Budget Hack
-        </Link>
-      </div>
-    );
-  }
-
-  if (hasPremiumLitter) {
-    return (
-      <div className="bg-purple-50 border-2 border-purple-300 rounded-2xl p-8 my-8">
-        <h3 className="text-2xl font-bold mb-4">✨ Premium Performance Boost</h3>
-        <p className="text-lg mb-4">
-          You&apos;re looking at premium litters. Make them perform even better and
-          last 2x longer with Purrify:
-        </p>
-        <div className="grid md:grid-cols-3 gap-4 mb-6">
-          <div className="bg-white p-4 rounded-xl text-center">
-            <div className="text-3xl font-bold text-emerald-600 mb-2">2x</div>
-            <div className="text-sm">Longer Lasting</div>
-          </div>
-          <div className="bg-white p-4 rounded-xl text-center">
-            <div className="text-3xl font-bold text-emerald-600 mb-2">99%</div>
-            <div className="text-sm">Odor Reduction</div>
-          </div>
-          <div className="bg-white p-4 rounded-xl text-center">
-            <div className="text-3xl font-bold text-emerald-600 mb-2">$35</div>
-            <div className="text-sm">Saved Monthly</div>
-          </div>
-        </div>
-        <Link
-          href="/reviews/purrify"
-          prefetch={false}
-          className="block w-full text-center bg-purple-600 text-white py-4 rounded-xl font-bold hover:bg-purple-700"
-        >
-          Supercharge Your Premium Litter
-        </Link>
-      </div>
-    );
-  }
-
-  // Default recommendation
   return (
-    <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 my-8">
-      <h3 className="text-2xl font-bold mb-4">🎯 The Secret: Make Any of These 2x Better</h3>
-      <p className="text-lg mb-4">
-        Instead of stressing over which litter is &quot;best,&quot; grab Purrify for $19 and make
-        any of these litters perform like premium. Tested with all products above.
-      </p>
-      <div className="grid md:grid-cols-3 gap-4 mb-6">
-        <div className="bg-white p-4 rounded-xl">
-          <div className="text-3xl font-bold text-emerald-600 mb-2">2x</div>
-          <div className="text-sm">Longer Lasting</div>
+    <div className="bg-white border border-border rounded-3xl p-8 my-8 shadow-sm">
+      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        <div className="flex-1">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-semibold mb-4">
+            <Compass className="w-4 h-4" />
+            Explainable recommendation
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-3">{insight.title}</h3>
+          <p className="text-muted-foreground text-lg mb-6">{insight.summary}</p>
+
+          <div className="space-y-3 mb-6">
+            {insight.reasons.map((reason) => (
+              <div key={reason} className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <p className="text-foreground/85">{reason}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl bg-secondary/30 border border-border p-4 text-sm text-muted-foreground">
+            {insight.tradeoff}
+          </div>
         </div>
-        <div className="bg-white p-4 rounded-xl">
-          <div className="text-3xl font-bold text-emerald-600 mb-2">$30</div>
-          <div className="text-sm">Saved Per Month</div>
-        </div>
-        <div className="bg-white p-4 rounded-xl">
-          <div className="text-3xl font-bold text-emerald-600 mb-2">100%</div>
-          <div className="text-sm">Natural Probiotics</div>
+
+        <div className="lg:w-80 shrink-0">
+          <div className="rounded-3xl bg-foreground text-white p-6 mb-4">
+            <div className="text-sm uppercase tracking-[0.2em] text-white/60 mb-2">
+              Best overall pick
+            </div>
+            <div className="text-2xl font-bold mb-2">{insight.winner.name}</div>
+            <p className="text-white/75 mb-4">{insight.winner.verdict.bestFor}</p>
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <div className="text-xs text-white/60 uppercase tracking-wide">Score</div>
+                <div className="text-3xl font-bold">{insight.winner.overallScore}</div>
+              </div>
+              <div>
+                <div className="text-xs text-white/60 uppercase tracking-wide">Per day</div>
+                <div className="text-3xl font-bold">{insight.winner.costPerDay}</div>
+              </div>
+            </div>
+            <Link
+              href={insight.winner.reviewUrl}
+              prefetch={false}
+              className="inline-flex items-center gap-2 font-bold text-accent hover:text-accent/80"
+            >
+              Read full review
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {insight.alternatives.length > 0 && (
+            <div className="space-y-3">
+              {insight.alternatives.map((alternative) => (
+                <div key={alternative.label} className="rounded-2xl border border-border p-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                    {alternative.label}
+                  </div>
+                  <div className="font-bold mb-1">{alternative.product.name}</div>
+                  <p className="text-sm text-muted-foreground">{alternative.reason}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
-      <Link
-        href="/reviews/purrify"
-        prefetch={false}
-        className="block w-full text-center bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700"
-      >
-        See How Purrify Works →
-      </Link>
     </div>
   );
 }

@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import { SearchPageClient } from "./SearchPageClient";
+import { getReviewedProductCount, siteUrl } from "@/lib/site";
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const reviewedProductCount = getReviewedProductCount();
 
 export const metadata: Metadata = {
-  title: "Search Cat Litter Reviews | 500+ Products | ReviewCatLitter",
-  description: "Search our database of 500+ cat litter reviews. Find reviews by brand, type, or feature. Compare clay, crystal, natural and clumping litters.",
+  title: "Search Cat Litter Reviews | ReviewCatLitter",
+  description: `Search ${reviewedProductCount} hands-on cat litter reviews by brand, type, or feature.`,
   keywords: ["search cat litter", "find cat litter reviews", "cat litter search", "best cat litter finder"],
   alternates: {
     canonical: "/search",
-    languages: {
-      "en-CA": "/search",
-      "fr-CA": "/search",
-      "en": "/search",
-    },
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
   openGraph: {
-    title: "Search Cat Litter Reviews | 500+ Products",
-    description: "Search our database of 500+ cat litter reviews. Find reviews by brand, type, or feature.",
+    title: "Search Cat Litter Reviews | ReviewCatLitter",
+    description: `Search ${reviewedProductCount} hands-on cat litter reviews by brand, type, or feature.`,
     url: `${siteUrl}/search`,
     type: "website",
     images: [
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Search Cat Litter Reviews | 500+ Products",
-    description: "Search our database of 500+ cat litter reviews. Find reviews by brand, type, or feature.",
+    title: "Search Cat Litter Reviews | ReviewCatLitter",
+    description: `Search ${reviewedProductCount} hands-on cat litter reviews by brand, type, or feature.`,
     images: [`${siteUrl}/images/og-search.jpg`],
   },
 };

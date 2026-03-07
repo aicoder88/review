@@ -2,75 +2,19 @@
 
 import { Card } from '@/components/ui/card';
 import { Calendar, TrendingUp, ArrowRight, Star } from 'lucide-react';
+import {
+  formatCatalogDate,
+  getLatestReviewedProducts,
+} from '@/lib/product-catalog';
 
-const reviews = [
-  {
-    id: 1,
-    title: 'ARM & HAMMER Clump & Seal Review',
-    category: 'Clumping Clay',
-    date: 'Dec 15, 2025',
-    score: 8.7,
-    image: 'https://images.unsplash.com/photo-1548247416-ec66f4900b2e?w=600&q=80',
-    excerpt: 'Strong odor control meets affordable pricing in this popular choice...',
-    trending: true,
-    gradient: 'from-accent to-amber-600',
-  },
-  {
-    id: 2,
-    title: 'Ökocat Natural Wood Clumping',
-    category: 'Natural/Wood',
-    date: 'Dec 12, 2025',
-    score: 8.9,
-    image: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&q=80',
-    excerpt: 'Eco-conscious cat parents will appreciate this sustainable option...',
-    trending: false,
-    gradient: 'from-primary to-emerald-600',
-  },
-  {
-    id: 3,
-    title: 'Fresh Step Clean Paws Multi-Cat',
-    category: 'Clumping Clay',
-    date: 'Dec 10, 2025',
-    score: 8.5,
-    image: 'https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?w=600&q=80',
-    excerpt: 'Low-tracking formula delivers on its promise for multi-cat homes...',
-    trending: true,
-    gradient: 'from-accent/80 to-amber-700',
-  },
-  {
-    id: 4,
-    title: 'Boxiecat Premium Clumping Clay',
-    category: 'Clumping Clay',
-    date: 'Dec 8, 2025',
-    score: 9.0,
-    image: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&q=80',
-    excerpt: 'Premium pricing justified by exceptional performance metrics...',
-    trending: false,
-    gradient: 'from-[#8B5E3C] to-[#6F4E37]', // Bronze
-  },
-  {
-    id: 5,
-    title: 'Tidy Cats LightWeight 24/7',
-    category: 'Lightweight Clay',
-    date: 'Dec 5, 2025',
-    score: 8.3,
-    image: 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=600&q=80',
-    excerpt: 'Convenience meets performance in this easy-to-handle formula...',
-    trending: false,
-    gradient: 'from-slate-600 to-slate-800',
-  },
-  {
-    id: 6,
-    title: 'sWheat Scoop Multi-Cat Natural',
-    category: 'Natural/Wheat',
-    date: 'Dec 3, 2025',
-    score: 8.6,
-    image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&q=80',
-    excerpt: 'Wheat-based formula offers natural clumping with minimal dust...',
-    trending: false,
-    gradient: 'from-accent to-yellow-600',
-  },
-];
+const reviews = getLatestReviewedProducts();
+
+function getGradient(score: number) {
+  if (score >= 9.3) return 'from-[#D9B373] to-[#B38B4D]';
+  if (score >= 9) return 'from-primary to-emerald-600';
+  if (score >= 8.7) return 'from-accent to-amber-600';
+  return 'from-slate-600 to-slate-800';
+}
 
 export function LatestReviews() {
   return (
@@ -93,9 +37,9 @@ export function LatestReviews() {
               Fresh insights from our testing lab, updated weekly
             </p>
           </div>
-          <button className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">
+          <a href="/reviews" className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">
             View All Reviews <ArrowRight className="w-5 h-5" />
-          </button>
+          </a>
         </div>
 
         {/* Masonry Grid */}
@@ -109,7 +53,7 @@ export function LatestReviews() {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={review.image}
-                  alt={review.title}
+                  alt={review.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
@@ -117,14 +61,14 @@ export function LatestReviews() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
 
                 {/* Score Badge */}
-                <div className={`absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300`}>
-                  <div className="font-mono text-lg font-bold text-white">
-                    {review.score}
+                  <div className={`absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300`}>
+                    <div className="font-mono text-lg font-bold text-white">
+                    {review.overallScore}
+                    </div>
                   </div>
-                </div>
 
                 {/* Trending Badge */}
-                {review.trending && (
+                {review.latestTrending && (
                   <div className="absolute top-4 left-4 bg-accent text-white px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
                     <TrendingUp className="w-3 h-3" />
                     <span className="font-bold text-xs uppercase tracking-wide">Trending</span>
@@ -135,35 +79,35 @@ export function LatestReviews() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className={`bg-gradient-to-r ${review.gradient} text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full`}>
+                  <span className={`bg-gradient-to-r ${getGradient(review.overallScore)} text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full`}>
                     {review.category}
                   </span>
                   <div className="flex items-center text-xs text-muted-foreground font-medium">
                     <Calendar className="w-3 h-3 mr-1" />
-                    {review.date}
+                    {formatCatalogDate(review.lastReviewedAt)}
                   </div>
                 </div>
 
                 <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2 leading-tight">
-                  {review.title}
+                  {review.name}
                 </h3>
 
                 <p className="text-sm text-muted-foreground line-clamp-2 mb-6 font-light">
-                  {review.excerpt}
+                  {review.summary}
                 </p>
 
-                <div className="flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all duration-300">
+                <a href={review.reviewUrl} className="flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all duration-300">
                   Read Full Review <ArrowRight className="w-3 h-3 ml-1" />
-                </div>
+                </a>
               </div>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-foreground text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:bg-primary-foreground hover:text-foreground border-2 border-transparent hover:border-foreground">
+          <a href="/reviews" className="inline-flex bg-foreground text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:bg-primary-foreground hover:text-foreground border-2 border-transparent hover:border-foreground">
             Load More Reviews
-          </button>
+          </a>
         </div>
       </div>
     </section>

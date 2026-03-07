@@ -1,6 +1,7 @@
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
@@ -10,124 +11,13 @@ import { CostCalculator } from '@/components/compare/CostCalculator';
 import { SmartRecommendation } from '@/components/compare/SmartRecommendation';
 import { useComparison } from '@/context/ComparisonContext';
 import { FadeUp } from '@/components/ui/motion';
+import {
+    getAllComparisonMatchups,
+    getComparisonMatchupHref,
+    getComparisonProductsByIds,
+} from '@/lib/product-catalog';
 
-// Mock DB - In real app, fetch from CMS/DB
-const PRODUCT_DB: Record<string, DetailedProduct> = {
-    "dr-elseys-ultra": {
-        id: "dr-elseys-ultra",
-        name: "Dr. Elsey's Ultra",
-        image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&q=80",
-        overallScore: 9.4,
-        price: "$24.99",
-        weight: "40 lbs",
-        costPerLb: "$0.62",
-        costPerDay: "$0.51",
-        type: "Clay",
-        scores: {
-            dust: 9.0,
-            dustMeasurement: "0.03mg",
-            clumping: 10.0,
-            clumpingStatus: "Rock-solid",
-            odor: 8.0,
-            odorStatus: "85% reduction",
-            tracking: 7.0,
-            trackingStatus: "Moderate",
-            value: 8.0
-        },
-        features: {
-            scented: false,
-            flushable: false,
-            biodegradable: false,
-            lightweight: false,
-            multiCat: true
-        },
-        longevity: {
-            single: "7 weeks",
-            multi: "4.5 weeks"
-        },
-        verdict: {
-            bestFor: "Dust-free performance"
-        },
-        reviewUrl: "/reviews/dr-elseys-ultra",
-        buyUrl: "https://amazon.com"
-    },
-    "worlds-best": {
-        id: "worlds-best",
-        name: "World's Best Cat Litter",
-        image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=200&q=80",
-        overallScore: 9.1,
-        price: "$29.99",
-        weight: "28 lbs",
-        costPerLb: "$1.07",
-        costPerDay: "$0.58",
-        type: "Corn",
-        scores: {
-            dust: 7.0,
-            dustMeasurement: "0.12mg",
-            clumping: 9.0,
-            clumpingStatus: "Excellent",
-            odor: 8.0,
-            odorStatus: "85% reduction",
-            tracking: 9.0,
-            trackingStatus: "Minimal",
-            value: 7.0
-        },
-        features: {
-            scented: false,
-            flushable: true,
-            biodegradable: true,
-            lightweight: true,
-            multiCat: true
-        },
-        longevity: {
-            single: "6 weeks",
-            multi: "4 weeks"
-        },
-        verdict: {
-            bestFor: "Eco-conscious / Flushing"
-        },
-        reviewUrl: "/reviews",
-        buyUrl: "https://amazon.com"
-    },
-    "arm-hammer-clump-seal": {
-        id: "arm-hammer-clump-seal",
-        name: "Arm & Hammer",
-        image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
-        overallScore: 8.7,
-        price: "$16.99",
-        weight: "38 lbs",
-        costPerLb: "$0.45",
-        costPerDay: "$0.43",
-        type: "Clay",
-        scores: {
-            dust: 6.0,
-            dustMeasurement: "0.18mg",
-            clumping: 8.0,
-            clumpingStatus: "Good",
-            odor: 9.0,
-            odorStatus: "90% reduction",
-            tracking: 6.0,
-            trackingStatus: "Moderate",
-            value: 9.0
-        },
-        features: {
-            scented: true,
-            flushable: false,
-            biodegradable: false,
-            lightweight: false,
-            multiCat: true
-        },
-        longevity: {
-            single: "5 weeks",
-            multi: "3.5 weeks"
-        },
-        verdict: {
-            bestFor: "Budget & Odor"
-        },
-        reviewUrl: "/reviews",
-        buyUrl: "https://amazon.com"
-    }
-};
+const featuredMatchups = getAllComparisonMatchups().slice(0, 6);
 
 function ComparisonLoader() {
     const searchParams = useSearchParams();
@@ -144,9 +34,7 @@ function ComparisonLoader() {
         // Merge (prefer URL if present, else Context)
         const targetIds = (urlIds && urlIds.length > 0) ? urlIds : contextIds;
 
-        const resolved = targetIds
-            .map(id => PRODUCT_DB[id])
-            .filter(Boolean); // Remove not found
+        const resolved = getComparisonProductsByIds(targetIds);
 
         setDisplayProducts(resolved);
     }, [searchParams, contextProducts]);
@@ -170,7 +58,7 @@ function ComparisonLoader() {
                         <CostCalculator products={adaptedProducts} />
                     </FadeUp>
                     <FadeUp delay={0.3}>
-                        <SmartRecommendation products={adaptedProducts} />
+                        <SmartRecommendation products={displayProducts} />
                     </FadeUp>
                     <FadeUp delay={0.4}>
                         <PurrifyEnhancement />
@@ -189,6 +77,38 @@ export function ComparePageClient() {
                 <section className="container mx-auto px-6 mb-12 text-center">
                     <h1 className="font-display text-4xl font-bold mb-4">Compare Cat Litters</h1>
                     <p className="text-xl text-muted-foreground">See the real data side-by-side. No fluff.</p>
+                </section>
+
+                <section className="container mx-auto px-6 mb-12">
+                    <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-white p-8 shadow-sm">
+                        <h2 className="font-display text-2xl font-bold mb-3">Popular head-to-head matchups</h2>
+                        <p className="text-muted-foreground mb-6">
+                            Permanent comparison pages built from our closest product alternatives.
+                        </p>
+                        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                            {featuredMatchups.map((matchup) => (
+                                <Link
+                                    key={matchup.slug}
+                                    href={getComparisonMatchupHref(matchup.slug)}
+                                    prefetch={false}
+                                    className="rounded-2xl border border-border bg-secondary/20 p-5 transition-all hover:-translate-y-1 hover:shadow-sm"
+                                >
+                                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">
+                                        Comparison
+                                    </div>
+                                    <h3 className="font-display text-xl font-bold mb-2">
+                                        {matchup.products[0].name} vs {matchup.products[1].name}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground mb-3">
+                                        {matchup.insight.summary}
+                                    </p>
+                                    <div className="text-sm font-semibold text-foreground">
+                                        Winner: {matchup.insight.winner.name}
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </section>
 
                 <Suspense fallback={<div className="text-center py-12">Loading comparison...</div>}>

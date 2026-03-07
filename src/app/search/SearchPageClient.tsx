@@ -7,75 +7,13 @@ import { Star, ArrowRight, Sparkles } from 'lucide-react';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
-
-// Comprehensive product data for search
-const allProducts = [
-    {
-        id: 'dr-elseys-ultra',
-        name: "Dr. Elsey's Ultra Premium",
-        category: "Clumping Clay",
-        rating: 9.4,
-        image: "https://images.unsplash.com/photo-1615789591457-74a63395c990?w=400&q=80",
-        summary: "The gold standard for clumping clay litter. Exceptional dust control and rock-solid clumps.",
-        tags: ["clay", "clumping", "low-dust", "unscented", "multi-cat"]
-    },
-    {
-        id: 'worlds-best',
-        name: "World's Best Cat Litter",
-        category: "Natural/Corn",
-        rating: 8.8,
-        image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&q=80",
-        summary: "Eco-friendly corn-based litter that's flushable and biodegradable. Great for environmentally conscious cat owners.",
-        tags: ["natural", "corn", "flushable", "eco-friendly", "biodegradable"]
-    },
-    {
-        id: 'arm-hammer-clump-seal',
-        name: "Arm & Hammer Clump & Seal",
-        category: "Clumping Clay",
-        rating: 9.1,
-        image: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&q=80",
-        summary: "Excellent odor control with 7-day guarantee. Strong clumping but can be dusty.",
-        tags: ["clay", "clumping", "odor-control", "scented"]
-    },
-    {
-        id: 'prettylitter',
-        name: "PrettyLitter",
-        category: "Crystal/Silica",
-        rating: 8.5,
-        image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=400&q=80",
-        summary: "Health-monitoring crystal litter that changes color. Subscription-based but convenient.",
-        tags: ["crystal", "silica", "health-monitoring", "lightweight", "subscription"]
-    },
-    {
-        id: 'boxiecat-premium',
-        name: "Boxiecat Premium Clumping",
-        category: "Clumping Clay",
-        rating: 9.2,
-        image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=400&q=80",
-        summary: "Premium clay with flat-top clumping technology. Excellent for multi-cat households.",
-        tags: ["clay", "clumping", "premium", "multi-cat", "low-tracking"]
-    },
-    {
-        id: 'purrify',
-        name: "Purrify Probiotic Deodorizer",
-        category: "Litter Additive",
-        rating: 9.6,
-        image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&q=80",
-        summary: "Game-changing probiotic additive that eliminates odor at the source. Works with any litter.",
-        tags: ["additive", "probiotic", "odor-control", "natural", "budget-hack"]
-    }
-];
+import { searchCatalog } from '@/lib/product-catalog';
 
 function SearchContent() {
     const searchParams = useSearchParams();
     const query = searchParams.get('q') || '';
 
-    const results = allProducts.filter(product =>
-        product.name.toLowerCase().includes(query.toLowerCase()) ||
-        product.category.toLowerCase().includes(query.toLowerCase()) ||
-        product.summary.toLowerCase().includes(query.toLowerCase()) ||
-        product.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
-    );
+    const results = searchCatalog(query);
 
     return (
         <div className="min-h-screen bg-background">
@@ -99,7 +37,7 @@ function SearchContent() {
                         <>
                             <div className="grid gap-6 mb-12">
                                 {results.map(product => (
-                                    <Link key={product.id} href={`/reviews/${product.id}`} prefetch={false}>
+                                    <Link key={product.id} href={product.reviewUrl} prefetch={false}>
                                         <div className="bg-card border border-border p-6 rounded-2xl hover:shadow-md transition-all flex flex-col md:flex-row gap-6 group">
                                             <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0">
                                                 <img src={product.image} alt={`${product.name} - ${product.category} cat litter product`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -109,7 +47,7 @@ function SearchContent() {
                                                     <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">{product.category}</span>
                                                     <div className="flex items-center gap-1 text-amber-500">
                                                         <Star className="w-4 h-4 fill-current" />
-                                                        <span className="font-bold text-sm">{product.rating}</span>
+                                                        <span className="font-bold text-sm">{product.overallScore}</span>
                                                     </div>
                                                 </div>
                                                 <h2 className="font-display text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{product.name}</h2>
