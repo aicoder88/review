@@ -201,7 +201,7 @@ export default function DrElseysReview() {
                 </section>
 
                 <section>
-                    <h2>What Dr. Elsey's Ultra Actually Is (No Marketing BS)</h2>
+                    <h2>What Dr. Elsey&apos;s Ultra Actually Is (No Marketing BS)</h2>
                     <p>
                         Dr. Elsey&apos;s Ultra is a medium-grain, hypoallergenic clumping clay litter. It&apos;s not fancy. It doesn&apos;t have scent crystals, color-changing beads, or self-cleaning robots attached to it. It&apos;s just high-quality bentonite clay designed to do one thing: clump fast and hard without creating a dust storm.
                     </p>
@@ -211,9 +211,9 @@ export default function DrElseysReview() {
                     <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-blue-900 mb-2">🏆 Veterinary Endorsement</h4>
                         <p className="text-blue-800">
-                            Dr. Elsey's is one of the few litters actually developed by a veterinarian.
+                            Dr. Elsey&apos;s is one of the few litters actually developed by a veterinarian.
                             Dr. Bruce Elsey still practices and uses the proceeds to fund cat rescue organizations
-                            through the <a href="https://www.drelseys.com/giving-back/" target="_blank" rel="noopener noreferrer" className="underline">Dr. Elsey's Give Back Program</a>.
+                            through the <a href="https://www.drelseys.com/giving-back/" target="_blank" rel="noopener noreferrer" className="underline">Dr. Elsey&apos;s Give Back Program</a>.
                         </p>
                     </div>
                 </section>
@@ -242,7 +242,7 @@ export default function DrElseysReview() {
                 <section>
                     <h2>Performance Results: The Data</h2>
 
-                    <h3>Dust Control (9.4/10) — The Best We've Tested</h3>
+                    <h3>Dust Control (9.4/10) — The Best We&apos;ve Tested</h3>
                     <p>
                         This is where Dr. Elsey&apos;s absolutely shines. We poured 2 cups from 24 inches up, 10 different times, and measured particulate levels with a professional air quality monitor.
                     </p>
@@ -253,12 +253,12 @@ export default function DrElseysReview() {
                                 <tr className="border-b border-border">
                                     <th className="text-left py-2">Litter Brand</th>
                                     <th className="text-right py-2">mg per Pour</th>
-                                    <th className="text-right py-2">vs Dr. Elsey's</th>
+                                    <th className="text-right py-2">vs Dr. Elsey&apos;s</th>
                                 </tr>
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2 font-medium text-foreground">Dr. Elsey's Ultra</td>
+                                    <td className="py-2 font-medium text-foreground">Dr. Elsey&apos;s Ultra</td>
                                     <td className="text-right py-2 font-bold text-primary">0.03mg</td>
                                     <td className="text-right py-2">Baseline</td>
                                 </tr>
@@ -268,12 +268,12 @@ export default function DrElseysReview() {
                                     <td className="text-right py-2">+33%</td>
                                 </tr>
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">World's Best</td>
+                                    <td className="py-2">World&apos;s Best</td>
                                     <td className="text-right py-2">0.15mg</td>
                                     <td className="text-right py-2">+400%</td>
                                 </tr>
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Arm & Hammer</td>
+                                    <td className="py-2">Arm &amp; Hammer</td>
                                     <td className="text-right py-2">0.45mg</td>
                                     <td className="text-right py-2">+1,400%</td>
                                 </tr>
@@ -325,7 +325,7 @@ export default function DrElseysReview() {
                     </div>
 
                     <OdorMetrics
-                        productName="Dr. Elsey's Ultra"
+                        productName="Dr. Elsey&apos;s Ultra"
                         overallScore={8.5}
                         testDuration="90 days"
                         initialAmmonia={0}
@@ -343,7 +343,7 @@ export default function DrElseysReview() {
                             "Requires full change at 3-4 weeks for multi-cat"
                         ]}
                         pros={["No overpowering perfumes", "Hard clumps remove all waste", "Hypoallergenic"]}
-                        cons={["Can get smelly by week 4", "Doesn't actively eliminate bacteria"]}
+                        cons={["Can get smelly by week 4", "Doesn&apos;t actively eliminate bacteria"]}
                         purrifyEnhancement={{
                             enabled: true,
                             improvementPercent: 90,
@@ -367,7 +367,7 @@ export default function DrElseysReview() {
                         <h4 className="font-bold text-lg mb-4">Cost Breakdown (Single Cat):</h4>
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div>
-                                <p className="font-bold mb-2 text-primary">Dr. Elsey's Ultra:</p>
+                                <p className="font-bold mb-2 text-primary">Dr. Elsey&apos;s Ultra:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $24.99 per 40lb bag</li>
                                     <li>• Lasts 7 weeks</li>
@@ -393,7 +393,7 @@ export default function DrElseysReview() {
                 </section>
 
                 <section>
-                    <h2>Who Should Buy Dr. Elsey's Ultra?</h2>
+                    <h2>Who Should Buy Dr. Elsey&apos;s Ultra?</h2>
                     <div className="grid md:grid-cols-2 gap-6 my-8">
                         <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
                             <h3 className="font-bold text-xl text-green-800 mb-4">✅ Perfect For:</h3>
@@ -409,7 +409,7 @@ export default function DrElseysReview() {
                             <h3 className="font-bold text-xl text-red-800 mb-4">❌ Not For:</h3>
                             <ul className="space-y-2 text-red-900/80">
                                 <li>• Tight budgets (budget clay is $0.08/day cheaper)</li>
-                                <li>• Those who can't lift 40lb bags</li>
+                                <li>• Those who can&apos;t lift 40lb bags</li>
                                 <li>• Eco-conscious buyers (clay mining)</li>
                                 <li>• Anyone needing flushable litter</li>
                                 <li>• People wanting scented/lavender options</li>
@@ -428,7 +428,7 @@ export default function DrElseysReview() {
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">
-                            Editor's Choice: Best Overall Clay Litter
+                            Editor&apos;s Choice: Best Overall Clay Litter
                         </p>
                         <p className="text-muted-foreground mb-6">
                             9.4/10 — The gold standard for dust-free clumping
