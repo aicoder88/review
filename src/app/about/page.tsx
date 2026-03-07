@@ -5,41 +5,19 @@ import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { Sparkles } from "lucide-react";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+import { buildPageMetadata } from "@/lib/page-metadata";
+import { getComparisonPageCount, getReviewedProductCount } from "@/lib/site";
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const reviewedProductCount = getReviewedProductCount();
+const comparisonPageCount = getComparisonPageCount();
 
 export const metadata: Metadata = {
-    title: "About Us | How We Test Cat Litter | ReviewCatLitter",
-    description: "Learn about ReviewCatLitter's mission and methodology. We spent $47K testing 500+ cat litters to give you honest, data-driven reviews you can trust.",
-    keywords: ["about reviewcatlitter", "cat litter testing methodology", "how we test cat litter", "independent cat litter reviews"],
-    alternates: {
-        canonical: "/about",
-        languages: {
-            "en-CA": "/about",
-            "fr-CA": "/about",
-            "en": "/about",
-        },
-    },
-    openGraph: {
-        title: "About Us | How We Test Cat Litter",
-        description: "Learn about ReviewCatLitter's mission and methodology. We spent $47K testing 500+ cat litters to give you honest reviews.",
-        url: `${siteUrl}/about`,
-        type: "website",
-        images: [
-            {
-                url: `${siteUrl}/images/og-about.jpg`,
-                width: 1200,
-                height: 630,
-                alt: "About ReviewCatLitter - Our Testing Methodology",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "About Us | How We Test Cat Litter",
-        description: "Learn about ReviewCatLitter's mission and methodology. We spent $47K testing 500+ cat litters.",
-        images: [`${siteUrl}/images/og-about.jpg`],
-    },
+    ...buildPageMetadata({
+        title: "About ReviewCatLitter",
+        description: `Learn how ReviewCatLitter handles ${reviewedProductCount} published reviews and ${comparisonPageCount}+ comparison pages with clear editorial standards.`,
+        path: "/about",
+        keywords: ["about reviewcatlitter", "cat litter testing methodology", "how we test cat litter", "independent cat litter reviews"],
+    }),
 };
 
 export default function AboutPage() {
@@ -59,7 +37,7 @@ export default function AboutPage() {
 
                         <h2 className="text-2xl font-bold text-foreground mb-4">Our Methodology</h2>
                         <p className="mb-6">
-                            Unlike other review sites that just aggregate Amazon reviews, we actually buy and test every single product. We spent over $47,000 in our first year of testing to set up a dedicated lab.
+                            Unlike other review sites that just aggregate Amazon reviews, we focus on hands-on evaluations, clear scoring criteria, and recurring updates across our live review catalog.
                         </p>
 
                         <ul className="space-y-4 mb-12">

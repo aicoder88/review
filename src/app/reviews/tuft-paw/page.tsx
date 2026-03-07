@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/tuft-paw`;
 
 export const metadata: Metadata = {
-    title: "Tuft + Paw Cat Litter Review 2025 | Designer Litter Test",
+    title: "Tuft + Paw Cat Litter Review | Designer Litter Test",
     description: "We tested Tuft + Paw's Really Great Cat Litter for 60 days. Soy-based, tofu-like litter. See our clumping analysis and value assessment.",
     keywords: [
         "Tuft and Paw review",
@@ -169,7 +169,7 @@ const faqData = [
 export default function TuftPawReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

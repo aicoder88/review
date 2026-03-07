@@ -2,12 +2,16 @@
 
 import { Beaker, ClipboardCheck, LineChart, Microscope, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { FadeUp, StaggerChildren, FadeIn } from '@/components/ui/motion';
+import { formatSiteDate, getLatestReviewedDate, getReviewedProductCount } from '@/lib/site';
+
+const reviewedProductCount = getReviewedProductCount();
+const latestReviewedDate = getLatestReviewedDate();
 
 const methodologyPoints = [
   {
     icon: Beaker,
     title: 'Lab Testing',
-    description: 'Every product undergoes 30+ standardized tests measuring dust, clumping, tracking, and odor',
+    description: 'Each review tracks dust, clumping, tracking, odor, and day-to-day usability with the same scoring framework',
     color: 'bg-accent/20 text-accent',
   },
   {
@@ -19,7 +23,7 @@ const methodologyPoints = [
   {
     icon: ClipboardCheck,
     title: 'Real-World Testing',
-    description: '90-day home trials with multiple cats, different box types, and various scooping schedules',
+    description: 'Real household use with multiple cats, different box types, and repeat review cycles over time',
     color: 'bg-accent/20 text-accent',
   },
   {
@@ -54,13 +58,13 @@ export function Methodology() {
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex items-end gap-4">
                   <div>
-                    <span className="block text-4xl font-bold text-accent">547+</span>
-                    <span className="text-sm text-white/80">Brands Tested</span>
+                    <span className="block text-4xl font-bold text-accent">{reviewedProductCount}</span>
+                    <span className="text-sm text-white/80">Published Reviews</span>
                   </div>
                   <div className="w-px h-12 bg-white/20" />
                   <div>
-                    <span className="block text-4xl font-bold text-accent">$47k</span>
-                    <span className="text-sm text-white/80">Invested</span>
+                    <span className="block text-4xl font-bold text-accent">{formatSiteDate(latestReviewedDate)}</span>
+                    <span className="text-sm text-white/80">Latest Review</span>
                   </div>
                 </div>
               </div>
@@ -101,7 +105,7 @@ export function Methodology() {
 
             <FadeUp delay={0.2}>
               <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                We&apos;re cat owners who got tired of the lies. <span className="font-bold text-white">&ldquo;99% Dust Free&rdquo;</span> usually means <span className="font-bold text-white">&ldquo;Clouds of Choking Dust&rdquo;</span>. We buy every product at retail price, test it for 90 days, and give you the raw data.
+                We&apos;re cat owners who got tired of the lies. <span className="font-bold text-white">&ldquo;99% Dust Free&rdquo;</span> usually means <span className="font-bold text-white">&ldquo;Clouds of Choking Dust&rdquo;</span>. We review products on the same rubric, revisit the catalog regularly, and publish the raw data instead of packaging hype.
               </p>
             </FadeUp>
 

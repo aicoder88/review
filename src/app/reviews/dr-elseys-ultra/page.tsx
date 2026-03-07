@@ -10,7 +10,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/dr-elseys-ultra`;
 
 export const metadata: Metadata = {
-    title: "Dr. Elsey's Ultra Cat Litter Review 2025 | 90-Day Lab Test Results",
+    title: "Dr. Elsey's Ultra Cat Litter Review | 90-Day Lab Test Results",
     description: "We spent 90 days testing Dr. Elsey's Ultra with air quality monitors and drop tests. 0.03mg dust per pour, 94% less than average. See the full data.",
     keywords: [
         "Dr Elsey's Ultra review",
@@ -181,7 +181,7 @@ export default function DrElseysReview() {
     return (
         <>
             {/* Schema.org Structured Data */}
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

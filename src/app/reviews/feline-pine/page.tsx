@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/feline-pine`;
 
 export const metadata: Metadata = {
-    title: "Feline Pine Review 2025 | Best Pine Pellet Cat Litter Test",
+    title: "Feline Pine Review | Best Pine Pellet Cat Litter Test",
     description: "We tested Feline Pine for 60 days. Chemical-free pine scent, highly absorbent, but non-clumping. See our sawdust breakdown analysis and odor control data.",
     keywords: [
         "Feline Pine review",
@@ -169,7 +169,7 @@ const faqData = [
 export default function FelinePineReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

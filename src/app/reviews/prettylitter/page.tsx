@@ -10,7 +10,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/prettylitter`;
 
 export const metadata: Metadata = {
-    title: "PrettyLitter Review 2025 | Health Monitoring Cat Litter Test",
+    title: "PrettyLitter Review | Health Monitoring Cat Litter Test",
     description: "We tested PrettyLitter for 60 days. Health monitoring works, but poop odor is weak. See our pH test validation and probiotic solution for multi-cat homes.",
     keywords: [
         "PrettyLitter review",
@@ -181,7 +181,7 @@ export default function PrettyLitterReview() {
     return (
         <>
             {/* Schema.org Structured Data */}
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

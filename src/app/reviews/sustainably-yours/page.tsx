@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/sustainably-yours`;
 
 export const metadata: Metadata = {
-    title: "Sustainably Yours Cat Litter Review 2025 | Best Natural Litter Test",
+    title: "Sustainably Yours Cat Litter Review | Best Natural Litter Test",
     description: "We tested Sustainably Yours for 60 days. Better than World's Best? See our corn + cassava formula test data, clumping analysis, and flushability results.",
     keywords: [
         "Sustainably Yours review",
@@ -179,7 +179,7 @@ const faqData = [
 export default function SustainablyYoursReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

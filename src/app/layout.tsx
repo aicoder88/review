@@ -25,8 +25,6 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const defaultImage = `${siteUrl}/images/og-default.jpg`;
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -49,9 +47,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -59,20 +54,11 @@ export const metadata: Metadata = {
     siteName: siteName,
     title: "ReviewCatLitter.com - Data-Driven Cat Litter Reviews & Ratings",
     description: siteDescription,
-    images: [
-      {
-        url: defaultImage,
-        width: 1200,
-        height: 630,
-        alt: "ReviewCatLitter.com - Data-Driven Cat Litter Reviews",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ReviewCatLitter.com - Data-Driven Cat Litter Reviews & Ratings",
     description: siteDescription,
-    images: [defaultImage],
     creator: "@reviewcatlitter",
     site: "@reviewcatlitter",
   },

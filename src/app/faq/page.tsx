@@ -9,41 +9,18 @@ import {
 } from '@/components/ui/accordion';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/page-metadata';
+import { getReviewedProductCount } from '@/lib/site';
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const reviewedProductCount = getReviewedProductCount();
 
 export const metadata: Metadata = {
-  title: "Cat Litter FAQ 2025 | Common Questions Answered | ReviewCatLitter",
-  description: "Get answers to all your cat litter questions. How often to change litter, best types for odor control, money-saving tips, and expert advice.",
-  keywords: ["cat litter FAQ", "how often change cat litter", "best cat litter odor control", "cat litter questions", "litter box tips"],
-  alternates: {
-    canonical: "/faq",
-    languages: {
-      "en-CA": "/faq",
-      "fr-CA": "/faq",
-      "en": "/faq",
-    },
-  },
-  openGraph: {
-    title: "Cat Litter FAQ 2025 | Common Questions Answered",
-    description: "Get answers to all your cat litter questions. How often to change litter, best types for odor control, money-saving tips.",
-    url: `${siteUrl}/faq`,
-    type: "website",
-    images: [
-      {
-        url: `${siteUrl}/images/og-faq.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Cat Litter Frequently Asked Questions",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cat Litter FAQ 2025 | Common Questions Answered",
-    description: "Get answers to all your cat litter questions. How often to change litter, best types for odor control.",
-    images: [`${siteUrl}/images/og-faq.jpg`],
-  },
+  ...buildPageMetadata({
+    title: "Cat Litter FAQ",
+    description: "Get answers to common cat litter questions, from odor control and litter changes to money-saving tips and basic product choices.",
+    path: "/faq",
+    keywords: ["cat litter FAQ", "how often change cat litter", "best cat litter odor control", "cat litter questions", "litter box tips"],
+  }),
 };
 
 const faqs = [
@@ -107,7 +84,7 @@ const faqs = [
     questions: [
       {
         question: "Does Purrify really work with any litter?",
-        answer: "Yes. We've personally tested Purrify with 50+ litter brands including clay (clumping and non-clumping), silica crystal, natural corn/wheat/wood, walnut, paper, and pellet types. The probiotics work on bacterial odor regardless of litter material. Results consistently show 2x extended litter life across ALL types tested."
+        answer: `Yes. We've tested Purrify across the ${reviewedProductCount}-product review catalog, including clay, silica, natural, walnut, paper, and pellet-style options. The probiotics work on bacterial odor regardless of litter material, and the strongest results still come from unscented formulas.`
       },
       {
         question: "How long does one bag of Purrify last?",
@@ -159,7 +136,7 @@ export default function FAQPage() {
             </h1>
             <p className="text-xl text-muted-foreground mb-12">
               Everything you need to know about cat litter, odor control,
-              and making your litter last longer. Expert answers based on testing 50+ brands.
+              and making your litter last longer. Expert answers grounded in our published review catalog.
             </p>
 
             {faqs.map(category => (

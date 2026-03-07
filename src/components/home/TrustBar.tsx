@@ -2,13 +2,18 @@
 
 import { FadeUp } from "@/components/ui/motion";
 import { CountUp } from "@/components/ui/CountUp";
+import { getComparisonPageCount, getFeaturedWinnerCount, getReviewedProductCount } from "@/lib/site";
+
+const reviewedProductCount = getReviewedProductCount();
+const comparisonPageCount = getComparisonPageCount();
+const featuredWinnerCount = getFeaturedWinnerCount();
 
 export function TrustBar() {
   const stats = [
-    { label: "Hours of Lab Testing", value: "2,847" },
-    { label: "Products Tested", value: "547" },
+    { label: "Published Reviews", value: reviewedProductCount.toString() },
+    { label: "Comparison Matchups", value: comparisonPageCount.toString() },
+    { label: "Featured Winners", value: featuredWinnerCount.toString() },
     { label: "Sponsored Reviews", value: "Zero" },
-    { label: "Money Spent", value: "$47,000+" },
   ];
 
   return (
@@ -20,8 +25,9 @@ export function TrustBar() {
           className="text-center group cursor-default"
         >
           <div className="text-3xl md:text-4xl font-display font-bold text-primary mb-1 group-hover:text-accent transition-colors duration-300">
-            {stat.label === "Hours of Lab Testing" ? <CountUp value={2847} /> :
-              stat.label === "Products Tested" ? <CountUp value={547} /> :
+            {stat.label === "Published Reviews" ? <CountUp value={reviewedProductCount} /> :
+              stat.label === "Comparison Matchups" ? <CountUp value={comparisonPageCount} /> :
+                stat.label === "Featured Winners" ? <CountUp value={featuredWinnerCount} /> :
                 stat.value}
           </div>
           <div className="text-primary/60 text-[10px] md:text-xs font-bold tracking-widest uppercase">

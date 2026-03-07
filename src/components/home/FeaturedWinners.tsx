@@ -6,6 +6,7 @@ import { ScalePop, StaggerChildren, FadeUp } from '@/components/ui/motion';
 import Link from 'next/link';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { getFeaturedWinnerProducts } from '@/lib/product-catalog';
+import { getReviewedProductCount } from '@/lib/site';
 
 const iconMap = {
   crown: Crown,
@@ -15,6 +16,7 @@ const iconMap = {
 } as const;
 
 const featuredProducts = getFeaturedWinnerProducts();
+const reviewedProductCount = getReviewedProductCount();
 
 export function FeaturedWinners() {
   return (
@@ -24,18 +26,18 @@ export function FeaturedWinners() {
           <FadeUp>
             <div className="inline-flex items-center gap-2 bg-white border border-border text-foreground/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
               <Crown className="w-4 h-4 text-accent" />
-              <span className="font-semibold text-sm tracking-wide">2025 Award Winners</span>
+              <span className="font-semibold text-sm tracking-wide">Editorial Standouts</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Only <span className="text-gradient-gold italic font-serif">4 Litters</span> Passed Our Tests
+              Our <span className="text-gradient-gold italic font-serif">{featuredProducts.length} Top Picks</span> Right Now
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto leading-relaxed mb-2">
-              <span className="font-bold">543 failed.</span> These 4 actually work.
+              {reviewedProductCount} published reviews, narrowed down to the standout products we would buy again.
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Tested for 6 months in real homes with real cats. No marketing BS.
+              These are the clearest winners in the current review catalog. No marketing fluff.
             </p>
           </FadeUp>
         </div>
@@ -123,7 +125,7 @@ export function FeaturedWinners() {
 
         <div className="mt-16 text-center space-y-6">
           <Link href="/reviews" prefetch={false} className="px-8 py-4 bg-white border-2 border-border hover:border-primary text-foreground font-bold rounded-full transition-all duration-300 shadow-sm hover:shadow-lg inline-flex items-center gap-2">
-            View All 547 Reviews <ArrowRight className="w-4 h-4" />
+            View All {reviewedProductCount} Reviews <ArrowRight className="w-4 h-4" />
           </Link>
           
           {/* Subtle Purrify Tip */}

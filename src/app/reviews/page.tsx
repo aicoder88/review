@@ -6,6 +6,7 @@ import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
 import { BreadcrumbSchema } from "@/components/seo/EnhancedProductSchema";
 import { ItemListSchema } from "@/components/seo/ItemListSchema";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { getReviewDirectoryProducts } from "@/lib/product-catalog";
 import {
   formatSiteDate,
@@ -20,43 +21,28 @@ const reviewedProductCount = getReviewedProductCount();
 const latestReviewedDate = getLatestReviewedDate();
 
 export const metadata: Metadata = {
-  title: "All Cat Litter Reviews 2025 | 90-Day Scientific Testing | ReviewCatLitter",
-  description: `Independent cat litter reviews based on hands-on testing. Browse ${reviewedProductCount} current reviews with dust, clumping, odor, tracking, and value data.`,
-  keywords: [
-    "cat litter reviews",
-    "best cat litter 2025",
-    "scientific cat litter testing",
-    "dust free litter reviews",
-    "clumping litter comparison",
-    "cat litter ratings",
-    "independent litter reviews",
-    "Dr Elsey's review",
-    "World's Best litter review",
-    "PrettyLitter review"
-  ],
-  alternates: {
-    canonical: "/reviews",
-  },
-  openGraph: {
-    title: "Cat Litter Reviews 2025 | Scientific Testing & Real Data",
-    description: "Independent reviews with 90-day testing. Dust measurement, clump strength analysis, and ammonia testing. No paid placements, no fake reviews.",
-    url: `${siteUrl}/reviews`,
-    type: "website",
-    images: [
-      {
-        url: `${siteUrl}/images/og-reviews.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Scientific Cat Litter Reviews - Independent Testing Data",
-      },
+  ...buildPageMetadata({
+    title: 'All Cat Litter Reviews',
+    description: `Independent cat litter reviews based on hands-on testing. Browse ${reviewedProductCount} current reviews with dust, clumping, odor, tracking, and value data.`,
+    path: '/reviews',
+    keywords: [
+      "cat litter reviews",
+      "scientific cat litter testing",
+      "dust free litter reviews",
+      "clumping litter comparison",
+      "cat litter ratings",
+      "independent litter reviews",
+      "Dr Elsey's review",
+      "World's Best litter review",
+      "PrettyLitter review"
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cat Litter Reviews 2025 | Scientific Testing & Real Data",
-    description: "Independent reviews with 90-day testing. Dust measurement, clump strength analysis, and ammonia testing.",
-    images: [`${siteUrl}/images/og-reviews.jpg`],
-  },
+    openGraphTitle: 'Cat Litter Reviews | Scientific Testing and Real Data',
+    openGraphDescription:
+      'Independent reviews with dust measurement, clump strength analysis, and ammonia testing. No paid placements, no fake reviews.',
+    twitterTitle: 'Cat Litter Reviews | Scientific Testing and Real Data',
+    twitterDescription:
+      'Independent reviews with dust measurement, clump strength analysis, and ammonia testing.',
+  }),
 };
 
 // Breadcrumb schema
@@ -80,8 +66,8 @@ const trustSignals = [
   },
   {
     icon: Clock,
-    title: "90-Day Tests",
-    description: "Every product tested for minimum 60-90 days"
+    title: "Current Review Cycles",
+    description: "Product pages are refreshed against the live catalog instead of left to go stale"
   },
   {
     icon: Shield,
@@ -114,7 +100,7 @@ export default function ReviewsPage() {
                 Cat Litter <span className="text-primary">Reviews</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Independent reviews based on 90-day scientific testing. We measure dust with air quality monitors, 
+                Independent reviews based on hands-on testing. We measure dust with air quality monitors,
                 test clumping with drop tests, and track ammonia with lab strips. No paid placements. No fake reviews.
               </p>
               <div className="mx-auto mb-10 flex max-w-4xl flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
@@ -187,7 +173,7 @@ export default function ReviewsPage() {
                 <div className="text-center bg-white/70 backdrop-blur-sm p-4 rounded-xl">
                   <div className="text-5xl font-bold text-emerald-600">9.6</div>
                   <div className="text-sm text-emerald-700 font-medium">Highest Score</div>
-                  <div className="text-xs text-emerald-600 mt-1">6-month test</div>
+                  <div className="text-xs text-emerald-600 mt-1">Reviewed {formatSiteDate(latestReviewedDate)}</div>
                 </div>
               </div>
             </div>
@@ -220,7 +206,7 @@ export default function ReviewsPage() {
                           <Star className="w-4 h-4 fill-current" />
                           <span className="font-bold text-sm">{review.overallScore}/10</span>
                         </div>
-                        <span className="text-xs text-muted-foreground">• 90-day test</span>
+                        <span className="text-xs text-muted-foreground">• Reviewed {formatSiteDate(review.lastReviewedAt)}</span>
                       </div>
                       <h2 className="font-display text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {review.name}

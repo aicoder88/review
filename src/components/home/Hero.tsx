@@ -6,6 +6,10 @@ import { useRouter } from 'next/navigation';
 import { Search, ArrowRight, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { FadeUp, FadeIn, StaggerChildren } from '@/components/ui/motion';
+import { getComparisonPageCount, getReviewedProductCount } from '@/lib/site';
+
+const reviewedProductCount = getReviewedProductCount();
+const comparisonPageCount = getComparisonPageCount();
 
 export function Hero() {
   const [searchFocused, setSearchFocused] = useState(false);
@@ -36,23 +40,25 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span className="text-sm font-bold tracking-wide uppercase">2,847 Hours of Lab Testing • Zero Sponsored Reviews</span>
+            <span className="text-sm font-bold tracking-wide uppercase">
+              {reviewedProductCount} Published Reviews • {comparisonPageCount}+ Comparison Matchups
+            </span>
           </FadeUp>
 
           {/* Headline */}
           <FadeUp>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium mb-8 leading-[1.05] tracking-tight text-foreground">
-              We Spent <span className="text-primary font-bold">$47,000</span> Testing Every Major <span className="text-gradient-gold italic pr-2">Cat Litter</span> Brand. <br className="hidden md:block" /> Here&apos;s What Actually Works.
+              We Review <span className="text-primary font-bold">Cat Litter</span> With Clear Scores, Real Tradeoffs, and <span className="text-gradient-gold italic pr-2">No Packaging Hype</span>. <br className="hidden md:block" /> Here&apos;s What Actually Works.
             </h1>
           </FadeUp>
 
           {/* Subheadline (Hormozi Style) */}
           <FadeUp delay={0.2} className="max-w-3xl mx-auto mb-12">
             <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-4">
-              <span className="font-bold text-destructive">93% of cat litters fail</span> our odor control test by week 3.
+              <span className="font-bold text-destructive">Most cat litters still fall short</span> on dust, odor, or cleanup.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Stop wasting money on litters that <span className="font-semibold text-foreground">clump like wet sand</span>, <span className="font-semibold text-foreground">track across your house</span>, or <span className="font-semibold text-foreground">smell like a zoo</span>. We spent 2,847 hours testing 547 brands so you don&apos;t have to.
+              Stop wasting money on litters that <span className="font-semibold text-foreground">clump like wet sand</span>, <span className="font-semibold text-foreground">track across your house</span>, or <span className="font-semibold text-foreground">smell like a zoo</span>. Browse {reviewedProductCount} current reviews and {comparisonPageCount}+ permanent side-by-side matchups instead of guessing from packaging claims.
             </p>
           </FadeUp>
 
@@ -78,7 +84,7 @@ export function Hero() {
               <Search className="ml-4 w-5 h-5 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search 547+ brutally honest reviews..."
+                placeholder={`Search ${reviewedProductCount} brutally honest reviews...`}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setSearchFocused(true)}
@@ -119,7 +125,7 @@ export function Hero() {
         <FadeIn delay={0.8}>
           <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg border border-primary/10">
             <span className="text-2xl">🐱</span>
-            <span className="text-xs font-bold text-primary">547+ Reviews</span>
+            <span className="text-xs font-bold text-primary">{reviewedProductCount} Reviews</span>
           </div>
         </FadeIn>
         <FadeIn delay={1.0}>

@@ -1,13 +1,21 @@
+import type { Metadata } from 'next';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
+import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+
+const categoryConfig = getCategoryPageConfig('best-odor-control-cat-litter');
+const categoryStats = getCategoryPageStats('best-odor-control-cat-litter');
+
+export const metadata: Metadata = getCategoryPageMetadata('best-odor-control-cat-litter');
 
 const categoryData: CategoryData = {
-    title: "Best Odor Control Cat Litter (2025)",
-    description: "If your house smells like a litter box, you're buying the wrong litter. We tested 23 brands to find the ones that actually trap, seal, and destroy odors.",
+    path: categoryConfig?.path ?? '/categories/best-odor-control-cat-litter',
+    title: categoryConfig?.title ?? 'Best Odor Control Cat Litter',
+    description: categoryConfig?.description ?? "If your house smells like a litter box, you're buying the wrong litter. We tested odor-control picks to find the ones that actually trap, seal, and destroy odors.",
     stats: {
-        tested: 23,
-        duration: "6 Months",
-        priceRange: "$15 - $32"
+        tested: categoryStats?.tested ?? 0,
+        reviewedThrough: categoryStats?.reviewedThrough ?? '',
+        priceRange: categoryStats?.priceRange ?? '$0 - $0'
     },
     products: [
         {

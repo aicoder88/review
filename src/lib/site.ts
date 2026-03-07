@@ -1,4 +1,8 @@
-import { getAllComparisonMatchups, productCatalog } from '@/lib/product-catalog';
+import {
+  getAllComparisonMatchups,
+  getFeaturedWinnerProducts,
+  productCatalog,
+} from '@/lib/product-catalog';
 
 export const siteUrl = 'https://www.reviewcatlitter.com';
 export const siteName = 'ReviewCatLitter.com';
@@ -49,6 +53,10 @@ export function getReviewedProductCount() {
 
 export function getComparisonPageCount() {
   return getAllComparisonMatchups().length;
+}
+
+export function getFeaturedWinnerCount() {
+  return getFeaturedWinnerProducts().length;
 }
 
 export function getLatestReviewedDate() {

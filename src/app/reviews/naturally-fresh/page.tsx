@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/naturally-fresh`;
 
 export const metadata: Metadata = {
-    title: "Naturally Fresh Review 2025 | Walnut Shell Cat Litter Test",
+    title: "Naturally Fresh Review | Walnut Shell Cat Litter Test",
     description: "We tested Naturally Fresh for 60 days. Walnut shell litter with incredible clumping. See our data on this eco-friendly clay alternative.",
     keywords: [
         "Naturally Fresh review",
@@ -169,7 +169,7 @@ const faqData = [
 export default function NaturallyFreshReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

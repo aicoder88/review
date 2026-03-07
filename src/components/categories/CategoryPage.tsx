@@ -11,6 +11,8 @@ import { ArrowUpDown, SlidersHorizontal, Check } from 'lucide-react';
 import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { ItemListSchema } from '@/components/seo/ItemListSchema';
+import { toAbsoluteUrl } from '@/lib/site';
 
 export interface ProductGridItem {
     id: string;
@@ -29,11 +31,12 @@ export interface ProductGridItem {
 }
 
 export interface CategoryData {
+    path: string;
     title: string;
     description: string;
     stats: {
         tested: number;
-        duration: string;
+        reviewedThrough: string;
         priceRange: string;
     };
     quickPicks: {
@@ -51,6 +54,7 @@ interface CategoryPageProps extends CategoryData {
 }
 
 export function CategoryPage({
+    path,
     title,
     description,
     stats,
@@ -159,10 +163,20 @@ export function CategoryPage({
     });
 
     return (
-        <div className="min-h-screen bg-background">
-            <Header />
+        <>
+            <ItemListSchema
+                name={`${title} category roundup`}
+                url={toAbsoluteUrl(path)}
+                items={products.map((product) => ({
+                    name: product.name,
+                    url: toAbsoluteUrl(product.reviewUrl),
+                }))}
+            />
 
-            <main className="pt-24 pb-20">
+            <div className="min-h-screen bg-background">
+                <Header />
+
+                <main className="pt-24 pb-20">
 
                 {/* Category Hero */}
                 <section className="container mx-auto px-6 mb-16 text-center max-w-4xl">
@@ -177,15 +191,15 @@ export function CategoryPage({
                     <FadeUp delay={0.2} className="inline-flex flex-wrap justify-center gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest text-primary/80">
                         <span className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-primary" />
-                            Tested {stats.tested} Products
+                            {stats.tested} Reviewed Picks
                         </span>
                         <span className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-primary" />
-                            {stats.duration} Testing
+                            Reviewed Through {stats.reviewedThrough}
                         </span>
                         <span className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-primary" />
-                            Tested by Humans & Cats
+                            {stats.priceRange} Price Range
                         </span>
                     </FadeUp>
                 </section>
@@ -386,8 +400,9 @@ export function CategoryPage({
                     </div>
                 </section>
 
-            </main>
-            <Footer />
-        </div>
+                </main>
+                <Footer />
+            </div>
+        </>
     );
 }

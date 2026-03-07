@@ -1,7 +1,11 @@
 'use client';
 
 import { FadeUp, FadeIn, StaggerChildren } from '@/components/ui/motion';
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
+import { getComparisonPageCount, getReviewedProductCount } from '@/lib/site';
+
+const reviewedProductCount = getReviewedProductCount();
+const comparisonPageCount = getComparisonPageCount();
 
 export function ValueEquation() {
     return (
@@ -18,7 +22,7 @@ export function ValueEquation() {
                     </FadeUp>
                     <FadeUp delay={0.1}>
                         <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto leading-relaxed mb-2">
-                            We spent <span className="font-bold">$70,000+</span> and <span className="font-bold">2,847 hours</span> testing.
+                            We maintain <span className="font-bold">{reviewedProductCount} live reviews</span> and <span className="font-bold">{comparisonPageCount}+ comparison pages</span>.
                         </p>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                             You get the truth for free. That&apos;s the deal.
@@ -39,15 +43,15 @@ export function ValueEquation() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">$47,000</strong> buying 547 litters at retail price (no freebies)</span>
+                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">{reviewedProductCount} published reviews</strong> with full scores, pros/cons, and verdicts</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">$23,000</strong> on lab equipment & testing supplies</span>
+                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">{comparisonPageCount}+ matchup pages</strong> built from the closest catalog alternatives</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">2,847 hours</strong> of testing, measuring, and analyzing</span>
+                                <span className="text-lg text-muted-foreground"><strong className="text-foreground">Real product-level notes</strong> on dust, clumping, odor, tracking, and value</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-primary mt-1 shrink-0" />

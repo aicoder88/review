@@ -7,41 +7,15 @@ import { Testimonials } from '@/components/purrify/Testimonials';
 import { RelatedArticles } from '@/components/content/RelatedArticles';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-
-const siteUrl = "https://www.reviewcatlitter.com";
+import { buildPageMetadata } from '@/lib/page-metadata';
 
 export const metadata: Metadata = {
-  title: "Purrify: Make Any Cat Litter Last 2x Longer | Save $360/Year",
-  description: "Probiotic cat litter deodorizer that eliminates odor and extends litter life. Works with all brands. 2,847+ happy customers. Money-back guarantee.",
-  keywords: ["Purrify", "cat litter deodorizer", "probiotic litter additive", "extend cat litter life", "cat litter odor control"],
-  alternates: {
-    canonical: "/purrify-litter-enhancer",
-    languages: {
-      "en-CA": "/purrify-litter-enhancer",
-      "fr-CA": "/purrify-litter-enhancer",
-      "en": "/purrify-litter-enhancer",
-    },
-  },
-  openGraph: {
-    title: "Purrify: Make Any Cat Litter Last 2x Longer | Save $360/Year",
-    description: "Probiotic cat litter deodorizer that eliminates odor and extends litter life. Works with all brands. 2,847+ happy customers.",
-    url: `${siteUrl}/purrify-litter-enhancer`,
-    type: "website",
-    images: [
-      {
-        url: `${siteUrl}/images/og-purrify.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Purrify Probiotic Cat Litter Deodorizer",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Purrify: Make Any Cat Litter Last 2x Longer",
-    description: "Probiotic cat litter deodorizer that eliminates odor and extends litter life. Works with all brands.",
-    images: [`${siteUrl}/images/og-purrify.jpg`],
-  },
+  ...buildPageMetadata({
+    title: "Purrify: Make Any Cat Litter Last Longer",
+    description: "Probiotic cat litter deodorizer that targets odor at the source and helps extend litter life across multiple litter types.",
+    path: "/purrify-litter-enhancer",
+    keywords: ["Purrify", "cat litter deodorizer", "probiotic litter additive", "extend cat litter life", "cat litter odor control"],
+  }),
 };
 
 export default function PurrifyLandingPage() {
@@ -98,7 +72,7 @@ export default function PurrifyLandingPage() {
           <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-xl">⭐⭐⭐⭐⭐</span>
-              <span>4.8/5 (2,847 reviews)</span>
+              <span>Top-rated by ReviewCatLitter readers</span>
             </div>
             <div>✓ Works with all litters</div>
             <div>✓ 100% Natural probiotics</div>
@@ -211,7 +185,7 @@ export default function PurrifyLandingPage() {
             <div className="bg-white border border-gray-200 rounded-xl p-6">
               <h3 className="font-bold text-lg mb-2">Does Purrify really work with any litter?</h3>
               <p className="text-muted-foreground">
-                Yes! We&apos;ve tested Purrify with 50+ litter brands including clay, crystal, natural,
+                Yes. We&apos;ve tested Purrify with clay, crystal, natural,
                 and pellet types. The probiotics work on bacterial odor regardless of litter material.
                 Results consistently show 2x extended litter life across all types tested.
               </p>
@@ -263,7 +237,7 @@ export default function PurrifyLandingPage() {
             Ready to Save $300+ Per Year?
           </h2>
           <p className="text-xl mb-8 opacity-95">
-            Join 2,847 cat parents who&apos;ve already made the switch to Purrify
+            See whether Purrify fits your current litter setup
           </p>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">

@@ -48,7 +48,7 @@ export function Testimonials() {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-4">
-          2,847 Cat Parents Love Purrify
+          Reader Feedback on Purrify
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg">
           Real results from real cat owners
@@ -90,7 +90,7 @@ export function Testimonials() {
           <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-6 py-3">
             <span className="text-amber-400 text-xl">★★★★★</span>
             <span className="font-bold">4.8/5</span>
-            <span className="text-muted-foreground">from 2,847 reviews</span>
+            <span className="text-muted-foreground">based on featured testimonials</span>
           </div>
         </div>
       </div>

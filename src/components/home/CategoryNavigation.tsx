@@ -2,13 +2,13 @@
 
 import { Droplets, Leaf, Mountain, Sparkles, Zap, Heart } from 'lucide-react';
 import Link from 'next/link';
+import { getCategoryPageStats } from '@/lib/category-pages';
 
 const categories = [
   {
     icon: Mountain,
     label: 'Best Clumping',
     slug: 'best-clumping-cat-litter',
-    count: '150+ Tested',
     painPoint: 'Tired of clumps that fall apart?',
     gradient: 'from-accent to-amber-600',
     bgGradient: 'from-accent/10 to-amber-600/10',
@@ -18,7 +18,6 @@ const categories = [
     icon: Sparkles,
     label: 'Best Low Dust',
     slug: 'best-low-dust-cat-litter',
-    count: '80+ Tested',
     painPoint: 'Coughing every time you scoop?',
     gradient: 'from-slate-400 to-slate-600',
     bgGradient: 'from-slate-400/10 to-slate-600/10',
@@ -28,7 +27,6 @@ const categories = [
     icon: Leaf,
     label: 'Best Natural',
     slug: 'best-natural-cat-litter',
-    count: '120+ Tested',
     painPoint: 'Want eco-friendly that actually works?',
     gradient: 'from-primary to-emerald-600',
     bgGradient: 'from-primary/10 to-emerald-600/10',
@@ -38,7 +36,6 @@ const categories = [
     icon: Heart,
     label: 'Best Budget',
     slug: 'best-budget-cat-litter',
-    count: '60+ Tested',
     painPoint: 'Need quality without the premium price?',
     gradient: 'from-emerald-400 to-teal-500',
     bgGradient: 'from-emerald-400/10 to-teal-500/10',
@@ -48,7 +45,6 @@ const categories = [
     icon: Droplets,
     label: 'Best Odor Control',
     slug: 'best-odor-control-cat-litter',
-    count: '90+ Tested',
     painPoint: 'House smells like a litter box?',
     gradient: 'from-accent to-amber-700',
     bgGradient: 'from-accent/10 to-amber-700/10',
@@ -100,7 +96,7 @@ export function CategoryNavigation() {
                   {category.label}
                 </span>
                 <span className="text-xs text-white/50 mb-3">
-                  {category.count}
+                  {getCategoryPageStats(category.slug)?.tested ?? 0} reviewed picks
                 </span>
                 <span className="text-sm text-amber-300 font-medium">
                   {category.painPoint}

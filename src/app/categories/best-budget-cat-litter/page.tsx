@@ -1,14 +1,22 @@
 
+import type { Metadata } from 'next';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
+import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+
+const categoryConfig = getCategoryPageConfig('best-budget-cat-litter');
+const categoryStats = getCategoryPageStats('best-budget-cat-litter');
+
+export const metadata: Metadata = getCategoryPageMetadata('best-budget-cat-litter');
 
 const categoryData: CategoryData = {
-    title: "Best Budget Cat Litter (2025)",
-    description: "You don't need to spend $40 a month to avoid smelling cat poop. We found the best cheap litters that actually work.",
+    path: categoryConfig?.path ?? '/categories/best-budget-cat-litter',
+    title: categoryConfig?.title ?? 'Best Budget Cat Litter',
+    description: categoryConfig?.description ?? "You don't need to spend $40 a month to avoid smelling cat poop. We found the best cheap litters that actually work.",
     stats: {
-        tested: 15,
-        duration: "4 Months",
-        priceRange: "$8 - $20"
+        tested: categoryStats?.tested ?? 0,
+        reviewedThrough: categoryStats?.reviewedThrough ?? '',
+        priceRange: categoryStats?.priceRange ?? '$0 - $0'
     },
     products: [
         {

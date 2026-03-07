@@ -10,7 +10,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/worlds-best`;
 
 export const metadata: Metadata = {
-    title: "World's Best Cat Litter Review 2025 | Flushable Natural Litter Test",
+    title: "World's Best Cat Litter Review | Flushable Natural Litter Test",
     description: "We tested World's Best Cat Litter for 60 days. It's flushable, eco-friendly, and controls odor well—but has a 'corn smell' issue. See our full data and the Purrify fix.",
     keywords: [
         "World's Best Cat Litter review",
@@ -183,7 +183,7 @@ export default function WorldsBestReview() {
     return (
         <>
             {/* Schema.org Structured Data */}
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

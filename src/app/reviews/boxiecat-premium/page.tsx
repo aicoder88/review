@@ -10,7 +10,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/boxiecat-premium`;
 
 export const metadata: Metadata = {
-    title: "Boxiecat Premium Review 2025 | Flat Top Clumping Test Results",
+    title: "Boxiecat Premium Review | Flat Top Clumping Test Results",
     description: "We tested Boxiecat Premium for 90 days. The 'Flat Top' clumping really works—no more scraping the bottom. See our dust test data vs Dr. Elsey's.",
     keywords: [
         "Boxiecat Premium review",
@@ -181,7 +181,7 @@ export default function BoxiecatReview() {
     return (
         <>
             {/* Schema.org Structured Data */}
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

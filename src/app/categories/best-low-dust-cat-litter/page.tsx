@@ -1,13 +1,21 @@
+import type { Metadata } from 'next';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
+import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+
+const categoryConfig = getCategoryPageConfig('best-low-dust-cat-litter');
+const categoryStats = getCategoryPageStats('best-low-dust-cat-litter');
+
+export const metadata: Metadata = getCategoryPageMetadata('best-low-dust-cat-litter');
 
 const categoryData: CategoryData = {
-    title: "Best Low-Dust Cat Litter (2025)",
-    description: "Dust isn't just an annoyance; it's a health hazard for you and your cat. We measured particulate levels in 18 brands to find the true dust-free options.",
+    path: categoryConfig?.path ?? '/categories/best-low-dust-cat-litter',
+    title: categoryConfig?.title ?? 'Best Low-Dust Cat Litter',
+    description: categoryConfig?.description ?? "Dust isn't just an annoyance; it's a health hazard for you and your cat. We measured particulate levels in several brands to find the true dust-free options.",
     stats: {
-        tested: 18,
-        duration: "3 Months",
-        priceRange: "$20 - $40"
+        tested: categoryStats?.tested ?? 0,
+        reviewedThrough: categoryStats?.reviewedThrough ?? '',
+        priceRange: categoryStats?.priceRange ?? '$0 - $0'
     },
     products: [
         {

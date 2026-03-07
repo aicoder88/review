@@ -4,41 +4,18 @@ import { CheckCircle2, Beaker, Clock, DollarSign, Sparkles, ArrowRight } from "l
 import { Header } from "@/components/home/Header";
 import { Footer } from "@/components/home/Footer";
 import { PurrifyLink } from "@/components/reviews/PurrifyLink";
+import { buildPageMetadata } from "@/lib/page-metadata";
+import { getReviewedProductCount } from "@/lib/site";
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const reviewedProductCount = getReviewedProductCount();
 
 export const metadata: Metadata = {
-  title: "Our Testing Methodology | How We Review Cat Litter | ReviewCatLitter",
-  description: "Learn how we test cat litter. $47K spent, 500+ products, scientific measurements for dust, clumping, odor & tracking. Real data, no sponsored reviews.",
-  keywords: ["cat litter testing methodology", "how we test cat litter", "cat litter lab testing", "litter review process", "independent cat litter testing"],
-  alternates: {
-    canonical: "/methodology",
-    languages: {
-      "en-CA": "/methodology",
-      "fr-CA": "/methodology",
-      "en": "/methodology",
-    },
-  },
-  openGraph: {
-    title: "Our Testing Methodology | How We Review Cat Litter",
-    description: "Learn how we test cat litter. $47K spent, 500+ products, scientific measurements for dust, clumping, odor & tracking.",
-    url: `${siteUrl}/methodology`,
-    type: "website",
-    images: [
-      {
-        url: `${siteUrl}/images/og-methodology.jpg`,
-        width: 1200,
-        height: 630,
-        alt: "Our Cat Litter Testing Methodology",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Our Testing Methodology | How We Review Cat Litter",
-    description: "Learn how we test cat litter. $47K spent, 500+ products, scientific measurements.",
-    images: [`${siteUrl}/images/og-methodology.jpg`],
-  },
+  ...buildPageMetadata({
+    title: "Our Testing Methodology",
+    description: `Learn how we score dust, clumping, odor, tracking, and value across ${reviewedProductCount} published cat litter reviews.`,
+    path: "/methodology",
+    keywords: ["cat litter testing methodology", "how we test cat litter", "cat litter lab testing", "litter review process", "independent cat litter testing"],
+  }),
 };
 
 export default function MethodologyPage() {
@@ -51,7 +28,7 @@ export default function MethodologyPage() {
                         Our <span className="text-primary">Testing Methodology</span>
                     </h1>
                     <p className="text-xl text-muted-foreground mb-12">
-                        How we test 500+ cat litters to find the ones that actually work.
+                        How we evaluate the published review catalog to find the products that actually work.
                     </p>
 
                     <div className="prose prose-lg prose-emerald max-w-none text-muted-foreground">
@@ -62,19 +39,19 @@ export default function MethodologyPage() {
                         </h2>
                         <p className="mb-6">
                             Unlike other review sites that just aggregate Amazon reviews, we actually buy and test every single product. 
-                            We spent over $47,000 in our first year of testing to set up a dedicated lab.
+                            Every review follows the same scoring rubric so dust, clumping, odor, tracking, and value stay comparable.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
                             <div className="bg-secondary/30 rounded-xl p-6 border border-border">
                                 <Clock className="w-8 h-8 text-primary mb-3" />
-                                <h3 className="font-bold text-foreground mb-2">2,847 Hours</h3>
-                                <p className="text-sm text-muted-foreground">Total testing time across all products</p>
+                                <h3 className="font-bold text-foreground mb-2">{reviewedProductCount} Reviews</h3>
+                                <p className="text-sm text-muted-foreground">Current product pages scored on the same framework</p>
                             </div>
                             <div className="bg-secondary/30 rounded-xl p-6 border border-border">
                                 <DollarSign className="w-8 h-8 text-primary mb-3" />
-                                <h3 className="font-bold text-foreground mb-2">$47,000+</h3>
-                                <p className="text-sm text-muted-foreground">Invested in products and equipment</p>
+                                <h3 className="font-bold text-foreground mb-2">5 Core Metrics</h3>
+                                <p className="text-sm text-muted-foreground">Dust, clumping, odor, tracking, and value on every review</p>
                             </div>
                         </div>
 
@@ -127,7 +104,7 @@ export default function MethodologyPage() {
                                         Our Biggest Discovery
                                     </h3>
                                     <p className="text-emerald-700 mb-4">
-                                        After testing 500+ litters, we discovered that adding a probiotic deodorizer like Purrify 
+                                        After reviewing the live catalog, we discovered that adding a probiotic deodorizer like Purrify 
                                         to ANY litter dramatically improves performance. It&apos;s now part of our standard testing protocol 
                                         to measure how litters perform both with and without enhancement.
                                     </p>

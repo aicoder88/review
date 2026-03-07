@@ -2,6 +2,10 @@
 
 import { CategoryPage } from '@/components/categories/CategoryPage';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
+import { getCategoryPageConfig, getCategoryPageStats } from '@/lib/category-pages';
+
+const categoryConfig = getCategoryPageConfig('best-clumping-cat-litter');
+const categoryStats = getCategoryPageStats('best-clumping-cat-litter');
 
 export function BestClumpingClient() {
     const products = [
@@ -120,9 +124,14 @@ export function BestClumpingClient() {
 
     return (
         <CategoryPage
-            title="Best Clumping Cat Litter (2025)"
-            description="We tested 87 clumping cat litters. Most were garbage. These actually clump properly and don't turn into cement."
-            stats={{ tested: 87, duration: "6 Months", priceRange: "$12 - $35" }}
+            path={categoryConfig?.path ?? '/categories/best-clumping-cat-litter'}
+            title={categoryConfig?.title ?? 'Best Clumping Cat Litter'}
+            description={categoryConfig?.description ?? "Hands-on picks for hard clumps, easier scooping, and lower dust across the strongest clumping formulas we review."}
+            stats={{
+                tested: categoryStats?.tested ?? 0,
+                reviewedThrough: categoryStats?.reviewedThrough ?? '',
+                priceRange: categoryStats?.priceRange ?? '$0 - $0',
+            }}
             products={products}
             comparisonProducts={comparison}
             quickPicks={quickPicks}
@@ -133,7 +142,7 @@ export function BestClumpingClient() {
                 Good clumping litter needs to do 3 things: form solid clumps that don&apos;t break, control odor, and minimize dust. Most products fail at least one of these.
             </p>
             <p>
-                We tested 87 clumping litters. Here&apos;s what separated winners from trash:
+                Here&apos;s what separated the strongest clumping performers from the rest of the current review set:
             </p>
 
             <h3>Clump Strength</h3>

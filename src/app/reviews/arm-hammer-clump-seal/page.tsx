@@ -10,7 +10,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/arm-hammer-clump-seal`;
 
 export const metadata: Metadata = {
-    title: "Arm & Hammer Clump & Seal Review 2025 | Odor Control Test Results",
+    title: "Arm & Hammer Clump & Seal Review | Odor Control Test Results",
     description: "We tested Arm & Hammer Clump & Seal for 60 days. Strong odor control but heavy perfume. See our ammonia test data and learn the unscented alternative.",
     keywords: [
         "Arm and Hammer cat litter review",
@@ -180,7 +180,7 @@ export default function ArmHammerReview() {
     return (
         <>
             {/* Schema.org Structured Data */}
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

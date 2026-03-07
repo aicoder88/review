@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/okocat-paper-pellet`;
 
 export const metadata: Metadata = {
-    title: "Ökocat Paper Pellet Review 2025 | Best Paper Litter Test Results",
+    title: "Ökocat Paper Pellet Review | Best Paper Litter Test Results",
     description: "We tested Ökocat Non-Clumping Paper Pellet for 60 days. Best for post-surgery, declawed cats, and dust-free needs. See absorption and odor control data.",
     keywords: [
         "Okocat review",
@@ -181,7 +181,7 @@ const faqData = [
 export default function OkocatPaperPelletReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

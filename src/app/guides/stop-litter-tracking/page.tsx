@@ -4,10 +4,15 @@ import { InternalLinkBox } from '@/components/content/InternalLinkBox';
 import { RelatedArticles } from '@/components/content/RelatedArticles';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/page-metadata';
 
 export const metadata: Metadata = {
-  title: "How to Stop Cat Litter Tracking: 12 Proven Methods (2025 Guide)",
-  description: "Tired of litter everywhere? Our testing shows these 12 methods reduce tracking by 90%. Includes DIY solutions and product recommendations.",
+  ...buildPageMetadata({
+    title: "How to Stop Cat Litter Tracking: 12 Proven Methods",
+    description: "Tired of litter everywhere? Our testing shows these 12 methods reduce tracking substantially. Includes DIY solutions and product recommendations.",
+    path: "/guides/stop-litter-tracking",
+    type: "article",
+  }),
 };
 
 export default function StopLitterTracking() {
@@ -23,7 +28,7 @@ export default function StopLitterTracking() {
               How to Stop Cat Litter Tracking: 12 Proven Methods
             </h1>
             <p className="text-xl text-muted-foreground">
-              After testing 50+ solutions across 15 households, here&apos;s what actually works
+              After testing common litter-box fixes, here&apos;s what actually works
               to keep litter in the box and off your floors.
             </p>
             <div className="flex items-center gap-4 mt-6 text-sm text-muted-foreground">

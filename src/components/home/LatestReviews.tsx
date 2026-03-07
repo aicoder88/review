@@ -6,8 +6,10 @@ import {
   formatCatalogDate,
   getLatestReviewedProducts,
 } from '@/lib/product-catalog';
+import { getLatestReviewedDate } from '@/lib/site';
 
 const reviews = getLatestReviewedProducts();
+const latestReviewedDate = getLatestReviewedDate();
 
 function getGradient(score: number) {
   if (score >= 9.3) return 'from-[#D9B373] to-[#B38B4D]';
@@ -28,13 +30,13 @@ export function LatestReviews() {
           <div>
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-6 py-2 mb-6 border border-primary/20">
               <Star className="w-4 h-4" />
-              <span className="font-semibold text-sm">Fresh from the Lab</span>
+              <span className="font-semibold text-sm">Latest Review Cycle</span>
             </div>
             <h2 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-4">
               Latest <span className="text-gradient-gold font-serif italic">Reviews</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-xl font-light">
-              Fresh insights from our testing lab, updated weekly
+              Newest hands-on reviews in the current catalog, updated through {formatCatalogDate(latestReviewedDate)}
             </p>
           </div>
           <a href="/reviews" className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">

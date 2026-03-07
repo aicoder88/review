@@ -9,7 +9,7 @@ const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/dr-elseys-cat-attract`;
 
 export const metadata: Metadata = {
-    title: "Dr. Elsey's Cat Attract Review 2025 | Multi-Cat Formula Test Results",
+    title: "Dr. Elsey's Cat Attract Review | Multi-Cat Formula Test Results",
     description: "We tested Dr. Elsey's Cat Attract for 90 days with cats who avoid the litter box. Does the herbal attractant really work? See our behavioral and performance data.",
     keywords: [
         "Dr Elsey's Cat Attract review",
@@ -181,7 +181,7 @@ const faqData = [
 export default function DrElseysCatAttractReview() {
     return (
         <>
-            <EnhancedProductSchema {...productSchemaData} />
+            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />

@@ -6,6 +6,7 @@ import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { ComparisonTable } from '@/components/compare/ComparisonTable';
 import { BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
+import { buildPageMetadata } from '@/lib/page-metadata';
 import {
   formatCatalogDate,
   getAllComparisonMatchups,
@@ -29,33 +30,17 @@ function buildMetadata(matchupSlug: string): Metadata {
   const description = `${leftProduct.name} vs ${rightProduct.name}: side-by-side dust, clumping, odor control, tracking, and daily cost. ${matchup.insight.winner.name} wins this matchup for ${matchup.insight.winner.verdict.bestFor.toLowerCase()}.`;
   const canonicalPath = getComparisonMatchupHref(matchup.slug);
 
-  return {
+  return buildPageMetadata({
     title,
     description,
-    alternates: {
-      canonical: canonicalPath,
-    },
-    openGraph: {
-      title,
-      description,
-      url: `${siteUrl}${canonicalPath}`,
-      type: 'website',
-      images: [
-        {
-          url: leftProduct.image,
-          width: 1200,
-          height: 630,
-          alt: `${leftProduct.name} vs ${rightProduct.name} comparison`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [leftProduct.image],
-    },
-  };
+    path: canonicalPath,
+    keywords: [
+      `${leftProduct.name} vs ${rightProduct.name}`,
+      'cat litter comparison',
+      `${leftProduct.brand} comparison`,
+      `${rightProduct.brand} comparison`,
+    ],
+  });
 }
 
 export async function generateMetadata({

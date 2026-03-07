@@ -1,13 +1,21 @@
+import type { Metadata } from 'next';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
+import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+
+const categoryConfig = getCategoryPageConfig('best-natural-cat-litter');
+const categoryStats = getCategoryPageStats('best-natural-cat-litter');
+
+export const metadata: Metadata = getCategoryPageMetadata('best-natural-cat-litter');
 
 const categoryData: CategoryData = {
-    title: "Best Natural Cat Litter (2025)",
-    description: "Stop bringing clay dust into your home. We tested the top 12 natural litters to find the ones that actually clump and don't attract bugs.",
+    path: categoryConfig?.path ?? '/categories/best-natural-cat-litter',
+    title: categoryConfig?.title ?? 'Best Natural Cat Litter',
+    description: categoryConfig?.description ?? "Stop bringing clay dust into your home. We tested natural litters to find the ones that actually clump and don't attract bugs.",
     stats: {
-        tested: 12,
-        duration: "3 Months",
-        priceRange: "$18 - $35"
+        tested: categoryStats?.tested ?? 0,
+        reviewedThrough: categoryStats?.reviewedThrough ?? '',
+        priceRange: categoryStats?.priceRange ?? '$0 - $0'
     },
     products: [
         {
