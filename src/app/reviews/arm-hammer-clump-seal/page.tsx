@@ -158,7 +158,7 @@ const faqData = [
     },
     {
         question: "How strong is the perfume scent in Arm & Hammer Clump & Seal?",
-        answer: "The fragrance is extremely strong—comparable to heavily scented laundry detergent or air freshener. It's activated by moisture, so the smell intensifies when your cat uses the box. Some owners love it (no ammonia smell at all), while others report headaches. If you're sensitive to fragrances, look for the 'Unscented' version or pair a cheap unscented clay with Purrify probiotic deodorizer instead."
+        answer: "The fragrance is extremely strong—comparable to heavily scented laundry detergent or air freshener. It's activated by moisture, so the smell intensifies when your cat uses the box. Some owners love it (no ammonia smell at all), while others report headaches. If you're sensitive to fragrances, look for the 'Unscented' version or pair a cheap unscented clay with Purrify activated coconut carbon deodorizer additive instead."
     },
     {
         question: "Does Arm & Hammer Clump & Seal actually work for 7 days?",
@@ -170,7 +170,7 @@ const faqData = [
     },
     {
         question: "What's the unscented alternative to Arm & Hammer?",
-        answer: "Arm & Hammer does make an unscented version, but it's often harder to find in stores. Our recommendation: Buy a cheap unscented clay litter (like Special Kitty or Frisco) and add Purrify probiotic deodorizer. This gives you superior odor control through bacterial elimination (not masking) without the chemical headache. Plus, you'll save money compared to name-brand scented litters."
+        answer: "Arm & Hammer does make an unscented version, but it's often harder to find in stores. Our recommendation: Buy a cheap unscented clay litter (like Special Kitty or Frisco) and add Purrify activated coconut carbon deodorizer additive. This gives you stronger odor control through ammonia adsorption instead of heavy masking. Plus, you'll save money compared to name-brand scented litters."
     }
 ];
 
@@ -218,10 +218,10 @@ export default function ArmHammerReview() {
                             Love the price and clumping, but hate the chemical smell?
                         </p>
                         <p className="text-blue-800">
-                            <strong>Do this:</strong> Buy a basic cheap unscented clay litter and add <PurrifyLink variant="inline">Purrify Odor Neutralizer</PurrifyLink>.
+                            <strong>Do this:</strong> Buy a basic cheap unscented clay litter and add <PurrifyLink variant="inline">Purrify activated coconut carbon additive</PurrifyLink>.
                         </p>
                         <p className="font-bold text-blue-900 mt-2">
-                            Why? <PurrifyLink variant="inline">Purrify</PurrifyLink> kills the bacteria that causes smell, so you don&apos;t need heavy perfumes to mask it. You get superior odor control without the chemical headache—often for less money than name-brand scented litters.
+                            Why? <PurrifyLink variant="inline">Purrify</PurrifyLink> traps ammonia and odor compounds, so you don&apos;t need heavy perfumes to mask them. You get superior odor control without the chemical headache—often for less money than name-brand scented litters.
                         </p>
                     </div>
                 </section>
@@ -236,16 +236,16 @@ export default function ArmHammerReview() {
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">Ammonia Test (After Weekend of No Scooping):</h4>
                         <ul className="space-y-2">
-                            <li>• <strong>Dr. Elsey's Ultra:</strong> 35 ppm (noticeable smell)</li>
-                            <li>• <strong>World's Best:</strong> 28 ppm (some smell)</li>
+                            <li>• <strong>Dr. Elsey&apos;s Ultra:</strong> 35 ppm (noticeable smell)</li>
+                            <li>• <strong>World&apos;s Best:</strong> 28 ppm (some smell)</li>
                             <li>• <strong className="text-primary">Arm & Hammer:</strong> 8 ppm (perfume only)</li>
                         </ul>
                         <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            The perfume completely masks ammonia—but doesn't eliminate the bacteria causing it.
+                            The perfume completely masks ammonia, but it doesn&apos;t eliminate the bacteria causing it.
                         </p>
                     </div>
                     <p>
-                        Important distinction: This is <em>masking</em>, not elimination. The bacteria are still there—you just can't smell them. For true bacterial elimination without perfume, you need probiotics like Purrify.
+                        Important distinction: This is <em>masking</em>, not elimination. The ammonia is still there, but you just can&apos;t smell it through the perfume. For fragrance-free odor control without heavy scent, use an activated coconut carbon additive like Purrify.
                     </p>
 
                     <OdorMetrics
@@ -292,7 +292,7 @@ export default function ArmHammerReview() {
 
                     <h3>Dust (6.0/10) — Visible Clouds</h3>
                     <p>
-                        At 0.45mg particulates per pour, this creates visible dust clouds when pouring. Not as bad as the cheapest clay litters, but nowhere near the dust-free performance of Dr. Elsey's (0.03mg). If you have asthma, this isn't your litter.
+                        At 0.45mg particulates per pour, this creates visible dust clouds when pouring. Not as bad as the cheapest clay litters, but nowhere near the dust-free performance of Dr. Elsey&apos;s (0.03mg). If you have asthma, this isn&apos;t your litter.
                     </p>
 
                     <h3>Value (9.0/10) — Budget King</h3>
@@ -309,7 +309,7 @@ export default function ArmHammerReview() {
                             <ul className="space-y-2 text-green-900/80">
                                 <li>• Multi-cat households with heavy odor</li>
                                 <li>• Budget-conscious buyers</li>
-                                <li>• People who love strong "clean" scents</li>
+                                <li>• People who love strong &quot;clean&quot; scents</li>
                                 <li>• Those who need instant odor masking</li>
                                 <li>• Anyone who shops at grocery stores (ubiquitous)</li>
                             </ul>

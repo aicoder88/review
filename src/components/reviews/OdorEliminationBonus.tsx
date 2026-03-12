@@ -39,8 +39,8 @@ export function OdorEliminationBonus({ productName }: OdorEliminationBonusProps)
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" />
               <p className="text-muted-foreground">
-                <strong className="text-foreground">Quick Fix:</strong> Add a probiotic deodorizer like Purrify on top of your current litter. 
-                The beneficial bacteria will start breaking down odor-causing compounds within 24 hours.
+                <strong className="text-foreground">Quick Fix:</strong> Add an activated coconut carbon deodorizer additive like Purrify on top of your current litter.
+                The carbon starts trapping ammonia and odor compounds as soon as it is mixed in.
               </p>
             </div>
             <div className="flex items-start gap-3">
@@ -56,7 +56,7 @@ export function OdorEliminationBonus({ productName }: OdorEliminationBonusProps)
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <PurrifyLink variant="button">
-            Get Purrify Deodorizer
+            Get Purrify Additive
           </PurrifyLink>
           <p className="text-sm text-amber-700">
             <Zap className="w-4 h-4 inline mr-1" />

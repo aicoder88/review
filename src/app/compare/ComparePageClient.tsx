@@ -3,8 +3,8 @@
 import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Header } from '@/components/home/Header';
-import { Footer } from '@/components/home/Footer';
+import { HeaderClient } from '@/components/home/HeaderClient';
+import { FooterClient } from '@/components/home/FooterClient';
 import { ComparisonTable, DetailedProduct } from '@/components/compare/ComparisonTable';
 import { PurrifyEnhancement } from '@/components/compare/PurrifyEnhancement';
 import { CostCalculator } from '@/components/compare/CostCalculator';
@@ -37,19 +37,57 @@ const decisionPaths = [
         description: 'Use the roundup built around ammonia management and smell control.',
     },
     {
-        title: 'Cat Litter Guides',
-        href: '/guides',
-        description: 'Learn the tradeoffs behind odor, tracking, and savings before comparing products.',
+        title: 'How to Stop Litter Tracking',
+        href: '/guides/stop-litter-tracking',
+        description: 'See the specific box, mat, and litter changes that reduce mess outside the box.',
     },
     {
-        title: 'All Reviews',
-        href: '/reviews',
-        description: 'Open the underlying hands-on review pages behind the comparison data.',
+        title: 'Fix Litter Box Smell',
+        href: '/guides/eliminate-litter-smell',
+        description: 'Compare the fixes that actually reduce odor instead of only masking it.',
     },
     {
-        title: 'Testing Methodology',
-        href: '/methodology',
-        description: 'See how each score is measured across dust, clumping, odor, tracking, and value.',
+        title: 'Real Litter Cost Comparison',
+        href: '/guides/real-cat-litter-cost-comparison',
+        description: 'Use monthly and annual cost scenarios instead of bag price alone.',
+    },
+    {
+        title: 'Baking Soda vs Activated Carbon',
+        href: '/guides/baking-soda-vs-activated-carbon-cat-litter',
+        description: 'Learn which odor-control strategy fits your box, room, and cleanup routine.',
+    },
+];
+
+const comparisonIntents = [
+    {
+        eyebrow: 'Odor control methods',
+        title: 'Compare how litters control smell',
+        description: 'Searchers do not only compare brands. They compare baking soda, activated carbon, fragrance, natural absorption, and probiotic additives. This section gives those intent clusters a direct home.',
+        links: [
+            { href: '/guides/baking-soda-vs-activated-carbon-cat-litter', label: 'Baking soda vs activated carbon' },
+            { href: '/categories/best-odor-control-cat-litter', label: 'Best odor control cat litter' },
+            { href: '/guides/eliminate-litter-smell', label: 'Fix a litter box that still smells' },
+        ],
+    },
+    {
+        eyebrow: 'Tracking outside the box',
+        title: 'Compare low-tracking setups',
+        description: 'Tracking is a mix of litter particle size, box design, mat design, and static. Use the guide and category pages below before narrowing the field to two products.',
+        links: [
+            { href: '/guides/stop-litter-tracking', label: 'How to stop litter tracking' },
+            { href: '/categories/best-low-dust-cat-litter', label: 'Best low-dust cat litter' },
+            { href: '/categories/best-natural-cat-litter', label: 'Best natural cat litter' },
+        ],
+    },
+    {
+        eyebrow: 'Real cost',
+        title: 'Compare actual monthly litter cost',
+        description: 'Bag price is a weak proxy. Cost depends on clump integrity, litter life, cat count, and how often you fully change the box. Use the cost guide and calculator together.',
+        links: [
+            { href: '/guides/real-cat-litter-cost-comparison', label: 'Real cat litter cost comparison' },
+            { href: '/categories/best-budget-cat-litter', label: 'Best budget cat litter' },
+            { href: '/guides/extend-cat-litter-life', label: 'How to make litter last longer' },
+        ],
     },
 ];
 
@@ -106,15 +144,29 @@ function ComparisonLoader() {
 export function ComparePageClient() {
     return (
         <div className="min-h-screen bg-background">
-            <Header />
+            <HeaderClient />
             <main className="pt-24 pb-20">
                 <section className="container mx-auto px-6 mb-12 text-center">
                     <h1 className="font-display text-4xl font-bold mb-4">Compare Cat Litters</h1>
-                    <p className="text-xl text-muted-foreground">See the real data side-by-side. No fluff.</p>
+                    <p className="text-xl text-muted-foreground">See the real data side-by-side across odor control, tracking, cost, dust, and clumping.</p>
                     <div className="mt-8 max-w-3xl mx-auto text-left">
                         <EditorialTrustBox
                             summary="The comparison hub is maintained by the ReviewCatLitter editorial team and pulls from the same review scores, matchup logic, and testing methodology used across the site."
                         />
+                    </div>
+                </section>
+
+                <section className="container mx-auto px-6 mb-12">
+                    <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-white p-8 shadow-sm">
+                        <h2 className="font-display text-2xl font-bold mb-4">Compare by the problem you are actually trying to solve</h2>
+                        <div className="max-w-4xl text-muted-foreground space-y-4">
+                            <p>
+                                Some searches are brand-vs-brand. Many are not. People also compare odor-control methods like baking soda vs activated carbon, search for litters that track less outside the box, or want the cheapest litter that still performs well over a full month.
+                            </p>
+                            <p>
+                                Use the head-to-head pages below when you are choosing between two products. Use the intent pages here when you are still deciding which type of litter or odor-control approach belongs in the box.
+                            </p>
+                        </div>
                     </div>
                 </section>
 
@@ -147,6 +199,33 @@ export function ComparePageClient() {
                                 </Link>
                             ))}
                         </div>
+                    </div>
+                </section>
+
+                <section className="container mx-auto px-6 mb-12">
+                    <div className="max-w-6xl mx-auto grid gap-6 xl:grid-cols-3">
+                        {comparisonIntents.map((section) => (
+                            <article key={section.title} className="rounded-3xl border border-border bg-white p-7 shadow-sm">
+                                <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                                    {section.eyebrow}
+                                </div>
+                                <h2 className="font-display text-2xl font-bold mb-3">{section.title}</h2>
+                                <p className="text-muted-foreground mb-5">{section.description}</p>
+                                <div className="space-y-3">
+                                    {section.links.map((link) => (
+                                        <Link
+                                            key={link.href}
+                                            href={link.href}
+                                            prefetch={false}
+                                            className="flex items-center justify-between gap-3 rounded-2xl bg-secondary/20 px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                                        >
+                                            <span>{link.label}</span>
+                                            <span className="text-primary">Open</span>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </article>
+                        ))}
                     </div>
                 </section>
 
@@ -225,7 +304,7 @@ export function ComparePageClient() {
                 </Suspense>
 
             </main>
-            <Footer />
+            <FooterClient />
         </div>
     );
 }

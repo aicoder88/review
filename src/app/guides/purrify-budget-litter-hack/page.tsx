@@ -27,7 +27,7 @@ const faqData = [
   {
     question: 'How often do I need to add Purrify?',
     answer:
-      'Weekly maintenance works best. Add one tablespoon after the main weekly scoop to keep the probiotic layer active.',
+      'Weekly maintenance works best. Add one tablespoon after the main weekly scoop to keep the carbon layer refreshed.',
   },
 ];
 
@@ -139,10 +139,10 @@ export default function PurrifyBudgetHackGuide() {
 
               <h3>Here&apos;s How It Works:</h3>
               <p>
-                <PurrifyLink variant="inline">Purrify</PurrifyLink> is a probiotic powder you sprinkle on top of your litter. The active ingredients are beneficial bacteria (probiotics) that literally eat the organic waste and ammonia that cause odor.
+                <PurrifyLink variant="inline">Purrify</PurrifyLink> is an activated coconut carbon cat litter deodorizer additive you sprinkle on top of your litter. The carbon traps ammonia and odor compounds before they spread through the room.
               </p>
               <p>
-                Unlike scented litters that <em>mask</em> smell with perfume, Purrify <strong>destroys odor at the molecular level</strong>.
+                Unlike scented litters that <em>mask</em> smell with perfume, Purrify <strong>adsorbs odor at the molecular level</strong>.
               </p>
 
               <h2>Step-by-Step: How to Implement The Hack</h2>
@@ -171,7 +171,7 @@ export default function PurrifyBudgetHackGuide() {
                   </li>
                   <li>
                     <strong>Weekly maintenance: add 1 tablespoon after scooping</strong>
-                    <p className="text-sm mt-1">Keeps probiotics active and multiplying</p>
+                    <p className="text-sm mt-1">Refreshes the activated carbon layer for the next week</p>
                   </li>
                 </ol>
               </div>
@@ -287,7 +287,7 @@ export default function PurrifyBudgetHackGuide() {
 
               <h3>Q: Is it safe for cats?</h3>
               <p>
-                Yes. The probiotics are the same strains used in pet digestive supplements. They&apos;re non-toxic and safe even if ingested during grooming.
+                Yes. Purrify uses fragrance-free activated coconut carbon granules that are non-toxic and safe for normal litter-box use.
               </p>
 
               <h3>Q: How often do I need to add Purrify?</h3>
@@ -352,7 +352,7 @@ export default function PurrifyBudgetHackGuide() {
                   Get Purrify Now
                 </PurrifyLink>
                 <p className="text-xs text-emerald-100 mt-4">
-                  Made in Canada • Natural probiotics • 60-day money-back guarantee
+                  Made in Canada • Activated coconut carbon • 60-day money-back guarantee
                 </p>
               </div>
 

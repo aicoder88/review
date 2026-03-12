@@ -159,7 +159,7 @@ const faqData = [
     },
     {
         question: "Does walnut litter control odor well?",
-        answer: "Walnut shells have natural odor-absorbing properties. In our testing, Naturally Fresh controlled ammonia odor for 5-6 days—excellent for a natural litter. The walnut scent itself is subtle and pleasant. For maximum odor control, we still recommend adding Purrify probiotic deodorizer, but the natural walnut properties do significant work on their own."
+        answer: "Walnut shells have natural odor-absorbing properties. In our testing, Naturally Fresh controlled ammonia odor for 5-6 days—excellent for a natural litter. The walnut scent itself is subtle and pleasant. For maximum odor control, we still recommend adding Purrify activated coconut carbon deodorizer additive, but the natural walnut properties do significant work on their own."
     },
     {
         question: "Will walnut litter stain my cat's paws?",
@@ -191,10 +191,10 @@ export default function NaturallyFreshReview() {
                 <section>
                     <h2>The Walnut Shell Surprise</h2>
                     <p>
-                        We expected Naturally Fresh to be "good for natural litter." We didn't expect it to outperform most clay litters.
+                        We expected Naturally Fresh to be &quot;good for natural litter.&quot; We didn&apos;t expect it to outperform most clay litters.
                     </p>
                     <p>
-                        The walnut shell granules create incredibly hard clumps—denser and more durable than typical clay. It's the natural litter that clumps like premium clay.
+                        The walnut shell granules create incredibly hard clumps, denser and more durable than typical clay. It&apos;s the natural litter that clumps like premium clay.
                     </p>
                     <div className="bg-green-50 border-l-4 border-green-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-green-900 mb-2">♻️ Sustainable Byproduct</h4>
@@ -221,7 +221,7 @@ export default function NaturallyFreshReview() {
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Dr. Elsey's (Clay)</td>
+                                    <td className="py-2">Dr. Elsey&apos;s (Clay)</td>
                                     <td className="text-center py-2">98%</td>
                                 </tr>
                                 <tr className="border-b border-border/50">
@@ -229,7 +229,7 @@ export default function NaturallyFreshReview() {
                                     <td className="text-center py-2 font-bold">89%</td>
                                 </tr>
                                 <tr>
-                                    <td className="py-2">World's Best (Corn)</td>
+                                    <td className="py-2">World&apos;s Best (Corn)</td>
                                     <td className="text-center py-2">76%</td>
                                 </tr>
                             </tbody>
@@ -251,7 +251,7 @@ export default function NaturallyFreshReview() {
 
                     <h3>The Dark Side (Literally)</h3>
                     <p>
-                        The dark brown color makes waste hard to see. You'll hunt for clumps more than with light litters. Trade-off for the performance.
+                        The dark brown color makes waste hard to see. You&apos;ll hunt for clumps more than with light litters. Trade-off for the performance.
                     </p>
                 </section>
 
@@ -265,7 +265,7 @@ export default function NaturallyFreshReview() {
                             <li>• <strong>$1.07/day</strong> (premium pricing)</li>
                         </ul>
                         <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            You're paying for premium natural performance
+                            You&apos;re paying for premium natural performance
                         </p>
                     </div>
                 </section>

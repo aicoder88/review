@@ -1,12 +1,7 @@
-'use client';
-
+import Image from 'next/image';
 import Link from 'next/link';
 import { Beaker, ClipboardCheck, LineChart, Scale, ArrowRight, ShieldCheck } from 'lucide-react';
-import { FadeUp, StaggerChildren, FadeIn } from '@/components/ui/motion';
-import { formatSiteDate, getLatestReviewedDate, getReviewedProductCount } from '@/lib/site';
-
-const reviewedProductCount = getReviewedProductCount();
-const latestReviewedDate = getLatestReviewedDate();
+import { formatSiteDate } from '@/lib/site';
 
 const methodologyPoints = [
   {
@@ -35,7 +30,15 @@ const methodologyPoints = [
   },
 ];
 
-export function Methodology() {
+interface MethodologyProps {
+  reviewedProductCount: number;
+  latestReviewedDate: string;
+}
+
+export function Methodology({
+  reviewedProductCount,
+  latestReviewedDate,
+}: MethodologyProps) {
   return (
     <section id="methodology" className="py-24 px-6 bg-foreground relative overflow-hidden text-white">
       {/* Background Ambience */}
@@ -49,10 +52,13 @@ export function Methodology() {
           {/* Left Column: Image & Stats */}
           <div className="relative">
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10">
-              <img
+              <Image
                 src="/images/methodology-lab.png"
                 alt="Scientist testing cat litter"
-                className="w-full h-full object-cover"
+                width={640}
+                height={640}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-auto w-full object-cover"
               />
 
               {/* Overlay Stat Card */}
@@ -73,10 +79,12 @@ export function Methodology() {
 
             {/* Decorative Elements */}
             <div className="absolute -bottom-8 -right-8 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-foreground z-20 hidden md:block">
-              <img
+              <Image
                 src="/images/methodology-microscope.png"
                 alt="Microscope analysis"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(min-width: 768px) 12rem, 0px"
+                className="object-cover"
               />
             </div>
 
@@ -88,31 +96,24 @@ export function Methodology() {
           </div>
           {/* Right: Content */}
           <div>
-            <FadeUp>
-              <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
-                <Beaker className="w-4 h-4 text-accent" />
-                <span className="text-white/80 font-medium text-sm tracking-wide">How We Evaluate Reviews</span>
-              </div>
-            </FadeUp>
+            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
+              <Beaker className="w-4 h-4 text-accent" />
+              <span className="text-white/80 font-medium text-sm tracking-wide">How We Evaluate Reviews</span>
+            </div>
 
-            <FadeUp delay={0.1}>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                How We Keep the Catalog <span className="text-gradient-gold italic">Comparable</span>
-              </h2>
-            </FadeUp>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              How We Keep the Catalog <span className="text-gradient-gold italic">Comparable</span>
+            </h2>
 
-            <FadeUp delay={0.2}>
-              <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                ReviewCatLitter exists to make cat litter shopping easier to audit. Instead of repeating
-                packaging claims, we keep review pages on a shared scoring framework, explain the tradeoffs
-                in plain language, and connect winners back to the review and comparison pages they came from.
-              </p>
-            </FadeUp>
+            <p className="text-white/70 text-lg mb-8 leading-relaxed">
+              ReviewCatLitter exists to make cat litter shopping easier to audit. Instead of repeating
+              packaging claims, we keep review pages on a shared scoring framework, explain the tradeoffs
+              in plain language, and connect winners back to the review and comparison pages they came from.
+            </p>
 
-            {/* Methodology Points */}
-            <StaggerChildren className="space-y-8">
+            <div className="space-y-8">
               {methodologyPoints.map((point, index) => (
-                <FadeUp key={index} className="flex gap-6 group">
+                <div key={index} className="flex gap-6 group">
                   <div className={`flex-shrink-0 w-16 h-16 ${point.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <point.icon className="w-7 h-7" />
                   </div>
@@ -125,19 +126,17 @@ export function Methodology() {
                       {point.description}
                     </p>
                   </div>
-                </FadeUp>
+                </div>
               ))}
-            </StaggerChildren>
+            </div>
 
-            <FadeUp delay={0.4}>
-              <Link
-                href="/methodology"
-                prefetch={false}
-                className="group mt-12 inline-flex items-center gap-2 text-accent font-bold text-lg hover:text-white transition-colors"
-              >
-                Read Full Methodology <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </FadeUp>
+            <Link
+              href="/methodology"
+              prefetch={false}
+              className="group mt-12 inline-flex items-center gap-2 text-accent font-bold text-lg hover:text-white transition-colors"
+            >
+              Read Full Methodology <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </div>

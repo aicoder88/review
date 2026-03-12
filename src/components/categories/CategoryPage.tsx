@@ -1,8 +1,8 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
-import { Header } from '@/components/home/Header';
-import { Footer } from '@/components/home/Footer';
+import { HeaderClient } from '@/components/home/HeaderClient';
+import { FooterClient } from '@/components/home/FooterClient';
 import { QuickPickCard } from './ui/QuickPickCard';
 import { FilterSidebar } from './ui/FilterSidebar';
 import { CategoryComparisonTable, ProductSpec } from './ui/CategoryComparisonTable';
@@ -201,7 +201,7 @@ export function CategoryPage({
             />
 
             <div className="min-h-screen bg-background">
-                <Header />
+                <HeaderClient />
 
                 <main className="pt-24 pb-20">
 
@@ -521,7 +521,7 @@ export function CategoryPage({
                 )}
 
                 </main>
-                <Footer />
+                <FooterClient />
             </div>
         </>
     );

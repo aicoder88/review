@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Droplets, Leaf, Mountain, Sparkles, Zap, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { getCategoryPageStats } from '@/lib/category-pages';
@@ -84,7 +85,13 @@ export function CategoryNavigation() {
             >
               {/* Background Image */}
               <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
-                <img src={category.image} alt={`${category.label} cat litter category`} className="w-full h-full object-cover" />
+                <Image
+                  src={category.image}
+                  alt={`${category.label} cat litter category`}
+                  fill
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
 
               {/* Content */}
@@ -110,7 +117,13 @@ export function CategoryNavigation() {
         <div className="mt-16 grid md:grid-cols-2 gap-6">
           <Link href="/categories/best-clumping-cat-litter" prefetch={false} className="relative bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
-              <img src="/images/featured-dr-elseys.png" alt="Best clumping cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
+              <Image
+                src="/images/featured-dr-elseys.png"
+                alt="Best clumping cat litter category"
+                fill
+                sizes="(min-width: 768px) 12rem, 10rem"
+                className="rounded-bl-3xl object-cover"
+              />
             </div>
             <div className="relative z-10">
               <span className="text-white/80 font-medium">Most Popular</span>
@@ -124,7 +137,13 @@ export function CategoryNavigation() {
 
           <Link href="/categories/best-natural-cat-litter" prefetch={false} className="relative bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl p-8 overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 block">
             <div className="absolute top-0 right-0 w-48 h-48 opacity-30">
-              <img src="/images/featured-worlds-best.png" alt="Natural eco-friendly cat litter category" className="w-full h-full object-cover rounded-bl-3xl" />
+              <Image
+                src="/images/featured-worlds-best.png"
+                alt="Natural eco-friendly cat litter category"
+                fill
+                sizes="(min-width: 768px) 12rem, 10rem"
+                className="rounded-bl-3xl object-cover"
+              />
             </div>
             <div className="relative z-10">
               <span className="text-white/80 font-medium">Eco-Friendly</span>

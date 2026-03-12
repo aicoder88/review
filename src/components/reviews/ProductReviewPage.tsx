@@ -9,8 +9,8 @@ import { ComparisonWidget } from './ui/ComparisonWidget';
 import { RecommendedAddOn } from './RecommendedAddOn';
 import { OdorEliminationBonus } from './OdorEliminationBonus';
 import { FadeUp } from '@/components/ui/motion';
-import { Header } from '@/components/home/Header';
-import { Footer } from '@/components/home/Footer';
+import { HeaderClient } from '@/components/home/HeaderClient';
+import { FooterClient } from '@/components/home/FooterClient';
 import { ReviewTrustPanel } from '@/components/seo/ReviewTrustPanel';
 import { RelatedArticles } from '@/components/content/RelatedArticles';
 import { getRelatedResourceCardsForProduct } from '@/lib/internal-links';
@@ -26,6 +26,7 @@ export interface ReviewData {
     name: string;
     category: string;
     image: string;
+    imageAlt?: string;
     overallScore: number;
     specs: {
         type: string;
@@ -52,6 +53,11 @@ export interface ReviewData {
         skipIt: string;
     };
     priceCheckUrl: string;
+    priceCheckLabel?: string;
+    researchLinks?: Array<{
+        label: string;
+        href: string;
+    }>;
 }
 
 interface ProductReviewPageProps {
@@ -96,10 +102,21 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                     iconClassName: 'bg-red-100',
                     icon: '!',
                 };
+    const priceCheckLabel = data.priceCheckLabel ?? 'Check Best Price';
+    const researchLinks = data.researchLinks ?? [
+        { label: 'Arm & Hammer Official Site', href: 'https://www.armandhammer.com' },
+        { label: "Dr. Elsey's Official Site", href: 'https://www.drelseys.com' },
+        { label: "World's Best Cat Litter Official Site", href: 'https://www.worldsbestcatlitter.com' },
+        { label: 'PrettyLitter Official Site', href: 'https://www.prettylitter.com' },
+        { label: 'AVMA Pet Care Guidance', href: 'https://www.avma.org/resources-tools/pet-owners/petcare' },
+        { label: 'Journal of Feline Medicine and Surgery', href: 'https://journals.sagepub.com/home/jfm' },
+        { label: 'ASTM Testing Standards', href: 'https://www.astm.org' },
+        { label: 'EPA Indoor Air Quality', href: 'https://www.epa.gov/indoor-air-quality-iaq' },
+    ];
 
     return (
         <div className="min-h-screen bg-background">
-            <Header />
+            <HeaderClient />
 
             <main className="pt-24 pb-20">
                 {/* Breadcrumb - Simple */}
@@ -129,7 +146,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                 <div className="relative aspect-[4/3] flex items-center justify-center">
                                     <img
                                         src={data.image}
-                                        alt={`${data.name} cat litter product photo`}
+                                        alt={data.imageAlt ?? `${data.name} cat litter product photo`}
                                         className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
@@ -173,7 +190,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                             <FadeUp delay={0.2} className="flex flex-col sm:flex-row gap-4">
                                 <a href={data.priceCheckUrl} target="_blank" rel="noopener noreferrer" className="flex-1 bg-primary text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 hover:-translate-y-1 transition-all text-center flex items-center justify-center gap-2">
                                     <ShoppingCart className="w-5 h-5" />
-                                    Check Best Price
+                                    {priceCheckLabel}
                                 </a>
                             </FadeUp>
                         </div>
@@ -333,14 +350,13 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                     Official brand pages and third-party references used to cross-check claims:
                                 </p>
                                 <ul className="grid md:grid-cols-2 gap-2 text-sm">
-                                    <li><a href="https://www.armandhammer.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Arm &amp; Hammer Official Site</a></li>
-                                    <li><a href="https://www.drelseys.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Dr. Elsey&apos;s Official Site</a></li>
-                                    <li><a href="https://www.worldsbestcatlitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">World&apos;s Best Cat Litter Official Site</a></li>
-                                    <li><a href="https://www.prettylitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">PrettyLitter Official Site</a></li>
-                                    <li><a href="https://www.avma.org/resources-tools/pet-owners/petcare" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AVMA Pet Care Guidance</a></li>
-                                    <li><a href="https://journals.sagepub.com/home/jfm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Journal of Feline Medicine and Surgery</a></li>
-                                    <li><a href="https://www.astm.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ASTM Testing Standards</a></li>
-                                    <li><a href="https://www.epa.gov/indoor-air-quality-iaq" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">EPA Indoor Air Quality</a></li>
+                                    {researchLinks.map((resource) => (
+                                        <li key={resource.href}>
+                                            <a href={resource.href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                                                {resource.label}
+                                            </a>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
@@ -417,7 +433,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                                 </div>
                                 <div className="mt-8 pt-6 border-t border-border">
                                     <a href={data.priceCheckUrl} target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-primary text-white font-bold text-center rounded-xl shadow-lg shadow-primary/10 hover:bg-primary/90 transition-all">
-                                        Get Best Price
+                                        {priceCheckLabel}
                                     </a>
                                     <p className="text-center text-xs text-muted-foreground mt-3">
                                         We may earn a commission from links.
@@ -453,7 +469,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
                 <ComparisonWidget currentProduct={data.name} />
 
             </main>
-            <Footer />
+            <FooterClient />
         </div>
     );
 }

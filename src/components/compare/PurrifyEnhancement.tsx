@@ -35,7 +35,7 @@ export function PurrifyEnhancement() {
             <Sparkles className="w-8 h-8 text-teal-600 mb-3" />
             <h4 className="font-bold text-lg text-foreground mb-2">Better Odor Control</h4>
             <p className="text-muted-foreground">
-              Probiotics eliminate smell biologically—no masking with perfumes
+              Activated coconut carbon traps ammonia compounds without masking with perfumes
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export function PurrifyEnhancement() {
               Learn More About Purrify
             </PurrifyLink>
             <p className="text-sm text-emerald-100">
-              Natural probiotics • Made in Canada
+              Activated coconut carbon • Made in Canada
             </p>
           </div>
         </div>

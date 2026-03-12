@@ -79,7 +79,7 @@ export default function AboutPage() {
                             It all started when we adopted two rescue cats and quickly realized that living in a small apartment meant we were constantly fighting litter box odors. We tried every premium brand, but the smell always returned after a week or two.
                         </p>
                         <p className="mb-6">
-                            Frustrated by the misleading "99% Dust Free" and "30 Day Odor Control" claims on the packaging, we started doing our own independent tests. We measured ammonia levels, timed clump formations, and tracked dust spread.
+                            Frustrated by the misleading &quot;99% Dust Free&quot; and &quot;30 Day Odor Control&quot; claims on the packaging, we started doing our own independent tests. We measured ammonia levels, timed clump formations, and tracked dust spread.
                         </p>
 
                         <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-200 my-8 not-prose">
@@ -92,10 +92,10 @@ export default function AboutPage() {
                                         The Testing Breakthrough
                                     </h3>
                                     <p className="text-emerald-700 mb-4">
-                                        During our months of testing, we discovered something that changed everything: probiotics. Specifically, a probiotic deodorizer called Purrify. When we applied it to even budget-tier litters, the odor-control performance skyrocketed past the priciest premium brands.
+                                        During our months of testing, we discovered something that changed everything: activated coconut carbon. Specifically, a cat litter deodorizer additive called Purrify. When we applied it to even budget-tier litters, the odor-control performance skyrocketed past the priciest premium brands.
                                     </p>
                                     <p className="text-emerald-700 mb-4">
-                                        We realized the secret to a perfect litter box wasn't just finding the right litter, but enhancing it biologically.
+                                        We realized the secret to a perfect litter box wasn&apos;t just finding the right litter, but enhancing it with a dedicated odor-control additive.
                                     </p>
                                     <PurrifyLink variant="badge">
                                         Learn About Purrify
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
                         <h2 className="text-2xl font-bold text-foreground mb-4">Why Trust Us?</h2>
                         <p className="mb-8">
-                            Because we're cat owners who got tired of the lies. "99% Dust Free" usually means "Clouds of Choking Dust". We're here to expose the marketing fluff and give you the raw data.
+                            Because we&apos;re cat owners who got tired of the lies. &quot;99% Dust Free&quot; usually means &quot;Clouds of Choking Dust&quot;. We&apos;re here to expose the marketing fluff and give you the raw data.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-8">

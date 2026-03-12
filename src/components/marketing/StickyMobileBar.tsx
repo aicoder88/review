@@ -42,7 +42,7 @@ export function StickyMobileBar({ productName }: StickyMobileBarProps) {
           <div className="font-bold text-sm truncate">
             {productName ? `Make ${productName} 2x better` : 'Make any litter 2x better'}
           </div>
-          <div className="text-xs opacity-90">Purrify probiotic deodorizer</div>
+          <div className="text-xs opacity-90">Purrify activated coconut carbon additive</div>
         </div>
         <Link
           href="/reviews/purrify"

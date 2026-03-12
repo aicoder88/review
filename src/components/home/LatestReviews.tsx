@@ -1,15 +1,9 @@
-'use client';
-
+import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { Calendar, TrendingUp, ArrowRight, Star } from 'lucide-react';
-import {
-  formatCatalogDate,
-  getLatestReviewedProducts,
-} from '@/lib/product-catalog';
-import { getLatestReviewedDate } from '@/lib/site';
-
-const reviews = getLatestReviewedProducts();
-const latestReviewedDate = getLatestReviewedDate();
+import Link from 'next/link';
+import { formatCatalogDate } from '@/lib/product-catalog';
+import type { HomeLatestReview } from '@/lib/homepage';
 
 function getGradient(score: number) {
   if (score >= 9.3) return 'from-[#D9B373] to-[#B38B4D]';
@@ -18,7 +12,12 @@ function getGradient(score: number) {
   return 'from-slate-600 to-slate-800';
 }
 
-export function LatestReviews() {
+interface LatestReviewsProps {
+  reviews: HomeLatestReview[];
+  latestReviewedDate: string;
+}
+
+export function LatestReviews({ reviews, latestReviewedDate }: LatestReviewsProps) {
   return (
     <section id="latest" className="py-24 px-6 bg-secondary/30 relative overflow-hidden">
       {/* Background Decorations */}
@@ -39,12 +38,11 @@ export function LatestReviews() {
               Newest hands-on reviews in the current catalog, updated through {formatCatalogDate(latestReviewedDate)}
             </p>
           </div>
-          <a href="/reviews" className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">
+          <Link href="/reviews" prefetch={false} className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">
             View All Reviews <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
 
-        {/* Masonry Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.map((review) => (
             <Card
@@ -53,10 +51,12 @@ export function LatestReviews() {
             >
               {/* Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img
+                <Image
                   src={review.image}
                   alt={review.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Gradient Overlay */}
@@ -98,18 +98,18 @@ export function LatestReviews() {
                   {review.summary}
                 </p>
 
-                <a href={review.reviewUrl} className="flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all duration-300">
+                <Link href={review.reviewUrl} prefetch={false} className="flex items-center text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all duration-300">
                   Read Full Review <ArrowRight className="w-3 h-3 ml-1" />
-                </a>
+                </Link>
               </div>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a href="/reviews" className="inline-flex bg-foreground text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:bg-primary-foreground hover:text-foreground border-2 border-transparent hover:border-foreground">
+          <Link href="/reviews" prefetch={false} className="inline-flex bg-foreground text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:bg-primary-foreground hover:text-foreground border-2 border-transparent hover:border-foreground">
             Load More Reviews
-          </a>
+          </Link>
         </div>
       </div>
     </section>

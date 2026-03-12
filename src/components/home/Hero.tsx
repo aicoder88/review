@@ -1,104 +1,94 @@
-'use client';
-
-import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Search, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Search, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { FadeUp, FadeIn, StaggerChildren } from '@/components/ui/motion';
-import { getComparisonPageCount, getReviewedProductCount } from '@/lib/site';
 
-const reviewedProductCount = getReviewedProductCount();
-const comparisonPageCount = getComparisonPageCount();
+interface HeroProps {
+  reviewedProductCount: number;
+  comparisonPageCount: number;
+}
 
-export function Hero() {
-  const [searchFocused, setSearchFocused] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter();
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
-    }
-  };
-
+export function Hero({ reviewedProductCount, comparisonPageCount }: HeroProps) {
   return (
-    <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-background">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[0%] right-[-10%] w-[600px] h-[600px] bg-accent/5 rounded-full blur-[100px]" />
+    <section className="relative overflow-hidden bg-background pb-16 pt-32 md:pb-32 md:pt-48">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[-10%] top-[-20%] h-[800px] w-[800px] rounded-full bg-primary/10 blur-[120px]" />
+        <div className="absolute bottom-[0%] right-[-10%] h-[600px] w-[600px] rounded-full bg-accent/5 blur-[100px]" />
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 text-center">
-        <StaggerChildren className="max-w-4xl mx-auto" staggerDelay={0.15}>
-          {/* Badge */}
-          <FadeUp className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary rounded-full px-5 py-2 mb-8 backdrop-blur-md shadow-lg">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-8 inline-flex animate-in items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-5 py-2 text-primary shadow-lg fade-in slide-in-from-bottom-4 duration-700">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            <span className="text-sm font-bold tracking-wide uppercase">
+            <span className="text-sm font-bold uppercase tracking-wide">
               {reviewedProductCount} Published Reviews • {comparisonPageCount}+ Comparison Matchups
             </span>
-          </FadeUp>
+          </div>
 
-          {/* Headline */}
-          <FadeUp>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium mb-8 leading-[1.05] tracking-tight text-foreground">
-              Best <span className="text-primary font-bold">Cat Litter Reviews</span>, Roundups, and Comparisons for Real-World Dust, Odor, Clumping, and Cleanup.
-            </h1>
-          </FadeUp>
+          <h1 className="mb-8 animate-in font-display text-5xl font-medium leading-[1.05] tracking-tight text-foreground fade-in slide-in-from-bottom-4 duration-700 md:text-7xl lg:text-8xl">
+            Best <span className="font-bold text-primary">Cat Litter Reviews</span>, Roundups,
+            and Comparisons for Real-World Dust, Odor, Clumping, and Cleanup.
+          </h1>
 
-          <FadeUp delay={0.2} className="max-w-3xl mx-auto mb-12">
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-4">
-              <span className="font-bold text-destructive">Most cat litters still fall short</span> on low dust, odor control, or clean clumping.
+          <div className="mx-auto mb-12 max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <p className="mb-4 text-xl leading-relaxed text-foreground md:text-2xl">
+              <span className="font-bold text-destructive">Most cat litters still fall short</span>{' '}
+              on low dust, odor control, or clean clumping.
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Browse {reviewedProductCount} current review pages, category roundups for natural litter,
-              odor control, low dust, clumping, and budget shopping, plus {comparisonPageCount}+
-              side-by-side matchups when you are deciding between close alternatives.
+            <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+              Browse {reviewedProductCount} current review pages, category roundups for natural
+              litter, odor control, low dust, clumping, and budget shopping, plus{' '}
+              {comparisonPageCount}+ side-by-side matchups when you are deciding between close
+              alternatives.
             </p>
-          </FadeUp>
+          </div>
 
-          {/* CTAs */}
-          <FadeUp delay={0.4} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <button
-              onClick={() => document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-accent to-amber-500 text-white font-display font-bold text-xl rounded-full shadow-xl shadow-accent/30 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group"
+          <div className="mb-16 flex animate-in flex-col items-center justify-center gap-4 fade-in slide-in-from-bottom-4 duration-700 sm:flex-row">
+            <a
+              href="#featured"
+              className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-accent to-amber-500 px-10 py-5 font-display text-xl font-bold text-white shadow-xl shadow-accent/30 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl sm:w-auto"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full" />
+              <div className="absolute inset-0 translate-y-full rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-y-0" />
               <span className="relative z-10">See What Actually Works</span>
-              <ArrowRight className="w-6 h-6 relative z-10" />
-            </button>
-            <Link href="/methodology" prefetch={false} className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-primary/20 text-foreground font-bold text-lg rounded-full hover:bg-white hover:border-primary/50 transition-all duration-300 inline-flex items-center justify-center">
+              <ArrowRight className="relative z-10 h-6 w-6" />
+            </a>
+            <Link
+              href="/methodology"
+              prefetch={false}
+              className="inline-flex w-full items-center justify-center rounded-full border-2 border-primary/20 px-8 py-4 text-lg font-bold text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-white sm:w-auto"
+            >
               How We Test
             </Link>
-          </FadeUp>
+          </div>
 
-          {/* Search Bar (Secondary) */}
-          <FadeUp delay={0.5} className="max-w-lg mx-auto relative group">
-            <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl group-hover:bg-accent/30 transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <form onSubmit={handleSearch} className={`relative flex items-center bg-white border-2 transition-all duration-300 rounded-full overflow-hidden ${searchFocused ? 'border-primary ring-4 ring-primary/10' : 'border-border'}`}>
-              <Search className="ml-4 w-5 h-5 text-muted-foreground" />
+          <div className="group relative mx-auto max-w-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 blur-xl transition-all duration-500 group-focus-within:opacity-100 group-hover:opacity-100" />
+            <form
+              action="/search"
+              className="relative flex items-center overflow-hidden rounded-full border-2 border-border bg-white transition-all duration-300 focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/10"
+            >
+              <Search className="ml-4 h-5 w-5 text-muted-foreground" />
               <Input
-                type="text"
+                type="search"
+                name="q"
                 placeholder={`Search ${reviewedProductCount} brutally honest reviews...`}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setSearchFocused(true)}
-                onBlur={() => setSearchFocused(false)}
-                className="border-none shadow-none focus-visible:ring-0 text-base py-6 bg-transparent"
+                className="border-none bg-transparent py-6 text-base shadow-none focus-visible:ring-0"
               />
-              <button type="submit" className="mr-2 bg-primary text-white p-2 rounded-full hover:bg-primary/90 transition-colors">
-                <ArrowRight className="w-4 h-4" />
+              <button
+                type="submit"
+                className="mr-2 rounded-full bg-primary p-2 text-white transition-colors hover:bg-primary/90"
+                aria-label="Search reviews"
+              >
+                <ArrowRight className="h-4 w-4" />
               </button>
             </form>
-          </FadeUp>
+          </div>
 
-          <FadeUp delay={0.6} className="mt-8">
+          <div className="mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
               {[
                 ['Start With Categories', '#intent-hub'],
@@ -116,45 +106,42 @@ export function Hero() {
                 </a>
               ))}
             </div>
-          </FadeUp>
-
-        </StaggerChildren>
+          </div>
+        </div>
       </div>
 
-      {/* Floating Cats (Decorations) - Positioned absolutely to frame the content */}
-      <FadeIn delay={0.8} className="absolute top-1/2 -translate-y-1/2 left-[2%] hidden xl:block pointer-events-none">
-        <div className="relative w-64 xl:w-72 aspect-[3/4] rounded-3xl overflow-hidden rotate-[-6deg] shadow-2xl border-4 border-white/50 bg-white/10 backdrop-blur-sm">
-          <img
+      <div className="pointer-events-none absolute left-[2%] top-1/2 hidden -translate-y-1/2 xl:block">
+        <div className="relative aspect-[3/4] w-64 rotate-[-6deg] overflow-hidden rounded-3xl border-4 border-white/50 bg-white/10 shadow-2xl backdrop-blur-sm xl:w-72">
+          <Image
             src="/images/cat-hero-1.png"
             alt="Beautiful cat sitting next to a clean litter box"
-            className="w-full h-full object-cover opacity-90"
+            fill
+            sizes="(min-width: 1280px) 18rem, 0px"
+            className="object-cover opacity-90"
           />
         </div>
-      </FadeIn>
-      <FadeIn delay={1.0} className="absolute top-1/2 -translate-y-1/2 right-[2%] hidden xl:block pointer-events-none">
-        <div className="relative w-64 xl:w-72 aspect-[3/4] rounded-3xl overflow-hidden rotate-[6deg] shadow-2xl border-4 border-white/50 bg-white/10 backdrop-blur-sm">
-          <img
+      </div>
+      <div className="pointer-events-none absolute right-[2%] top-1/2 hidden -translate-y-1/2 xl:block">
+        <div className="relative aspect-[3/4] w-64 rotate-[6deg] overflow-hidden rounded-3xl border-4 border-white/50 bg-white/10 shadow-2xl backdrop-blur-sm xl:w-72">
+          <Image
             src="/images/cat-hero-2.png"
             alt="Happy cat in a clean home environment"
-            className="w-full h-full object-cover opacity-90"
+            fill
+            sizes="(min-width: 1280px) 18rem, 0px"
+            className="object-cover opacity-90"
           />
         </div>
-      </FadeIn>
+      </div>
 
-      {/* Mobile Decorative Elements */}
-      <div className="xl:hidden absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
-        <FadeIn delay={0.8}>
-          <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg border border-primary/10">
-            <span className="text-2xl">🐱</span>
-            <span className="text-xs font-bold text-primary">{reviewedProductCount} Reviews</span>
-          </div>
-        </FadeIn>
-        <FadeIn delay={1.0}>
-          <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg border border-accent/10">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-xs font-bold text-accent">Review Library</span>
-          </div>
-        </FadeIn>
+      <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex items-end justify-between xl:hidden">
+        <div className="flex items-center gap-2 rounded-full border border-primary/10 bg-white/80 px-3 py-2 shadow-lg backdrop-blur-sm">
+          <span className="text-2xl">🐱</span>
+          <span className="text-xs font-bold text-primary">{reviewedProductCount} Reviews</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full border border-accent/10 bg-white/80 px-3 py-2 shadow-lg backdrop-blur-sm">
+          <Sparkles className="h-4 w-4 text-accent" />
+          <span className="text-xs font-bold text-accent">Review Library</span>
+        </div>
       </div>
     </section>
   );

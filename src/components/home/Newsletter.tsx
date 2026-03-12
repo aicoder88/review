@@ -1,8 +1,6 @@
-'use client';
-
 import { Input } from '@/components/ui/input';
 import { Mail, Gift, ArrowRight } from 'lucide-react';
-import { FadeIn, FadeUp } from '@/components/ui/motion';
+import Link from 'next/link';
 
 export function Newsletter() {
   return (
@@ -11,7 +9,7 @@ export function Newsletter() {
       <div className="absolute inset-0 bg-primary/5 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative">
-        <FadeIn className="relative bg-foreground rounded-[2.5rem] overflow-hidden shadow-2xl">
+        <div className="relative bg-foreground rounded-[2.5rem] overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
 
           <div className="grid lg:grid-cols-2 gap-0 relative z-10">
@@ -31,22 +29,29 @@ export function Newsletter() {
                 for roundup refreshes, buying-guide notes, and links to the newest comparison pages and cleanup guides.
               </p>
 
-              <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="flex flex-col gap-4">
                 <div className="flex gap-2">
                   <Input
+                    type="email"
                     placeholder="Enter your email..."
+                    readOnly
+                    aria-label="Email signup preview"
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 focus-visible:ring-accent focus-visible:border-accent transition-all hover:bg-white/20"
                   />
-                  <button type="submit" className="h-14 px-8 rounded-full bg-accent text-foreground hover:bg-white transition-all duration-300 font-bold text-lg shadow-lg shadow-accent/20 whitespace-nowrap flex items-center gap-2">
+                  <Link
+                    href="/guides"
+                    prefetch={false}
+                    className="flex h-14 items-center gap-2 whitespace-nowrap rounded-full bg-accent px-8 text-lg font-bold text-foreground shadow-lg shadow-accent/20 transition-all duration-300 hover:bg-white"
+                  >
                     Send Me The Guide
                     <ArrowRight className="w-5 h-5" />
-                  </button>
+                  </Link>
                 </div>
                 <p className="text-white/40 text-sm flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                   Designed for occasional review updates, not daily spam
                 </p>
-              </form>
+              </div>
 
               <div className="mt-12 flex items-center gap-4">
                 <h3 className="font-display text-xl font-bold text-white mr-4">
@@ -66,10 +71,8 @@ export function Newsletter() {
               </div>
             </div>
 
-            {/* Right Visual */}
             <div className="relative h-full min-h-[400px] bg-white/5 lg:border-l border-white/10 p-12 flex items-center justify-center">
               <div className="relative w-full max-w-sm">
-                {/* Stacked Cards Animation */}
                 <div className="absolute top-0 left-0 w-full h-full bg-white/5 rounded-2xl rotate-6 transform translate-y-4" />
                 <div className="absolute top-0 left-0 w-full h-full bg-white/5 rounded-2xl -rotate-6 transform -translate-y-4" />
 
@@ -101,7 +104,7 @@ export function Newsletter() {
               </div>
             </div>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

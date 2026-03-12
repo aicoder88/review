@@ -167,7 +167,7 @@ const faqData = [
     },
     {
         question: "Does Boxiecat's probiotic odor control work?",
-        answer: "Boxiecat includes natural probiotics in their formula that do help with initial odor control. However, in our 90-day testing, we found the probiotic effect noticeably faded after about 3 weeks of opening the bag. For continued probiotic odor control, we recommend refreshing the box with Purrify probiotic deodorizer every few weeks. This maintains the biological odor elimination without adding perfumes."
+        answer: "Boxiecat includes natural probiotics in their formula that do help with initial odor control. However, in our 90-day testing, we found the probiotic effect noticeably faded after about 3 weeks of opening the bag. For continued odor control, we recommend refreshing the box with Purrify activated coconut carbon deodorizer additive every few weeks. This adds fragrance-free ammonia control without adding perfumes."
     },
     {
         question: "Why is Boxiecat more expensive than other litters?",
@@ -199,7 +199,7 @@ export default function BoxiecatReview() {
                 </section>
 
                 <section>
-                    <h2>The "Flat Top" Innovation (Why It Matters)</h2>
+                    <h2>The &quot;Flat Top&quot; Innovation (Why It Matters)</h2>
                     <p>
                         Most cat litters allow urine to trickle down 1-2 inches before clumping, creating those dreaded sludge-cement deposits on the bottom of the tray. You know the ones—they require a chisel and prayers to remove.
                     </p>
@@ -247,10 +247,10 @@ export default function BoxiecatReview() {
                             Boxiecat has the right idea: probiotics work better than perfumes. But the built-in probiotics die off once exposed to air.
                         </p>
                         <p className="text-green-800">
-                            To maintain that "Day 1" freshness forever, we refreshed the box with <PurrifyLink variant="inline">Purrify</PurrifyLink> every time we scooped.
+                            To maintain that &quot;Day 1&quot; freshness forever, we refreshed the box with <PurrifyLink variant="inline">Purrify</PurrifyLink> every time we scooped.
                         </p>
                         <p className="font-bold text-green-900 mt-2">
-                            Since Purrify is a concentrated probiotic specifically designed for litter, it supercharges Boxiecat's natural formula—extending that fresh probiotic protection indefinitely.
+                            Since Purrify is a concentrated activated coconut carbon additive specifically designed for litter, it reinforces Boxiecat&apos;s odor control after the built-in probiotic effect starts fading.
                         </p>
                     </div>
                 </section>
@@ -286,9 +286,9 @@ export default function BoxiecatReview() {
                         className="my-10"
                     />
 
-                    <h3>Dust (9.0/10) — Comparable to Dr. Elsey's</h3>
+                    <h3>Dust (9.0/10) — Comparable to Dr. Elsey&apos;s</h3>
                     <p>
-                        Exceptional. We measured 0.04mg particulates per pour—basically invisible and statistically tied with Dr. Elsey's Ultra (0.03mg). You won't see dust clouds, period.
+                        Exceptional. We measured 0.04mg particulates per pour, basically invisible and statistically tied with Dr. Elsey&apos;s Ultra (0.03mg). You won&apos;t see dust clouds, period.
                     </p>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">Dust Comparison:</h4>
@@ -301,7 +301,7 @@ export default function BoxiecatReview() {
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Dr. Elsey's Ultra</td>
+                                    <td className="py-2">Dr. Elsey&apos;s Ultra</td>
                                     <td className="text-right py-2 font-bold">0.03mg</td>
                                 </tr>
                                 <tr className="border-b border-border/50">
@@ -321,7 +321,7 @@ export default function BoxiecatReview() {
                         The clumps are hard, flat, and do not break. Because they don&apos;t stick to the box, you save 2-3 minutes per scooping session not scraping cement off the bottom.
                     </p>
                     <p>
-                        In our drop test, 47 of 50 clumps stayed completely intact. The flat shape actually makes them <em>easier</em> to scoop than round clumps—they don't roll off the scoop.
+                        In our drop test, 47 of 50 clumps stayed completely intact. The flat shape actually makes them <em>easier</em> to scoop than round clumps because they don&apos;t roll off the scoop.
                     </p>
 
                     <h3>Tracking (8.0/10) — Low</h3>
@@ -331,7 +331,7 @@ export default function BoxiecatReview() {
                 </section>
 
                 <section>
-                    <h2>Boxiecat vs Dr. Elsey's: The Premium Showdown</h2>
+                    <h2>Boxiecat vs Dr. Elsey&apos;s: The Premium Showdown</h2>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">Head-to-Head Comparison:</h4>
                         <table className="w-full text-sm">
@@ -339,7 +339,7 @@ export default function BoxiecatReview() {
                                 <tr className="border-b border-border">
                                     <th className="text-left py-2">Feature</th>
                                     <th className="text-center py-2">Boxiecat</th>
-                                    <th className="text-center py-2">Dr. Elsey's</th>
+                                    <th className="text-center py-2">Dr. Elsey&apos;s</th>
                                 </tr>
                             </thead>
                             <tbody className="text-muted-foreground">
@@ -380,7 +380,7 @@ export default function BoxiecatReview() {
                         <strong>Choose Boxiecat if:</strong> You hate scraping the bottom of the pan and want the ultimate convenience.
                     </p>
                     <p>
-                        <strong>Choose Dr. Elsey's if:</strong> You want maximum clump hardness, better value per pound, and easy store availability.
+                        <strong>Choose Dr. Elsey&apos;s if:</strong> You want maximum clump hardness, better value per pound, and easy store availability.
                     </p>
                 </section>
 
@@ -391,7 +391,7 @@ export default function BoxiecatReview() {
                             <h3 className="font-bold text-xl text-green-800 mb-4">✅ Perfect For:</h3>
                             <ul className="space-y-2 text-green-900/80">
                                 <li>• People who hate scraping litter boxes</li>
-                                <li>• Those wanting Dr. Elsey's alternative</li>
+                                <li>• Those wanting Dr. Elsey&apos;s alternative</li>
                                 <li>• Anyone prioritizing convenience</li>
                                 <li>• Owners who scoop frequently</li>
                                 <li>• Homes with litter robots (Flat Top works great)</li>
@@ -415,7 +415,7 @@ export default function BoxiecatReview() {
                         This is currently the runner-up for Best Overall Litter. If you prefer flat-top clumping over Dr. Elsey&apos;s density—and don&apos;t mind the premium price—Boxiecat is a fantastic choice that delivers on its promises.
                     </p>
                     <p>
-                        The Flat Top technology genuinely works, and the dust control rivals the best in the industry. Just be prepared to either accept fading probiotics after 3 weeks or boost them with <PurrifyLink variant="inline">Purrify</PurrifyLink>.
+                        The Flat Top technology genuinely works, and the dust control rivals the best in the industry. Just be prepared to either accept fading probiotics after 3 weeks or reinforce the odor control with <PurrifyLink variant="inline">Purrify</PurrifyLink>.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

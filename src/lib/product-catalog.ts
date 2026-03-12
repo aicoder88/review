@@ -91,32 +91,32 @@ export const productCatalog: ComparisonProductRecord[] = [
   {
     id: 'purrify',
     slug: 'purrify',
-    name: 'Purrify Probiotic Deodorizer',
+    name: 'Purrify Activated Carbon Additive',
     brand: 'Purrify',
-    category: 'Litter Enhancement',
+    category: 'Litter Additive',
     image: getProductImage('purrify'),
     overallScore: 9.6,
-    price: '$18.99',
-    weight: '16 oz',
-    costPerLb: '$18.99',
-    costPerDay: '$0.19',
-    type: 'Probiotic Additive',
-    summary: 'Game-changing probiotic additive. 87% ammonia reduction, 2x litter life extension, and it works with almost any litter.',
-    tags: ['additive', 'probiotic', 'odor-control', 'natural', 'budget-hack', 'multi-cat'],
-    pros: ['87% ammonia reduction', 'Works with any litter', 'Saves $20-30/month'],
+    price: '$4.76 trial',
+    weight: '12 g trial',
+    costPerLb: '$18.99 est.',
+    costPerDay: '$0.19 est.',
+    type: 'Activated Carbon Additive',
+    summary: 'Top-rated activated carbon additive with fragrance-free ammonia control, low-dust granules, and a free-trial entry point.',
+    tags: ['additive', 'activated-carbon', 'odor-control', 'fragrance-free', 'trial', 'multi-cat'],
+    pros: ['Fragrance-free ammonia control', 'Works with most litters', 'Free trial pack available'],
     badge: "Editor's Choice",
     reviewUrl: '/reviews/purrify',
-    buyUrl: 'https://www.purrify.ca?via=reviewcatlitter',
+    buyUrl: 'https://www.purrify.ca/products/trial-size/',
     scores: {
-      dust: 10,
-      dustMeasurement: 'No added dust',
-      clumping: 9.4,
-      clumpingStatus: 'Boosts litter performance',
-      odor: 10,
-      odorStatus: '87% ammonia reduction',
-      tracking: 10,
-      trackingStatus: 'No added tracking',
-      value: 9.5,
+      dust: 9.3,
+      dustMeasurement: 'Low-dust 8x30 mesh granules',
+      clumping: 8.3,
+      clumpingStatus: 'Additive only; does not fix weak clumps',
+      odor: 9.9,
+      odorStatus: 'Activated carbon targets ammonia',
+      tracking: 9.4,
+      trackingStatus: 'Dense granules stay in the box well',
+      value: 9.6,
     },
     features: {
       scented: false,
@@ -126,13 +126,13 @@ export const productCatalog: ComparisonProductRecord[] = [
       multiCat: true,
     },
     longevity: {
-      single: '8 weeks',
-      multi: '5 weeks',
+      single: '7+ days per application',
+      multi: 'Reapply more often in high-output boxes',
     },
     verdict: {
-      bestFor: 'Making any litter last longer',
-      worthIf: 'You want better odor control without buying a more expensive litter.',
-      skipIf: 'You only want standalone litters and never use litter additives.',
+      bestFor: 'Adding ammonia control to a litter your cat already likes',
+      worthIf: 'You want a fragrance-free odor upgrade without changing base litter.',
+      skipIf: 'You want a litter replacement or stronger clumping from the litter itself.',
     },
     lastReviewedAt: '2026-03-07',
     latestTrending: true,
@@ -1194,7 +1194,7 @@ export function getCompetitorsForProduct(productId: string, limit = 5) {
 }
 
 function isStaticMatchupEligible(product: ComparisonProductRecord) {
-  return product.category !== 'Litter Enhancement';
+  return product.category !== 'Litter Additive';
 }
 
 function sortProductsForMatchup(

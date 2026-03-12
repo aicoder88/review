@@ -222,7 +222,7 @@ export function OdorMetrics({
                 Boost {productName} with Purrify
               </h4>
               <p className="text-amber-800 text-sm mb-4">
-                Our tests showed that adding Purrify probiotic deodorizer to {productName}
+                Our tests showed that adding Purrify activated coconut carbon deodorizer additive to {productName}
                 improved odor control by <strong>{purrifyEnhancement.improvementPercent}%</strong> and extended
                 usable litter life by <strong>{purrifyEnhancement.extendedLifeDays} days</strong>.
               </p>

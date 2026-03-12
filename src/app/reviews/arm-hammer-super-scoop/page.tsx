@@ -163,7 +163,7 @@ const faqData = [
     },
     {
         question: "Can I improve Super Scoop's performance?",
-        answer: "Yes—adding Purrify probiotic deodorizer transforms this budget litter into a premium performer. The probiotics eliminate odor at the source (compensating for softer clumps) and extend litter life by 1-2 weeks. Even with the added cost of Purrify (~$7.50/month), you'll still save money vs premium litters while getting better odor control than Clump & Seal."
+        answer: "Yes—adding Purrify activated coconut carbon deodorizer additive transforms this budget litter into a premium performer. The carbon improves odor control at the source (compensating for softer clumps) and extends litter life by 1-2 weeks. Even with the added cost of Purrify (~$7.50/month), you'll still save money vs premium litters while getting better odor control than Clump & Seal."
     },
     {
         question: "Where's the best place to buy Super Scoop?",
@@ -195,10 +195,10 @@ export default function ArmHammerSuperScoopReview() {
                 <section>
                     <h2>What Makes Super Scoop Different</h2>
                     <p>
-                        Arm & Hammer makes multiple litter lines, and it's confusing. Super Scoop is their <em>budget</em> option—not to be confused with Clump & Seal (premium) or the various scented versions.
+                        Arm & Hammer makes multiple litter lines, and it&apos;s confusing. Super Scoop is their <em>budget</em> option, not to be confused with Clump & Seal (premium) or the various scented versions.
                     </p>
                     <p>
-                        Here's what you get: Standard clay litter with baking soda mixed in. No fancy micro-particles, no heavy perfumes, no health-monitoring crystals. Just decent litter at a decent price.
+                        Here&apos;s what you get: standard clay litter with baking soda mixed in. No fancy micro-particles, no heavy perfumes, no health-monitoring crystals. Just decent litter at a decent price.
                     </p>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">Arm & Hammer Litter Lineup:</h4>
@@ -238,7 +238,7 @@ export default function ArmHammerSuperScoopReview() {
                 <section>
                     <h2>The Real Cost: Math That Matters</h2>
                     <p>
-                        Let's break down the actual cost difference between Super Scoop and premium litters:
+                        Let&apos;s break down the actual cost difference between Super Scoop and premium litters:
                     </p>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">Annual Cost Comparison (Single Cat):</h4>
@@ -253,7 +253,7 @@ export default function ArmHammerSuperScoopReview() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="font-bold mb-2">Dr. Elsey's Ultra:</p>
+                                <p className="font-bold mb-2">Dr. Elsey&apos;s Ultra:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $24.99 per 40lb bag</li>
                                     <li>• Lasts 7 weeks</li>
@@ -267,7 +267,7 @@ export default function ArmHammerSuperScoopReview() {
                         </p>
                     </div>
                     <p>
-                        The savings are real but modest ($2.40/month). You're trading convenience (harder clumps, less dust) for cash.
+                        The savings are real but modest ($2.40/month). You&apos;re trading convenience (harder clumps, less dust) for cash.
                     </p>
                 </section>
 
@@ -276,12 +276,12 @@ export default function ArmHammerSuperScoopReview() {
 
                     <h3>Dust (5.5/10) — You Get What You Pay For</h3>
                     <p>
-                        Super Scoop measured 0.55mg particulates per pour—18x more than Dr. Elsey's. You'll see visible dust clouds when pouring. Not ideal, but manageable for most people.
+                        Super Scoop measured 0.55mg particulates per pour, 18x more than Dr. Elsey&apos;s. You&apos;ll see visible dust clouds when pouring. Not ideal, but manageable for most people.
                     </p>
 
                     <h3>Clumping (7.2/10) — Good, Not Great</h3>
                     <p>
-                        Clumps form but break more easily than premium. In our drop test, 32 of 50 clumps stayed intact (64% vs 98% for Dr. Elsey's). This means:
+                        Clumps form but break more easily than premium. In our drop test, 32 of 50 clumps stayed intact (64% vs 98% for Dr. Elsey&apos;s). This means:
                     </p>
                     <ul>
                         <li>→ More small crumbles left behind</li>
@@ -299,8 +299,8 @@ export default function ArmHammerSuperScoopReview() {
                             Buy Super Scoop ($15/month) + <PurrifyLink variant="inline">Purrify</PurrifyLink> ($7.50/month) = $22.50/month.
                         </p>
                         <p className="text-amber-800 mt-2">
-                            You get premium odor control and extended litter life for less than Dr. Elsey's alone ($25/month). 
-                            Best of both worlds: budget base + probiotic enhancement.
+                            You get premium odor control and extended litter life for less than Dr. Elsey&apos;s alone ($25/month). 
+                            Best of both worlds: budget base + activated carbon upgrade.
                         </p>
                     </div>
                 </section>
@@ -333,7 +333,7 @@ export default function ArmHammerSuperScoopReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Arm & Hammer Super Scoop proves you don't need to spend big for acceptable litter performance. At $0.35/day, it delivers 80% of premium performance at 60% of the cost.
+                        Arm & Hammer Super Scoop proves you don&apos;t need to spend big for acceptable litter performance. At $0.35/day, it delivers 80% of premium performance at 60% of the cost.
                     </p>
                     <p>
                         The trade-offs are real: more dust, softer clumps, more frequent changes. But for budget-conscious households, the savings justify the extra effort.

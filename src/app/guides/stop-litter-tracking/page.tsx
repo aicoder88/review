@@ -66,7 +66,7 @@ export default function StopLitterTracking() {
             </h1>
             <p className="text-xl text-muted-foreground">
               After testing common litter-box fixes, here&apos;s what actually works
-              to keep litter in the box and off your floors.
+              to keep litter in the box instead of spreading outside the litter box and across your floors.
             </p>
             <div className="flex items-center gap-4 mt-6 text-sm text-muted-foreground">
               <div>Updated {formatSiteDate(guide.dateModified)}</div>
@@ -87,7 +87,7 @@ export default function StopLitterTracking() {
             <p>
               The most effective solution is a three-part approach: (1) use a high-sided litter box
               with (2) a large, textured litter mat, and (3) switch to heavier, low-tracking litter.
-              This combination reduces tracking by 85-90% in our testing.
+              This combination reduces tracking outside the litter box by 85-90% in our testing.
             </p>
           </div>
 
@@ -186,7 +186,7 @@ export default function StopLitterTracking() {
                   happier cats.
                 </p>
                 <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                  <strong>Money saver:</strong> Use Purrify probiotic deodorizer to make litter last 2x longer
+                  <strong>Money saver:</strong> Use Purrify activated coconut carbon additive to make litter last 2x longer
                   so you can afford proper depth without spending more.
                 </div>
               </div>
@@ -251,8 +251,8 @@ export default function StopLitterTracking() {
                 creates a fine coating on granules that sticks to paws like glue.
               </p>
               <p className="mb-4">
-                <strong>Purrify probiotic deodorizer</strong> reduces airborne dust by neutralizing static and
-                binding fine particles. Added benefit: litter lasts 2x longer, so you save money while reducing
+                <strong>Purrify activated coconut carbon deodorizer additive</strong> adds odor control without heavy fragrance
+                or a messy powder layer. Added benefit: litter lasts 2x longer, so you save money while reducing
                 tracking.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

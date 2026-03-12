@@ -1,199 +1,231 @@
-import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
+import type { Metadata } from 'next';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
-import { TestingMethodology } from '@/components/reviews/TestingMethodology';
-import { OdorMetrics } from '@/components/reviews/OdorMetrics';
+import { ProductReviewPage, ReviewData } from '@/components/reviews/ProductReviewPage';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
-import type { Metadata } from 'next';
 import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
-const siteUrl = "https://www.reviewcatlitter.com";
+const siteUrl = 'https://www.reviewcatlitter.com';
 const productUrl = `${siteUrl}/reviews/purrify`;
+const officialTrialUrl = 'https://www.purrify.ca/products/trial-size/';
+const officialProductsUrl = 'https://www.purrify.ca/products/';
+const officialScienceUrl = 'https://www.purrify.ca/learn/science/';
+const officialSafetyUrl = 'https://www.purrify.ca/learn/safety/';
+const officialShippingUrl = 'https://www.purrify.ca/support/shipping/';
 
 export const metadata: Metadata = {
-    title: "Purrify Review: Tested Odor Reduction, Savings, and Litter Life",
-    description: "Our Purrify review covers ammonia reduction, litter-life extension, monthly savings, and fit after six months of hands-on testing across multiple litters.",
+    title: 'Purrify Review: Activated Carbon Additive, Free Trial, and Fit',
+    description:
+        "Purrify is not a cat litter. It's an activated-carbon litter additive. This review covers what the official site claims, who it fits best, and why the free trial pack is the right starting point.",
     keywords: [
-        "Purrify review",
-        "Purrify probiotic deodorizer",
-        "cat litter odor eliminator",
-        "best litter deodorizer",
-        "probiotic cat litter additive",
-        "reduce litter box smell",
-        "extend cat litter life",
-        "Purrify vs baking soda",
-        "natural litter deodorizer"
+        'Purrify review',
+        'Purrify activated carbon',
+        'cat litter additive review',
+        'activated carbon litter additive',
+        'fragrance free litter deodorizer',
+        'Purrify free trial',
+        'ammonia odor control',
+        'coconut shell activated carbon',
+        'Purrify safety',
     ],
     alternates: {
-        canonical: "/reviews/purrify",
+        canonical: '/reviews/purrify',
     },
     openGraph: {
-        title: "Purrify Review: Tested Odor Reduction, Savings, and Litter Life",
-        description: "See our six-month Purrify test data for odor reduction, litter-life extension, and the households most likely to benefit.",
+        title: 'Purrify Review: Activated Carbon Additive, Free Trial, and Fit',
+        description:
+            "We reviewed Purrify as a dedicated litter additive, not a litter brand. See how its activated-carbon approach fits alongside clay, crystal, and natural litters.",
         url: productUrl,
-        type: "article",
-        publishedTime: "2025-01-15",
-        modifiedTime: "2025-12-18",
-        authors: ["ReviewCatLitter.com"],
-        section: "Product Reviews",
-        tags: ["Purrify", "odor control", "probiotics", "litter enhancer"],
+        type: 'article',
+        publishedTime: '2026-03-12',
+        modifiedTime: '2026-03-12',
+        authors: ['ReviewCatLitter.com'],
+        section: 'Product Reviews',
+        tags: ['Purrify', 'activated carbon', 'litter additive', 'odor control'],
     },
 };
 
 const reviewData: ReviewData = {
-    name: "Purrify Probiotic Deodorizer",
-    category: "Litter Enhancement",
+    name: 'Purrify Activated Carbon Additive',
+    category: 'Litter Additive',
     image: getProductImage('purrify'),
+    imageAlt: 'Purrify activated carbon cat litter additive pouch',
     overallScore: 9.6,
     specs: {
-        type: "Probiotic Powder",
-        price: "$",
-        weight: "16 oz",
-        dust: "N/A (Enhancement)",
-        clumping: "N/A (Enhancement)",
-        odor: "10/10 (Excellent)",
-        tracking: "N/A (Enhancement)",
-        value: "10/10 (Excellent)"
+        type: 'Activated Coconut-Shell Carbon Additive',
+        price: 'Free trial + $4.76 shipping',
+        weight: '12 g trial size',
+        dust: 'Low-dust 8x30 mesh granules',
+        clumping: 'Additive only; not a clumping fix',
+        odor: '9.9/10 (Excellent)',
+        tracking: '9.4/10 (Low added tracking)',
+        value: '9.6/10 (Strong)',
     },
     scores: {
-        dust: 10.0,
-        clumping: 10.0,
-        odor: 10.0,
-        tracking: 10.0,
-        value: 10.0
+        dust: 9.3,
+        clumping: 8.3,
+        odor: 9.9,
+        tracking: 9.4,
+        value: 9.6,
     },
     pros: [
-        "Makes ANY litter last 2x longer (scientifically tested)",
-        "Eliminates odor at bacterial source (87% ammonia reduction)",
-        "Works with clay, crystal, and natural litters",
-        "Saves $20-30/month on litter costs (proven)",
-        "Natural probiotics - safe for cats, humans, environment",
-        "Made in Canada with veterinary-grade ingredients"
+        'Clearly positioned as a cat litter additive, not a litter replacement',
+        'Activated coconut-shell carbon targets ammonia without perfumes',
+        'Official site offers a free trial pack with shipping-only checkout in Canada',
+        'Low-dust granular format is designed to stay in the box',
+        'Works with most litter types and automatic boxes per official FAQ',
+        'Dedicated science, safety, sizing, and shipping pages make evaluation easier',
     ],
     cons: [
-        "Requires consistent weekly application",
-        "Not a standalone litter (enhancement only)",
-        "Takes 24-48 hours for full probiotic colonization",
-        "Must be stored in cool, dry place (live bacteria)"
+        'Will not fix weak clumping, bad texture, or heavy tracking from the base litter',
+        'Official claims center on odor control more than lifespan or cost savings',
+        'Trial offer is framed around Canada shipping, not a universal free-ship offer',
+        'Needs reapplication as litter is refreshed and odor load builds back up',
     ],
     verdict: {
-        quickTake: "After 6 months of controlled testing with 10+ litter brands across 3 households, the data is clear: Purrify delivers 87% ammonia reduction and doubles litter life. It's the single most cost-effective upgrade you can make to your cat litter setup.",
-        worthIt: "You want to eliminate odor at the source, save $15-30/month on litter, or extend the life of your current litter by 2x.",
-        skipIt: "You change litter every 5-7 days regardless, or exclusively use heavily scented litters (fragrances inhibit probiotics)."
+        quickTake:
+            "Purrify earns a very high score because it solves a specific problem cleanly: adding fragrance-free ammonia control to the litter your cat already accepts. It deserves its own review page as an additive, not as a cat litter.",
+        worthIt:
+            "You want to keep your current litter and layer in stronger odor control with an additive-first approach.",
+        skipIt:
+            "You need a better litter base for clumping, tracking, or texture, not just an odor-control upgrade.",
     },
-    priceCheckUrl: "https://www.purrify.ca?via=reviewcatlitter"
+    priceCheckUrl: officialTrialUrl,
+    priceCheckLabel: 'Claim Free Trial',
+    researchLinks: [
+        { label: 'Purrify free trial pack', href: officialTrialUrl },
+        { label: 'Purrify compare sizes', href: officialProductsUrl },
+        { label: 'Purrify science page', href: officialScienceUrl },
+        { label: 'Purrify safety information', href: officialSafetyUrl },
+        { label: 'Purrify shipping and returns', href: officialShippingUrl },
+        { label: 'ASPCA poison control overview', href: 'https://www.aspca.org/pet-care/animal-poison-control' },
+    ],
 };
 
-// Schema data
 const productSchemaData = {
-    name: "Purrify Probiotic Deodorizer",
-    description: "Probiotic powder that eliminates cat litter odor at the bacterial source. Extends litter life by 2x and reduces ammonia by 87%. Works with all litter types.",
-    category: "Pet Supplies > Cat Supplies > Cat Litter > Litter Additives",
+    name: 'Purrify Activated Carbon Additive',
+    description:
+        'Activated coconut-shell carbon litter additive designed to trap ammonia and other odor compounds without fragrances. Reviewed as an add-on for existing cat litter, not as a standalone litter.',
+    category: 'Pet Supplies > Cat Supplies > Cat Litter > Litter Additives',
     image: getProductImageSet('purrify'),
-    brand: "Purrify",
-    sku: "PURRIFY-16OZ",
+    brand: 'Purrify',
     review: {
-        author: "ReviewCatLitter.com",
-        datePublished: "2025-01-15",
-        reviewBody: "After 6 months of controlled testing with 10+ litter brands across 3 households and 6 cats, we found that Purrify delivers 87% ammonia reduction, doubles litter life across all brands tested, and saves an average of $20-30/month in litter costs. The probiotic formula works by colonizing the litter with beneficial bacteria that consume odor-causing compounds at the molecular level, rather than masking them with perfumes.",
+        author: 'ReviewCatLitter.com',
+        datePublished: '2026-03-12',
+        reviewBody:
+            "Purrify ranks near the top of our odor-control add-ons because the live official site is unusually clear about what the product is: an activated-carbon litter additive made from coconut-shell carbon. The strongest fit is for households that already like their litter but want fragrance-free ammonia control, low-dust granules, and a low-friction free-trial option.",
         rating: 9.6,
         bestRating: 10,
-        worstRating: 0
+        worstRating: 0,
     },
     aggregateRating: {
         ratingValue: 9.6,
         reviewCount: 1,
         bestRating: 10,
-        worstRating: 0
+        worstRating: 0,
     },
     offers: {
-        price: "$14.99",
-        priceCurrency: "CAD",
-        availability: "https://schema.org/InStock",
-        url: "https://www.purrify.ca?via=reviewcatlitter",
-        seller: "Purrify Canada"
+        price: '$4.76',
+        priceCurrency: 'CAD',
+        availability: 'https://schema.org/InStock',
+        url: officialTrialUrl,
+        seller: 'Purrify',
     },
     features: [
-        "Probiotic formula with Bacillus subtilis and Lactobacillus strains",
-        "Eliminates odor at bacterial source (not masking)",
-        "Extends litter life by 2x",
-        "Works with all litter types (clay, crystal, natural)",
-        "Safe for cats, humans, and environment",
-        "Made in Canada"
+        'Activated coconut-shell carbon additive',
+        'Fragrance-free odor control',
+        'Targets ammonia through adsorption',
+        'Low-dust 8x30 mesh granules',
+        'Official free trial pack available',
+        'Made in Canada',
     ],
     keywords: [
-        "probiotic cat litter deodorizer",
-        "natural litter odor eliminator",
-        "cat litter enhancer",
-        "ammonia reducer",
-        "extend litter life"
+        'activated carbon cat litter additive',
+        'fragrance free litter deodorizer',
+        'Purrify free trial',
+        'ammonia odor control',
+        'coconut shell activated carbon',
     ],
     url: productUrl,
-    odorControlScore: 10,
-    clumpingScore: 10,
-    dustScore: 10,
-    trackingScore: 10,
-    valueScore: 10
+    odorControlScore: 9.9,
+    clumpingScore: 8.3,
+    dustScore: 9.3,
+    trackingScore: 9.4,
+    valueScore: 9.6,
 };
 
 const articleSchemaData = {
-    headline: "Purrify Probiotic Deodorizer Review: 6-Month Test Results & Data Analysis",
-    description: "Scientific review of Purrify based on 6 months of testing with 10+ litter brands. Includes ammonia reduction data, cost savings analysis, and compatibility testing.",
+    headline: 'Purrify Review: Why This Activated-Carbon Additive Deserves Its Own Page',
+    description:
+        "A source-backed review of Purrify as a litter additive, covering ingredients, safety positioning, usage, and the current free-trial offer.",
     image: getProductImage('purrify'),
-    datePublished: "2025-01-15",
-    dateModified: "2025-12-01",
-    author: "ReviewCatLitter.com",
+    datePublished: '2026-03-12',
+    dateModified: '2026-03-12',
+    author: 'ReviewCatLitter.com',
     url: productUrl,
-    keywords: ["Purrify review", "probiotic deodorizer", "cat litter odor", "litter enhancer"]
+    keywords: ['Purrify review', 'activated carbon additive', 'litter additive', 'odor control'],
 };
 
 const breadcrumbData = [
-    { name: "Home", url: siteUrl },
-    { name: "Reviews", url: `${siteUrl}/reviews` },
-    { name: "Purrify Probiotic Deodorizer", url: productUrl }
+    { name: 'Home', url: siteUrl },
+    { name: 'Reviews', url: `${siteUrl}/reviews` },
+    { name: 'Purrify Activated Carbon Additive', url: productUrl },
 ];
 
 const aggregateRatingSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Purrify Probiotic Deodorizer",
-    "url": productUrl,
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": 9.6,
-        "bestRating": 10,
-        "ratingCount": 1
-    }
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Purrify Activated Carbon Additive',
+    url: productUrl,
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: 9.6,
+        bestRating: 10,
+        ratingCount: 1,
+    },
 };
 
 const faqData = [
     {
-        question: "How does Purrify work to eliminate litter box odor?",
-        answer: "Purrify uses beneficial bacteria (probiotics) that colonize the litter and actively consume the organic waste and ammonia that cause odor. Unlike scented litters that mask smell with perfume, Purrify destroys odor at the molecular level by breaking down urea, ammonia, and fecal bacteria. The main probiotic strains are Bacillus subtilis and Lactobacillus, which are safe for cats and humans."
+        question: 'Is Purrify cat litter?',
+        answer:
+            "No. Purrify is a cat litter additive. You sprinkle it into the litter you already use, so it should be evaluated as an odor-control add-on rather than as a litter brand or litter formula.",
     },
     {
-        question: "How long does Purrify take to work?",
-        answer: "Purrify takes 24-48 hours for the probiotics to fully colonize the litter and reach peak effectiveness. You'll notice some improvement within the first few hours, but maximum odor control develops over the first two days. This is different from scented litters that mask odor immediately but don't actually eliminate the source."
+        question: 'What is Purrify made from?',
+        answer:
+            'The official site describes Purrify as premium coconut-shell activated carbon with no added fragrances, perfumes, preservatives, binding agents, or fillers.',
     },
     {
-        question: "Can I use Purrify with any type of cat litter?",
-        answer: "Yes, Purrify works with virtually all litter types including clay (clumping and non-clumping), silica crystal, corn, walnut, wheat, and paper litters. The only exception is heavily scented or perfumed litters, as the chemical fragrances can inhibit probiotic growth. For best results, use with unscented litter."
+        question: 'How fast does Purrify work?',
+        answer:
+            'According to the official site, bench testing showed meaningful ammonia-related odor reduction in as little as 60 seconds, with maximum effect building within about 24 hours. The FAQ also says existing odors typically fade over the first 24 to 48 hours.',
     },
     {
-        question: "How much money can Purrify save me on cat litter?",
-        answer: "Based on our 6-month testing, Purrify typically saves cat owners $15-30 per month. For example, with Dr. Elsey's Ultra ($25/40lb bag), a single-cat household goes from spending $25/month (changing every 4 weeks) to $20/month (litter lasts 8 weeks + Purrify cost). With cheaper litters, savings can reach $20-30/month because Purrify makes budget litter perform like premium brands."
+        question: 'Is Purrify safe for cats and kittens?',
+        answer:
+            "The safety and FAQ pages position it as non-toxic, fragrance-free activated carbon that is safe for cats of all ages, including kittens, when used as directed. The site also emphasizes its low-dust granular format rather than powdered carbon.",
     },
     {
-        question: "Is Purrify safe for kittens and senior cats?",
-        answer: "Yes, Purrify is safe for cats of all ages, including kittens and seniors. The probiotic strains used are the same ones found in veterinary supplements and human probiotics. They are non-toxic, chemical-free, and safe if ingested in small amounts during grooming. However, as with any litter product, monitor kittens under 12 weeks to ensure they don't consume large quantities."
-    }
+        question: 'Can I use Purrify with any litter or an automatic litter box?',
+        answer:
+            'The official FAQ says it works with most litter types and can be used in automatic and self-cleaning litter boxes because the granules are similar in size and weight to standard clumping litter.',
+    },
+    {
+        question: 'What is included in the free trial pack?',
+        answer:
+            'The current official trial page advertises a 12 g trial bag at no product charge, with a $4.76 shipping charge within Canada, limited to one trial per household while the offer is available.',
+    },
 ];
 
 export default function PurrifyReview() {
     return (
         <>
-            {/* Schema.org Structured Data */}
-            <EnhancedProductSchema {...productSchemaData} positiveNotes={reviewData.pros} negativeNotes={reviewData.cons} />
+            <EnhancedProductSchema
+                {...productSchemaData}
+                positiveNotes={reviewData.pros}
+                negativeNotes={reviewData.cons}
+            />
             <ArticleSchema {...articleSchemaData} />
             <BreadcrumbSchema items={breadcrumbData} />
             <FAQSchema faqs={faqData} />
@@ -205,340 +237,210 @@ export default function PurrifyReview() {
             />
 
             <ProductReviewPage data={reviewData}>
-
-                {/* Testing Methodology Section */}
-                <section className="my-12">
-                    <TestingMethodology
-                        productName="Purrify"
-                        testDuration="6 months"
-                        catCount={6}
-                        householdCount={3}
-                        startDate="June 2025"
-                        endDate="December 2025"
-                        additionalMetrics={[
-                            {
-                                name: "Ammonia Reduction",
-                                method: "pH/ammonia test strips at 24hr intervals",
-                                equipment: "Ammonia detection strips (0-100 ppm)",
-                                samples: 540
-                            },
-                            {
-                                name: "Litter Life Extension",
-                                method: "Controlled comparison of litter longevity",
-                                equipment: "Standardized scooping protocol",
-                                samples: 60
-                            },
-                            {
-                                name: "Cost Analysis",
-                                method: "Price tracking and usage measurement",
-                                equipment: "Digital scale, purchase records",
-                                samples: 120
-                            }
-                        ]}
-                    />
-                </section>
-
                 <section>
-                    <h2>What Purrify Actually Is (No Marketing Fluff)</h2>
+                    <h2>Purrify Is Not Cat Litter</h2>
                     <p>
-                        Purrify isn&apos;t a litter. It&apos;s a probiotic powder you sprinkle on top of your existing litter. Think of it like a force multiplier—it makes whatever litter you&apos;re using work harder and last longer.
+                        This is the first thing that needed fixing on the page: Purrify does not make cat litter. It makes a
+                        cat litter additive. You sprinkle it into the litter your cat already uses, so the review should judge it
+                        as an odor-control upgrade layer, not as a litter replacement.
                     </p>
-                    <p>
-                        The active ingredient is a blend of beneficial bacteria (probiotics) that literally <em>eat</em> the organic waste and ammonia in your litter box. Unlike scented litters that mask smell with perfume, Purrify destroys odor at the molecular level.
-                    </p>
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
-                        <h4 className="font-bold text-blue-900 mb-2">🔬 The Science Behind It</h4>
-                        <p className="text-blue-800">
-                            The probiotic strains (Bacillus subtilis and Lactobacillus) colonize the litter and break down:
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 my-6">
+                        <p className="font-semibold text-emerald-900 mb-2">The correct positioning</p>
+                        <p className="text-emerald-800 mb-0">
+                            Purrify belongs in the review directory as a dedicated additive with its own page, not as a pretend
+                            litter SKU. That is also how the official site presents it.
                         </p>
-                        <ul className="list-disc pl-6 mt-2 space-y-1 text-blue-800">
-                            <li><strong>Urea</strong> → Broken down before converting to ammonia</li>
-                            <li><strong>Ammonia</strong> → Consumed by bacteria as energy source</li>
-                            <li><strong>Fecal bacteria</strong> → Outcompeted by beneficial probiotics</li>
-                        </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Our Testing Process: 6 Months, 10 Litters, Real Data</h2>
+                    <h2>Why It Ranks So Highly</h2>
                     <p>
-                        We didn&apos;t just sprinkle it once and write a review. We ran a <strong>6-month controlled experiment</strong> with scientific methodology:
+                        Purrify scores near the top because it solves a real pain point without asking cats to accept a totally
+                        different substrate. That is a strong product design choice. If a household already has a litter that is
+                        acceptable for clumping and texture, adding odor control is usually easier than restarting with a new litter.
                     </p>
-                    <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li><strong>10 different litter brands</strong> (clay, crystal, corn, walnut, paper)</li>
-                        <li><strong>6 cats</strong> across 3 households (single cat, multi-cat, high-traffic)</li>
-                        <li><strong>Split testing:</strong> Same litter with/without Purrify side-by-side</li>
-                        <li><strong>Odor measurement:</strong> Ammonia test strips every 48 hours (540 data points)</li>
-                        <li><strong>Cost analysis:</strong> Tracked usage and calculated monthly spend</li>
-                    </ul>
-                    <p>
-                        We also interviewed the manufacturer and reviewed third-party lab tests on the probiotic strains used.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>The Results: What The Data Actually Shows</h2>
-
-                    <h3>Odor Elimination: 87% Ammonia Reduction (10/10)</h3>
-                    <p>
-                        This is where Purrify absolutely dominates. Here&apos;s the actual data from our ammonia testing:
-                    </p>
-                    <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
-                        <h4 className="font-bold text-lg mb-4">Ammonia Test Results (ppm)</h4>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <p className="font-bold mb-2">Without Purrify:</p>
-                                <ul className="space-y-1 text-sm">
-                                    <li>Day 1: 5 ppm (baseline)</li>
-                                    <li>Day 7: 18 ppm</li>
-                                    <li>Day 14: 35 ppm</li>
-                                    <li>Day 21: 48 ppm (strong smell)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p className="font-bold mb-2 text-primary">With Purrify:</p>
-                                <ul className="space-y-1 text-sm">
-                                    <li>Day 1: 5 ppm (baseline)</li>
-                                    <li>Day 7: 6 ppm</li>
-                                    <li>Day 14: 8 ppm</li>
-                                    <li>Day 21: 12 ppm (minimal smell)</li>
-                                </ul>
-                            </div>
+                    <div className="grid md:grid-cols-2 gap-6 my-8">
+                        <div className="bg-white border border-border rounded-2xl p-6">
+                            <h3>1. Additive-first fit</h3>
+                            <p>
+                                It layers on top of clay, crystal, or natural litters instead of forcing a full swap. For picky cats,
+                                that matters more than flashy marketing.
+                            </p>
                         </div>
-                        <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            Result: 87% reduction in ammonia at Day 21
-                        </p>
+                        <div className="bg-white border border-border rounded-2xl p-6">
+                            <h3>2. Fragrance-free positioning</h3>
+                            <p>
+                                The official materials lean hard into &quot;no perfumes, just science,&quot; which is materially better than the
+                                usual floral-mask approach taken by many odor products.
+                            </p>
+                        </div>
+                        <div className="bg-white border border-border rounded-2xl p-6">
+                            <h3>3. Clear safety and spec pages</h3>
+                            <p>
+                                Purrify publishes dedicated science, safety, usage, sizing, and shipping pages. That makes this easier
+                                to evaluate than the average vague deodorizer listing.
+                            </p>
+                        </div>
+                        <div className="bg-white border border-border rounded-2xl p-6">
+                            <h3>4. Low-friction trial offer</h3>
+                            <p>
+                                The current official trial page gives people a cheap first test instead of pushing a full-size blind
+                                purchase. That is exactly what you want from an add-on product.
+                            </p>
+                        </div>
                     </div>
-                    <p>
-                        We tested this against heavily scented litters like Arm & Hammer. Purrify on unscented clay performed better and didn&apos;t give anyone headaches from perfume.
-                    </p>
+                </section>
 
-                    <OdorMetrics
-                        productName="Purrify (with Clay Litter)"
-                        overallScore={10.0}
-                        testDuration="21 days"
-                        initialAmmonia={5}
-                        results={[
-                            { timePoint: "Day 1", ammoniaLevel: 5, smellRating: 9, notes: "Baseline" },
-                            { timePoint: "Day 7", ammoniaLevel: 6, smellRating: 9, notes: "Probiotics fully colonized" },
-                            { timePoint: "Day 14", ammoniaLevel: 8, smellRating: 8, notes: "Bacterial consumption outpaces ammonia creation" },
-                            { timePoint: "Day 21", ammoniaLevel: 12, smellRating: 8, notes: "87% less ammonia vs control" }
-                        ]}
-                        comparisonLitter="Untreated Clay"
-                        comparisonScore={6.0}
-                        keyFindings={[
-                            "Ammonia levels stay functionally flat instead of spiking",
-                            "Works by eliminating source bacteria rather than masking",
-                            "Requires 24-48 hours to fully colonize"
-                        ]}
-                        pros={["Unbeatable scientific odor reduction", "Does not rely on headache-inducing perfumes"]}
-                        cons={["Must be reapplied weekly"]}
-                        className="my-10"
-                    />
-
-                    <h3>Litter Life Extension: Consistent 2x Improvement (10/10)</h3>
+                <section>
+                    <h2>What the Official Site Says It Actually Does</h2>
                     <p>
-                        Here&apos;s the money-saving data from our controlled tests:
+                        The live Purrify site positions the product as water-filter grade activated carbon made from coconut shells.
+                        The core mechanism is adsorption: odor molecules stick to the carbon&apos;s pore structure instead of being covered
+                        up with fragrance.
                     </p>
-                    <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
-                        <h4 className="font-bold text-lg mb-4">Average Litter Duration (Single Cat Household):</h4>
-                        <ul className="space-y-3 mb-4">
-                            <li>• <strong>Dr. Elsey&apos;s WITHOUT Purrify:</strong> 4 weeks</li>
-                            <li>• <strong>Dr. Elsey&apos;s WITH Purrify:</strong> 8 weeks (2x longer)</li>
-                            <li className="pt-2 border-t border-border">• <strong>Cheap Clay WITHOUT Purrify:</strong> 2.5 weeks</li>
-                            <li>• <strong>Cheap Clay WITH Purrify:</strong> 5 weeks (2x longer)</li>
-                            <li className="pt-2 border-t border-border">• <strong>World&apos;s Best WITHOUT Purrify:</strong> 3 weeks (corn smell)</li>
-                            <li>• <strong>World&apos;s Best WITH Purrify:</strong> 6 weeks (no smell)</li>
+                    <p>
+                        Across the official science and FAQ pages, the repeat message is consistent: Purrify is built to trap ammonia,
+                        hydrogen sulfide, mercaptans, and related odor compounds at the molecular level. That is the right technical
+                        framing for a litter additive aimed at the sharp urine smell most people are actually trying to solve.
+                    </p>
+                    <div className="bg-secondary/20 border border-border rounded-2xl p-6 my-6">
+                        <h3 className="mt-0">Why that matters</h3>
+                        <ul className="mb-0">
+                            <li>It is not sold as a scent booster.</li>
+                            <li>It is not pretending to replace litter texture or clumping performance.</li>
+                            <li>It is targeting ammonia as the problem layer that many litters still leave behind.</li>
                         </ul>
-                        <p className="font-bold text-primary">
-                            Pattern: Purrify consistently doubled litter life across all brands.
-                        </p>
                     </div>
+                </section>
 
-                    <h3>Cost Savings Analysis (10/10)</h3>
+                <section>
+                    <h2>Ingredients, Safety, and Dust Positioning</h2>
                     <p>
-                        Let&apos;s do the math for a single cat household:
+                        The strongest source-backed part of the Purrify story is its safety and materials stack. The official safety and
+                        FAQ pages say it is made from coconut-shell activated carbon and contains no added fragrances, perfumes,
+                        preservatives, binding agents, or fillers.
                     </p>
-                    <div className="bg-green-50 border border-green-200 p-6 rounded-2xl my-6">
-                        <h4 className="font-bold text-lg mb-4 text-green-900">Monthly Cost Analysis:</h4>
-                        <p className="mb-4 text-green-800"><strong>Without Purrify (Dr. Elsey&apos;s 40lb @ $25):</strong></p>
-                        <ul className="space-y-2 mb-4 text-green-800">
-                            <li>• Lasts 4 weeks → Need 1 bag/month</li>
-                            <li>• <strong>Cost: $25/month</strong></li>
-                        </ul>
-                        <p className="mb-4 text-green-800 pt-4 border-t border-green-300"><strong>With Purrify ($15 bottle lasts 2 months):</strong></p>
-                        <ul className="space-y-2 mb-4 text-green-800">
-                            <li>• Litter lasts 8 weeks → Need 0.5 bags/month</li>
-                            <li>• Litter cost: $12.50/month</li>
-                            <li>• Purrify cost: $7.50/month</li>
-                            <li>• <strong>Total: $20/month</strong></li>
-                        </ul>
-                        <p className="font-bold text-xl text-green-900 pt-4 border-t border-green-300">
-                            💰 Savings: $5/month ($60/year)
-                        </p>
-                        <p className="text-sm text-green-700 mt-2">
-                            With cheaper litters, savings are even higher (up to $20/month).
-                        </p>
-                    </div>
-
-                    <h3>Compatibility Testing (10/10)</h3>
                     <p>
-                        We tested Purrify with 10 different litter types. It worked with all of them:
+                        The safety page also emphasizes coarse 8x30 mesh granules rather than fine powder, with the goal of keeping dust
+                        down and helping the additive stay put in the litter box. That does not magically make a dusty base litter clean,
+                        but it is the right format for an additive that needs to be low annoyance in everyday use.
                     </p>
-                    <ul className="list-disc pl-6 space-y-1 mb-4">
-                        <li>✅ Clay litters (Dr. Elsey&apos;s, Tidy Cats, Arm & Hammer)</li>
-                        <li>✅ Crystal litters (PrettyLitter, Fresh Step Crystals)</li>
-                        <li>✅ Natural litters (World&apos;s Best, Ökocat, SmartCat)</li>
-                        <li>✅ Budget store brands (Special Kitty, etc.)</li>
-                    </ul>
                     <p>
-                        The only litter it doesn&apos;t work well with is heavily perfumed/scented litter, because the chemical fragrances can inhibit probiotic growth.
+                        Official FAQ copy also says it is safe for cats of all ages, including kittens, and compatible with automatic
+                        litter boxes. Those are meaningful compatibility points for an add-on product.
                     </p>
                 </section>
 
                 <section>
-                    <h2>How to Use Purrify (Application Instructions)</h2>
+                    <h2>How to Use It With Your Current Litter</h2>
                     <p>
-                        This is important—if you don&apos;t apply it correctly, you won&apos;t get the full benefits:
+                        Purrify&apos;s own usage guidance is straightforward. The FAQ says to use roughly 1 to 2 tablespoons for a standard
+                        litter box, or 2 to 3 tablespoons for larger boxes and heavier multi-cat setups.
                     </p>
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
-                        <h4 className="font-bold text-blue-900 mb-2">📋 Step-by-Step Application:</h4>
-                        <ol className="list-decimal pl-6 text-blue-800 space-y-2">
-                            <li><strong>Start with fresh litter:</strong> Clean your box completely and add fresh litter (3-4 inches deep).</li>
-                            <li><strong>Sprinkle Purrify:</strong> Add 1-2 tablespoons evenly across the surface.</li>
-                            <li><strong>Mix lightly:</strong> Use your scoop to mix it into the top layer (don&apos;t bury it deep).</li>
-                            <li><strong>Weekly maintenance:</strong> Add 1 tablespoon after each deep scoop (every 7 days).</li>
-                            <li><strong>Wait 24-48 hours:</strong> Let the probiotics colonize before expecting full odor control.</li>
+                    <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6">
+                        <h3 className="mt-0 text-blue-900">Recommended starting routine</h3>
+                        <ol className="text-blue-800 mb-0">
+                            <li>Start with fresh litter, or at least recently scooped litter.</li>
+                            <li>Sprinkle the additive evenly across the surface.</li>
+                            <li>Mix gently into the top layer rather than burying it deeply.</li>
+                            <li>Refresh it when you refresh litter or when odor load starts building back up.</li>
                         </ol>
-                        <p className="font-bold text-blue-900 mt-4">
-                            Pro Tip: Don&apos;t over-apply. More isn&apos;t better—the probiotics need time to multiply.
-                        </p>
+                    </div>
+                    <p>
+                        That positioning is credible. It behaves like an odor layer, not a cure-all. If the litter base itself is shot,
+                        no additive is going to rescue terrible clumps or fully saturated litter.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Free Trial Pack and Current Size Options</h2>
+                    <p>
+                        The current official trial page is the best CTA for this review. It advertises a 12 g trial bag with no product
+                        charge and a $4.76 shipping charge within Canada, limited to one trial per household while the offer is live.
+                    </p>
+                    <p>
+                        The same page says trial orders ship within 24 hours, arrive in roughly 2 to 3 business days, and are intended
+                        as a first real test rather than a full commitment. That makes sense for a litter additive because users need to
+                        see how it behaves with their own box, their own litter, and their own cat&apos;s tolerance.
+                    </p>
+                    <p>
+                        The official product catalog also includes regular and multi-cat sizes, with the size comparison flow calling out
+                        a larger 120 g option for higher-output homes. If the trial works, that is the next place to evaluate the right
+                        ongoing size.
+                    </p>
+                    <div className="my-8 text-center">
+                        <PurrifyLink variant="button">Open the Free Trial Pack</PurrifyLink>
                     </div>
                 </section>
 
                 <section>
-                    <h2>The &quot;Budget Litter Hack&quot; That Saves $240/Year</h2>
+                    <h2>Where It Fits in a Real Buying Decision</h2>
                     <p>
-                        Here&apos;s the secret that premium litter companies don&apos;t want you to know:
+                        Purrify makes the most sense when your current litter is acceptable on texture, tracking, and scoopability, but
+                        the box still develops that sharp ammonia edge. In that situation, an additive deserves its own review lane because
+                        it solves a different problem than litter selection.
                     </p>
                     <p>
-                        <strong>Cheap unscented clay + Purrify = Premium litter performance at 50% cost.</strong>
+                        If your litter is already failing at clumping or your cat hates the texture, start by fixing the litter. If odor
+                        is the primary remaining complaint, Purrify becomes an excellent second move.
                     </p>
-                    <p>
-                        We tested this extensively. Special Kitty (Walmart brand, $8 for 25lbs) + Purrify performed nearly identically to Dr. Elsey&apos;s ($25 for 40lbs) in our side-by-side odor tests.
-                    </p>
-                    <div className="bg-amber-50 border border-amber-200 p-6 rounded-2xl my-6">
-                        <h4 className="font-bold text-lg mb-4 text-amber-900">The Budget Hack Math:</h4>
-                        <ul className="space-y-2 text-amber-800">
-                            <li>• Special Kitty: $8/25lb → lasts 5 weeks with Purrify</li>
-                            <li>• Monthly cost: $6.40 (litter) + $7.50 (Purrify) = <strong>$13.90/month</strong></li>
-                            <li>• Dr. Elsey&apos;s: $25/40lb → lasts 4 weeks = <strong>$25/month</strong></li>
-                            <li className="pt-2 border-t border-amber-300 font-bold text-amber-900">💰 Annual savings: $133 (single cat)</li>
-                        </ul>
-                    </div>
-                    <p>
-                        The only difference? Clumping strength. Dr. Elsey&apos;s still clumps harder. But for <strong>odor control and litter life, the combo is unbeatable for the price</strong>.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>What We Didn&apos;t Love (The Honest Cons)</h2>
-                    <p>
-                        No product is perfect. Here are the real downsides we discovered:
-                    </p>
-                    <h3>1. Requires Consistent Application</h3>
-                    <p>
-                        You need to remember to add it weekly. If you forget for 2+ weeks, odor starts creeping back. It&apos;s not a &quot;set it and forget it&quot; solution.
-                    </p>
-                    <h3>2. Not Instant (24-48 Hour Delay)</h3>
-                    <p>
-                        Unlike scented litters that mask smell immediately, Purrify takes 24-48 hours to colonize and start working. If you need instant results, this isn&apos;t it.
-                    </p>
-                    <h3>3. Storage Sensitive</h3>
-                    <p>
-                        The probiotics are alive. If you leave the bottle in a hot garage or humid bathroom, they can die. Store it in a cool, dry place like a pantry.
-                    </p>
-                    <h3>4. Incompatible with Heavily Scented Litters</h3>
-                    <p>
-                        The chemical fragrances in scented litters can kill the probiotics. Use with unscented litter only.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Who Should Buy Purrify?</h2>
                     <div className="grid md:grid-cols-2 gap-6 my-8">
                         <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
-                            <h3 className="font-bold text-xl text-green-800 mb-4">✅ Perfect For:</h3>
-                            <ul className="space-y-2 text-green-900/80">
-                                <li>• Multi-cat households (odor builds up fast)</li>
-                                <li>• Apartment dwellers (smell permeates small spaces)</li>
-                                <li>• Budget-conscious owners (saves $15-30/month)</li>
-                                <li>• People sensitive to artificial fragrances</li>
-                                <li>• Anyone who wants to extend litter life</li>
-                                <li>• Those who want natural, non-toxic solutions</li>
+                            <h3 className="text-green-900">Best fit</h3>
+                            <ul className="text-green-800 mb-0">
+                                <li>Apartment households dealing with trapped ammonia smell</li>
+                                <li>Cats that already accept their current litter</li>
+                                <li>People who want no added scent</li>
+                                <li>Homes choosing between another litter switch and a simpler add-on</li>
                             </ul>
                         </div>
-                        <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-                            <h3 className="font-bold text-xl text-red-800 mb-4">❌ Skip If:</h3>
-                            <ul className="space-y-2 text-red-900/80">
-                                <li>• You change litter every 5-7 days regardless</li>
-                                <li>• You want instant odor masking (use scented litter)</li>
-                                <li>• You forget weekly maintenance tasks</li>
-                                <li>• You exclusively use heavily scented litter</li>
-                                <li>• You can&apos;t store it in a cool, dry place</li>
+                        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+                            <h3 className="text-amber-900">Less compelling fit</h3>
+                            <ul className="text-amber-800 mb-0">
+                                <li>Boxes with already-saturated litter that needs a full dump</li>
+                                <li>Homes trying to fix weak clumping with an additive</li>
+                                <li>Buyers who want one product to replace litter entirely</li>
+                                <li>Anyone outside the trial geography expecting free shipping everywhere</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Frequently Asked Questions</h2>
-
-                    <h3>Is Purrify safe for kittens?</h3>
+                    <h2>What Kept It From a Perfect 10</h2>
                     <p>
-                        Yes. The probiotic strains are the same ones found in veterinary supplements. They&apos;re non-toxic and safe if ingested in small amounts during grooming. However, monitor kittens under 12 weeks as you would with any litter product.
+                        The drawbacks are mostly scope-related, not quality-related. Purrify is a strong odor-control add-on, but it is
+                        still just an add-on.
                     </p>
-
-                    <h3>How long does one bottle last?</h3>
-                    <p>
-                        One 16oz bottle typically lasts 2 months for a single-cat household with weekly application. Multi-cat households may use it faster (every 3-4 weeks).
-                    </p>
-
-                    <h3>Can I use Purrify with PrettyLitter or other crystal litters?</h3>
-                    <p>
-                        Yes, Purrify works great with crystal litters. It helps with the poop odor that crystal litters struggle with. Just sprinkle it on top and stir gently.
-                    </p>
-
-                    <h3>Does Purrify work in automatic litter boxes?</h3>
-                    <p>
-                        Yes, but apply it differently. Add Purrify directly to the waste drawer/receptacle rather than the litter bed, as the raking mechanism can distribute it unevenly.
-                    </p>
+                    <ul>
+                        <li>It does not fix bad base litter performance.</li>
+                        <li>Its strongest official claims are about ammonia control, not total litter-box optimization.</li>
+                        <li>Some of the broader claims on the official site are marketing-forward, so the safest read is to treat it as a specialized odor tool.</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2>Final Verdict: Is Purrify Worth It?</h2>
+                    <h2>Final Verdict</h2>
                     <p>
-                        After 6 months of scientific testing, <strong>yes, absolutely</strong>.
+                        Purrify deserves a standalone review page because it is a distinct product type: a cat litter additive, not a cat
+                        litter. On that basis, it is one of the highest-ranked add-ons in the directory.
                     </p>
                     <p>
-                        Purrify is the single most cost-effective upgrade you can make to your litter box setup. It&apos;s not a replacement for good litter—it&apos;s a multiplier that makes any litter work better.
-                    </p>
-                    <p>
-                        If you&apos;re spending $20-40/month on litter and still dealing with odor, adding Purrify will save you money <em>and</em> improve your quality of life. The data is clear: 87% ammonia reduction, 2x litter life, and $5-30/month in savings.
+                        The official site is strongest on three points: activated-carbon positioning, fragrance-free odor control, and a
+                        cheap trial path. If your cat already likes its litter and you mainly need better ammonia control, this is a very
+                        sensible product to test before you start another full litter switch.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">
-                            Editor&apos;s Choice: Best Litter Enhancement
+                            Editor&apos;s Choice: Best Dedicated Litter Additive
                         </p>
                         <p className="text-muted-foreground mb-6">
-                            Scored 9.6/10 — The highest-rated product enhancement we&apos;ve ever tested
+                            Ranked 9.6/10 for additive-first odor control, strong safety positioning, and a low-risk free-trial offer.
                         </p>
-                        <PurrifyLink variant="button">
-                            Try Purrify Risk-Free
-                        </PurrifyLink>
+                        <PurrifyLink variant="button">Claim the Free Trial Pack</PurrifyLink>
                     </div>
                 </section>
-
             </ProductReviewPage>
         </>
     );

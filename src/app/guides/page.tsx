@@ -217,7 +217,7 @@ export default function GuidesPage() {
                             The Secret Weapon Behind Our Top Guides
                         </h2>
                         <p className="text-lg text-amber-700 max-w-2xl mx-auto mb-6">
-                            Most of our money-saving hacks involve one simple product: Purrify probiotic deodorizer. 
+                            Most of our money-saving hacks involve one simple product: Purrify activated coconut carbon deodorizer additive.
                             It&apos;s the single best investment you can make for your litter box.
                         </p>
                         <PurrifyLink variant="button">

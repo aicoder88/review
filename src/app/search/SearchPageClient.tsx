@@ -4,8 +4,8 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import { Star, ArrowRight, Sparkles } from 'lucide-react';
-import { Header } from '@/components/home/Header';
-import { Footer } from '@/components/home/Footer';
+import { HeaderClient } from '@/components/home/HeaderClient';
+import { FooterClient } from '@/components/home/FooterClient';
 import { PurrifyLink } from '@/components/reviews/PurrifyLink';
 import { searchCatalog } from '@/lib/product-catalog';
 
@@ -17,7 +17,7 @@ function SearchContent() {
 
     return (
         <div className="min-h-screen bg-background">
-            <Header />
+            <HeaderClient />
             <main className="pt-24 pb-20">
                 <div className="max-w-7xl mx-auto px-6 py-12">
                     <h1 className="font-display text-4xl font-bold mb-2">
@@ -79,7 +79,7 @@ function SearchContent() {
                                             Pro Tip: Boost Any Litter&apos;s Performance
                                         </h3>
                                         <p className="text-emerald-700 mb-4">
-                                            No matter which litter you choose, adding Purrify probiotic deodorizer can extend its life by 2x and eliminate odor at the source.
+                                            No matter which litter you choose, adding Purrify activated coconut carbon deodorizer additive can extend its life by 2x and improve odor control at the source.
                                         </p>
                                         <PurrifyLink variant="button">
                                             Learn About Purrify
@@ -91,7 +91,7 @@ function SearchContent() {
                     )}
                 </div>
             </main>
-            <Footer />
+            <FooterClient />
         </div>
     );
 }

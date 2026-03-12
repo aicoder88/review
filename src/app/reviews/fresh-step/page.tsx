@@ -191,7 +191,7 @@ export default function FreshStepReview() {
                 <section>
                     <h2>The Gain Scent Experience</h2>
                     <p>
-                        Fresh Step's partnership with Gain isn't just marketing—these litters genuinely smell like Gain detergent. Opening the bag fills the room with "fresh laundry" scent.
+                        Fresh Step&apos;s partnership with Gain isn&apos;t just marketing. These litters genuinely smell like Gain detergent. Opening the bag fills the room with &quot;fresh laundry&quot; scent.
                     </p>
                     <p>
                         The scent is the strongest feature. It effectively masks ammonia odor for 7-10 days, even with minimal scooping.
@@ -200,7 +200,7 @@ export default function FreshStepReview() {
                         <h4 className="font-bold text-amber-900 mb-2">⚠️ Fragrance Warning</h4>
                         <p className="text-amber-800">
                             The Gain scent is STRONG. If you get headaches from perfumes or have scent sensitivities, 
-                            this isn't your litter. Try the unscented Fresh Step version instead.
+                            this isn&apos;t your litter. Try the unscented Fresh Step version instead.
                         </p>
                     </div>
                 </section>
@@ -210,13 +210,13 @@ export default function FreshStepReview() {
 
                     <h3>Odor Control (8.0/10) — Fragrance Power</h3>
                     <p>
-                        The Gain scent masks odor effectively for 7-10 days. However, it's masking, not elimination—the ammonia is still there, just covered.
+                        The Gain scent masks odor effectively for 7-10 days. However, it&apos;s masking, not elimination. The ammonia is still there, just covered.
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-amber-900 mb-2">💡 Better Odor Solution</h4>
                         <p className="text-amber-800">
                             For true odor elimination without heavy fragrance, add <PurrifyLink variant="inline">Purrify</PurrifyLink>. 
-                            The probiotics eat the ammonia bacteria, eliminating smell at the source instead of masking it.
+                            The activated coconut carbon traps ammonia and odor compounds instead of masking them with fragrance.
                         </p>
                     </div>
 
@@ -256,7 +256,7 @@ export default function FreshStepReview() {
                                 <li>• Odor masking priority</li>
                                 <li>• Convenience buyers (everywhere)</li>
                                 <li>• Mid-range budget</li>
-                                <li>• Those who don't mind fragrance</li>
+                                <li>• Those who don&apos;t mind fragrance</li>
                             </ul>
                         </div>
                         <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
@@ -278,7 +278,7 @@ export default function FreshStepReview() {
                         Fresh Step does what it promises: strong Gain scent and decent clumping at a fair price. The fragrance is genuinely effective but overwhelming for some.
                     </p>
                     <p>
-                        If you love Gain detergent smell and don't have fragrance sensitivities, it's a solid mid-range choice.
+                        If you love Gain detergent smell and don&apos;t have fragrance sensitivities, it&apos;s a solid mid-range choice.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

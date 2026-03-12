@@ -214,7 +214,7 @@ export default function DrElseysCatAttractReview() {
                 <section>
                     <h2>What Makes Cat Attract Different</h2>
                     <p>
-                        Dr. Elsey's Cat Attract isn't just regular litter with marketing fluff. It contains a proprietary blend of natural herbs that creates a scent cats find irresistible. Think of it as a "come hither" signal for the litter box.
+                        Dr. Elsey&apos;s Cat Attract isn&apos;t just regular litter with marketing fluff. It contains a proprietary blend of natural herbs that creates a scent cats find irresistible. Think of it as a &quot;come hither&quot; signal for the litter box.
                     </p>
                     <p>
                         The formula is based on 35+ years of feline veterinary experience. Dr. Elsey developed it specifically to address the #1 behavioral reason cats are surrendered to shelters: litter box avoidance.
@@ -222,7 +222,7 @@ export default function DrElseysCatAttractReview() {
                     <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-blue-900 mb-2">🔬 The Attractant Science</h4>
                         <p className="text-blue-800">
-                            The herbal blend works by triggering a cat's natural instinct to dig and bury in specific substrates. 
+                            The herbal blend works by triggering a cat&apos;s natural instinct to dig and bury in specific substrates. 
                             Cats have scent receptors that respond to certain plant compounds—these same compounds evolved to help wild cats 
                             locate appropriate elimination sites. Cat Attract leverages this instinct.
                         </p>
@@ -232,7 +232,7 @@ export default function DrElseysCatAttractReview() {
                 <section>
                     <h2>Our Behavioral Testing: Real Cats, Real Data</h2>
                     <p>
-                        We didn't just test clumping and dust—we tested behavior. We worked with 4 households and 10 cats who had documented litter box issues:
+                        We didn&apos;t just test clumping and dust, we tested behavior. We worked with 4 households and 10 cats who had documented litter box issues:
                     </p>
                     <ul className="list-disc pl-6 space-y-2 mb-4">
                         <li><strong>4 cats</strong> were peeing outside the box (on floors, beds, etc.)</li>
@@ -240,7 +240,7 @@ export default function DrElseysCatAttractReview() {
                         <li><strong>3 cats</strong> were transitioning from outdoor to indoor</li>
                     </ul>
                     <p>
-                        We tracked daily usage with cameras and logs for 90 days. Here's what happened:
+                        We tracked daily usage with cameras and logs for 90 days. Here&apos;s what happened:
                     </p>
 
                     <h3>Behavioral Results: 80% Success Rate</h3>
@@ -282,7 +282,7 @@ export default function DrElseysCatAttractReview() {
                         </p>
                     </div>
                     <p>
-                        The 2 cats who didn't respond had underlying medical issues (UTI and arthritis) that required veterinary treatment. Once treated, they also began using the box.
+                        The 2 cats who didn&apos;t respond had underlying medical issues (UTI and arthritis) that required veterinary treatment. Once treated, they also began using the box.
                     </p>
                 </section>
 
@@ -291,7 +291,7 @@ export default function DrElseysCatAttractReview() {
                     
                     <h3>Dust (9.0/10) — Same Excellent Performance</h3>
                     <p>
-                        We measured 0.04mg particulates per pour—statistically identical to Ultra (0.03mg). You won't see dust clouds.
+                        We measured 0.04mg particulates per pour, statistically identical to Ultra (0.03mg). You won&apos;t see dust clouds.
                     </p>
 
                     <h3>Clumping (9.8/10) — Even Better Than Ultra</h3>
@@ -307,7 +307,7 @@ export default function DrElseysCatAttractReview() {
                         <h4 className="font-bold text-amber-900 mb-2">💡 Boost with Purrify</h4>
                         <p className="text-amber-800">
                             For multi-cat homes, add <PurrifyLink variant="inline">Purrify</PurrifyLink> to extend odor control to 6+ weeks. 
-                            The probiotics work great with the herbal formula.
+                            The activated coconut carbon works well alongside the herbal formula.
                         </p>
                     </div>
                 </section>
@@ -327,7 +327,7 @@ export default function DrElseysCatAttractReview() {
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Dr. Elsey's Ultra</td>
+                                    <td className="py-2">Dr. Elsey&apos;s Ultra</td>
                                     <td className="text-center py-2">$24.99</td>
                                     <td className="text-center py-2">$0.51</td>
                                     <td className="text-right py-2">Best value if no issues</td>
@@ -375,7 +375,7 @@ export default function DrElseysCatAttractReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Dr. Elsey's Cat Attract delivers on its promise. The herbal attractant isn't marketing fluff—it genuinely draws cats to the box, with an 80% success rate in our testing.
+                        Dr. Elsey&apos;s Cat Attract delivers on its promise. The herbal attractant isn&apos;t marketing fluff, it genuinely draws cats to the box, with an 80% success rate in our testing.
                     </p>
                     <p>
                         Combined with the same excellent dust control and superior clumping of the Ultra formula, this is our top pick for multi-cat homes and any cat with litter box issues.
@@ -385,7 +385,7 @@ export default function DrElseysCatAttractReview() {
                             Best for Multi-Cat & Behavioral Issues
                         </p>
                         <p className="text-muted-foreground mb-6">
-                            9.5/10 — The litter that actually "trains" cats
+                            9.5/10 — The litter that actually &quot;trains&quot; cats
                         </p>
                     </div>
                 </section>

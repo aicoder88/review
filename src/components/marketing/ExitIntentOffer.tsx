@@ -44,8 +44,8 @@ export function ExitIntentOffer() {
           ⏰ Wait! Before You Go...
         </h2>
         <p className="text-lg mb-6">
-          Want to save $30/month on cat litter? Purrify makes ANY litter
-          last 2x longer. No matter which brand you choose.
+          Want to save $30/month on cat litter? Purrify&apos;s activated coconut carbon additive can make
+          the litter you already use last 2x longer.
         </p>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">

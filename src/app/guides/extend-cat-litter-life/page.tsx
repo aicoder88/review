@@ -99,10 +99,10 @@ export default function ExtendCatLitterLifeGuide() {
               </div>
 
               <p>
-                So the question isn&apos;t &quot;how to make litter clump longer.&quot; It&apos;s <strong>&quot;how to control bacterial growth so odor doesn&apos;t force you to change it early.&quot;</strong>
+                So the question isn&apos;t &quot;how to make litter clump longer.&quot; It&apos;s <strong>&quot;how to stop odor buildup so smell doesn&apos;t force you to change it early.&quot;</strong>
               </p>
 
-              <h2>Method #1: Use Probiotics to Fight Bacteria (Most Effective)</h2>
+              <h2>Method #1: Use Purify Activated Carbon for Odor Removal (Most Effective)</h2>
               <p>
                 <strong>Effectiveness: ⭐⭐⭐⭐⭐ (5/5)</strong>
               </p>
@@ -110,14 +110,14 @@ export default function ExtendCatLitterLifeGuide() {
                 After 6 months of testing, this is the single most effective method we found. Here&apos;s why it works:
               </p>
               <p>
-                Probiotic deodorizers like <PurrifyLink variant="inline">Purrify</PurrifyLink> contain beneficial bacteria that actively <em>eat</em> the organic waste and ammonia in your litter box. It&apos;s not masking—it&apos;s biological elimination.
+                <PurrifyLink variant="inline">Purify activated carbon</PurrifyLink> adsorbs ammonia and odor molecules directly in the litter bed before they can spread through the room. It&apos;s not perfume and it&apos;s not masking. It removes the smell at the source and keeps the box usable much longer.
               </p>
 
               <div className="bg-green-50 border border-green-200 rounded-2xl p-8 my-8">
                 <h4 className="font-bold text-lg text-green-900 mb-4">📊 Our Test Results (Dr. Elsey&apos;s Ultra, Single Cat):</h4>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <p className="font-bold text-sm text-muted-foreground mb-2">WITHOUT Probiotics</p>
+                    <p className="font-bold text-sm text-muted-foreground mb-2">WITHOUT Purify Activated Carbon</p>
                     <ul className="text-sm space-y-1 text-green-800">
                       <li>Week 1-2: Fresh</li>
                       <li>Week 3: Faint ammonia smell</li>
@@ -126,7 +126,7 @@ export default function ExtendCatLitterLifeGuide() {
                     </ul>
                   </div>
                   <div>
-                    <p className="font-bold text-sm text-muted-foreground mb-2">WITH Probiotics (Purrify)</p>
+                    <p className="font-bold text-sm text-muted-foreground mb-2">WITH Purify Activated Carbon</p>
                     <ul className="text-sm space-y-1 text-green-800">
                       <li>Week 1-6: Fresh (no smell)</li>
                       <li>Week 7: Very faint smell</li>
@@ -141,14 +141,14 @@ export default function ExtendCatLitterLifeGuide() {
                 <strong>How to apply:</strong>
               </p>
               <ol className="list-decimal pl-6 space-y-2">
-                <li>Sprinkle 1-2 tablespoons of probiotic powder on fresh litter</li>
+                <li>Sprinkle 1-2 tablespoons of Purify activated carbon on fresh litter</li>
                 <li>Mix lightly into the top layer</li>
                 <li>Add 1 tablespoon weekly after scooping</li>
               </ol>
               <p>
-                <strong>Cost:</strong> $7.50/month for Purrify<br />
+                <strong>Cost:</strong> $7.50/month for Purify activated carbon<br />
                 <strong>Savings:</strong> $12.50/month (by using half as much litter)<br />
-                <strong>Net benefit:</strong> Save $5/month + zero odor
+                <strong>Net benefit:</strong> Save $5/month + best-in-class odor control
               </p>
 
               <h2>Method #2: Scoop Daily (Non-Negotiable)</h2>
@@ -225,7 +225,7 @@ export default function ExtendCatLitterLifeGuide() {
                 <strong>Effectiveness: ⭐⭐ (2/5)</strong>
               </p>
               <p>
-                Baking soda absorbs some odor, but it&apos;s nowhere near as effective as probiotics. It&apos;s a cheap option if you&apos;re on a tight budget.
+                Baking soda absorbs some odor, but it&apos;s nowhere near as effective as Purify activated carbon. It&apos;s a cheap fallback if you&apos;re on a tight budget.
               </p>
               <p>
                 <strong>How to apply:</strong>
@@ -236,7 +236,7 @@ export default function ExtendCatLitterLifeGuide() {
                 <li>Don&apos;t overdo it—too much baking soda creates dust</li>
               </ol>
               <p className="text-muted-foreground text-sm mt-4">
-                ⚠️ Note: Baking soda only <em>absorbs</em> odor. It doesn&apos;t kill bacteria like probiotics do.
+                ⚠️ Note: Baking soda helps temporarily, but it doesn&apos;t match the odor-removal power of activated carbon in the litter itself.
               </p>
 
               <h2>Method #7: Avoid Scented Litters</h2>
@@ -250,7 +250,7 @@ export default function ExtendCatLitterLifeGuide() {
                 <strong>Why?</strong> The chemical fragrances mask smell for the first 2 weeks, but they don&apos;t kill bacteria. By week 3, you have ammonia smell <em>plus</em> fake lavender, creating a worse smell than unscented litter would have.
               </p>
               <p>
-                <strong>Better approach:</strong> Use unscented litter + biological odor control (Method #1) for longer-lasting freshness.
+                <strong>Better approach:</strong> Use unscented litter + Purify activated carbon (Method #1) for longer-lasting freshness.
               </p>
 
               <h2>The Optimal Combination (What We Recommend)</h2>
@@ -278,7 +278,7 @@ export default function ExtendCatLitterLifeGuide() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-emerald-600 shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-emerald-900">Step 3: Add Purrify probiotics</p>
+                      <p className="font-bold text-emerald-900">Step 3: Add Purify activated carbon</p>
                       <p className="text-sm text-emerald-700">2 tablespoons on top, mixed lightly</p>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export default function ExtendCatLitterLifeGuide() {
                     <CheckCircle className="w-6 h-6 text-emerald-600 shrink-0 mt-1" />
                     <div>
                       <p className="font-bold text-emerald-900">Step 5: Weekly maintenance</p>
-                      <p className="text-sm text-emerald-700">Add 1 cup fresh litter + 1 tablespoon Purrify</p>
+                      <p className="text-sm text-emerald-700">Add 1 cup fresh litter + 1 tablespoon Purify activated carbon</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -343,7 +343,7 @@ export default function ExtendCatLitterLifeGuide() {
                         <span className="font-mono">$12.50</span>
                       </li>
                       <li className="flex justify-between">
-                        <span>Purrify monthly:</span>
+                        <span>Purify activated carbon:</span>
                         <span className="font-mono">$7.50</span>
                       </li>
                       <li className="flex justify-between border-t pt-2 font-bold">
@@ -368,8 +368,8 @@ export default function ExtendCatLitterLifeGuide() {
                 For 2-3 cats, expect these adjustments:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>2 cats:</strong> Litter life drops to 3-4 weeks → probiotics extend to 5-6 weeks</li>
-                <li><strong>3+ cats:</strong> Litter life drops to 2 weeks → probiotics extend to 3-4 weeks</li>
+                <li><strong>2 cats:</strong> Litter life drops to 3-4 weeks → Purify activated carbon extends it to 5-6 weeks</li>
+                <li><strong>3+ cats:</strong> Litter life drops to 2 weeks → Purify activated carbon extends it to 3-4 weeks</li>
                 <li><strong>Recommendation:</strong> Use 2 litter boxes minimum (1 per cat + 1 extra)</li>
               </ul>
 
@@ -398,10 +398,10 @@ export default function ExtendCatLitterLifeGuide() {
               <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-10 rounded-3xl text-center my-12">
                 <h3 className="text-3xl font-display font-bold mb-4">Want the Easiest Solution?</h3>
                 <p className="text-blue-50 mb-6 max-w-2xl mx-auto">
-                  <PurrifyLink variant="inline">Purrify</PurrifyLink> is the single most effective method we tested. It extends any litter life by 2x with zero effort beyond weekly application.
+                  <PurrifyLink variant="inline">Purify activated carbon</PurrifyLink> is the single most effective odor-control upgrade we tested. It keeps litter usable up to 2x longer with just a quick weekly refresh.
                 </p>
                 <PurrifyLink variant="button">
-                  Try Purrify Risk-Free
+                  Try Purify Risk-Free
                 </PurrifyLink>
                 <p className="text-xs text-blue-100 mt-4">
                   60-day money-back guarantee • Made in Canada
@@ -412,7 +412,7 @@ export default function ExtendCatLitterLifeGuide() {
               <ul>
                 <li><Link href="/guides/purrify-budget-litter-hack" prefetch={false} className="text-primary hover:underline">The $15 Budget Litter Hack</Link></li>
                 <li><Link href="/categories/best-clumping-cat-litter" prefetch={false} className="text-primary hover:underline">Best Clumping Cat Litters</Link></li>
-                <li><Link href="/reviews/purrify" prefetch={false} className="text-primary hover:underline">Full Purrify Review</Link></li>
+                <li><Link href="/reviews/purrify" prefetch={false} className="text-primary hover:underline">Full Purify Review</Link></li>
               </ul>
 
             </article>

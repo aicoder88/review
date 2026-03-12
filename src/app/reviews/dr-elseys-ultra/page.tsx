@@ -159,7 +159,7 @@ const faqData = [
     },
     {
         question: "How long does Dr. Elsey's Ultra last?",
-        answer: "For a single-cat household, a 40lb bag typically lasts 7 weeks with daily scooping. This is about 30% longer than budget clay litters because the hard clumping removes waste more efficiently without crumbling. In multi-cat households (2-3 cats), expect 4-5 weeks per bag. You can extend this to 8+ weeks by adding a probiotic deodorizer like Purrify."
+        answer: "For a single-cat household, a 40lb bag typically lasts 7 weeks with daily scooping. This is about 30% longer than budget clay litters because the hard clumping removes waste more efficiently without crumbling. In multi-cat households (2-3 cats), expect 4-5 weeks per bag. You can extend this to 8+ weeks by adding an activated coconut carbon deodorizer additive like Purrify."
     },
     {
         question: "Is Dr. Elsey's Ultra good for multiple cats?",
@@ -171,7 +171,7 @@ const faqData = [
     },
     {
         question: "Does Dr. Elsey's Ultra control odor well?",
-        answer: "Dr. Elsey's Ultra controls odor through superior clumping rather than masking perfumes. The hard clumps seal away urine and feces, preventing ammonia release. In our testing, a single-cat box remained odor-free for 3 weeks without a full change. For maximum odor control in multi-cat households, pair with a probiotic deodorizer like Purrify, which can extend odor control to 8 weeks."
+        answer: "Dr. Elsey's Ultra controls odor through superior clumping rather than masking perfumes. The hard clumps seal away urine and feces, preventing ammonia release. In our testing, a single-cat box remained odor-free for 3 weeks without a full change. For maximum odor control in multi-cat households, pair with an activated coconut carbon deodorizer additive like Purrify, which can extend odor control to 8 weeks."
     }
 ];
 
@@ -317,8 +317,8 @@ export default function DrElseysReview() {
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-amber-900 mb-2">💡 Pro Tip: Extend to 8 Weeks</h4>
                         <p className="text-amber-800">
-                            If you have multiple cats and want to extend odor control to 8 weeks, add <PurrifyLink variant="inline">Purrify Probiotic Deodorizer</PurrifyLink>.
-                            The probiotics colonize the litter and actively consume ammonia-causing bacteria, keeping the box fresh longer without adding perfumes.
+                            If you have multiple cats and want to extend odor control to 8 weeks, add <PurrifyLink variant="inline">Purrify activated coconut carbon additive</PurrifyLink>.
+                            The carbon traps ammonia and odor compounds, keeping the box fresh longer without adding perfumes.
                         </p>
                     </div>
 

@@ -8,9 +8,9 @@ export function HowItWorks() {
     },
     {
       number: 2,
-      title: "Probiotics Activate",
-      description: "Good bacteria colonize the litter and start consuming odor-causing ammonia compounds at the source.",
-      icon: "🦠"
+      title: "Carbon Starts Working",
+      description: "Activated coconut carbon adsorbs ammonia and odor molecules in the litter instead of covering them with fragrance.",
+      icon: "⚫"
     },
     {
       number: 3,

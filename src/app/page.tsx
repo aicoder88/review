@@ -13,6 +13,7 @@ import { Footer } from '@/components/home/Footer';
 import { WebPageSchemas } from '@/components/seo/PageSchemas';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/page-metadata';
+import { getHomePageData } from '@/lib/homepage';
 import { getComparisonPageCount, getReviewedProductCount, siteUrl } from '@/lib/site';
 
 const reviewedProductCount = getReviewedProductCount();
@@ -38,6 +39,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const breadcrumbItems = [{ name: 'Home', url: siteUrl }];
+  const homePageData = getHomePageData();
 
   return (
     <div className="min-h-screen">
@@ -49,14 +51,33 @@ export default function Page() {
       />
       <Header />
       <main>
-        <Hero />
-        <TrustBar />
+        <Hero
+          reviewedProductCount={homePageData.reviewedProductCount}
+          comparisonPageCount={homePageData.comparisonPageCount}
+        />
+        <TrustBar
+          reviewedProductCount={homePageData.reviewedProductCount}
+          comparisonPageCount={homePageData.comparisonPageCount}
+          featuredWinnerCount={homePageData.featuredWinnerCount}
+        />
         <SearchIntentHub />
-        <FeaturedWinners />
+        <FeaturedWinners
+          featuredProducts={homePageData.featuredWinners}
+          reviewedProductCount={homePageData.reviewedProductCount}
+        />
         <BudgetHackBanner />
-        <Methodology />
-        <ValueEquation />
-        <LatestReviews />
+        <Methodology
+          reviewedProductCount={homePageData.reviewedProductCount}
+          latestReviewedDate={homePageData.latestReviewedDate}
+        />
+        <ValueEquation
+          reviewedProductCount={homePageData.reviewedProductCount}
+          comparisonPageCount={homePageData.comparisonPageCount}
+        />
+        <LatestReviews
+          reviews={homePageData.latestReviews}
+          latestReviewedDate={homePageData.latestReviewedDate}
+        />
         <CategoryNavigation />
         <Newsletter />
       </main>

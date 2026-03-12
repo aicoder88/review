@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Mike T.",
     cats: 2,
-    text: "I was skeptical about probiotics, but the science is real. Day 3 the smell was GONE. Now I'm a believer and telling all my cat parent friends.",
+    text: "I was skeptical about activated coconut carbon, but the science is real. Day 3 the smell was GONE. Now I'm a believer and telling all my cat parent friends.",
     savings: "$30/month",
     rating: 5
   },

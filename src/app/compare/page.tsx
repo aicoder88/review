@@ -13,8 +13,8 @@ const comparisonSchemaItems = getAllComparisonMatchups().map((matchup) => ({
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: 'Compare Cat Litters Side by Side: Dust, Odor, Cost, and Clumping',
-    description: `Compare cat litters head to head with real test data across dust, clumping, odor control, tracking, and daily cost. Browse ${comparisonPageCount}+ permanent comparison pages plus the interactive comparison tool.`,
+    title: 'Compare Cat Litters Side by Side: Odor Control, Tracking, Cost, and Dust',
+    description: `Compare cat litters head to head with real test data across odor control, tracking outside the litter box, daily cost, dust, and clumping. Browse ${comparisonPageCount}+ permanent comparison pages plus guides for odor-control methods and litter cost tradeoffs.`,
     path: '/compare',
     keywords: [
       'compare cat litter',
@@ -22,13 +22,14 @@ export const metadata: Metadata = {
       'best cat litter comparison',
       'litter side by side',
       'cat litter cost comparison',
-      'dust free cat litter comparison',
+      'low tracking cat litter comparison',
       'odor control cat litter comparison',
+      'cat litter odor control methods',
     ],
-    openGraphTitle: 'Compare Cat Litters Side by Side | Dust, Odor, Cost, and Clumping',
-    openGraphDescription: `Browse ${comparisonPageCount}+ permanent cat litter comparison pages and compare the closest alternatives side by side.`,
-    twitterTitle: 'Compare Cat Litters Side by Side | Dust, Odor, Cost, and Clumping',
-    twitterDescription: `Browse ${comparisonPageCount}+ permanent cat litter comparison pages and compare the closest alternatives side by side.`,
+    openGraphTitle: 'Compare Cat Litters Side by Side | Odor Control, Tracking, Cost, and Dust',
+    openGraphDescription: `Browse ${comparisonPageCount}+ permanent cat litter comparison pages plus guides for odor-control methods, tracking, and real-world cost tradeoffs.`,
+    twitterTitle: 'Compare Cat Litters Side by Side | Odor Control, Tracking, Cost, and Dust',
+    twitterDescription: `Browse ${comparisonPageCount}+ permanent cat litter comparison pages plus guides for odor-control methods, tracking, and real-world cost tradeoffs.`,
   }),
 };
 

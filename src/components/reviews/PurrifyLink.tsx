@@ -22,9 +22,10 @@ export function PurrifyLink({
 
   return (
     <a
-      href="https://www.purrify.ca?via=reviewcatlitter"
+      href="https://www.purrify.ca/products/trial-size/"
+      target="_blank"
       className={cn(baseClasses, variantClasses[variant], className)}
-     rel="sponsored noopener noreferrer">
+      rel="sponsored noopener noreferrer">
       {children}
       <ArrowRight className={cn(
         "transition-transform",

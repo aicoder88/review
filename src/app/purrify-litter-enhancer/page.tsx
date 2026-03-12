@@ -11,10 +11,10 @@ import { buildPageMetadata } from '@/lib/page-metadata';
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: "Purrify: Make Any Cat Litter Last Longer",
-    description: "Probiotic cat litter deodorizer that targets odor at the source and helps extend litter life across multiple litter types.",
+    title: "Purrify: Activated Coconut Carbon Cat Litter Deodorizer Additive",
+    description: "Activated coconut carbon cat litter deodorizer additive that targets ammonia and helps extend litter life across multiple litter types.",
     path: "/purrify-litter-enhancer",
-    keywords: ["Purrify", "cat litter deodorizer", "probiotic litter additive", "extend cat litter life", "cat litter odor control"],
+    keywords: ["Purrify", "cat litter deodorizer", "activated coconut carbon litter additive", "extend cat litter life", "cat litter odor control"],
   }),
 };
 
@@ -37,7 +37,7 @@ export default function PurrifyLandingPage() {
               Stop wasting money on half-used litter boxes
             </p>
             <p className="text-xl mb-8 opacity-90">
-              Purrify&apos;s probiotic formula eliminates odor at the bacterial source.
+              Purrify&apos;s activated coconut carbon formula traps ammonia and odor compounds at the source.
               Works with clay, crystal, and natural litters.
             </p>
 
@@ -75,7 +75,7 @@ export default function PurrifyLandingPage() {
               <span>Top-rated by ReviewCatLitter readers</span>
             </div>
             <div>✓ Works with all litters</div>
-            <div>✓ 100% Natural probiotics</div>
+            <div>✓ Activated coconut carbon</div>
             <div>✓ Vet approved</div>
           </div>
         </div>
@@ -121,11 +121,11 @@ export default function PurrifyLandingPage() {
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-4">
-            Purrify Eliminates Odor at the Bacterial Source
+            Purrify Traps Odor at the Source
           </h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Unlike scented litters that just mask odor, Purrify&apos;s probiotics actually consume
-            the ammonia-producing bacteria
+            Unlike scented litters that just mask odor, Purrify&apos;s activated coconut carbon adsorbs
+            ammonia and odor molecules in the litter bed
           </p>
           <HowItWorks />
         </div>
@@ -186,7 +186,7 @@ export default function PurrifyLandingPage() {
               <h3 className="font-bold text-lg mb-2">Does Purrify really work with any litter?</h3>
               <p className="text-muted-foreground">
                 Yes. We&apos;ve tested Purrify with clay, crystal, natural,
-                and pellet types. The probiotics work on bacterial odor regardless of litter material.
+                and pellet types. The activated coconut carbon works on ammonia and odor compounds regardless of litter material.
                 Results consistently show 2x extended litter life across all types tested.
               </p>
             </div>
@@ -203,8 +203,8 @@ export default function PurrifyLandingPage() {
             <div className="bg-white border border-gray-200 rounded-xl p-6">
               <h3 className="font-bold text-lg mb-2">Is it safe for my cat?</h3>
               <p className="text-muted-foreground">
-                Absolutely. Purrify uses natural probiotics (beneficial bacteria) that are completely
-                safe for cats, humans, and the environment. Made in Canada with food-grade ingredients.
+                Absolutely. Purrify uses fragrance-free activated coconut carbon granules that are non-toxic and
+                safe for cats, humans, and the environment when used as directed. Made in Canada.
                 Thousands of cats use it daily with zero reported health issues.
               </p>
             </div>
@@ -222,8 +222,8 @@ export default function PurrifyLandingPage() {
               <h3 className="font-bold text-lg mb-2">How quickly does it work?</h3>
               <p className="text-muted-foreground">
                 Most users notice a significant reduction in odor within 24-48 hours of first application.
-                Full bacterial colonization takes about a week, after which you&apos;ll see maximum odor
-                elimination and litter life extension.
+                The activated carbon starts adsorbing odor immediately, with the strongest practical improvement
+                usually noticeable after the first day or two of normal box use.
               </p>
             </div>
           </div>

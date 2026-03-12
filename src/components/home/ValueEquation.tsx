@@ -1,13 +1,13 @@
-'use client';
-
-import { FadeUp, FadeIn, StaggerChildren } from '@/components/ui/motion';
 import { Check } from 'lucide-react';
-import { getComparisonPageCount, getReviewedProductCount } from '@/lib/site';
+interface ValueEquationProps {
+  reviewedProductCount: number;
+  comparisonPageCount: number;
+}
 
-const reviewedProductCount = getReviewedProductCount();
-const comparisonPageCount = getComparisonPageCount();
-
-export function ValueEquation() {
+export function ValueEquation({
+  reviewedProductCount,
+  comparisonPageCount,
+}: ValueEquationProps) {
     return (
         <section className="py-24 px-6 bg-background relative overflow-hidden">
             {/* Background Decorations */}
@@ -15,24 +15,19 @@ export function ValueEquation() {
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="text-center mb-16">
-                    <FadeUp>
-                        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                            How to Use the <span className="text-gradient-gold italic">Review Catalog</span>
-                        </h2>
-                    </FadeUp>
-                    <FadeUp delay={0.1}>
-                        <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto leading-relaxed mb-2">
-                            We maintain <span className="font-bold">{reviewedProductCount} live reviews</span> and <span className="font-bold">{comparisonPageCount}+ comparison pages</span>.
-                        </p>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                            The goal is simple: help you shortlist faster without pretending every home needs the same litter.
-                        </p>
-                    </FadeUp>
+                    <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                        How to Use the <span className="text-gradient-gold italic">Review Catalog</span>
+                    </h2>
+                    <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto leading-relaxed mb-2">
+                        We maintain <span className="font-bold">{reviewedProductCount} live reviews</span> and <span className="font-bold">{comparisonPageCount}+ comparison pages</span>.
+                    </p>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                        The goal is simple: help you shortlist faster without pretending every home needs the same litter.
+                    </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
-                    {/* What we publish */}
-                    <FadeIn delay={0.2} className="bg-white rounded-3xl p-8 shadow-xl border border-border relative overflow-hidden">
+                    <div className="bg-white rounded-3xl p-8 shadow-xl border border-border relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
                         <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                             <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
@@ -58,10 +53,9 @@ export function ValueEquation() {
                                 <span className="text-lg text-muted-foreground"><strong className="text-foreground">Methodology and editorial pages</strong> that explain how recommendations are maintained</span>
                             </li>
                         </ul>
-                    </FadeIn>
+                    </div>
 
-                    {/* How readers use it */}
-                    <FadeIn delay={0.4} className="bg-foreground text-white rounded-3xl p-8 shadow-xl border border-white/10 relative overflow-hidden">
+                    <div className="bg-foreground text-white rounded-3xl p-8 shadow-xl border border-white/10 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-accent" />
                         <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                             <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-accent font-bold">
@@ -87,7 +81,7 @@ export function ValueEquation() {
                                 <span className="text-lg text-white/80"><strong className="text-white">Use the methodology and editorial standards</strong> when you want to audit how the site reaches its recommendations.</span>
                             </li>
                         </ul>
-                    </FadeIn>
+                    </div>
                 </div>
             </div>
         </section>

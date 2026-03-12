@@ -137,7 +137,7 @@ const productSchemaData = {
 
 const articleSchemaData = {
     headline: "PrettyLitter Review: Health Monitoring Cat Litter Validation Test",
-    description: "60-day scientific validation of PrettyLitter's health monitoring claims. pH testing accuracy, real-world usage experience, and probiotic solution for odor control issues.",
+    description: "60-day scientific validation of PrettyLitter's health monitoring claims. pH testing accuracy, real-world usage experience, and an activated carbon solution for odor control issues.",
     image: getProductImage('prettylitter'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
@@ -163,7 +163,7 @@ const faqData = [
     },
     {
         question: "Does PrettyLitter control poop odor?",
-        answer: "PrettyLitter controls urine odor excellently through silica absorption, but solid waste odor control is mediocre. Since there's no clumping to coat and bury feces, poop sits on top until scooped. We found that adding Purrify probiotic deodorizer on top of the crystals significantly improved solid waste odor control. The dry probiotic powder breaks down organic waste without saturating the crystals, extending the effective life of the bag."
+        answer: "PrettyLitter controls urine odor excellently through silica absorption, but solid waste odor control is mediocre. Since there's no clumping to coat and bury feces, poop sits on top until scooped. We found that adding Purrify activated coconut carbon deodorizer additive on top of the crystals significantly improved solid waste odor control. The dry carbon granules help trap odor compounds without saturating the crystals, extending the effective life of the bag."
     },
     {
         question: "Is PrettyLitter worth the price?",
@@ -272,7 +272,7 @@ export default function PrettyLitterReview() {
                             <strong>The Solution:</strong> This litter <em>needs</em> help with solid waste odor. We recommend sprinkling <PurrifyLink variant="inline">Purrify</PurrifyLink> over the crystals.
                         </p>
                         <p className="font-bold text-purple-900 mt-2">
-                            Because Purrify is dry and enzymatic, it breaks down the organic waste on the surface without saturating the crystals, doubling the effective life of the bag.
+                            Because Purrify is dry activated coconut carbon, it helps trap surface odor without saturating the crystals, doubling the effective life of the bag.
                         </p>
                     </div>
                 </section>
@@ -323,12 +323,12 @@ export default function PrettyLitterReview() {
 
                     <h3>Solid Waste Odor (4.0/10) — The Weakness</h3>
                     <p>
-                        Since poop just sits on top until scooped, there's nothing masking the smell except your scooping frequency. If you skip a day, you'll know it.
+                        Since poop just sits on top until scooped, there&apos;s nothing masking the smell except your scooping frequency. If you skip a day, you&apos;ll know it.
                     </p>
 
                     <h3>Dust (9.0/10) — Nearly Zero</h3>
                     <p>
-                        Excellent. Pouring the bag creates almost zero cloud. If you have asthma, silica is generally safer than clay dust (though don't inhale any litter dust directly).
+                        Excellent. Pouring the bag creates almost zero cloud. If you have asthma, silica is generally safer than clay dust (though don&apos;t inhale any litter dust directly).
                     </p>
 
                     <h3>Tracking (8.0/10) — Good, But Painful</h3>
@@ -351,7 +351,7 @@ export default function PrettyLitterReview() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="font-bold mb-2">Dr. Elsey's Ultra:</p>
+                                <p className="font-bold mb-2">Dr. Elsey&apos;s Ultra:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• ~$25 per 7 weeks</li>
                                     <li>• 40lb bag</li>
@@ -374,7 +374,7 @@ export default function PrettyLitterReview() {
                                 <li>• Older cats (8+ years) prone to health issues</li>
                                 <li>• Breeds prone to UTIs (males, Persians, etc.)</li>
                                 <li>• Health-anxious pet parents</li>
-                                <li>• Those who can't lift heavy bags</li>
+                                <li>• Those who can&apos;t lift heavy bags</li>
                                 <li>• People who want delivery convenience</li>
                             </ul>
                         </div>
@@ -384,7 +384,7 @@ export default function PrettyLitterReview() {
                                 <li>• Multi-cat households (saturates too fast)</li>
                                 <li>• Budget-conscious buyers</li>
                                 <li>• Those who want clumping</li>
-                                <li>• People grossed out by 'stirring pee'</li>
+                                <li>• People grossed out by &apos;stirring pee&apos;</li>
                                 <li>• Homes with poor poop scooping habits</li>
                             </ul>
                         </div>
@@ -394,7 +394,7 @@ export default function PrettyLitterReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Buy this for the health monitoring. It&apos;s early detection insurance for your cat, and the technology actually works. Just be prepared to pay a premium and manage the poop odor with more frequent scooping or a <PurrifyLink variant="inline">probiotic helper</PurrifyLink>.
+                        Buy this for the health monitoring. It&apos;s early detection insurance for your cat, and the technology actually works. Just be prepared to pay a premium and manage the poop odor with more frequent scooping or an <PurrifyLink variant="inline">activated carbon helper</PurrifyLink>.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

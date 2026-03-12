@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
-import { ComparisonProvider } from "@/context/ComparisonContext";
-import { ComparisonBar } from "@/components/compare/ComparisonBar";
-import { ExitIntentOffer } from "@/components/marketing/ExitIntentOffer";
+import { AppClientShell } from "@/components/app/AppClientShell";
 import { SiteSchema } from "@/components/seo/SiteSchema";
 import { siteDescription, siteName, siteUrl } from "@/lib/site";
 
@@ -16,12 +14,6 @@ const fraunces = Fraunces({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -76,13 +68,9 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#0d9488" />
         <script defer src="/_vercel/insights/script.js"></script>
       </head>
-      <body className={`${outfit.variable} ${fraunces.variable} ${jetbrainsMono.variable} antialiased`}>
+      <body className={`${outfit.variable} ${fraunces.variable} antialiased`}>
         <SiteSchema />
-        <ComparisonProvider>
-          {children}
-          <ComparisonBar />
-          <ExitIntentOffer />
-        </ComparisonProvider>
+        <AppClientShell>{children}</AppClientShell>
       </body>
     </html>
   );

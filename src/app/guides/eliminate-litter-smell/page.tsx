@@ -66,8 +66,8 @@ export default function EliminateLitterSmell() {
             <h2 className="font-bold text-lg mb-2">Quick Answer</h2>
             <p>
               Ammonia smell from &quot;clean&quot; litter comes from bacteria colonies in used granules. The most effective
-              solution: Purrify probiotic deodorizer, which introduces beneficial bacteria that consume
-              ammonia-producing bacteria at the source. Combined with daily scooping and monthly deep cleaning,
+              solution: Purrify activated coconut carbon deodorizer additive, which traps ammonia and other
+              odor molecules in the litter itself. Combined with daily scooping and monthly deep cleaning,
               this eliminates 99% of litter box odor.
             </p>
           </div>
@@ -109,12 +109,12 @@ export default function EliminateLitterSmell() {
                   <div className="bg-emerald-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">
                     1
                   </div>
-                  <h3 className="text-2xl font-bold">Purrify Probiotic Deodorizer (Most Effective)</h3>
+                  <h3 className="text-2xl font-bold">Purrify Activated Coconut Carbon Additive (Most Effective)</h3>
                 </div>
 
                 <p className="text-lg mb-4">
-                  <strong>How it works:</strong> Introduces beneficial probiotic bacteria that consume the
-                  ammonia-producing bacteria. Eliminates odor at the biological source instead of masking it.
+                  <strong>How it works:</strong> Activated coconut carbon adsorbs ammonia and other odor
+                  compounds in the litter. Eliminates odor without masking it with perfume.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -348,7 +348,7 @@ export default function EliminateLitterSmell() {
           <InternalLinkBox
             title="Related Guides"
             links={[
-              { text: "Purrify Probiotic Deodorizer - Full Review", url: "/reviews/purrify", context: "purrify" },
+              { text: "Purrify Activated Carbon Additive - Full Review", url: "/reviews/purrify", context: "purrify" },
               { text: "Best Odor Control Cat Litters (Tested)", url: "/categories/best-odor-control-cat-litter", context: "category" },
               { text: "How to Make Cat Litter Last 2x Longer", url: "/guides/extend-cat-litter-life", context: "guide" },
             ]}

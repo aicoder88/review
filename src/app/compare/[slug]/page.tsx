@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ArrowLeftRight, ArrowRight, BadgeDollarSign, ShieldCheck, Trophy } from 'lucide-react';
+import { ArrowLeftRight, ArrowRight, BadgeDollarSign, Footprints, ShieldCheck, Trophy } from 'lucide-react';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { ComparisonTable } from '@/components/compare/ComparisonTable';
@@ -64,7 +64,8 @@ function buildComparisonFaqs(
   rightProduct: ComparisonProductRecord,
   winnerName: string,
   cheapestName: string,
-  bestDustName: string,
+  bestOdorName: string,
+  bestTrackingName: string,
 ) {
   return [
     {
@@ -76,8 +77,12 @@ function buildComparisonFaqs(
       answer: `${cheapestName} has the lower daily cost in this head-to-head comparison.`,
     },
     {
-      question: `Which has better dust control: ${leftProduct.name} or ${rightProduct.name}?`,
-      answer: `${bestDustName} posts the stronger dust-control result in this comparison page.`,
+      question: `Which has better odor control: ${leftProduct.name} or ${rightProduct.name}?`,
+      answer: `${bestOdorName} posts the stronger odor-control result in this comparison page.`,
+    },
+    {
+      question: `Which tracks less outside the litter box: ${leftProduct.name} or ${rightProduct.name}?`,
+      answer: `${bestTrackingName} has the stronger tracking result in this head-to-head comparison.`,
     },
   ];
 }
@@ -99,8 +104,10 @@ export default function ComparisonMatchupPage({
     Number.parseFloat(rightProduct.costPerDay.replace(/[^0-9.]/g, ''))
       ? leftProduct
       : rightProduct;
-  const bestDustProduct =
-    leftProduct.scores.dust >= rightProduct.scores.dust ? leftProduct : rightProduct;
+  const bestOdorProduct =
+    leftProduct.scores.odor >= rightProduct.scores.odor ? leftProduct : rightProduct;
+  const bestTrackingProduct =
+    leftProduct.scores.tracking >= rightProduct.scores.tracking ? leftProduct : rightProduct;
 
   const breadcrumbData = [
     { name: 'Home', url: siteUrl },
@@ -125,10 +132,16 @@ export default function ComparisonMatchupPage({
       icon: BadgeDollarSign,
     },
     {
-      label: 'Best dust control',
-      value: `${bestDustProduct.name} at ${bestDustProduct.scores.dustMeasurement}`,
-      detail: 'Dust performance matters disproportionately in daily use.',
+      label: 'Best odor control',
+      value: `${bestOdorProduct.name} at ${bestOdorProduct.scores.odorStatus}`,
+      detail: 'Odor control often decides whether a litter feels tolerable long term.',
       icon: ShieldCheck,
+    },
+    {
+      label: 'Tracks less outside the box',
+      value: `${bestTrackingProduct.name} at ${bestTrackingProduct.scores.trackingStatus}`,
+      detail: 'Tracking can be more important than overall score in small spaces.',
+      icon: Footprints,
     },
   ];
   const faqData = buildComparisonFaqs(
@@ -136,7 +149,8 @@ export default function ComparisonMatchupPage({
     rightProduct,
     matchup.insight.winner.name,
     cheapestProduct.name,
-    bestDustProduct.name,
+    bestOdorProduct.name,
+    bestTrackingProduct.name,
   );
   const relatedMatchups = getRelatedComparisonMatchups(matchup.slug, 6);
   const comparisonDescription = `Compare dust, clumping, odor control, tracking, and daily cost side by side. ${matchup.insight.winner.name} is the better fit here for ${matchup.insight.winner.verdict.bestFor.toLowerCase()}.`;

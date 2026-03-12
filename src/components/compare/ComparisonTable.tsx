@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, X, Trophy, Minus, AlertCircle } from 'lucide-react';
+import { Check, X, Trophy } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
 import Link from 'next/link';
@@ -47,6 +47,9 @@ export function ComparisonTable({ products, allowRemoval = true }: ComparisonTab
     const overallWinner = findWinner(p => p.overallScore);
     const dustWinner = findWinner(p => p.scores.dust);
     const clumpingWinner = findWinner(p => p.scores.clumping);
+    const odorWinner = findWinner(p => p.scores.odor);
+    const trackingWinner = findWinner(p => p.scores.tracking);
+    const valueWinner = findWinner(p => p.scores.value);
 
     return (
         <div className="overflow-x-auto pb-8">
@@ -155,11 +158,40 @@ export function ComparisonTable({ products, allowRemoval = true }: ComparisonTab
                         <th className="p-4 text-left bg-background sticky left-0 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] text-sm font-medium">Odor Control</th>
                         {products.map(p => (
                             <td key={p.id} className="p-4 text-center align-top relative">
+                                {odorWinner === p.id && <Trophy className="w-3 h-3 text-amber-500 absolute top-2 right-4" />}
                                 <div className="font-bold text-lg mb-1">{p.scores.odor}</div>
                                 <div className="w-full max-w-[80px] h-1.5 bg-secondary rounded-full overflow-hidden mx-auto mb-2">
                                     <div className="h-full bg-primary" style={{ width: `${p.scores.odor * 10}%` }} />
                                 </div>
                                 <div className="text-xs text-muted-foreground">{p.scores.odorStatus}</div>
+                            </td>
+                        ))}
+                    </tr>
+                    <tr>
+                        <th className="p-4 text-left bg-background sticky left-0 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] text-sm font-medium">Tracking Outside the Box</th>
+                        {products.map(p => (
+                            <td key={p.id} className="p-4 text-center align-top relative">
+                                {trackingWinner === p.id && <Trophy className="w-3 h-3 text-amber-500 absolute top-2 right-4" />}
+                                <div className="font-bold text-lg mb-1">{p.scores.tracking}</div>
+                                <div className="w-full max-w-[80px] h-1.5 bg-secondary rounded-full overflow-hidden mx-auto mb-2">
+                                    <div className="h-full bg-primary" style={{ width: `${p.scores.tracking * 10}%` }} />
+                                </div>
+                                <div className="text-xs text-muted-foreground">{p.scores.trackingStatus}</div>
+                            </td>
+                        ))}
+                    </tr>
+                    <tr>
+                        <th className="p-4 text-left bg-background sticky left-0 z-10 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] text-sm font-medium">Value for Cost</th>
+                        {products.map(p => (
+                            <td key={p.id} className="p-4 text-center align-top relative">
+                                {valueWinner === p.id && <Trophy className="w-3 h-3 text-amber-500 absolute top-2 right-4" />}
+                                <div className="font-bold text-lg mb-1">{p.scores.value}</div>
+                                <div className="w-full max-w-[80px] h-1.5 bg-secondary rounded-full overflow-hidden mx-auto mb-2">
+                                    <div className="h-full bg-primary" style={{ width: `${p.scores.value * 10}%` }} />
+                                </div>
+                                <div className="text-xs text-muted-foreground">
+                                    {p.costPerDay}/day · {p.price}
+                                </div>
                             </td>
                         ))}
                     </tr>

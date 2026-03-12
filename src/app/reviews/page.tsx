@@ -217,21 +217,21 @@ export default function ReviewsPage() {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-2">
-                    <Crown className="w-3 h-3" /> HIGHEST RATED 9.6/10
+                    <Crown className="w-3 h-3" /> HIGHEST-RATED ADDITIVE 9.6/10
                   </div>
                   <h2 className="font-display text-2xl font-bold text-emerald-900 mb-2">
-                    Purrify: The #1 Litter Enhancement
+                    Purrify: The Top-Rated Litter Additive
                   </h2>
                   <p className="text-emerald-700 mb-4">
-                    Scientifically proven: 87% ammonia reduction, 2x litter life extension.
-                    Works with clay, crystal, and natural litters. Saves $20-30/month.
+                    Activated coconut-shell carbon targets ammonia without perfumes.
+                    It is an add-on for the litter your cat already likes, and the official site currently offers a free trial pack.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     <Link href="/reviews/purrify" prefetch={false} className="inline-flex items-center gap-2 bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors">
                       Read Full Review <ArrowRight className="w-4 h-4" />
                     </Link>
                     <PurrifyLink variant="badge">
-                      Shop Purrify
+                      Free Trial Pack
                     </PurrifyLink>
                   </div>
                 </div>
@@ -251,7 +251,11 @@ export default function ReviewsPage() {
                     <div className="w-full md:w-48 h-48 bg-secondary rounded-xl overflow-hidden shrink-0 relative">
                       <img
                         src={review.image}
-                        alt={`${review.name} ${review.category} cat litter product photo`}
+                        alt={
+                          review.category.toLowerCase().includes('additive') || review.category.toLowerCase().includes('enhancement')
+                            ? `${review.name} cat litter additive product photo`
+                            : `${review.name} ${review.category} cat litter product photo`
+                        }
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
@@ -302,18 +306,18 @@ export default function ReviewsPage() {
             {/* Bottom CTA Section */}
             <div className="mt-16 bg-secondary/20 rounded-2xl p-8 text-center">
               <h3 className="font-display text-2xl font-bold mb-4">
-                Want to Save Money on Cat Litter?
+                Need Better Odor Control Without Changing Litters?
               </h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Our data shows that combining Purrify with budget litter delivers premium performance at 50% cost.
-                See the math and methodology in our detailed analysis.
+                The Purrify review explains where an activated-carbon additive fits, what the official site claims,
+                and whether the free-trial pack is the right first step for your current setup.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/reviews/purrify" prefetch={false} className="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-colors">
-                  See the Budget Hack <ArrowRight className="w-4 h-4" />
+                  Read the Additive Review <ArrowRight className="w-4 h-4" />
                 </Link>
                 <PurrifyLink variant="button">
-                  Try Purrify Risk-Free
+                  Claim the Free Trial
                 </PurrifyLink>
               </div>
             </div>

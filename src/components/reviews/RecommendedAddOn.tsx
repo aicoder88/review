@@ -27,26 +27,26 @@ export function RecommendedAddOn({ productName }: RecommendedAddOnProps) {
 
             <div className="space-y-4 mb-8">
               <p className="text-foreground leading-relaxed">
-                After testing hundreds of cat litters, our team discovered that pairing any litter with <strong>Purrify Probiotic Deodorizer</strong> dramatically improves performance and extends litter life.
+                If odor is the main problem, pairing your base litter with <strong>Purrify activated coconut carbon additive</strong> is one of the cleanest upgrade paths in the review archive. It is an additive, not a litter, so cats can keep the texture they already prefer.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
                   <TrendingUp className="w-6 h-6 text-emerald-600 mb-2" />
-                  <h4 className="font-bold text-emerald-900 mb-1">2x Longer Life</h4>
-                  <p className="text-sm text-emerald-700">Extends litter freshness from 3-4 weeks to 6-8 weeks</p>
+                  <h4 className="font-bold text-emerald-900 mb-1">Add-On, Not Switch</h4>
+                  <p className="text-sm text-emerald-700">Keep your current litter and layer in extra ammonia control instead of changing textures.</p>
                 </div>
 
                 <div className="bg-teal-50 rounded-xl p-4 border border-teal-100">
                   <Package className="w-6 h-6 text-teal-600 mb-2" />
-                  <h4 className="font-bold text-teal-900 mb-1">Better Odor Control</h4>
-                  <p className="text-sm text-teal-700">Probiotics eliminate smell at the source, not just mask it</p>
+                  <h4 className="font-bold text-teal-900 mb-1">Ammonia Focus</h4>
+                  <p className="text-sm text-teal-700">Activated coconut-shell carbon targets the sharp urine smell without adding perfume.</p>
                 </div>
 
                 <div className="bg-cyan-50 rounded-xl p-4 border border-cyan-100">
                   <DollarSign className="w-6 h-6 text-cyan-600 mb-2" />
-                  <h4 className="font-bold text-cyan-900 mb-1">Save $20+/Month</h4>
-                  <p className="text-sm text-cyan-700">Use less litter and buy replacement bags less often</p>
+                  <h4 className="font-bold text-cyan-900 mb-1">Low-Risk Entry</h4>
+                  <p className="text-sm text-cyan-700">The official site currently offers a free trial pack with shipping-only checkout in Canada.</p>
                 </div>
               </div>
             </div>
@@ -57,11 +57,11 @@ export function RecommendedAddOn({ productName }: RecommendedAddOnProps) {
                   Works with {productName} and all other litters
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Natural probiotic formula • Safe for cats • Made in North America
+                  Activated coconut-shell carbon • Fragrance-free • Made in Canada
                 </p>
               </div>
               <PurrifyLink variant="button">
-                Shop Purrify
+                Try the Free Trial
               </PurrifyLink>
             </div>
           </div>

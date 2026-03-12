@@ -154,7 +154,7 @@ const faqData = [
     },
     {
         question: "Does the baking soda actually help with odor?",
-        answer: "Yes, the 10% baking soda content noticeably helps with ammonia odor. In our side-by-side testing with regular clay litter (no baking soda), HardBall controlled odor for 4-5 days vs 3 days for the non-baking-soda litter. The effect is moderate—not as strong as Purrify probiotics or heavy perfumes, but a genuine improvement over basic clay."
+        answer: "Yes, the 10% baking soda content noticeably helps with ammonia odor. In our side-by-side testing with regular clay litter (no baking soda), HardBall controlled odor for 4-5 days vs 3 days for the non-baking-soda litter. The effect is moderate—not as strong as Purrify activated coconut carbon or heavy perfumes, but a genuine improvement over basic clay."
     },
     {
         question: "Is HardBall dusty?",
@@ -190,7 +190,7 @@ export default function HardBallReview() {
                 <section>
                     <h2>The Fast Clumping Difference</h2>
                     <p>
-                        HardBall's key selling point is speed. The litter starts absorbing and clumping within 10 seconds of contact with liquid—faster than most clay litters.
+                        HardBall&apos;s key selling point is speed. The litter starts absorbing and clumping within 10 seconds of contact with liquid, faster than most clay litters.
                     </p>
                     <p>
                         Why does speed matter? Fast clumping means:
@@ -218,7 +218,7 @@ export default function HardBallReview() {
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Dr. Elsey's Ultra</td>
+                                    <td className="py-2">Dr. Elsey&apos;s Ultra</td>
                                     <td className="text-center py-2">98%</td>
                                 </tr>
                                 <tr className="border-b border-border/50">
@@ -233,7 +233,7 @@ export default function HardBallReview() {
                         </table>
                     </div>
                     <p>
-                        HardBall clumps are genuinely hard—significantly better than budget options, though not quite rock-solid like Dr. Elsey's.
+                        HardBall clumps are genuinely hard, significantly better than budget options, though not quite rock-solid like Dr. Elsey&apos;s.
                     </p>
 
                     <h3>Odor Control (8.0/10) — Baking Soda Helps</h3>
@@ -261,7 +261,7 @@ export default function HardBallReview() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="font-bold mb-2">Dr. Elsey's:</p>
+                                <p className="font-bold mb-2">Dr. Elsey&apos;s:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $24.99 per 40lb bag</li>
                                     <li>• Lasts 7 weeks</li>
@@ -306,7 +306,7 @@ export default function HardBallReview() {
                         HardBall is a solid mid-range choice. The fast, hard clumping delivers on its promise, and the baking soda helps with odor.
                     </p>
                     <p>
-                        It's the middle ground—better than budget, cheaper than premium. If that sounds like what you need, HardBall delivers.
+                        It&apos;s the middle ground: better than budget, cheaper than premium. If that sounds like what you need, HardBall delivers.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

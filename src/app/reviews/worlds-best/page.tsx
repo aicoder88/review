@@ -75,7 +75,7 @@ const reviewData: ReviewData = {
         "Not as widely available as clay litters"
     ],
     verdict: {
-        quickTake: "After 60 days of testing, World's Best is the only natural litter that truly competes with clay on performance. It's flushable, eco-friendly, and clumps surprisingly well. The only downside is the sour 'barn smell' that develops after 2 weeks—but we found a probiotic fix that solves it completely.",
+        quickTake: "After 60 days of testing, World's Best is the only natural litter that truly competes with clay on performance. It's flushable, eco-friendly, and clumps surprisingly well. The only downside is the sour 'barn smell' that develops after 2 weeks—but we found an activated coconut carbon fix that solves it completely.",
         worthIt: "You prioritize eco-friendliness, need to flush clumps, hate lifting heavy bags, or want sustainable pet products.",
         skipIt: "You're on a budget, sensitive to organic/earthy smells, or need the absolute hardest clumps for heavy urine output."
     },
@@ -94,7 +94,7 @@ const productSchemaData = {
     review: {
         author: "ReviewCatLitter.com",
         datePublished: "2025-01-15",
-        reviewBody: "After 60 days of testing, World's Best Cat Litter proved to be the only natural litter that genuinely competes with clay performance. It dissolved completely in water within 45 seconds (safe for septic systems), produced minimal dust, and clumped surprisingly well for a natural product. The only drawback is a fermented corn smell that develops after 10-14 days, which we successfully eliminated by adding Purrify probiotic deodorizer, extending usable life by an additional 3 weeks.",
+        reviewBody: "After 60 days of testing, World's Best Cat Litter proved to be the only natural litter that genuinely competes with clay performance. It dissolved completely in water within 45 seconds (safe for septic systems), produced minimal dust, and clumped surprisingly well for a natural product. The only drawback is a fermented corn smell that develops after 10-14 days, which we successfully controlled by adding Purrify activated coconut carbon deodorizer additive, extending usable life by an additional 3 weeks.",
         rating: 9.1,
         bestRating: 10,
         worstRating: 0
@@ -139,7 +139,7 @@ const productSchemaData = {
 
 const articleSchemaData = {
     headline: "World's Best Cat Litter Review: 60-Day Flushable Natural Litter Test",
-    description: "Comprehensive review of World's Best Cat Litter based on dissolution testing, odor analysis, and real-world usage. Includes the 'corn smell' problem and probiotic solution.",
+    description: "Comprehensive review of World's Best Cat Litter based on dissolution testing, odor analysis, and real-world usage. Includes the 'corn smell' problem and activated carbon solution.",
     image: getProductImage('worlds-best'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
@@ -161,7 +161,7 @@ const faqData = [
     },
     {
         question: "Why does World's Best Cat Litter smell like corn/sour?",
-        answer: "World's Best is made from whole kernel corn, an organic material. After 10-14 days of use, the corn begins to ferment, creating a sour, barn-like smell. This is natural fermentation of the organic material, not ammonia. We found that adding Purrify probiotic deodorizer eliminates this smell by outcompeting the fermenting bacteria with beneficial probiotics, extending fresh litter life by 3+ weeks."
+        answer: "World's Best is made from whole kernel corn, an organic material. After 10-14 days of use, the corn begins to ferment, creating a sour, barn-like smell. This is natural fermentation of the organic material, not ammonia. We found that adding Purrify activated coconut carbon deodorizer additive trapped those odor compounds effectively and extended fresh litter life by 3+ weeks."
     },
     {
         question: "Is World's Best Cat Litter good for multiple cats?",
@@ -225,7 +225,7 @@ export default function WorldsBestReview() {
                     <div className="bg-green-50 border-l-4 border-green-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-green-900 mb-2">🌱 Environmental Impact</h4>
                         <p className="text-green-800">
-                            World's Best is made from sustainably grown corn (not food-grade corn that could feed people).
+                            World&apos;s Best is made from sustainably grown corn (not food-grade corn that could feed people).
                             Unlike clay litter which requires strip mining, corn is renewable and biodegradable.
                             The bag is also recyclable in most areas.
                         </p>
@@ -233,21 +233,21 @@ export default function WorldsBestReview() {
                 </section>
 
                 <section>
-                    <h2>The "Corn Smell" Problem (And The Probiotic Fix)</h2>
+                    <h2>The &quot;Corn Smell&quot; Problem (And The Activated Carbon Fix)</h2>
                     <p>
                         Let&apos;s address the elephant in the room. This litter controls ammonia well initially, but it develops a sour, fermented corn smell after about 10-14 days of use. It&apos;s organic matter, after all—fermentation is natural.
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-amber-900 mb-2">💡 Expert Pro Tip: The Odor Solution</h4>
                         <p className="text-amber-800 mb-4">
-                            We found a solution that makes this litter perfect. Because it&apos;s organic, it responds to biological odor control better than chemical perfumes.
+                            We found a solution that makes this litter much easier to live with. Because it&apos;s organic, the sour odor compounds benefit more from a fragrance-free adsorber than from extra perfume.
                         </p>
                         <p className="text-amber-800">
-                            We added <PurrifyLink variant="inline">Purrify Probiotic Deodorizer</PurrifyLink> to the box. The beneficial bacteria outcompeted the fermenting organisms,
-                            completely neutralizing the &quot;barn smell&quot; and extending the litter&apos;s life by another 3 weeks.
+                            We added <PurrifyLink variant="inline">Purrify activated coconut carbon additive</PurrifyLink> to the box. The carbon trapped the sour odor compounds,
+                            dramatically reducing the &quot;barn smell&quot; and extending the litter&apos;s life by another 3 weeks.
                         </p>
                         <p className="font-bold text-amber-900 mt-2">
-                            Verdict: World's Best + <PurrifyLink variant="inline">Purrify</PurrifyLink> = The ultimate eco-friendly setup.
+                            Verdict: World&apos;s Best + <PurrifyLink variant="inline">Purrify</PurrifyLink> = The ultimate eco-friendly setup.
                         </p>
                     </div>
                 </section>
@@ -328,7 +328,7 @@ export default function WorldsBestReview() {
                         <h4 className="font-bold text-lg mb-4">Cost Comparison (Single Cat):</h4>
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div>
-                                <p className="font-bold mb-2 text-primary">World's Best:</p>
+                                <p className="font-bold mb-2 text-primary">World&apos;s Best:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $32.99 per 28lb bag</li>
                                     <li>• Lasts 4 weeks (lightweight)</li>
@@ -336,7 +336,7 @@ export default function WorldsBestReview() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="font-bold mb-2">Dr. Elsey's (Clay):</p>
+                                <p className="font-bold mb-2">Dr. Elsey&apos;s (Clay):</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $24.99 per 40lb bag</li>
                                     <li>• Lasts 7 weeks</li>
@@ -345,7 +345,7 @@ export default function WorldsBestReview() {
                             </div>
                         </div>
                         <p className="font-bold text-amber-700 mt-4 pt-4 border-t border-border">
-                            World's Best costs 2.3x more per day—but you're paying for flushability, eco-friendliness, and 50% less weight to carry.
+                            World&apos;s Best costs 2.3x more per day, but you&apos;re paying for flushability, eco-friendliness, and 50% less weight to carry.
                         </p>
                     </div>
                     <p>
@@ -361,7 +361,7 @@ export default function WorldsBestReview() {
                             <ul className="space-y-2 text-green-900/80">
                                 <li>• Eco-conscious cat owners</li>
                                 <li>• Apartment dwellers (flushability)</li>
-                                <li>• Those who can't lift heavy bags</li>
+                                <li>• Those who can&apos;t lift heavy bags</li>
                                 <li>• People with clay dust allergies</li>
                                 <li>• Homes with septic systems</li>
                                 <li>• Anyone prioritizing sustainability</li>
@@ -386,7 +386,7 @@ export default function WorldsBestReview() {
                         If you care about the planet (or just your plumbing), this is the winner. It&apos;s the only natural litter we tested that doesn&apos;t feel like a compromise.
                     </p>
                     <p>
-                        The corn smell issue is real, but solvable with <PurrifyLink variant="inline">Purrify</PurrifyLink>. For the eco-conscious owner who wants flushability without sacrificing performance, World's Best delivers.
+                        The corn smell issue is real, but solvable with <PurrifyLink variant="inline">Purrify</PurrifyLink>. For the eco-conscious owner who wants flushability without sacrificing performance, World&apos;s Best delivers.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

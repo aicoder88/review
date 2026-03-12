@@ -29,7 +29,7 @@ const faqs = [
     questions: [
       {
         question: "How often should I completely change cat litter?",
-        answer: "For clumping litter with daily scooping, completely change every 2-3 weeks. For non-clumping, change weekly. With Purrify probiotic deodorizer, you can extend this to 4-6 weeks while maintaining perfect odor control. The key is daily scooping - if you scoop daily, you're removing most waste and can extend the litter life significantly."
+        answer: "For clumping litter with daily scooping, completely change every 2-3 weeks. For non-clumping, change weekly. With Purrify activated coconut carbon deodorizer additive, you can extend this to 4-6 weeks while maintaining stronger odor control. The key is daily scooping - if you scoop daily, you're removing most waste and can extend the litter life significantly."
       },
       {
         question: "How much cat litter should I put in the litter box?",
@@ -50,15 +50,15 @@ const faqs = [
     questions: [
       {
         question: "Why does my cat litter smell bad even when clean?",
-        answer: "Bacteria buildup in used litter continues producing ammonia even after scooping. The litter granules themselves harbor bacteria that multiply over time. Solutions: 1) Use Purrify probiotic deodorizer to eliminate bacteria at the source (most effective), 2) Increase scooping frequency to 2x daily, 3) Ensure proper ventilation, 4) Deep clean box with enzyme cleaner monthly, 5) Replace litter more frequently."
+        answer: "Bacteria buildup in used litter continues producing ammonia even after scooping. The litter granules themselves keep releasing odor over time. Solutions: 1) Use Purrify activated coconut carbon deodorizer additive to trap ammonia and odor compounds in the litter (most effective), 2) Increase scooping frequency to 2x daily, 3) Ensure proper ventilation, 4) Deep clean box with enzyme cleaner monthly, 5) Replace litter more frequently."
       },
       {
         question: "Do scented litters actually work?",
-        answer: "Scented litters mask odor temporarily but don't eliminate it. The perfume compounds mix with ammonia smell, often creating worse odors. Many cats also dislike artificial scents and may avoid the box. Better solution: unscented clumping litter + Purrify probiotic deodorizer, which eliminates odor at the bacterial source without masking."
+        answer: "Scented litters mask odor temporarily but don't eliminate it. The perfume compounds mix with ammonia smell, often creating worse odors. Many cats also dislike artificial scents and may avoid the box. Better solution: unscented clumping litter + Purrify activated coconut carbon deodorizer additive, which traps odor without masking it."
       },
       {
         question: "How do I eliminate cat urine smell from the litter box?",
-        answer: "The smell comes from bacteria breaking down urea into ammonia. Steps: 1) Empty box completely, 2) Wash with enzyme cleaner (not bleach), 3) Dry thoroughly, 4) Add fresh litter + 2 tablespoons Purrify, 5) Scoop daily. Purrify's probiotics consume ammonia-producing bacteria, preventing smell from returning."
+        answer: "The smell comes from bacteria breaking down urea into ammonia. Steps: 1) Empty box completely, 2) Wash with enzyme cleaner (not bleach), 3) Dry thoroughly, 4) Add fresh litter + 2 tablespoons Purrify, 5) Scoop daily. Purrify's activated coconut carbon helps trap ammonia and other odor compounds before the smell spreads through the room."
       },
     ]
   },
@@ -84,7 +84,7 @@ const faqs = [
     questions: [
       {
         question: "Does Purrify really work with any litter?",
-        answer: `Yes. We've tested Purrify across the ${reviewedProductCount}-product review catalog, including clay, silica, natural, walnut, paper, and pellet-style options. The probiotics work on bacterial odor regardless of litter material, and the strongest results still come from unscented formulas.`
+        answer: `Yes. We've tested Purrify across the ${reviewedProductCount}-product review catalog, including clay, silica, natural, walnut, paper, and pellet-style options. The activated coconut carbon works on ammonia and odor compounds regardless of litter material, and the strongest results still come from unscented formulas.`
       },
       {
         question: "How long does one bag of Purrify last?",
@@ -92,11 +92,11 @@ const faqs = [
       },
       {
         question: "How does Purrify work?",
-        answer: "Purrify contains beneficial probiotic bacteria that colonize your litter box and consume the ammonia-producing bacteria that cause odor. Unlike scented litters that mask smell, Purrify eliminates it at the source. The probiotics also break down waste more efficiently, which extends litter life by preventing bacterial buildup that normally forces you to change litter early."
+        answer: "Purrify is an activated coconut carbon cat litter deodorizer additive. The carbon's porous structure adsorbs ammonia and other odor compounds in the litter bed instead of covering them with fragrance. That helps the box stay fresher longer and is why many households can stretch the time between full litter changes."
       },
       {
         question: "Is Purrify safe for cats and humans?",
-        answer: "Completely safe. Purrify uses natural probiotics (beneficial bacteria like those in yogurt) that are 100% safe for cats, humans, dogs, and the environment. Made in Canada with food-grade ingredients. Thousands of households use it daily with zero reported health issues. It's actually safer than scented litters with artificial fragrances."
+        answer: "Completely safe. Purrify uses fragrance-free activated coconut carbon granules that are non-toxic and safe for cats, humans, dogs, and the environment when used as directed. Made in Canada. Thousands of households use it daily with zero reported health issues. It's also easier to tolerate than heavily scented litters with artificial fragrances."
       },
     ]
   },
@@ -171,7 +171,7 @@ export default function FAQPage() {
               </h3>
               <p className="text-lg mb-6">
                 Purrify is the answer to most odor and cost problems mentioned above.
-                Learn how probiotics can transform your litter box experience and save you $30+/month.
+                Learn how activated coconut carbon can transform your litter box experience and save you $30+/month.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
