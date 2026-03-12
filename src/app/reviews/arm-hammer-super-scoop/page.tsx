@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/arm-hammer-super-scoop`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Arm & Hammer Super Scoop",
     category: "Clumping Clay (Budget)",
-    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+    image: getProductImage('arm-hammer-super-scoop'),
     overallScore: 8.4,
     specs: {
         type: "Clumping Clay",
@@ -83,10 +84,7 @@ const productSchemaData = {
     name: "Arm & Hammer Super Scoop Clumping Cat Litter",
     description: "Budget-friendly clumping clay litter with baking soda for odor control. 40lb bags at under $15. Best value for multi-cat households and budget-conscious owners.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: [
-        "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
-        "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80"
-    ],
+    image: getProductImageSet('arm-hammer-super-scoop'),
     brand: "Arm & Hammer",
     sku: "AH-SUPERSCOOP-40",
     review: {
@@ -136,7 +134,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Arm & Hammer Super Scoop Review: Best Budget Cat Litter Under $15",
     description: "60-day test comparing Super Scoop to premium litters. Cost analysis, performance data, and value assessment for budget-conscious cat owners.",
-    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+    image: getProductImage('arm-hammer-super-scoop'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

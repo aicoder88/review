@@ -1,3 +1,5 @@
+import { getProductImage } from '@/lib/product-images';
+
 export interface ComparisonProductRecord {
   id: string;
   slug: string;
@@ -92,7 +94,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Purrify Probiotic Deodorizer',
     brand: 'Purrify',
     category: 'Litter Enhancement',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('purrify'),
     overallScore: 9.6,
     price: '$18.99',
     weight: '16 oz',
@@ -142,7 +144,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: "Dr. Elsey's Cat Attract",
     brand: "Dr. Elsey's",
     category: 'Clumping Clay / Behavioral',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('dr-elseys-cat-attract'),
     overallScore: 9.5,
     price: '$26.99',
     weight: '40 lbs',
@@ -189,7 +191,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: "Dr. Elsey's Ultra",
     brand: "Dr. Elsey's",
     category: 'Clumping Clay',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('dr-elseys-ultra'),
     overallScore: 9.4,
     price: '$24.99',
     weight: '40 lbs',
@@ -247,7 +249,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Sustainably Yours',
     brand: 'Sustainably Yours',
     category: 'Natural (Corn + Cassava)',
-    image: '/images/featured-worlds-best.png',
+    image: getProductImage('sustainably-yours'),
     overallScore: 9.3,
     price: '$29.99',
     weight: '26 lbs',
@@ -293,7 +295,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Boxiecat Premium',
     brand: 'Boxiecat',
     category: 'Clumping Clay',
-    image: '/images/latest-boxiecat.png',
+    image: getProductImage('boxiecat-premium'),
     overallScore: 9.2,
     price: '$27.99',
     weight: '40 lbs',
@@ -350,7 +352,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: "World's Best Cat Litter",
     brand: "World's Best",
     category: 'Natural Corn',
-    image: '/images/featured-worlds-best.png',
+    image: getProductImage('worlds-best'),
     overallScore: 9.1,
     price: '$29.99',
     weight: '28 lbs',
@@ -406,7 +408,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Naturally Fresh Walnut',
     brand: 'Naturally Fresh',
     category: 'Walnut Shell (Natural)',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('naturally-fresh'),
     overallScore: 8.8,
     price: '$24.99',
     weight: '26 lbs',
@@ -452,7 +454,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Catalyst Soft Wood',
     brand: 'Catalyst',
     category: 'Pine (Soft Granules)',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('catalyst'),
     overallScore: 8.7,
     price: '$27.99',
     weight: '18 lbs',
@@ -498,7 +500,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'PrettyLitter',
     brand: 'PrettyLitter',
     category: 'Silica Crystal',
-    image: '/images/featured-prettylitter.png',
+    image: getProductImage('prettylitter'),
     overallScore: 8.8,
     price: '$24.00',
     weight: '8 lbs',
@@ -555,7 +557,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Arm & Hammer Clump & Seal',
     brand: 'Arm & Hammer',
     category: 'Scented Clay',
-    image: '/images/latest-arm-hammer.png',
+    image: getProductImage('arm-hammer-clump-seal'),
     overallScore: 8.7,
     price: '$16.99',
     weight: '38 lbs',
@@ -602,7 +604,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Arm & Hammer HardBall',
     brand: 'Arm & Hammer',
     category: 'Clumping Clay',
-    image: '/images/latest-arm-hammer.png',
+    image: getProductImage('hardball'),
     overallScore: 8.5,
     price: '$19.99',
     weight: '38 lbs',
@@ -647,7 +649,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Arm & Hammer Super Scoop',
     brand: 'Arm & Hammer',
     category: 'Clumping Clay (Budget)',
-    image: '/images/latest-arm-hammer.png',
+    image: getProductImage('arm-hammer-super-scoop'),
     overallScore: 8.4,
     price: '$13.99',
     weight: '40 lbs',
@@ -693,7 +695,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Feline Pine',
     brand: 'Feline Pine',
     category: 'Pine Pellet',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('feline-pine'),
     overallScore: 8,
     price: '$19.99',
     weight: '40 lbs',
@@ -739,7 +741,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Fresh Step Scented',
     brand: 'Fresh Step',
     category: 'Scented Clay',
-    image: '/images/latest-fresh-step.png',
+    image: getProductImage('fresh-step'),
     overallScore: 8.1,
     price: '$18.99',
     weight: '42 lbs',
@@ -785,7 +787,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Frisco by Chewy',
     brand: 'Frisco',
     category: 'Clumping Clay (Budget)',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('frisco'),
     overallScore: 8,
     price: '$13.00',
     weight: '40 lbs',
@@ -831,7 +833,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Purina Tidy Cats',
     brand: 'Purina',
     category: 'Clumping Clay (Budget)',
-    image: '/images/latest-tidy-cats.png',
+    image: getProductImage('tidy-cats'),
     overallScore: 7.9,
     price: '$15.49',
     weight: '35 lbs',
@@ -876,7 +878,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Tuft + Paw',
     brand: 'Tuft + Paw',
     category: 'Soy/Tofu (Designer)',
-    image: '/images/featured-dr-elseys.png',
+    image: getProductImage('tuft-paw'),
     overallScore: 8.3,
     price: '$29.00',
     weight: '9 lbs',
@@ -922,7 +924,7 @@ export const productCatalog: ComparisonProductRecord[] = [
     name: 'Ökocat Paper Pellet',
     brand: 'Ökocat',
     category: 'Paper Pellet',
-    image: '/images/latest-okocat.png',
+    image: getProductImage('okocat-paper-pellet'),
     overallScore: 8.2,
     price: '$19.99',
     weight: '20 lbs',
@@ -1299,4 +1301,31 @@ export function getComparisonMatchupsForProduct(productId: string, limit = 3) {
       (matchup): matchup is ComparisonMatchupRecord => Boolean(matchup),
     )
     .slice(0, limit);
+}
+
+export function getRelatedComparisonMatchups(slug: string, limit = 6) {
+  const currentMatchup = getComparisonMatchupBySlug(slug);
+
+  if (!currentMatchup) {
+    return [];
+  }
+
+  const currentProductIds = new Set(currentMatchup.products.map((product) => product.id));
+
+  return comparisonMatchups
+    .filter((matchup) => matchup.slug !== slug)
+    .map((matchup) => ({
+      matchup,
+      sharedProductCount: matchup.products.filter((product) => currentProductIds.has(product.id)).length,
+    }))
+    .filter((entry) => entry.sharedProductCount > 0)
+    .sort((left, right) => {
+      if (right.sharedProductCount !== left.sharedProductCount) {
+        return right.sharedProductCount - left.sharedProductCount;
+      }
+
+      return right.matchup.updatedAt.localeCompare(left.matchup.updatedAt);
+    })
+    .slice(0, limit)
+    .map((entry) => entry.matchup);
 }

@@ -5,6 +5,7 @@ import { OdorMetrics } from '@/components/reviews/OdorMetrics';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/dr-elseys-ultra`;
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Dr. Elsey's Ultra",
     category: "Clumping Clay",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('dr-elseys-ultra'),
     overallScore: 9.4,
     specs: {
         type: "Clumping Clay",
@@ -85,10 +86,7 @@ const productSchemaData = {
     name: "Dr. Elsey's Ultra Cat Litter",
     description: "Premium low-dust clumping clay cat litter with superior clumping strength. Hypoallergenic, unscented, and ideal for multi-cat households. Produces 94% less dust than average clay litter.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: [
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
-        "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80"
-    ],
+    image: getProductImageSet('dr-elseys-ultra'),
     brand: "Dr. Elsey's",
     sku: "DR-ELSEYS-ULTRA-40",
     mpn: "Ultra",
@@ -140,7 +138,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Dr. Elsey's Ultra Cat Litter Review: 90-Day Lab Test Results",
     description: "Scientific review of Dr. Elsey's Ultra based on air quality monitoring, drop testing, and multi-household testing. Includes dust particulate data and clumping strength analysis.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('dr-elseys-ultra'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

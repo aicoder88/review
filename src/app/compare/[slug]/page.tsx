@@ -14,6 +14,7 @@ import {
   getAllComparisonMatchups,
   getComparisonMatchupBySlug,
   getComparisonMatchupHref,
+  getRelatedComparisonMatchups,
 } from '@/lib/product-catalog';
 import { siteUrl } from '@/lib/site';
 
@@ -137,6 +138,7 @@ export default function ComparisonMatchupPage({
     cheapestProduct.name,
     bestDustProduct.name,
   );
+  const relatedMatchups = getRelatedComparisonMatchups(matchup.slug, 6);
   const comparisonDescription = `Compare dust, clumping, odor control, tracking, and daily cost side by side. ${matchup.insight.winner.name} is the better fit here for ${matchup.insight.winner.verdict.bestFor.toLowerCase()}.`;
 
   return (
@@ -259,6 +261,74 @@ export default function ComparisonMatchupPage({
             </div>
           </section>
 
+          <section className="container mx-auto px-6 mb-12">
+            <div className="max-w-6xl mx-auto grid gap-5 lg:grid-cols-2">
+              {[leftProduct, rightProduct].map((product) => (
+                <article key={product.id} className="rounded-3xl border border-border bg-white p-7 shadow-sm">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">
+                    Best fit
+                  </div>
+                  <h2 className="font-display text-3xl font-bold mb-3">{product.name}</h2>
+                  <p className="text-muted-foreground mb-5">
+                    {product.name} makes the most sense for {product.verdict.bestFor.toLowerCase()}.
+                  </p>
+                  <div className="space-y-4 text-sm">
+                    <div className="rounded-2xl bg-secondary/20 p-4">
+                      <div className="font-semibold text-foreground mb-1">Worth it if</div>
+                      <p className="text-muted-foreground">
+                        {product.verdict.worthIf ?? `You want ${product.summary.toLowerCase()}`}
+                      </p>
+                    </div>
+                    <div className="rounded-2xl bg-secondary/20 p-4">
+                      <div className="font-semibold text-foreground mb-1">Skip it if</div>
+                      <p className="text-muted-foreground">
+                        {product.verdict.skipIf ?? `You need a formula that solves ${matchup.insight.winner.verdict.bestFor.toLowerCase()} better.`}
+                      </p>
+                    </div>
+                  </div>
+                  <Link
+                    href={product.reviewUrl}
+                    prefetch={false}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Open {product.name} review
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {matchup.insight.alternatives.length > 0 && (
+            <section className="container mx-auto px-6 mb-12">
+              <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-white p-8 shadow-sm">
+                <h2 className="font-display text-3xl font-bold mb-4">If neither option is quite right</h2>
+                <p className="text-muted-foreground mb-6">
+                  These alternatives solve a more specific budget, dust, or material tradeoff.
+                </p>
+                <div className="grid gap-4 md:grid-cols-3">
+                  {matchup.insight.alternatives.map((alternative) => (
+                    <Link
+                      key={alternative.product.id}
+                      href={alternative.product.reviewUrl}
+                      prefetch={false}
+                      className="rounded-2xl border border-border bg-secondary/10 p-5 transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                    >
+                      <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">
+                        {alternative.label}
+                      </div>
+                      <h3 className="font-display text-2xl font-bold mb-2">{alternative.product.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-3">{alternative.reason}</p>
+                      <div className="text-sm font-semibold text-foreground">
+                        Best for {alternative.product.verdict.bestFor.toLowerCase()}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
           <section className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto rounded-3xl bg-secondary/20 border border-border p-8">
               <h2 className="font-display text-3xl font-bold mb-4">Read the full reviews</h2>
@@ -286,6 +356,40 @@ export default function ComparisonMatchupPage({
               </div>
             </div>
           </section>
+
+          {relatedMatchups.length > 0 && (
+            <section className="container mx-auto px-6 mt-12">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="font-display text-3xl font-bold mb-4 text-center">Keep comparing nearby options</h2>
+                <p className="text-center text-muted-foreground mb-6">
+                  Related matchups that share one of the same products and answer the next likely decision.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {relatedMatchups.map((relatedMatchup) => (
+                    <Link
+                      key={relatedMatchup.slug}
+                      href={getComparisonMatchupHref(relatedMatchup.slug)}
+                      prefetch={false}
+                      className="rounded-2xl border border-border bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    >
+                      <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">
+                        Related matchup
+                      </div>
+                      <h3 className="font-display text-2xl font-bold mb-2">
+                        {relatedMatchup.products[0].name} vs {relatedMatchup.products[1].name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        {relatedMatchup.insight.summary}
+                      </p>
+                      <div className="text-sm font-semibold text-foreground">
+                        Winner: {relatedMatchup.insight.winner.name}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
           <section className="container mx-auto px-6 mt-12">
             <div className="max-w-5xl mx-auto">

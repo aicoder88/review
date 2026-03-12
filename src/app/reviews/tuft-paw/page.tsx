@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/tuft-paw`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Tuft + Paw Really Great Cat Litter",
     category: "Soy/Tofu (Designer)",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('tuft-paw'),
     overallScore: 8.3,
     specs: {
         type: "Soybean/Tofu Based",
@@ -85,7 +86,7 @@ const productSchemaData = {
     name: "Tuft + Paw Really Great Cat Litter",
     description: "Premium soy-based cat litter with tofu-like pellets. Virtually dust-free, flushable, and low-tracking. Designer brand for style-conscious cat owners.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Natural Litter",
-    image: ["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"],
+    image: getProductImageSet('tuft-paw'),
     brand: "Tuft + Paw",
     sku: "TUPAW-SOY-9",
     review: {
@@ -129,7 +130,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Tuft + Paw Review: Designer Soy Litter Performance Test",
     description: "60-day test of Tuft + Paw's soy-based litter. Dust analysis, tracking assessment, and value evaluation of this premium designer option.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('tuft-paw'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

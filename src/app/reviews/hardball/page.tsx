@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/hardball`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Arm & Hammer HardBall",
     category: "Clumping Clay",
-    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+    image: getProductImage('hardball'),
     overallScore: 8.5,
     specs: {
         type: "Fast-Clumping Clay",
@@ -84,7 +85,7 @@ const productSchemaData = {
     name: "Arm & Hammer HardBall Clumping Cat Litter",
     description: "Fast-clumping clay litter with 10% baking soda for odor control. Forms hard, rock-solid clumps quickly. Good middle-ground between budget and premium options.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: ["https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80"],
+    image: getProductImageSet('hardball'),
     brand: "Arm & Hammer",
     sku: "AH-HARDBALL-38",
     review: {
@@ -128,7 +129,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Arm & Hammer HardBall Review: Fast Hard Clumping Litter Test",
     description: "60-day test of HardBall clumping litter. Clump formation speed, hardness testing, and comparison to premium alternatives.",
-    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+    image: getProductImage('hardball'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

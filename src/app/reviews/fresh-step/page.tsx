@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/fresh-step`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Fresh Step Scented (Gain)",
     category: "Scented Clay",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('fresh-step'),
     overallScore: 8.1,
     specs: {
         type: "Scented Clumping Clay",
@@ -85,7 +86,7 @@ const productSchemaData = {
     name: "Fresh Step Scented Clumping Cat Litter",
     description: "Scented clumping clay litter with Gain fragrance. Strong odor masking, decent clumping, widely available at mid-range price point.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: ["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"],
+    image: getProductImageSet('fresh-step'),
     brand: "Fresh Step",
     sku: "FRESH-STEP-38",
     review: {
@@ -129,7 +130,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Fresh Step Review: Gain Scented Litter Performance Test",
     description: "60-day test of Fresh Step scented litter. Fragrance strength, clumping performance, and value analysis.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('fresh-step'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+import { getProductImage } from '@/lib/product-images';
 
 const categoryConfig = getCategoryPageConfig('best-natural-cat-litter');
 const categoryStats = getCategoryPageStats('best-natural-cat-litter');
@@ -22,7 +23,7 @@ const categoryData: CategoryData = {
         {
             id: "worlds-best",
             name: "World's Best Cat Litter",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+            image: getProductImage('worlds-best'),
             price: "$29.99",
             score: 9.1,
             quickTake: "The overall winner. Best clumping for precise scooping.",
@@ -37,7 +38,7 @@ const categoryData: CategoryData = {
         {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+            image: getProductImage('prettylitter'),
             price: "$24.00",
             score: 8.8,
             quickTake: "Best for health monitoring, but non-clumping behavior is polarizing.",
@@ -52,7 +53,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "Not natural (Clay), but included for comparison as the gold standard.",
@@ -69,7 +70,7 @@ const categoryData: CategoryData = {
         overall: {
             id: "worlds-best",
             name: "World's Best Cat Litter",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+            image: getProductImage('worlds-best'),
             price: "$29.99",
             score: 9.1,
             quickTake: "The overall winner. Best clumping for precise scooping.",
@@ -85,7 +86,7 @@ const categoryData: CategoryData = {
         value: {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "Not natural (Clay), but included for comparison as the gold standard.",
@@ -101,7 +102,7 @@ const categoryData: CategoryData = {
         niche: {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+            image: getProductImage('prettylitter'),
             price: "$24.00",
             score: 8.8,
             quickTake: "Best for health monitoring.",
@@ -130,7 +131,7 @@ const categoryData: CategoryData = {
         {
             id: "worlds-best",
             name: "World's Best",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=200&q=80",
+            image: getProductImage('worlds-best'),
             score: 9.1,
             price: "$29.99",
             type: "Corn",
@@ -144,7 +145,7 @@ const categoryData: CategoryData = {
         {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=200&q=80",
+            image: getProductImage('prettylitter'),
             score: 8.8,
             price: "$24.00",
             type: "Silica",
@@ -158,7 +159,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=200&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             score: 9.4,
             price: "$24.99",
             type: "Clay",

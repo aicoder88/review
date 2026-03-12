@@ -5,6 +5,7 @@ import { OdorMetrics } from '@/components/reviews/OdorMetrics';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/prettylitter`;
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "PrettyLitter",
     category: "Silica Gel (Crystal)",
-    image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+    image: getProductImage('prettylitter'),
     overallScore: 8.8,
     specs: {
         type: "Silica Gel Crystal",
@@ -86,10 +87,7 @@ const productSchemaData = {
     name: "PrettyLitter Health Monitoring Cat Litter",
     description: "Crystal cat litter that changes color to detect potential health issues including UTIs, kidney problems, and dehydration. Made from silica gel with health monitoring technology.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Crystal Litter",
-    image: [
-        "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"
-    ],
+    image: getProductImageSet('prettylitter'),
     brand: "PrettyLitter",
     sku: "PL-8LB-MONTHLY",
     review: {
@@ -140,7 +138,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "PrettyLitter Review: Health Monitoring Cat Litter Validation Test",
     description: "60-day scientific validation of PrettyLitter's health monitoring claims. pH testing accuracy, real-world usage experience, and probiotic solution for odor control issues.",
-    image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+    image: getProductImage('prettylitter'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

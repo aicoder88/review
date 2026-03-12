@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+import { getProductImage } from '@/lib/product-images';
 
 const categoryConfig = getCategoryPageConfig('best-budget-cat-litter');
 const categoryStats = getCategoryPageStats('best-budget-cat-litter');
@@ -23,7 +24,7 @@ const categoryData: CategoryData = {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             price: "$16.99",
             score: 8.7,
             quickTake: "The best value for odor sealing.",
@@ -38,7 +39,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "The gold standard. Slightly more expensive than grocery brands, but lasts longer.",
@@ -53,7 +54,7 @@ const categoryData: CategoryData = {
         {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
-            image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
+            image: getProductImage('boxiecat-premium'),
             price: "$27.99",
             score: 9.2,
             quickTake: "Premium option provided for comparison. Better dust control.",
@@ -70,7 +71,7 @@ const categoryData: CategoryData = {
         overall: {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             price: "$16.99",
             score: 8.7,
             quickTake: "The best value for odor sealing.",
@@ -86,7 +87,7 @@ const categoryData: CategoryData = {
         value: {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "The gold standard.",
@@ -102,7 +103,7 @@ const categoryData: CategoryData = {
         niche: {
             id: "worlds-best",
             name: "World's Best Cat Litter",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+            image: getProductImage('worlds-best'),
             price: "$29.99",
             score: 9.1,
             quickTake: "The best natural clumping litter.",
@@ -131,7 +132,7 @@ const categoryData: CategoryData = {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             score: 8.7,
             price: "$16.99",
             type: "Clay",
@@ -145,7 +146,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=200&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             score: 9.4,
             price: "$24.99",
             type: "Clay",
@@ -159,7 +160,7 @@ const categoryData: CategoryData = {
         {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
-            image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=200&q=80",
+            image: getProductImage('boxiecat-premium'),
             score: 9.2,
             price: "$27.99",
             type: "Clay",

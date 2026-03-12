@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/catalyst`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Catalyst Soft Wood Cat Litter",
     category: "Pine (Soft Granules)",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('catalyst'),
     overallScore: 8.7,
     specs: {
         type: "Upcycled Soft Pine",
@@ -84,7 +85,7 @@ const productSchemaData = {
     name: "Catalyst Soft Wood Cat Litter",
     description: "Upcycled pine cat litter with soft, sand-like texture. Clumping formula with low dust and natural wood scent. Sustainable alternative to clay.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Natural Litter",
-    image: ["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"],
+    image: getProductImageSet('catalyst'),
     brand: "Catalyst",
     sku: "CATALYST-20",
     review: {
@@ -128,7 +129,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Catalyst Review: Soft Pine Litter That Feels Like Clay",
     description: "60-day test of Catalyst upcycled pine litter. Soft texture analysis, clumping performance, and comparison to clay litters.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('catalyst'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

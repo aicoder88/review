@@ -5,6 +5,7 @@ import { OdorMetrics } from '@/components/reviews/OdorMetrics';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/boxiecat-premium`;
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Boxiecat Premium",
     category: "Clumping Clay",
-    image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
+    image: getProductImage('boxiecat-premium'),
     overallScore: 9.2,
     specs: {
         type: "Premium Clay",
@@ -86,10 +87,7 @@ const productSchemaData = {
     name: "Boxiecat Premium Cat Litter",
     description: "Premium clumping clay litter with patented Flat Top technology that prevents urine from reaching the bottom of the pan. Features probiotic odor control and 99.9% dust-free formula.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: [
-        "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"
-    ],
+    image: getProductImageSet('boxiecat-premium'),
     brand: "Boxiecat",
     sku: "BOXIE-PREM-28",
     review: {
@@ -140,7 +138,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Boxiecat Premium Review: Flat Top Clumping Technology Tested",
     description: "90-day scientific review of Boxiecat Premium's Flat Top technology. Dust testing, clumping analysis, and comparison with Dr. Elsey's Ultra.",
-    image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
+    image: getProductImage('boxiecat-premium'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

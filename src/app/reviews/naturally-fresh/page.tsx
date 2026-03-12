@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/naturally-fresh`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Naturally Fresh Walnut",
     category: "Walnut Shell (Natural)",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('naturally-fresh'),
     overallScore: 8.8,
     specs: {
         type: "Walnut Shell Granules",
@@ -85,7 +86,7 @@ const productSchemaData = {
     name: "Naturally Fresh Walnut Shell Cat Litter",
     description: "Clumping cat litter made from walnut shells. Superior clumping performance to most clay litters. Natural odor absorption, low dust, and sustainable.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Natural Litter",
-    image: ["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"],
+    image: getProductImageSet('naturally-fresh'),
     brand: "Naturally Fresh",
     sku: "NATFRESH-26",
     review: {
@@ -129,7 +130,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Naturally Fresh Review: Walnut Shell Litter Performance Test",
     description: "60-day test of walnut shell litter. Superior clumping analysis, natural odor control, and comparison to clay litters.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('naturally-fresh'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

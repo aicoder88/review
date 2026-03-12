@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+import { getProductImage } from '@/lib/product-images';
 
 const categoryConfig = getCategoryPageConfig('best-odor-control-cat-litter');
 const categoryStats = getCategoryPageStats('best-odor-control-cat-litter');
@@ -22,7 +23,7 @@ const categoryData: CategoryData = {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             price: "$16.99",
             score: 8.7,
             quickTake: "The nuclear option. Seals odor instantly with micro-sealing granules and powerful scent.",
@@ -37,7 +38,7 @@ const categoryData: CategoryData = {
         {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+            image: getProductImage('prettylitter'),
             price: "$24.00",
             score: 8.8,
             quickTake: "Best for urine odor. The silica crystals absorb moisture instantly, trapping the smell inside.",
@@ -52,7 +53,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "Best unscented option. Controls odor by locking waste in rock-solid clumps.",
@@ -69,7 +70,7 @@ const categoryData: CategoryData = {
         overall: {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             price: "$16.99",
             score: 8.7,
             quickTake: "The nuclear option for smell.",
@@ -85,7 +86,7 @@ const categoryData: CategoryData = {
         value: {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "Best unscented option.",
@@ -101,7 +102,7 @@ const categoryData: CategoryData = {
         niche: {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+            image: getProductImage('prettylitter'),
             price: "$24.00",
             score: 8.8,
             quickTake: "Best for urine odor.",
@@ -120,7 +121,7 @@ const categoryData: CategoryData = {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             score: 8.7,
             price: "$16.99",
             type: "Clay",
@@ -134,7 +135,7 @@ const categoryData: CategoryData = {
         {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=200&q=80",
+            image: getProductImage('prettylitter'),
             score: 8.8,
             price: "$24.00",
             type: "Silica",
@@ -148,7 +149,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=200&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             score: 9.4,
             price: "$24.99",
             type: "Clay",

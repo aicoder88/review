@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/okocat-paper-pellet`;
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Ökocat Non-Clumping Paper Pellet",
     category: "Paper Pellet (Non-Clumping)",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('okocat-paper-pellet'),
     overallScore: 8.2,
     specs: {
         type: "Compressed Paper Pellets",
@@ -87,10 +88,7 @@ const productSchemaData = {
     name: "Ökocat Non-Clumping Paper Pellet Cat Litter",
     description: "Dust-free paper pellet litter made from compressed reclaimed wood/paper. Zero dust formula ideal for cats with respiratory issues, post-surgery recovery, and declawed cats. Non-clumping, highly absorbent.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Paper Litter",
-    image: [
-        "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"
-    ],
+    image: getProductImageSet('okocat-paper-pellet'),
     brand: "Ökocat",
     sku: "OKOCAT-PAPER-14",
     review: {
@@ -141,7 +139,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Ökocat Paper Pellet Review: Best Paper Litter for Special Needs",
     description: "60-day test of paper pellet litter for post-surgery, declawed cats, and dust-sensitive households. Absorption testing and real-world usage data.",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('okocat-paper-pellet'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

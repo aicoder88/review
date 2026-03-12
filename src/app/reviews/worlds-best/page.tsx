@@ -5,6 +5,7 @@ import { OdorMetrics } from '@/components/reviews/OdorMetrics';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/worlds-best`;
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "World's Best Cat Litter",
     category: "Natural Corn",
-    image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+    image: getProductImage('worlds-best'),
     overallScore: 9.1,
     specs: {
         type: "Whole Kernel Corn",
@@ -86,10 +87,7 @@ const productSchemaData = {
     name: "World's Best Cat Litter",
     description: "Flushable, eco-friendly cat litter made from whole kernel corn. Septic-safe, lightweight, and clumps naturally without clay or silica. The sustainable choice for environmentally conscious cat owners.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Natural Litter",
-    image: [
-        "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"
-    ],
+    image: getProductImageSet('worlds-best'),
     brand: "World's Best Cat Litter",
     sku: "WBC-28LB",
     mpn: "Original",
@@ -142,7 +140,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "World's Best Cat Litter Review: 60-Day Flushable Natural Litter Test",
     description: "Comprehensive review of World's Best Cat Litter based on dissolution testing, odor analysis, and real-world usage. Includes the 'corn smell' problem and probiotic solution.",
-    image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+    image: getProductImage('worlds-best'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

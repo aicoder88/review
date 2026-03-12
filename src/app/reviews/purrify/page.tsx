@@ -5,6 +5,7 @@ import { OdorMetrics } from '@/components/reviews/OdorMetrics';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/purrify`;
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Purrify Probiotic Deodorizer",
     category: "Litter Enhancement",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('purrify'),
     overallScore: 9.6,
     specs: {
         type: "Probiotic Powder",
@@ -88,10 +89,7 @@ const productSchemaData = {
     name: "Purrify Probiotic Deodorizer",
     description: "Probiotic powder that eliminates cat litter odor at the bacterial source. Extends litter life by 2x and reduces ammonia by 87%. Works with all litter types.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Litter Additives",
-    image: [
-        "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"
-    ],
+    image: getProductImageSet('purrify'),
     brand: "Purrify",
     sku: "PURRIFY-16OZ",
     review: {
@@ -141,7 +139,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Purrify Probiotic Deodorizer Review: 6-Month Test Results & Data Analysis",
     description: "Scientific review of Purrify based on 6 months of testing with 10+ litter brands. Includes ammonia reduction data, cost savings analysis, and compatibility testing.",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('purrify'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

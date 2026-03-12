@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CategoryPage, CategoryData } from '@/components/categories/CategoryPage';
 import { getCategoryPageConfig, getCategoryPageMetadata, getCategoryPageStats } from '@/lib/category-pages';
+import { getProductImage } from '@/lib/product-images';
 
 const categoryConfig = getCategoryPageConfig('best-low-dust-cat-litter');
 const categoryStats = getCategoryPageStats('best-low-dust-cat-litter');
@@ -22,7 +23,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "The undefeated champion. 0.03mg dust levels (94% less than average).",
@@ -37,7 +38,7 @@ const categoryData: CategoryData = {
         {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
-            image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
+            image: getProductImage('boxiecat-premium'),
             price: "$27.99",
             score: 9.2,
             quickTake: "The premium contender. Equally dust-free but with better 'flat top' clumping.",
@@ -52,7 +53,7 @@ const categoryData: CategoryData = {
         {
             id: "prettylitter",
             name: "PrettyLitter",
-            image: "https://images.unsplash.com/photo-1623366302587-b38b1ddaefd9?w=800&q=80",
+            image: getProductImage('prettylitter'),
             price: "$24.00",
             score: 8.8,
             quickTake: "Best non-clay option. Silica gel has no clay dust spread.",
@@ -69,7 +70,7 @@ const categoryData: CategoryData = {
         overall: {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             price: "$24.99",
             score: 9.4,
             quickTake: "The undefeated champion for dust control.",
@@ -85,7 +86,7 @@ const categoryData: CategoryData = {
         value: {
             id: "worlds-best",
             name: "World's Best Cat Litter",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+            image: getProductImage('worlds-best'),
             price: "$29.99",
             score: 9.1,
             quickTake: "Best natural low-dust option. Corn produces little dust compared to cheap clay.",
@@ -101,7 +102,7 @@ const categoryData: CategoryData = {
         niche: {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
-            image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=800&q=80",
+            image: getProductImage('boxiecat-premium'),
             price: "$27.99",
             score: 9.2,
             quickTake: "Premium flat-top clumping.",
@@ -120,7 +121,7 @@ const categoryData: CategoryData = {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1603573568853-294c65365511?w=200&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             score: 9.4,
             price: "$24.99",
             type: "Clay",
@@ -134,7 +135,7 @@ const categoryData: CategoryData = {
         {
             id: "boxiecat-premium",
             name: "Boxiecat Premium",
-            image: "https://images.unsplash.com/photo-1513245543132-31f507417b26?w=200&q=80",
+            image: getProductImage('boxiecat-premium'),
             score: 9.2,
             price: "$27.99",
             type: "Clay",
@@ -148,7 +149,7 @@ const categoryData: CategoryData = {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             score: 8.7,
             price: "$16.99",
             type: "Clay",

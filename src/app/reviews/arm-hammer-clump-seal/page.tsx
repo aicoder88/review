@@ -5,6 +5,7 @@ import { OdorMetrics } from '@/components/reviews/OdorMetrics';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/arm-hammer-clump-seal`;
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Arm & Hammer Clump & Seal",
     category: "Scented Clay",
-    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+    image: getProductImage('arm-hammer-clump-seal'),
     overallScore: 8.7,
     specs: {
         type: "Fine Micro-Sandy Clay",
@@ -85,10 +86,7 @@ const productSchemaData = {
     name: "Arm & Hammer Clump & Seal Cat Litter",
     description: "Budget-friendly clumping clay litter with heavy odor-masking fragrance. Features micro-particle formula that coats waste completely. Best for multi-cat households needing maximum odor control at an affordable price.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: [
-        "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"
-    ],
+    image: getProductImageSet('arm-hammer-clump-seal'),
     brand: "Arm & Hammer",
     sku: "AH-CLUMPSEAL-38",
     review: {
@@ -139,7 +137,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Arm & Hammer Clump & Seal Review: Budget Odor Control With a Perfume Trade-off",
     description: "60-day test of Arm & Hammer Clump & Seal. Excellent odor control at a budget price, but heavy fragrance and tracking issues. Includes unscented alternative recommendation.",
-    image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+    image: getProductImage('arm-hammer-clump-seal'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

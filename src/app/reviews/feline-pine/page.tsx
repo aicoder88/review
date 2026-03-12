@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/feline-pine`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Feline Pine Original",
     category: "Pine Pellet (Non-Clumping)",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('feline-pine'),
     overallScore: 8.0,
     specs: {
         type: "Compressed Pine Pellets",
@@ -85,7 +86,7 @@ const productSchemaData = {
     name: "Feline Pine Original Cat Litter",
     description: "100% pure pine pellet litter with no chemicals or additives. Natural pine scent for odor control. Highly absorbent pellets break down to sawdust when wet.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Natural Litter",
-    image: ["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80"],
+    image: getProductImageSet('feline-pine'),
     brand: "Feline Pine",
     sku: "FELINE-PINE-40",
     review: {
@@ -129,7 +130,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Feline Pine Review: Natural Pine Pellet Litter Test",
     description: "60-day test of Feline Pine pellet litter. Absorption testing, sawdust breakdown analysis, and odor control data.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('feline-pine'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

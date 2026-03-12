@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/frisco`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Frisco by Chewy",
     category: "Clumping Clay (Budget)",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('frisco'),
     overallScore: 8.0,
     specs: {
         type: "Clumping Clay",
@@ -85,7 +86,7 @@ const productSchemaData = {
     name: "Frisco by Chewy Clumping Cat Litter",
     description: "Chewy's house brand clumping clay litter. Best value at $13 for 40lb. Decent clumping and odor control for budget-conscious buyers.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: ["https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80"],
+    image: getProductImageSet('frisco'),
     brand: "Frisco",
     sku: "FRISCO-40",
     review: {
@@ -129,7 +130,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Frisco Review: Chewy's Budget Cat Litter Performance Test",
     description: "60-day test of Frisco by Chewy. Value analysis, performance data, and comparison to premium litters at twice the price.",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('frisco'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

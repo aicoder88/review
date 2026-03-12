@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { CategoryPage } from '@/components/categories/CategoryPage';
 import { getCategoryPageConfig, getCategoryPageStats } from '@/lib/category-pages';
+import { getProductImage } from '@/lib/product-images';
 
 const categoryConfig = getCategoryPageConfig('best-clumping-cat-litter');
 const categoryStats = getCategoryPageStats('best-clumping-cat-litter');
@@ -12,7 +13,7 @@ export function BestClumpingClient() {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             score: 9.4,
             price: "$24.99",
             weight: "40lbs",
@@ -27,7 +28,7 @@ export function BestClumpingClient() {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer Clump & Seal",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=800&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             score: 8.7,
             price: "$16.99",
             weight: "38lbs",
@@ -42,7 +43,7 @@ export function BestClumpingClient() {
         {
             id: "worlds-best",
             name: "World's Best Cat Litter",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+            image: getProductImage('worlds-best'),
             score: 9.1,
             price: "$29.99",
             weight: "28lbs",
@@ -60,7 +61,7 @@ export function BestClumpingClient() {
         {
             id: "dr-elseys-ultra",
             name: "Dr. Elsey's Ultra",
-            image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&q=80",
+            image: getProductImage('dr-elseys-ultra'),
             score: 9.4,
             price: "$24.99",
             type: "Clay",
@@ -74,7 +75,7 @@ export function BestClumpingClient() {
         {
             id: "worlds-best",
             name: "World's Best",
-            image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=200&q=80",
+            image: getProductImage('worlds-best'),
             score: 9.1,
             price: "$29.99",
             type: "Corn",
@@ -88,7 +89,7 @@ export function BestClumpingClient() {
         {
             id: "arm-hammer-clump-seal",
             name: "Arm & Hammer",
-            image: "https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=200&q=80",
+            image: getProductImage('arm-hammer-clump-seal'),
             score: 8.7,
             price: "$16.99",
             type: "Clay",

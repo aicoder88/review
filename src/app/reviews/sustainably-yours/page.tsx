@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/sustainably-yours`;
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Sustainably Yours Small Grains",
     category: "Natural (Corn + Cassava)",
-    image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+    image: getProductImage('sustainably-yours'),
     overallScore: 9.3,
     specs: {
         type: "Corn & Cassava Blend",
@@ -85,10 +86,7 @@ const productSchemaData = {
     name: "Sustainably Yours Small Grains Cat Litter",
     description: "Premium natural cat litter made from corn and cassava. Harder clumping than corn-only litters, bright white for health monitoring, flushable and septic-safe.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Natural Litter",
-    image: [
-        "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
-        "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80"
-    ],
+    image: getProductImageSet('sustainably-yours'),
     brand: "Sustainably Yours",
     sku: "SY-SMALLGRAINS-13",
     review: {
@@ -139,7 +137,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Sustainably Yours Review: Corn + Cassava Natural Litter Test",
     description: "60-day scientific review of Sustainably Yours vs World's Best. Clumping analysis, dissolution tests, and health-monitoring visibility assessment.",
-    image: "https://images.unsplash.com/photo-1573865526739-10c1dd7aa5d0?w=800&q=80",
+    image: getProductImage('sustainably-yours'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

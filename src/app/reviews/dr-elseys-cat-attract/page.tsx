@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/dr-elseys-cat-attract`;
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Dr. Elsey's Cat Attract Multi-Cat Strength",
     category: "Clumping Clay / Behavioral",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('dr-elseys-cat-attract'),
     overallScore: 9.5,
     specs: {
         type: "Clumping Clay + Herbal Attractant",
@@ -86,10 +87,7 @@ const productSchemaData = {
     name: "Dr. Elsey's Cat Attract Multi-Cat Strength Cat Litter",
     description: "Clumping clay litter with herbal attractant designed to draw cats to the litter box. Multi-cat strength formula with superior clumping and 99% dust-free performance.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: [
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
-        "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80"
-    ],
+    image: getProductImageSet('dr-elseys-cat-attract'),
     brand: "Dr. Elsey's",
     sku: "DR-ELSEYS-CAT-ATTRACT-40",
     mpn: "CatAttract",
@@ -141,7 +139,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Dr. Elsey's Cat Attract Review: Behavioral Training Litter That Works",
     description: "90-day scientific test of Cat Attract with cats who avoid the litter box. Behavioral analysis, attractant effectiveness data, and multi-cat performance results.",
-    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    image: getProductImage('dr-elseys-cat-attract'),
     datePublished: "2025-01-15",
     dateModified: "2025-12-01",
     author: "ReviewCatLitter.com",

@@ -4,6 +4,7 @@ import { TestingMethodology } from '@/components/reviews/TestingMethodology';
 import { EnhancedProductSchema, ArticleSchema, BreadcrumbSchema } from '@/components/seo/EnhancedProductSchema';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import type { Metadata } from 'next';
+import { getProductImage, getProductImageSet } from '@/lib/product-images';
 
 const siteUrl = "https://www.reviewcatlitter.com";
 const productUrl = `${siteUrl}/reviews/tidy-cats`;
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const reviewData: ReviewData = {
     name: "Purina Tidy Cats Instant Action",
     category: "Clumping Clay (Budget)",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('tidy-cats'),
     overallScore: 7.9,
     specs: {
         type: "Clumping Clay",
@@ -85,7 +86,7 @@ const productSchemaData = {
     name: "Purina Tidy Cats Clumping Cat Litter",
     description: "Budget-friendly clumping cat litter with multiple formulas. Glade scented options for odor control. Widely available at grocery stores.",
     category: "Pet Supplies > Cat Supplies > Cat Litter > Clumping Litter",
-    image: ["https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80"],
+    image: getProductImageSet('tidy-cats'),
     brand: "Purina Tidy Cats",
     sku: "TIDY-INSTANT-40",
     review: {
@@ -129,7 +130,7 @@ const productSchemaData = {
 const articleSchemaData = {
     headline: "Tidy Cats Review: Budget Litter Performance Test",
     description: "60-day test of Tidy Cats Instant Action and 24/7 Performance. Formula comparison, performance data, and value analysis.",
-    image: "https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=800&q=80",
+    image: getProductImage('tidy-cats'),
     datePublished: "2024-01-15",
     dateModified: "2024-12-01",
     author: "ReviewCatLitter.com",

@@ -19,6 +19,7 @@ import {
 } from '@/lib/product-catalog';
 
 const featuredMatchups = getAllComparisonMatchups().slice(0, 6);
+const allMatchups = getAllComparisonMatchups();
 const decisionPaths = [
     {
         title: 'Best Clumping Cat Litter',
@@ -142,6 +143,50 @@ export function ComparePageClient() {
                                     </p>
                                     <div className="text-sm font-semibold text-foreground">
                                         Winner: {matchup.insight.winner.name}
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="container mx-auto px-6 mb-12">
+                    <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-white p-8 shadow-sm">
+                        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                            <div>
+                                <h2 className="font-display text-2xl font-bold mb-2">Browse every permanent comparison page</h2>
+                                <p className="text-muted-foreground">
+                                    Direct links to every indexed head-to-head matchup in the catalog.
+                                </p>
+                            </div>
+                            <div className="text-sm font-semibold text-muted-foreground">
+                                {allMatchups.length} matchup pages
+                            </div>
+                        </div>
+                        <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                            {allMatchups.map((matchup) => (
+                                <Link
+                                    key={matchup.slug}
+                                    href={getComparisonMatchupHref(matchup.slug)}
+                                    prefetch={false}
+                                    className="rounded-2xl border border-border bg-secondary/10 p-4 transition-all hover:-translate-y-0.5 hover:shadow-sm"
+                                >
+                                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-2">
+                                        Matchup page
+                                    </div>
+                                    <h3 className="font-display text-xl font-bold mb-2">
+                                        {matchup.products[0].name} vs {matchup.products[1].name}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground mb-3">
+                                        {matchup.insight.summary}
+                                    </p>
+                                    <div className="text-sm font-semibold text-foreground">
+                                        Updated {new Date(`${matchup.updatedAt}T00:00:00Z`).toLocaleDateString('en-US', {
+                                            month: 'short',
+                                            day: 'numeric',
+                                            year: 'numeric',
+                                            timeZone: 'UTC',
+                                        })}
                                     </div>
                                 </Link>
                             ))}

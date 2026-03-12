@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "purrify",
+    "name": "Purrify Probiotic Deodorizer",
+    "sourcePageUrl": "https://www.purrify.ca/",
+    "sourceImageUrl": "https://www.purrify.ca/optimized/products/140g-transparent.webp"
+  },
+  {
+    "slug": "dr-elseys-cat-attract",
+    "name": "Dr. Elsey's Cat Attract",
+    "sourcePageUrl": "https://drelseys.com/product/cat-attract-litter/"
+  },
+  {
+    "slug": "dr-elseys-ultra",
+    "name": "Dr. Elsey's Ultra",
+    "sourcePageUrl": "https://drelseys.com/product/ultra-litter/"
+  },
+  {
+    "slug": "sustainably-yours",
+    "name": "Sustainably Yours Small Grains",
+    "sourcePageUrl": "https://www.amazon.com/Sustainably-Yours-Natural-Litter-Multi-Cat/dp/B09ZFF4KM4",
+    "sourceImageUrl": "https://m.media-amazon.com/images/I/718WR540VVL._AC_SX679_.jpg",
+    "notes": "Uses the Small-Grain Amazon SKU image because the brand litters page does not expose a standalone pack shot in static HTML."
+  },
+  {
+    "slug": "boxiecat-premium",
+    "name": "Boxiecat Premium",
+    "sourcePageUrl": "https://boxiecat.com/products/unscented-premium-clumping-clay-litter"
+  },
+  {
+    "slug": "worlds-best",
+    "name": "World's Best Cat Litter",
+    "sourcePageUrl": "https://www.worldsbestcatlitter.com/scoopable-multiple-cat-clumping-litter/",
+    "sourceImageUrl": "https://www.worldsbestcatlitter.com/wp-content/uploads/2019/02/Bag-Multiple-Cat-Red.jpg"
+  },
+  {
+    "slug": "naturally-fresh",
+    "name": "Naturally Fresh Walnut",
+    "sourcePageUrl": "https://www.naturallyfreshlitter.com/quick-clump-cat-litter/",
+    "sourceImageUrl": "https://www.naturallyfreshlitter.com/wp-content/uploads/2026/01/QuickClumping_350x350_Front_ECO198.jpg"
+  },
+  {
+    "slug": "catalyst",
+    "name": "Catalyst Soft Wood",
+    "sourcePageUrl": "https://catalystpet.com/products/cat-litter-healthy-cat-formula"
+  },
+  {
+    "slug": "prettylitter",
+    "name": "PrettyLitter",
+    "sourcePageUrl": "https://www.prettylitter.com/",
+    "sourceImageUrl": "https://res.cloudinary.com/prettylitter/image/upload/w_600,h_600/v1682966575/components/prettylitter_social_sharing.jpg",
+    "notes": "PrettyLitter does not expose a better static pack shot without a client-side flow."
+  },
+  {
+    "slug": "arm-hammer-clump-seal",
+    "name": "Arm & Hammer Clump & Seal",
+    "sourcePageUrl": "https://www.armandhammer.com/en/cat-litter/premium-cat-litter/clump-and-seal/clump-seal-complete-odor-sealing-clumping-litter-multi-cat-38-lb"
+  },
+  {
+    "slug": "hardball",
+    "name": "Arm & Hammer HardBall",
+    "sourcePageUrl": "https://www.armandhammer.com/en/cat-litter/lightweight/lightweight-litter/hardball-lightweight-easy-no-mess-scooping-platinum-multi-cat-clumping-litter"
+  },
+  {
+    "slug": "arm-hammer-super-scoop",
+    "name": "Arm & Hammer Super Scoop",
+    "sourcePageUrl": "https://www.armandhammer.com/en/cat-litter/traditional-litter/super-scoop/arm-hammer-super-scoop-clumping-litter-fragrance-free-40-lb"
+  },
+  {
+    "slug": "feline-pine",
+    "name": "Feline Pine Original",
+    "sourcePageUrl": "https://www.felinepine.com/Feline-Pine-Non-Clumping-Litter.aspx"
+  },
+  {
+    "slug": "fresh-step",
+    "name": "Fresh Step Scented (Gain)",
+    "sourcePageUrl": "https://www.freshstep.com/our-litter/odor-shield-gain-original-scented-litter-with-febreze/"
+  },
+  {
+    "slug": "frisco",
+    "name": "Frisco by Chewy",
+    "sourcePageUrl": "https://www.chewy.com/frisco-unscented-clumping-clay-cat/dp/169771",
+    "sourceImageUrl": "https://image.chewy.com/catalog/general/images/frisco-odor-defense-unscented-clumping-clay-cat-litter-35lb-bag/img-165906._AC_SX500_SY400_QL75_V1_.jpg",
+    "notes": "Uses a current Frisco Odor Defense Unscented clumping litter SKU from Chewy, which aligns with the review's unscented budget-clay positioning."
+  },
+  {
+    "slug": "tidy-cats",
+    "name": "Purina Tidy Cats Instant Action",
+    "sourcePageUrl": "https://www.purina.com/cats/shop/tidy-cats-instant-action-clumping-cat-litter",
+    "sourceImageUrl": "https://live.purina.com/sites/default/files/products/2025-04/tidy-cats-instant-action-multi-cat-clumping-litter.png",
+    "notes": "Uses Purina's official Instant Action pack shot from the live product asset CDN."
+  },
+  {
+    "slug": "tuft-paw",
+    "name": "Tuft + Paw Really Great Cat Litter",
+    "sourcePageUrl": "https://www.tuftandpaw.com/products/really-great-cat-litter"
+  },
+  {
+    "slug": "okocat-paper-pellet",
+    "name": "Okocat Dust Free Paper",
+    "sourcePageUrl": "https://www.okocat.com/",
+    "sourceImageUrl": "https://cdn.shopify.com/s/files/1/0037/0268/5745/files/okocat-Flavors_Web_630x604dustfree.jpg?v=1697568007"
+  }
+]
