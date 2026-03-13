@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
-import { AppClientShell } from "@/components/app/AppClientShell";
 import { SiteSchema } from "@/components/seo/SiteSchema";
 import { siteDescription, siteName, siteUrl } from "@/lib/site";
 
@@ -70,7 +69,7 @@ export default function RootLayout({
       </head>
       <body className={`${outfit.variable} ${fraunces.variable} antialiased`}>
         <SiteSchema />
-        <AppClientShell>{children}</AppClientShell>
+        {children}
       </body>
     </html>
   );

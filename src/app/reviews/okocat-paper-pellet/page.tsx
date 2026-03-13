@@ -214,10 +214,10 @@ export default function OkocatPaperPelletReview() {
                 <section>
                     <h2>What Makes Paper Pellets Different</h2>
                     <p>
-                        Ökocat Paper Pellet isn't trying to be clay litter. It's a completely different approach to cat waste management—trading convenience for specific benefits.
+                        Ökocat Paper Pellet isn&apos;t trying to be clay litter. It&apos;s a completely different approach to cat waste management—trading convenience for specific benefits.
                     </p>
                     <p>
-                        The pellets are made from compressed reclaimed paper and wood fibers. They're essentially super-absorbent sponges in pellet form.
+                        The pellets are made from compressed reclaimed paper and wood fibers. They&apos;re essentially super-absorbent sponges in pellet form.
                     </p>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">How Paper Pellets Work:</h4>
@@ -246,22 +246,22 @@ export default function OkocatPaperPelletReview() {
                         </ul>
                     </div>
                     <p>
-                        If your vet has told you to find "zero dust" litter, this is literally the only option that delivers.
+                        If your vet has told you to find &quot;zero dust&quot; litter, this is literally the only option that delivers.
                     </p>
                 </section>
 
                 <section>
                     <h2>The Non-Clumping Reality</h2>
                     <p>
-                        Let's be clear: this is NOT convenient. You don't get the "scoop and go" experience of clumping litter.
+                        Let&apos;s be clear: this is NOT convenient. You don&apos;t get the &quot;scoop and go&quot; experience of clumping litter.
                     </p>
 
                     <h3>Absorption Testing</h3>
                     <p>
-                        We measured absorption capacity: 1 gram of pellets absorbed 3.1 grams of liquid. That's excellent absorption—better than many clumping litters.
+                        We measured absorption capacity: 1 gram of pellets absorbed 3.1 grams of liquid. That&apos;s excellent absorption—better than many clumping litters.
                     </p>
                     <p>
-                        The problem is what happens after absorption. Wet pellets turn to mush/sawdust. You can't separate clean from dirty.
+                        The problem is what happens after absorption. Wet pellets turn to mush/sawdust. You can&apos;t separate clean from dirty.
                     </p>
 
                     <h3>Change Frequency</h3>
@@ -297,10 +297,10 @@ export default function OkocatPaperPelletReview() {
                 <section>
                     <h2>Odor Control: The Weak Point</h2>
                     <p>
-                        Paper pellets control urine odor reasonably well through absorption. But poop odor? That's the problem.
+                        Paper pellets control urine odor reasonably well through absorption. But poop odor? That&apos;s the problem.
                     </p>
                     <p>
-                        Because pellets don't clump, you can't bury feces. Poop sits on top until scooped. If you don't scoop multiple times daily, odor becomes noticeable.
+                        Because pellets don&apos;t clump, you can&apos;t bury feces. Poop sits on top until scooped. If you don&apos;t scoop multiple times daily, odor becomes noticeable.
                     </p>
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-amber-900 mb-2">💡 Odor Management Tips:</h4>
@@ -347,7 +347,7 @@ export default function OkocatPaperPelletReview() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="font-bold mb-2">Dr. Elsey's Ultra:</p>
+                                <p className="font-bold mb-2">Dr. Elsey&apos;s Ultra:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $24.99 per 40lb bag</li>
                                     <li>• 0.6 bags per month</li>
@@ -393,7 +393,7 @@ export default function OkocatPaperPelletReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Ökocat Paper Pellet isn't trying to be your everyday litter—it's a specialty product for specific needs. And in those situations, it's the best available.
+                        Ökocat Paper Pellet isn&apos;t trying to be your everyday litter—it&apos;s a specialty product for specific needs. And in those situations, it&apos;s the best available.
                     </p>
                     <p>
                         Post-surgery? Declawed cat? Severe dust allergies? This is your answer. Just know the trade-offs: zero dust comes with high cost and frequent changes.

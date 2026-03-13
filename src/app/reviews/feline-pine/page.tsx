@@ -211,7 +211,7 @@ export default function FelinePineReview() {
                 <section>
                     <h2>The Sifting Box Advantage</h2>
                     <p>
-                        Feline Pine works best with a sifting litter box. Here's why:
+                        Feline Pine works best with a sifting litter box. Here&apos;s why:
                     </p>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">How Sifting Works:</h4>
@@ -234,10 +234,10 @@ export default function FelinePineReview() {
 
                     <h3>Odor Control (8.0/10) — Pine Power</h3>
                     <p>
-                        The natural pine scent isn't just masking—pine oils actually neutralize ammonia. We got 7-10 days of odor control before noticing ammonia.
+                        The natural pine scent isn&apos;t just masking—pine oils actually neutralize ammonia. We got 7-10 days of odor control before noticing ammonia.
                     </p>
                     <p>
-                        The pine smell is strong initially but fades over the first week. By day 3-4, it's subtle but still effective.
+                        The pine smell is strong initially but fades over the first week. By day 3-4, it&apos;s subtle but still effective.
                     </p>
 
                     <h3>Absorption (8.5/10) — Excellent</h3>
@@ -247,12 +247,12 @@ export default function FelinePineReview() {
 
                     <h3>Dust (9.0/10) — Very Low</h3>
                     <p>
-                        Measured 0.08mg per pour—excellent. The pellets don't create dust clouds. Some sawdust is generated as they break down, but it's heavier than clay dust.
+                        Measured 0.08mg per pour—excellent. The pellets don&apos;t create dust clouds. Some sawdust is generated as they break down, but it&apos;s heavier than clay dust.
                     </p>
 
                     <h3>Tracking (7.0/10) — Mixed</h3>
                     <p>
-                        Large pellets don't track much, but the sawdust does. Without a litter mat, you'll find fine pine dust around the box.
+                        Large pellets don&apos;t track much, but the sawdust does. Without a litter mat, you&apos;ll find fine pine dust around the box.
                     </p>
                 </section>
 
@@ -265,7 +265,7 @@ export default function FelinePineReview() {
                             <li>• Without sifting: ~$18/month (frequent changes)</li>
                         </ul>
                         <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            Get a sifting box—it's essential for value
+                            Get a sifting box—it&apos;s essential for value
                         </p>
                     </div>
                 </section>
@@ -299,10 +299,10 @@ export default function FelinePineReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Feline Pine is the best pine pellet litter for eco-conscious owners. The natural pine scent genuinely works, absorption is excellent, and it's truly chemical-free.
+                        Feline Pine is the best pine pellet litter for eco-conscious owners. The natural pine scent genuinely works, absorption is excellent, and it&apos;s truly chemical-free.
                     </p>
                     <p>
-                        The catch: you need a sifting box and your cat needs to accept pellets. If both those are true, it's an excellent, economical choice.
+                        The catch: you need a sifting box and your cat needs to accept pellets. If both those are true, it&apos;s an excellent, economical choice.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

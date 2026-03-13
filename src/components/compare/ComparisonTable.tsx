@@ -4,7 +4,7 @@ import { Check, X, Trophy } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
 import Link from 'next/link';
-import { useComparison } from '@/context/ComparisonContext';
+import { useOptionalComparison } from '@/context/ComparisonContext';
 import type { ComparisonProductRecord } from '@/lib/product-catalog';
 
 export type DetailedProduct = ComparisonProductRecord;
@@ -15,7 +15,7 @@ interface ComparisonTableProps {
 }
 
 export function ComparisonTable({ products, allowRemoval = true }: ComparisonTableProps) {
-    const { removeProduct } = useComparison();
+    const comparison = useOptionalComparison();
 
     if (products.length === 0) {
         return (
@@ -63,7 +63,7 @@ export function ComparisonTable({ products, allowRemoval = true }: ComparisonTab
                             <th key={product.id} className="p-4 align-bottom min-w-[240px] relative group">
                                 {allowRemoval && (
                                     <button
-                                        onClick={() => removeProduct(product.id)}
+                                        onClick={() => comparison?.removeProduct(product.id)}
                                         className="absolute top-2 right-2 text-muted-foreground hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
                                     >
                                         <X className="w-5 h-5" />

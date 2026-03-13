@@ -191,7 +191,7 @@ export default function TuftPawReview() {
                 <section>
                     <h2>The Designer Litter Experience</h2>
                     <p>
-                        Tuft + Paw isn't just litter—it's a lifestyle brand. The packaging is beautiful, the website is sleek, and the litter itself looks... nice?
+                        Tuft + Paw isn&apos;t just litter—it&apos;s a lifestyle brand. The packaging is beautiful, the website is sleek, and the litter itself looks... nice?
                     </p>
                     <p>
                         But underneath the branding is a genuinely innovative product: soy-based pellets that are virtually dust-free and track minimally.
@@ -199,9 +199,9 @@ export default function TuftPawReview() {
                     <div className="bg-purple-50 border-l-4 border-purple-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-purple-900 mb-2">✨ The Aesthetic Factor</h4>
                         <p className="text-purple-800">
-                            Tuft + Paw's litter actually looks good in your home. The pellets are uniform, 
+                            Tuft + Paw&apos;s litter actually looks good in your home. The pellets are uniform, 
                             the color is pleasant cream, and the bag looks designer. If you care about 
-                            home aesthetics, this is the only litter that doesn't look like... litter.
+                            home aesthetics, this is the only litter that doesn&apos;t look like... litter.
                         </p>
                     </div>
                 </section>
@@ -211,12 +211,12 @@ export default function TuftPawReview() {
 
                     <h3>Dust (9.0/10) — Virtually Zero</h3>
                     <p>
-                        Measured 0.05mg per pour—comparable to premium clay and excellent for allergies. You won't see dust clouds.
+                        Measured 0.05mg per pour—comparable to premium clay and excellent for allergies. You won&apos;t see dust clouds.
                     </p>
 
                     <h3>Tracking (9.0/10) — Minimal</h3>
                     <p>
-                        60% less tracking than clay in our testing. The large pellets simply don't travel far.
+                        60% less tracking than clay in our testing. The large pellets simply don&apos;t travel far.
                     </p>
 
                     <h3>Clumping (8.0/10) — Good</h3>
@@ -249,7 +249,7 @@ export default function TuftPawReview() {
                                     <td className="text-right py-2 text-red-600">4.1x</td>
                                 </tr>
                                 <tr>
-                                    <td className="py-2">Dr. Elsey's</td>
+                                    <td className="py-2">Dr. Elsey&apos;s</td>
                                     <td className="text-center py-2">$14</td>
                                     <td className="text-right py-2">baseline</td>
                                 </tr>
@@ -293,7 +293,7 @@ export default function TuftPawReview() {
                         Tuft + Paw is excellent litter at a terrible price. The performance is genuinely good—especially dust control and tracking.
                     </p>
                     <p>
-                        But you're paying 4x more for similar functionality to premium clay. This is a luxury purchase for design lovers, not a value play.
+                        But you&apos;re paying 4x more for similar functionality to premium clay. This is a luxury purchase for design lovers, not a value play.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

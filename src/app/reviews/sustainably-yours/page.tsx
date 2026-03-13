@@ -212,7 +212,7 @@ export default function SustainablyYoursReview() {
                 <section>
                     <h2>The Corn + Cassava Advantage</h2>
                     <p>
-                        Sustainably Yours isn't just another corn litter. The addition of cassava (a root vegetable starch) fundamentally changes the performance.
+                        Sustainably Yours isn&apos;t just another corn litter. The addition of cassava (a root vegetable starch) fundamentally changes the performance.
                     </p>
                     <p>
                         Corn alone clumps okay but tends to be crumbly. Cassava adds binding strength—think of it like adding egg to breadcrumbs. The result is noticeably harder clumps that survive scooping better.
@@ -229,7 +229,7 @@ export default function SustainablyYoursReview() {
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Dr. Elsey's (Clay)</td>
+                                    <td className="py-2">Dr. Elsey&apos;s (Clay)</td>
                                     <td className="text-center py-2">98%</td>
                                     <td className="text-right py-2">100% (baseline)</td>
                                 </tr>
@@ -239,14 +239,14 @@ export default function SustainablyYoursReview() {
                                     <td className="text-right py-2 text-primary">85%</td>
                                 </tr>
                                 <tr>
-                                    <td className="py-2">World's Best (Corn)</td>
+                                    <td className="py-2">World&apos;s Best (Corn)</td>
                                     <td className="text-center py-2">76%</td>
                                     <td className="text-right py-2">70%</td>
                                 </tr>
                             </tbody>
                         </table>
                         <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            Result: 15% harder clumps than World's Best
+                            Result: 15% harder clumps than World&apos;s Best
                         </p>
                     </div>
                 </section>
@@ -281,13 +281,13 @@ export default function SustainablyYoursReview() {
                 <section>
                     <h2>No More Corn Smell</h2>
                     <p>
-                        World's Best develops that sour, fermented corn smell after 2 weeks. It's the #1 complaint.
+                        World&apos;s Best develops that sour, fermented corn smell after 2 weeks. It&apos;s the #1 complaint.
                     </p>
                     <p>
                         Sustainably Yours largely avoids this because cassava ferments much more slowly than corn. In our 60-day test:
                     </p>
                     <ul>
-                        <li>→ World's Best: Noticeable smell at day 12</li>
+                            <li>→ World&apos;s Best: Noticeable smell at day 12</li>
                         <li>→ Sustainably Yours: Minimal smell through day 18</li>
                         <li>→ Both: Benefit from <PurrifyLink variant="inline">Purrify</PurrifyLink> to extend freshness</li>
                     </ul>
@@ -307,7 +307,7 @@ export default function SustainablyYoursReview() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="font-bold mb-2">World's Best:</p>
+                                <p className="font-bold mb-2">World&apos;s Best:</p>
                                 <ul className="space-y-1 text-sm">
                                     <li>• $32.99 per 28lb bag</li>
                                     <li>• Lasts 4 weeks</li>
@@ -316,11 +316,11 @@ export default function SustainablyYoursReview() {
                             </div>
                         </div>
                         <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            Sustainably Yours costs ~$0.12/day more than World's Best
+                            Sustainably Yours costs ~$0.12/day more than World&apos;s Best
                         </p>
                     </div>
                     <p>
-                        You're paying a small premium for better clumping, health visibility, and no corn smell. Worth it for many natural-litter buyers.
+                        You&apos;re paying a small premium for better clumping, health visibility, and no corn smell. Worth it for many natural-litter buyers.
                     </p>
                 </section>
 
@@ -330,7 +330,7 @@ export default function SustainablyYoursReview() {
                         <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
                             <h3 className="font-bold text-xl text-green-800 mb-4">✅ Perfect For:</h3>
                             <ul className="space-y-2 text-green-900/80">
-                                <li>• World's Best users wanting better clumping</li>
+                                <li>• World&apos;s Best users wanting better clumping</li>
                                 <li>• Health-conscious owners (white = visibility)</li>
                                 <li>• Those sensitive to fermented corn smell</li>
                                 <li>• Eco-conscious buyers (sustainable blend)</li>
@@ -342,7 +342,7 @@ export default function SustainablyYoursReview() {
                             <ul className="space-y-2 text-red-900/80">
                                 <li>• Budget-conscious buyers</li>
                                 <li>• Those who need easy store availability</li>
-                                <li>• World's Best loyalists (it's not that different)</li>
+                                <li>• World&apos;s Best loyalists (it&apos;s not that different)</li>
                                 <li>• Homes with bug/pest issues</li>
                             </ul>
                         </div>
@@ -352,17 +352,17 @@ export default function SustainablyYoursReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Sustainably Yours earns our pick as the best natural litter. The corn + cassava blend delivers harder clumping than World's Best, the white color enables health monitoring, and there's no fermented corn smell to deal with.
+                        Sustainably Yours earns our pick as the best natural litter. The corn + cassava blend delivers harder clumping than World&apos;s Best, the white color enables health monitoring, and there&apos;s no fermented corn smell to deal with.
                     </p>
                     <p>
-                        It's expensive and harder to find, but if you want the best natural litter performance available, this is it.
+                        It&apos;s expensive and harder to find, but if you want the best natural litter performance available, this is it.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">
                             Best Natural Litter
                         </p>
                         <p className="text-muted-foreground mb-6">
-                            9.3/10 — World's Best has serious competition
+                            9.3/10 — World&apos;s Best has serious competition
                         </p>
                     </div>
                 </section>

@@ -1,22 +1,14 @@
-'use client';
-
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { HeaderClient } from '@/components/home/HeaderClient';
-import { FooterClient } from '@/components/home/FooterClient';
-import { ComparisonTable, DetailedProduct } from '@/components/compare/ComparisonTable';
-import { PurrifyEnhancement } from '@/components/compare/PurrifyEnhancement';
-import { CostCalculator } from '@/components/compare/CostCalculator';
-import { SmartRecommendation } from '@/components/compare/SmartRecommendation';
+import { Header } from '@/components/home/Header';
+import { Footer } from '@/components/home/Footer';
+import { ComparisonExperience } from '@/components/compare/ComparisonExperience';
 import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
-import { useComparison } from '@/context/ComparisonContext';
-import { FadeUp } from '@/components/ui/motion';
 import {
     getAllComparisonMatchups,
     getComparisonMatchupHref,
-    getComparisonProductsByIds,
 } from '@/lib/product-catalog';
+import { ComparePageComparisonSection } from './ComparePageComparisonSection';
 
 const featuredMatchups = getAllComparisonMatchups().slice(0, 6);
 const allMatchups = getAllComparisonMatchups();
@@ -91,60 +83,10 @@ const comparisonIntents = [
     },
 ];
 
-function ComparisonLoader() {
-    const searchParams = useSearchParams();
-    const { products: contextProducts } = useComparison();
-    const [displayProducts, setDisplayProducts] = useState<DetailedProduct[]>([]);
-
-    useEffect(() => {
-        // Preference 1: URL query param (sharing)
-        const urlIds = searchParams.get('products')?.split(',');
-
-        // Preference 2: Context state
-        const contextIds = contextProducts.map(p => p.id);
-
-        // Merge (prefer URL if present, else Context)
-        const targetIds = (urlIds && urlIds.length > 0) ? urlIds : contextIds;
-
-        const resolved = getComparisonProductsByIds(targetIds);
-
-        setDisplayProducts(resolved);
-    }, [searchParams, contextProducts]);
-
-    // Adapt products for CostCalculator and SmartRecommendation
-    const adaptedProducts = displayProducts.map(p => ({
-        id: p.id,
-        name: p.name,
-        price: p.price,
-        lastedWeeks: p.longevity?.single?.replace(/\D/g, '') || '4'
-    }));
-
-    return (
-        <section className="container mx-auto px-6 mb-24">
-            <FadeUp>
-                <ComparisonTable products={displayProducts} />
-            </FadeUp>
-            {displayProducts.length > 0 && (
-                <>
-                    <FadeUp delay={0.2}>
-                        <CostCalculator products={adaptedProducts} />
-                    </FadeUp>
-                    <FadeUp delay={0.3}>
-                        <SmartRecommendation products={displayProducts} />
-                    </FadeUp>
-                    <FadeUp delay={0.4}>
-                        <PurrifyEnhancement />
-                    </FadeUp>
-                </>
-            )}
-        </section>
-    );
-}
-
 export function ComparePageClient() {
     return (
         <div className="min-h-screen bg-background">
-            <HeaderClient />
+            <Header />
             <main className="pt-24 pb-20">
                 <section className="container mx-auto px-6 mb-12 text-center">
                     <h1 className="font-display text-4xl font-bold mb-4">Compare Cat Litters</h1>
@@ -299,12 +241,14 @@ export function ComparePageClient() {
                     </div>
                 </section>
 
-                <Suspense fallback={<div className="text-center py-12">Loading comparison...</div>}>
-                    <ComparisonLoader />
-                </Suspense>
+                <ComparisonExperience>
+                    <Suspense fallback={<div className="text-center py-12">Loading comparison...</div>}>
+                        <ComparePageComparisonSection />
+                    </Suspense>
+                </ComparisonExperience>
 
             </main>
-            <FooterClient />
+            <Footer />
         </div>
     );
 }

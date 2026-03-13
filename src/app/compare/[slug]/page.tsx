@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeftRight, ArrowRight, BadgeDollarSign, Footprints, ShieldCheck, Trophy } from 'lucide-react';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
+import { ComparisonExperience } from '@/components/compare/ComparisonExperience';
 import { ComparisonTable } from '@/components/compare/ComparisonTable';
 import { ComparisonPageSchemas } from '@/components/seo/PageSchemas';
 import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
@@ -420,6 +421,7 @@ export default function ComparisonMatchupPage({
           </section>
         </main>
 
+        <ComparisonExperience />
         <Footer />
       </div>
     </>

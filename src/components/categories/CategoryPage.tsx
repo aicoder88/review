@@ -1,16 +1,11 @@
-'use client';
-
-import { ReactNode, useState } from 'react';
-import { HeaderClient } from '@/components/home/HeaderClient';
-import { FooterClient } from '@/components/home/FooterClient';
+import { ReactNode } from 'react';
+import { Header } from '@/components/home/Header';
+import { Footer } from '@/components/home/Footer';
 import { QuickPickCard } from './ui/QuickPickCard';
-import { FilterSidebar } from './ui/FilterSidebar';
+import { CategoryProductExplorer } from './CategoryProductExplorer';
 import { CategoryComparisonTable, ProductSpec } from './ui/CategoryComparisonTable';
-import { FadeUp, StaggerChildren } from '@/components/ui/motion';
-import { ArrowUpDown, SlidersHorizontal, Check } from 'lucide-react';
-import { ScoreBadge } from '@/components/reviews/ui/ScoreBadge';
+import { FadeUp } from '@/components/ui/motion';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import { CollectionPageSchemas } from '@/components/seo/PageSchemas';
 import { EditorialTrustBox } from '@/components/seo/EditorialTrustBox';
 import { RelatedArticles } from '@/components/content/RelatedArticles';
@@ -78,9 +73,6 @@ export function CategoryPage({
         { name: title, url: toAbsoluteUrl(path) },
     ];
 
-    const [activeFilters, setActiveFilters] = useState<Record<string, string[]>>({});
-    const [sortBy, setSortBy] = useState('rating');
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
     const jumpLinks = [
         { label: 'Overview', href: '#overview' },
         { label: 'Winners', href: '#winners' },
@@ -93,99 +85,6 @@ export function CategoryPage({
     if (relatedGuides.length > 0) {
         jumpLinks.push({ label: 'Guides', href: '#guides' });
     }
-
-    // Filters Configuration (You might bubble this up in a real app)
-    const filterConfig = [
-        {
-            id: 'price',
-            label: 'Price',
-            options: [
-                { id: 'budget', label: 'Under $15' },
-                { id: 'mid', label: '$15 - $25' },
-                { id: 'premium', label: 'Over $25' },
-            ]
-        },
-        {
-            id: 'type',
-            label: 'Material',
-            options: [
-                { id: 'clay', label: 'Clay' },
-                { id: 'natural', label: 'Natural/Plant' },
-                { id: 'crystal', label: 'Silica Gel' },
-            ]
-        },
-        {
-            id: 'feature',
-            label: 'Features',
-            options: [
-                { id: 'unscented', label: 'Unscented' },
-                { id: 'scented', label: 'Scented' },
-                { id: 'lightweight', label: 'Lightweight' },
-                { id: 'flushable', label: 'Flushable' },
-            ]
-        }
-    ];
-
-    const handleFilterChange = (groupId: string, optionId: string) => {
-        setActiveFilters(prev => {
-            const group = prev[groupId] || [];
-            if (group.includes(optionId)) {
-                return { ...prev, [groupId]: group.filter(id => id !== optionId) };
-            } else {
-                return { ...prev, [groupId]: [...group, optionId] };
-            }
-        });
-    };
-
-    // Filter Logic (Client-side for demo)
-    const filteredProducts = products.filter(product => {
-        // If no filters active, show all
-        if (Object.keys(activeFilters).length === 0 || Object.values(activeFilters).every(arr => arr.length === 0)) return true;
-
-        // Check each active filter group
-        for (const [groupId, selectedOptions] of Object.entries(activeFilters)) {
-            if (selectedOptions.length === 0) continue;
-
-            // Price filter
-            if (groupId === 'price') {
-                const priceNum = parseFloat(product.price.replace(/[^0-9.]/g, ''));
-                const matchesPrice = selectedOptions.some(opt => {
-                    if (opt === 'budget') return priceNum < 15;
-                    if (opt === 'mid') return priceNum >= 15 && priceNum <= 25;
-                    if (opt === 'premium') return priceNum > 25;
-                    return false;
-                });
-                if (!matchesPrice) return false;
-            }
-
-            // Type/Material filter
-            if (groupId === 'type') {
-                const productType = product.type.toLowerCase();
-                const matchesType = selectedOptions.some(opt => {
-                    if (opt === 'clay') return productType.includes('clay');
-                    if (opt === 'natural') return productType.includes('natural') || productType.includes('corn') || productType.includes('wheat') || productType.includes('plant');
-                    if (opt === 'crystal') return productType.includes('crystal') || productType.includes('silica');
-                    return false;
-                });
-                if (!matchesType) return false;
-            }
-
-            // Feature filter - check tags
-            if (groupId === 'feature') {
-                const matchesFeature = selectedOptions.some(opt => 
-                    product.tags.some(tag => tag.toLowerCase().includes(opt.toLowerCase()))
-                );
-                if (!matchesFeature) return false;
-            }
-        }
-
-        return true;
-    }).sort((a, b) => {
-        if (sortBy === 'rating') return b.score - a.score;
-        if (sortBy === 'price_low') return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
-        if (sortBy === 'price_high') return parseFloat(b.price.replace(/[^0-9.]/g, '')) - parseFloat(a.price.replace(/[^0-9.]/g, ''));
-        return 0;
-    });
 
     return (
         <>
@@ -201,7 +100,7 @@ export function CategoryPage({
             />
 
             <div className="min-h-screen bg-background">
-                <HeaderClient />
+                <Header />
 
                 <main className="pt-24 pb-20">
 
@@ -349,132 +248,7 @@ export function CategoryPage({
                     </div>
                 </section>
 
-                {/* Main Product List */}
-                <section className="container mx-auto px-6 mb-24" id="all-reviews">
-                    <div className="grid lg:grid-cols-12 gap-8">
-
-                        {/* Sidebar Filters */}
-                        <aside className="hidden lg:block lg:col-span-3">
-                            <div className="sticky top-24">
-                                <div className="flex items-center gap-2 font-bold text-lg mb-6">
-                                    <SlidersHorizontal className="w-5 h-5" /> Filters
-                                </div>
-                                <FilterSidebar
-                                    filters={filterConfig}
-                                    activeFilters={activeFilters}
-                                    onFilterChange={handleFilterChange}
-                                />
-                            </div>
-                        </aside>
-
-                        {/* Mobile Filter Toggle */}
-                        <div className="lg:hidden col-span-12 mb-4">
-                            <button
-                                onClick={() => setIsFilterOpen(!isFilterOpen)}
-                                className="w-full flex items-center justify-center gap-2 py-3 border border-border rounded-xl font-bold"
-                            >
-                                <SlidersHorizontal className="w-4 h-4" /> Filters {Object.values(activeFilters).flat().length > 0 && `(${Object.values(activeFilters).flat().length})`}
-                            </button>
-                            {isFilterOpen && (
-                                <div className="mt-4 p-4 border border-border rounded-xl bg-secondary/10">
-                                    <FilterSidebar
-                                        filters={filterConfig}
-                                        activeFilters={activeFilters}
-                                        onFilterChange={handleFilterChange}
-                                    />
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Product Grid */}
-                        <div className="lg:col-span-9 space-y-8">
-
-                            {/* Toolbar */}
-                            <div className="flex justify-between items-center pb-4 border-b border-border">
-                                <span className="text-muted-foreground font-medium">{filteredProducts.length} Products Found</span>
-                                <div className="flex items-center gap-2">
-                                    <ArrowUpDown className="w-4 h-4 text-muted-foreground" />
-                                    <select
-                                        className="bg-transparent font-bold text-foreground border-none focus:ring-0 cursor-pointer"
-                                        value={sortBy}
-                                        onChange={(e) => setSortBy(e.target.value)}
-                                    >
-                                        <option value="rating">Highest Rated</option>
-                                        <option value="price_low">Lowest Price</option>
-                                        <option value="price_high">Highest Price</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            {/* Cards */}
-                            <StaggerChildren className="space-y-6">
-                                {filteredProducts.map((product) => (
-                                    <FadeUp key={product.id} className="bg-white border border-border rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 hover:shadow-lg transition-shadow">
-                                        {/* Image & Score */}
-                                        <div className="w-full md:w-56 flex-shrink-0 flex flex-col items-center">
-                                            <div className="w-full aspect-square mb-4 relative">
-                                                <img src={product.image} alt={`${product.name} cat litter product photo`} className="w-full h-full object-contain" />
-                                                <div className="absolute top-0 right-0 md:hidden">
-                                                    <ScoreBadge score={product.score} size="sm" />
-                                                </div>
-                                            </div>
-                                            <div className="hidden md:flex flex-col items-center gap-2">
-                                                <ScoreBadge score={product.score} size="lg" />
-                                                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Our Score</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Content */}
-                                        <div className="flex-1 min-w-0">
-                                            <div className="flex flex-wrap items-baseline justify-between gap-4 mb-2">
-                                                <div>
-                                                    <div className="text-xs font-bold text-primary uppercase tracking-wider mb-1">{product.type}</div>
-                                                    <Link href={product.reviewUrl} prefetch={false} className="font-display text-2xl font-bold text-foreground hover:text-primary hover:underline">
-                                                        {product.name}
-                                                    </Link>
-                                                </div>
-                                                <div className="text-lg font-bold text-foreground">{product.price}</div>
-                                            </div>
-
-                                            {/* Quick Take */}
-                                            <div className="bg-secondary/30 rounded-xl p-4 mb-6">
-                                                <p className="font-medium text-foreground">{product.quickTake}</p>
-                                            </div>
-
-                                            <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                                                <div className="space-y-1">
-                                                    {product.pros.slice(0, 2).map((pro, i) => (
-                                                        <div key={i} className="flex items-start gap-2 text-sm text-green-700">
-                                                            <Check className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                                                            <span>{pro}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                                <div className="space-y-1">
-                                                    {product.cons.slice(0, 2).map((con, i) => (
-                                                        <div key={i} className="flex items-start gap-2 text-sm text-red-700">
-                                                            <span className="font-bold text-xs mt-0.5 px-1 bg-red-100 rounded">✗</span>
-                                                            <span>{con}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            <div className="flex flex-wrap gap-3">
-                                                <Link href={product.reviewUrl} prefetch={false} className="px-6 py-2.5 bg-foreground text-white font-bold rounded-lg hover:bg-black transition-colors">
-                                                    Read Review
-                                                </Link>
-                                                <a href={product.priceCheckUrl} target="_blank" className="px-6 py-2.5 border border-border font-bold rounded-lg hover:bg-secondary transition-colors">
-                                                    Check Price
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </FadeUp>
-                                ))}
-                            </StaggerChildren>
-                        </div>
-                    </div>
-                </section>
+                <CategoryProductExplorer products={products} />
 
                 {/* Comparison Table */}
                 <section className="container mx-auto px-6 mb-24" id="compare-table">
@@ -521,7 +295,7 @@ export function CategoryPage({
                 )}
 
                 </main>
-                <FooterClient />
+                <Footer />
             </div>
         </>
     );

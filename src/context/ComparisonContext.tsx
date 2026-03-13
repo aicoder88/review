@@ -21,6 +21,11 @@ interface ComparisonContextType {
 }
 
 const ComparisonContext = createContext<ComparisonContextType | undefined>(undefined);
+const COMPARISON_STORAGE_KEY = 'comparison_products';
+
+function persistProducts(products: CompareProduct[]) {
+    localStorage.setItem(COMPARISON_STORAGE_KEY, JSON.stringify(products));
+}
 
 export function ComparisonProvider({ children }: { children: ReactNode }) {
     const [products, setProducts] = useState<CompareProduct[]>([]);
@@ -28,7 +33,7 @@ export function ComparisonProvider({ children }: { children: ReactNode }) {
 
     // Load from localStorage on mount
     useEffect(() => {
-        const saved = localStorage.getItem('comparison_products');
+        const saved = localStorage.getItem(COMPARISON_STORAGE_KEY);
         if (saved) {
             try {
                 setProducts(JSON.parse(saved));
@@ -40,7 +45,7 @@ export function ComparisonProvider({ children }: { children: ReactNode }) {
 
     // Sync to localStorage
     useEffect(() => {
-        localStorage.setItem('comparison_products', JSON.stringify(products));
+        persistProducts(products);
     }, [products]);
 
     const addProduct = (product: CompareProduct) => {
@@ -50,12 +55,20 @@ export function ComparisonProvider({ children }: { children: ReactNode }) {
             alert("You can compare up to 4 products at a time.");
             return;
         }
-        setProducts(prev => [...prev, product]);
+        setProducts(prev => {
+            const nextProducts = [...prev, product];
+            persistProducts(nextProducts);
+            return nextProducts;
+        });
         setIsOpen(true);
     };
 
     const removeProduct = (productId: string) => {
-        setProducts(prev => prev.filter(p => p.id !== productId));
+        setProducts(prev => {
+            const nextProducts = prev.filter(p => p.id !== productId);
+            persistProducts(nextProducts);
+            return nextProducts;
+        });
     };
 
     const isInComparison = (productId: string) => {
@@ -63,7 +76,10 @@ export function ComparisonProvider({ children }: { children: ReactNode }) {
     };
 
     const clearComparison = () => {
-        setProducts([]);
+        setProducts(() => {
+            persistProducts([]);
+            return [];
+        });
     };
 
     return (
@@ -87,4 +103,8 @@ export function useComparison() {
         throw new Error('useComparison must be used within a ComparisonProvider');
     }
     return context;
+}
+
+export function useOptionalComparison() {
+    return useContext(ComparisonContext);
 }

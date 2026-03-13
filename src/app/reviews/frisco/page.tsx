@@ -191,16 +191,16 @@ export default function FriscoReview() {
                 <section>
                     <h2>The Best Value in Cat Litter</h2>
                     <p>
-                        Frisco isn't trying to be premium. It's Chewy's house brand—designed to offer "good enough" performance at the best possible price.
+                        Frisco isn&apos;t trying to be premium. It&apos;s Chewy&apos;s house brand—designed to offer &quot;good enough&quot; performance at the best possible price.
                     </p>
                     <p>
-                        At $13 for 40lb (sometimes $11 on sale), it's the cheapest clumping litter that actually works.
+                        At $13 for 40lb (sometimes $11 on sale), it&apos;s the cheapest clumping litter that actually works.
                     </p>
                     <div className="bg-green-50 border-l-4 border-green-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-green-900 mb-2">💰 The Value Proposition</h4>
                         <ul className="space-y-2 text-green-800">
                             <li>• $13 for 40lb = $0.33/day</li>
-                            <li>• Dr. Elsey's = $0.51/day</li>
+                            <li>• Dr. Elsey&apos;s = $0.51/day</li>
                             <li>• Annual savings: ~$65</li>
                         </ul>
                         <p className="font-bold text-green-900 mt-2">
@@ -224,7 +224,7 @@ export default function FriscoReview() {
                     <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-amber-900 mb-2">💡 Upgrade for Cheap</h4>
                         <p className="text-amber-800">
-                            Frisco ($13) + <PurrifyLink variant="inline">Purrify</PurrifyLink> ($7.50/month) = Premium odor control for less than Dr. Elsey's alone.
+                            Frisco ($13) + <PurrifyLink variant="inline">Purrify</PurrifyLink> ($7.50/month) = Premium odor control for less than Dr. Elsey&apos;s alone.
                         </p>
                     </div>
 
@@ -272,10 +272,10 @@ export default function FriscoReview() {
                 <section>
                     <h2>Final Verdict</h2>
                     <p>
-                        Frisco is the best value in cat litter, period. It's not premium, but at half the price of Dr. Elsey's, it doesn't need to be.
+                        Frisco is the best value in cat litter, period. It&apos;s not premium, but at half the price of Dr. Elsey&apos;s, it doesn&apos;t need to be.
                     </p>
                     <p>
-                        If you're on a budget, have multiple cats, or use an automatic box, Frisco is the smart choice.
+                        If you&apos;re on a budget, have multiple cats, or use an automatic box, Frisco is the smart choice.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

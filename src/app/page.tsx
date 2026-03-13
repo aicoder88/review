@@ -10,6 +10,7 @@ import { LatestReviews } from '@/components/home/LatestReviews';
 import { CategoryNavigation } from '@/components/home/CategoryNavigation';
 import { Newsletter } from '@/components/home/Newsletter';
 import { Footer } from '@/components/home/Footer';
+import { ExitIntentOffer } from '@/components/marketing/ExitIntentOffer';
 import { WebPageSchemas } from '@/components/seo/PageSchemas';
 import type { Metadata } from 'next';
 import { buildPageMetadata } from '@/lib/page-metadata';
@@ -82,6 +83,7 @@ export default function Page() {
         <Newsletter />
       </main>
       <Footer />
+      <ExitIntentOffer />
     </div>
   );
 }

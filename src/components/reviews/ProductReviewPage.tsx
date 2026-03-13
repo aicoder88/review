@@ -1,16 +1,14 @@
-'use client';
-
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowLeftRight, ArrowRight, Check, X, Info, ShoppingCart } from 'lucide-react';
 import { ScoreBadge } from './ui/ScoreBadge';
 import { ScoreMeter } from './ui/ScoreMeter';
-import { ComparisonWidget } from './ui/ComparisonWidget';
+import { ReviewComparisonIsland } from './ui/ReviewComparisonIsland';
 import { RecommendedAddOn } from './RecommendedAddOn';
 import { OdorEliminationBonus } from './OdorEliminationBonus';
 import { FadeUp } from '@/components/ui/motion';
-import { HeaderClient } from '@/components/home/HeaderClient';
-import { FooterClient } from '@/components/home/FooterClient';
+import { Header } from '@/components/home/Header';
+import { Footer } from '@/components/home/Footer';
 import { ReviewTrustPanel } from '@/components/seo/ReviewTrustPanel';
 import { RelatedArticles } from '@/components/content/RelatedArticles';
 import { getRelatedResourceCardsForProduct } from '@/lib/internal-links';
@@ -116,7 +114,7 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
 
     return (
         <div className="min-h-screen bg-background">
-            <HeaderClient />
+            <Header />
 
             <main className="pt-24 pb-20">
                 {/* Breadcrumb - Simple */}
@@ -466,10 +464,10 @@ export function ProductReviewPage({ data, children }: ProductReviewPageProps) {
 
                 <RecommendedAddOn productName={data.name} />
 
-                <ComparisonWidget currentProduct={data.name} />
+                <ReviewComparisonIsland currentProduct={data.name} />
 
             </main>
-            <FooterClient />
+            <Footer />
         </div>
     );
 }

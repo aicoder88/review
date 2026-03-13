@@ -193,13 +193,13 @@ export default function CatalystReview() {
                         Catalyst solved the #1 problem with pine litter: texture. Instead of hard pellets cats reject, Catalyst is soft like sand.
                     </p>
                     <p>
-                        The secret is upcycled pine that's processed into granules rather than compressed pellets. It feels like premium clay underfoot.
+                        The secret is upcycled pine that&apos;s processed into granules rather than compressed pellets. It feels like premium clay underfoot.
                     </p>
                     <div className="bg-green-50 border-l-4 border-green-500 p-6 my-6 rounded-r-xl">
                         <h4 className="font-bold text-green-900 mb-2">♻️ Upcycled Sustainability</h4>
                         <p className="text-green-800">
                             Catalyst is made from pine that would otherwise be discarded by lumber and furniture industries. 
-                            No trees are cut specifically for this litter—it's truly upcycled waste material.
+                            No trees are cut specifically for this litter—it&apos;s truly upcycled waste material.
                         </p>
                     </div>
                 </section>
@@ -224,7 +224,7 @@ export default function CatalystReview() {
                             </thead>
                             <tbody className="text-muted-foreground">
                                 <tr className="border-b border-border/50">
-                                    <td className="py-2">Dr. Elsey's (Clay)</td>
+                                    <td className="py-2">Dr. Elsey&apos;s (Clay)</td>
                                     <td className="text-center py-2">98%</td>
                                 </tr>
                                 <tr className="border-b border-border/50">
@@ -232,7 +232,7 @@ export default function CatalystReview() {
                                     <td className="text-center py-2 font-bold">73%</td>
                                 </tr>
                                 <tr>
-                                    <td className="py-2">World's Best (Corn)</td>
+                                    <td className="py-2">World&apos;s Best (Corn)</td>
                                     <td className="text-center py-2">76%</td>
                                 </tr>
                             </tbody>
@@ -244,7 +244,7 @@ export default function CatalystReview() {
 
                     <h3>Dust (8.0/10) — Low</h3>
                     <p>
-                        Measured 0.15mg per pour—similar to World's Best and much lower than budget clay. Very manageable.
+                        Measured 0.15mg per pour—similar to World&apos;s Best and much lower than budget clay. Very manageable.
                     </p>
 
                     <h3>Odor Control (8.0/10) — Pleasant Pine</h3>
@@ -263,7 +263,7 @@ export default function CatalystReview() {
                             <li>• <strong>$1.00/day</strong> (premium pricing)</li>
                         </ul>
                         <p className="font-bold text-primary mt-4 pt-4 border-t border-border">
-                            You're paying for eco-friendly + clay-like texture
+                            You&apos;re paying for eco-friendly + clay-like texture
                         </p>
                     </div>
                 </section>
@@ -299,7 +299,7 @@ export default function CatalystReview() {
                         Catalyst cracked the code: natural pine that cats actually want to use. The soft texture eliminates the rejection problem of pellets.
                     </p>
                     <p>
-                        You're paying a premium for sustainability and cat acceptance. If those matter to you, Catalyst delivers.
+                        You&apos;re paying a premium for sustainability and cat acceptance. If those matter to you, Catalyst delivers.
                     </p>
                     <div className="bg-primary/5 border border-primary/20 p-8 rounded-2xl my-8 text-center">
                         <p className="text-2xl font-bold text-primary mb-4">

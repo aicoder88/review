@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { CategoryPage } from '@/components/categories/CategoryPage';
 import { getCategoryPageConfig, getCategoryPageStats } from '@/lib/category-pages';

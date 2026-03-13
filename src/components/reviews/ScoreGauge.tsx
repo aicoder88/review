@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 interface ScoreGaugeProps {
     score: number; // 0-10
     label: string;
@@ -34,11 +30,9 @@ export function ScoreGauge({ score, label, description }: ScoreGaugeProps) {
 
             {/* Progress Bar Container */}
             <div className="h-4 bg-secondary rounded-full overflow-hidden relative">
-                <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${widthPercentage}%` }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className={`h-full ${getColor(score)} rounded-full relative z-10`}
+                <div
+                    className={`h-full ${getColor(score)} rounded-full relative z-10 animate-score-gauge`}
+                    style={{ width: `${widthPercentage}%` }}
                 />
                 {/* Striped Background Pattern (Optional texture) */}
                 <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />

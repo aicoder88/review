@@ -132,8 +132,95 @@
     @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
   }
 
+  .reveal-fade-in {
+    animation: reveal-fade-in var(--reveal-duration, 0.5s) ease-out var(--reveal-delay, 0s) both;
+  }
+
+  .reveal-fade-up {
+    animation: reveal-fade-up var(--reveal-duration, 0.5s) ease-out var(--reveal-delay, 0s) both;
+  }
+
+  .reveal-scale-pop {
+    animation: reveal-scale-pop var(--reveal-duration, 0.5s) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) both;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.3s ease-out both;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.25s ease-out both;
+  }
+
+  .animate-score-gauge {
+    transform-origin: left center;
+    animation: score-gauge-fill 0.8s ease-out both;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes reveal-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes reveal-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes reveal-scale-pop {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.88);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes score-gauge-fill {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
   }
 
   @keyframes float {
@@ -142,6 +229,20 @@
     }
     50% {
       transform: translateY(-20px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-fade-in,
+    .reveal-fade-up,
+    .reveal-scale-pop,
+    .animate-slide-in-up,
+    .animate-scale-in,
+    .animate-score-gauge,
+    .animate-float {
+      animation: none;
+      transform: none;
+      opacity: 1;
     }
   }
 }

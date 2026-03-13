@@ -1,96 +1,61 @@
-import { motion, HTMLMotionProps, Variants } from "framer-motion";
-import { cn } from "@/lib/utils";
-import React from "react";
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 
-interface MotionProps extends HTMLMotionProps<"div"> {
-    children: React.ReactNode;
+interface MotionProps extends HTMLAttributes<HTMLDivElement> {
+    children: ReactNode;
     delay?: number;
     duration?: number;
-    className?: string;
     viewport?: { once?: boolean; margin?: string };
 }
 
-export const fadeInVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-};
+function buildRevealStyle(delay: number, duration: number, style?: CSSProperties) {
+    return {
+        ...style,
+        ['--reveal-delay' as string]: `${delay}s`,
+        ['--reveal-duration' as string]: `${duration}s`,
+    } as CSSProperties;
+}
 
-export const fadeUpVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-};
-
-export const scalePopVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1 },
-};
-
-export function FadeIn({ children, delay = 0, duration = 0.5, className, viewport = { once: true }, ...props }: MotionProps) {
+export function FadeIn({ children, delay = 0, duration = 0.5, className, style, ...props }: MotionProps) {
     return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            variants={fadeInVariants}
-            transition={{ duration, delay, ease: "easeOut" }}
-            className={className}
+        <div
+            className={cn('reveal-fade-in', className)}
+            style={buildRevealStyle(delay, duration, style)}
             {...props}
         >
             {children}
-        </motion.div>
+        </div>
     );
 }
 
-export function FadeUp({ children, delay = 0, duration = 0.5, className, viewport = { once: true }, ...props }: MotionProps) {
+export function FadeUp({ children, delay = 0, duration = 0.5, className, style, ...props }: MotionProps) {
     return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            variants={fadeUpVariants}
-            transition={{ duration, delay, ease: "easeOut" }}
-            className={className}
+        <div
+            className={cn('reveal-fade-up', className)}
+            style={buildRevealStyle(delay, duration, style)}
             {...props}
         >
             {children}
-        </motion.div>
+        </div>
     );
 }
 
-export function ScalePop({ children, delay = 0, duration = 0.5, className, viewport = { once: true }, ...props }: MotionProps) {
+export function ScalePop({ children, delay = 0, duration = 0.5, className, style, ...props }: MotionProps) {
     return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            variants={scalePopVariants}
-            transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
-            className={className}
+        <div
+            className={cn('reveal-scale-pop', className)}
+            style={buildRevealStyle(delay, duration, style)}
             {...props}
         >
             {children}
-        </motion.div>
+        </div>
     );
 }
 
-export function StaggerChildren({ children, delay = 0, staggerDelay = 0.1, className, viewport = { once: true }, ...props }: MotionProps & { staggerDelay?: number }) {
+export function StaggerChildren({ children, className, ...props }: MotionProps & { staggerDelay?: number }) {
     return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            variants={{
-                visible: {
-                    transition: {
-                        staggerChildren: staggerDelay,
-                        delayChildren: delay,
-                    },
-                },
-            }}
-            className={className}
-            {...props}
-        >
+        <div className={className} {...props}>
             {children}
-        </motion.div>
+        </div>
     );
 }

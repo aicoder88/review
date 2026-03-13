@@ -191,7 +191,7 @@ export default function TidyCatsReview() {
                 <section>
                     <h2>Tidy Cats Formula Breakdown</h2>
                     <p>
-                        Tidy Cats offers more variety than most brands. Here's what each formula offers:
+                        Tidy Cats offers more variety than most brands. Here&apos;s what each formula offers:
                     </p>
                     <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6">
                         <h4 className="font-bold text-lg mb-4">Formula Comparison:</h4>
@@ -239,7 +239,7 @@ export default function TidyCatsReview() {
 
                     <h3>Odor Control — Glade Helps</h3>
                     <p>
-                        The Glade partnership isn't just marketing—the scents are pleasant and effective. We got 5-7 days of odor control.
+                        The Glade partnership isn&apos;t just marketing—the scents are pleasant and effective. We got 5-7 days of odor control.
                     </p>
 
                     <h3>Dust — Budget Level</h3>
